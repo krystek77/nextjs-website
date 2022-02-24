@@ -1,0 +1,22 @@
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+.subtitle__ball {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--accent-500);
+  flex-shrink: 0;
+}
+.subtitle__content {
+  letter-spacing: -0.02em;
+  font-family: var(--font-alt);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: 0.5rem;
+}

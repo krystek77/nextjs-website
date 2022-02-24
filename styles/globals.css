@@ -1,16 +1,70 @@
+:root {
+  --primary-700: #74d2d0;
+  --primary-500: #a8e3e2;
+  --primary-300: #f0fafa;
+  --accent-700: #b80000;
+  --accent-500: #ff0000;
+  --accent-300: #ff5c5c;
+  --light-700: #45484a;
+  --light-500: #6d7275;
+  --light-300: #959a9d;
+  --dark-700: #000f14;
+  --dark-500: #001a23;
+  --dark-300: #005c74;
+  --black: #191919;
+  --white: #ffffff;
+  --font-base: 'Open Sans', sans-serif;
+  --font-alt: 'Inter', sans-serif;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--white);
+  color: var(--dark-500);
+  font-family: var(--font-base);
+  font-size: 100%;
+  font-weight: 400;
+  user-select: none;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  font-family: var(--font-alt);
+  display: inline-block;
 }
-
-* {
-  box-sizing: border-box;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-700);
+}
+h1 {
+  font-size: 4.1875rem;
+}
+h2 {
+  font-size: 3.125rem;
+}
+h3 {
+  font-size: 2.375rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.3125rem;
+}
+h6 {
+  font-size: 0.9375rem;
+}
+ul {
+  list-style: none;
 }
