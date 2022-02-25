@@ -5,10 +5,12 @@ import Title from '../components/Title/Title';
 import ScrollButton from '../components/ScrollButton/ScrollButton';
 import Description from '../components/Description/Description';
 import Image from 'next/image';
+import MainNavigation from '../components/MainNavigation/MainNavigation';
 
 export default function Home() {
   return (
     <React.Fragment>
+      <MainNavigation />
       <ScrollButton up />
       <ScrollButton down />
       <Image
