@@ -11,7 +11,7 @@
   outline: none;
   padding: 0.5rem 1rem;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
 }
 .linkButton_disabled {
   background-color: var(--light-500);
@@ -28,7 +28,7 @@
   display: block;
   inset: -1px;
   position: absolute;
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .linkButton:hover {
