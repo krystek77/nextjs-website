@@ -7,6 +7,8 @@
   flex-grow: 1;
   position: relative;
   z-index: 1;
+  margin-left:0.5rem;
+  margin-right:0.5rem;
 }
 .mainNavigation__link {
   font-family: var(--font-alt);
@@ -19,6 +21,7 @@
   text-align: center;
   outline: none;
   position: relative;
+  padding:0.5rem 0.25rem;
 }
 .mainNavigation__subNavigation {
   background-color: var(--accent-500);
@@ -74,8 +77,8 @@
 
 @-webkit-keyframes slide-bottom {
   0% {
-    -webkit-transform: translateY(-25%);
-    transform: translateY(-25%);
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -84,8 +87,8 @@
 }
 @keyframes slide-bottom {
   0% {
-    -webkit-transform: translateY(-25%);
-    transform: translateY(-25%);
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%);
   }
   100% {
     -webkit-transform: translateY(0);

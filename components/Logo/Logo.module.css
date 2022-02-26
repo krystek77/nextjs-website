@@ -1,0 +1,19 @@
+.logo {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  outline: none;
+  position: relative;
+}
+.logo::after {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  content: "";
+  display: block;
+  inset: 0px;
+  position: absolute;
+  transition: var(--transition);
+}
+.logo:focus::after {
+  border-color: var(--accent-700);
+}

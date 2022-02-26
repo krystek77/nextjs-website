@@ -1,13 +1,11 @@
 import styles from './Layout.module.css';
-import MainNavigation from '../MainNavigation/MainNavigation';
+import Topbar from '../../containers/Topbar/Topbar';
 import ScrollButton from '../ScrollButton/ScrollButton';
-import Link from 'next/link';
 
 function Layout({ children }) {
   return (
     <div className={styles.layout}>
-      <MainNavigation />
-      <Link href="/">Go Home</Link>
+      <Topbar/>
       <ScrollButton down />
       <ScrollButton up />
       <main className={styles.layout__content}>{children}</main>
