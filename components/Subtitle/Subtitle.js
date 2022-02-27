@@ -1,8 +1,10 @@
-import styles from './Subtitle.module.css';
+import styles from "./Subtitle.module.css";
+import { classesNames } from "../../lib";
 
-function Subtitle({ content }) {
+function Subtitle({ content, classes }) {
+  const classesString = classesNames(classes, "subtitle")(styles);
   return (
-    <div className={styles.subtitle}>
+    <div className={classesString}>
       <div className={styles.subtitle__ball}></div>
       <p className={styles.subtitle__content}>{content}</p>
     </div>
@@ -10,6 +12,6 @@ function Subtitle({ content }) {
 }
 
 Subtitle.defaultProps = {
-  content: 'give some content',
+  content: "give some content",
 };
 export default Subtitle;

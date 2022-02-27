@@ -1,0 +1,41 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 700px;
+}
+.hero__background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.hero__background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__content,
+.hero__links {
+  position: relative;
+  flex:1;
+}
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left:6rem;
+    padding-right:6rem;
+    max-width: 50%;
+}
+.hero__links {
+  background-color: rgba(0,0,0,0.35);
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hero__link {
+    border:1px solid var(--primary-300);
+   
+}

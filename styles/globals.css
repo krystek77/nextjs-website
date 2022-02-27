@@ -74,3 +74,6 @@ h6 {
 ul {
   list-style: none;
 }
+img {
+  display: block;
+}

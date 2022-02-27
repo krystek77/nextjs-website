@@ -7,3 +7,6 @@
 .description_18 {
   font-size: 1.125rem;
 }
+.description_light_500 {
+  color: var(--primary-300);
+}

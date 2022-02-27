@@ -20,3 +20,6 @@
   line-height: 1;
   margin-left: 0.5rem;
 }
+.subtitle_light_500 p {
+  color: var(--primary-300);
+}

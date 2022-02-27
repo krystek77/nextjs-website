@@ -24,7 +24,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  content: '';
+  content: "";
   display: block;
   inset: -1px;
   position: absolute;
@@ -39,4 +39,8 @@
 }
 .linkButton_disabled:focus::after {
   border-color: var(--light-700);
+}
+.linkButton_center {
+  margin: 0 auto;
+  display: block;
 }
