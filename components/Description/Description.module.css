@@ -10,3 +10,6 @@
 .description_light_500 {
   color: var(--primary-300);
 }
+.description_mb_2 {
+  margin-bottom: 2rem;
+}

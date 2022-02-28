@@ -6,6 +6,7 @@ export const data = [
       { label: 'Pralnice', path: '/pralnice' },
       { label: 'Pralnicowirówki', path: '/pralnicowirowki' },
       { label: 'Suszarki', path: '/suszarki-bebnowe' },
+      { label: 'Prasownice', path: '/prasownice' },
       { label: 'Bariery higieny', path: '/bariery-higieny' },
       { label: 'Wirówki', path: '/wirowki-pralnicze' },
       {
