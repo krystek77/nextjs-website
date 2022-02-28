@@ -42,13 +42,16 @@ function Hero() {
     <div className={styles.hero}>
       {/** hero background */}
       <div className={styles.hero__background}>
-        <Image
+        <video loop muted autoPlay className={styles.hero__video}>
+          <source src="/assets/videos/hero.mp4" type="video/mp4" />
+        </video>
+        {/* <Image
           src="/assets/videos/video_poster.png"
           layout="fill"
           width="1920"
           height="700"
           alt="video"
-        />
+        /> */}
       </div>
       {/** hero content */}
       <div className={styles.hero__content}>

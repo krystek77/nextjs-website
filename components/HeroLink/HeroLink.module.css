@@ -3,6 +3,14 @@
   position: relative;
   overflow: hidden;
 }
+.link__outer:nth-child(1),
+.link__outer:nth-child(2) {
+  border-top: 0;
+}
+.link__outer:nth-child(2),
+.link__outer:nth-child(3) {
+  border-bottom: 0;
+}
 .link__overlay {
   background: var(--black);
   background: linear-gradient(
