@@ -1,0 +1,4 @@
+.header {
+    max-width: var(--container);
+    margin:0 auto;
+}
