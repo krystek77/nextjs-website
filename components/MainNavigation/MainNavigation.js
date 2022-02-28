@@ -1,5 +1,6 @@
-import styles from './MainNavigation.module.css';
 import Link from 'next/link';
+import SubNavigation from '../SubNavigation/SubNavigation';
+import styles from './MainNavigation.module.css';
 import { data } from '../../constants/links';
 
 function MainNavigation() {
@@ -15,7 +16,8 @@ function MainNavigation() {
             <Link href={page.path}>
               <a className={styles.mainNavigation__link}>{page.label}</a>
             </Link>
-            {page.submenu.length ? (
+            <SubNavigation page={page}/>
+            {/* {page.submenu.length ? (
               <ul className={styles.mainNavigation__subNavigation}>
                 {page.submenu.map((subpage, index) => {
                   return (
@@ -32,7 +34,7 @@ function MainNavigation() {
                   );
                 })}
               </ul>
-            ) : null}
+            ) : null} */}
           </li>
         );
       })}
