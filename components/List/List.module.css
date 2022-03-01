@@ -1,0 +1,27 @@
+.list__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list__item span:first-child {
+  flex-shrink: 0;
+}
+.list__content {
+  font-family: var(--font-base);
+  font-size: 1.5rem;
+  line-height: 1.75;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+  margin-left: 1rem;
+}
+.list.list_decorative .list__content {
+  font-family: var(--font-decorative);
+  font-size: 3rem;
+  line-height: 1;
+}
+.list.list_decorative .list__item {
+  margin-bottom: 0.5rem;
+}
+.list.list_light .list__content {
+  color: var(--primary-300);
+}

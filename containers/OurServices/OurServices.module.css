@@ -1,0 +1,17 @@
+.ourServices__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ourServices__content,
+.ourServices__list {
+  flex: 1;
+}
+.ourServices__content {
+  padding-right: 3rem;
+}
+.ourServices__list {
+  padding-left: 3rem;
+}
