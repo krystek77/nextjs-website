@@ -9,7 +9,7 @@
   justify-content: center;
   cursor: pointer;
   padding: 0.625rem;
-  position: fixed;
+  position: absolute;
   right: 2rem;
   transition: var(--transition);
 }

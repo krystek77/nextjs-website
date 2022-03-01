@@ -13,8 +13,8 @@
   --dark-300: #005c74;
   --black: #191919;
   --white: #ffffff;
-  --font-base: "Open Sans", sans-serif;
-  --font-alt: "Inter", sans-serif;
+  --font-base: 'Open Sans', sans-serif;
+  --font-alt: 'Inter', sans-serif;
   --transition: all 0.3s ease-in-out;
   --container: 1280px;
 }
@@ -85,4 +85,5 @@ img {
 section {
   padding-top: 144px;
   padding-bottom: 144px;
+  position: relative;
 }

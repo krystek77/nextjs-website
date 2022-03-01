@@ -1,0 +1,28 @@
+.label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-300);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  transform: rotate(-90deg) translateY(-100%);
+}
+.label__circle {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-500);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.label__content {
+  font-family: var(--font-alt);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+  text-transform: lowercase;
+}

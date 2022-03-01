@@ -1,4 +1,11 @@
 .header {
-    max-width: var(--container);
-    margin:0 auto;
+  max-width: var(--container);
+  margin: 0 auto;
+  margin-bottom: 144px;
+}
+.productCards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
