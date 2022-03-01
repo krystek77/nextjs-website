@@ -12,6 +12,12 @@
 .title_center {
   text-align: center;
 }
+.title_maxWidth_640 {
+  max-width: 640px;
+}
+.title_maxWidth_760 {
+  max-width: 760px;
+}
 .title_maxWidth_960 {
   max-width: 960px;
 }
