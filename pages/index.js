@@ -4,6 +4,7 @@ import ModernLaundryEquipment from "../containers/ModernLaundryEquipment/ModernL
 import HygieneBarrier from "../containers/HygieneBarrier/HygieneBarrier";
 import OurServices from "../containers/OurServices/OurServices";
 import Softwash from "../containers/Softwash/Softwash";
+import Gallery from "../containers/Gallery/Gallery";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HygieneBarrier />
       <OurServices />
       <Softwash />
+      <Gallery />
     </React.Fragment>
   );
 }

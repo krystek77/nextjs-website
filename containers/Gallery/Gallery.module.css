@@ -1,0 +1,13 @@
+.gallery {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.gallery__content {
+    margin-left: 20rem;
+}
+.gallery__images {
+    max-width: 50%;
+    flex: 1;
+}
