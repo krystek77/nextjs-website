@@ -14,3 +14,12 @@
 .description_mb_2 {
   margin-bottom: 2rem;
 }
+.description_maxWidth_640 {
+  max-width: 640px;
+}
+.description_maxWidth_760 {
+  max-width: 760px;
+}
+.description_maxWidth_960 {
+  max-width: 960px;
+}

@@ -16,15 +16,14 @@ function Softwash() {
         <Subtitle content='Technologia SoftWash' />
         <Title content='Witaj w Twojej przyszłej pralni' classes='title_maxWidth_640' />
         <Description
-          classes='description_18'
+          classes='description_18 description_maxWidth_760 '
           content=' Na całym świecie normy środowiskowe są coraz bardziej rygorystyczne i coraz więcej ludzi staje się
         świadomych ekologicznie. Tendencja ta ma również zastosowanie w branży pralniczej i pralni chemicznej.'
         />
-        <Description classes='description_18'>
+        <Description classes='description_18 description_maxWidth_760 '>
           <span>
-            Technologia <strong>Soft Wash</strong> pozwala wykorzystać ten trend. <strong>Soft Wash</strong> to pakiet szyty na miarę, 
-            który umożliwia wyczyszczenie nawet najdelikatniejszej bielizny. Tworzy nowe możliwości w segmentach rynku, 
-            takich jak pralnie chemiczne, domy opieki, usługi ratunkowe itp.
+            Technologia <strong>Soft Wash</strong> pozwala wykorzystać ten trend. <strong>Soft Wash</strong> to pakiet szyty na miarę, który umożliwia wyczyszczenie nawet najdelikatniejszej bielizny. Tworzy nowe możliwości w segmentach rynku, takich jak pralnie chemiczne, domy opieki, usługi
+            ratunkowe itp.
           </span>
         </Description>
         <LinkButton label='Poznaj szczegóły' to='/softwash' />
