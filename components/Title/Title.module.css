@@ -4,7 +4,14 @@
   line-height: 1.1;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  position: relative;
 }
 .title_light_500 {
   color: var(--primary-300);
+}
+.title_center {
+  text-align: center;
+}
+.title_maxWidth_960 {
+  max-width: 960px;
 }

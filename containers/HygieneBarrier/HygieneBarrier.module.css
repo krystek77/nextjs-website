@@ -1,0 +1,14 @@
+.hygieneBarrier {
+  height: 700px;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hygieneBarrier img {
+  filter: saturate(0.5);
+}
