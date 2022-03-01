@@ -25,7 +25,10 @@ function OurServices() {
           <Title content="Usługi" variant="h2" />
           <Description
             classes="description_18"
-            content="Nulla porttitor accumsan tincidunt. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            content="Prawie 30 lat obecności na rynku rozwiązań dla pralni przemysłowych, to dla nas różne wyzwania oraz bagaż wielu doświadczeń. 
+            Mimo realizacji setek pralni przemysłowych, zarówno od podstaw jak i doposażeń już istniejących, jeszcze bardziej się angażuejmy w kolejne projekty.
+            Potrzeby rosną, wyposażenie pralnicze zmienia się, dzieki czemu nadal rozwijamy swoją pasję, aby tworzyć dla Ciebie jeszcze bardziej wydajne, ekologiczne
+            i optymalne do potrzeb przemysłowe wyposażenie pralnicze."
           />
         </div>
         <div className={styles.ourServices__list}>

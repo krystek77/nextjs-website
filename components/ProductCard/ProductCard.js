@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 import Label from './Label/Label';
 import Button from '../Button/Button';
-import Image from 'next/image';
+import List from '../List/List';
 import styles from './ProductCard.module.css';
 
 function ProductCard({ parent, label, path, image, list }) {
@@ -17,21 +19,7 @@ function ProductCard({ parent, label, path, image, list }) {
         />
         <div className={styles.productCard__overlay}>
           <Label label={label} />
-          {list.length ? (
-            <ul className={styles.list}>
-              {list.map((item, index) => (
-                <li key={`label_${index}`} className={styles.list__item}>
-                  <Image
-                    src="/assets/icons/checked.svg"
-                    alt="checked"
-                    width="32"
-                    height="32"
-                  />
-                  <p className={styles.list__content}>{item}</p>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <List items={list} classes="list_light" />
           <Button label="Dowiedz się więcej" />
         </div>
       </a>
