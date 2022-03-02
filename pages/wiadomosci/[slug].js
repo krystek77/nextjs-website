@@ -1,7 +1,15 @@
 /*
  * http://localhost:3000/wiadomosci/pralnia-samoobslugowa-krasnik
  */
+import { useRouter } from 'next/router';
+import React from 'react';
+import Banner from '../../components/Banner/Banner';
 function PostItem() {
-  return <h1>Post</h1>;
+  const router = useRouter();
+  return (
+    <React.Fragment>
+      <Banner post={router.query.slug} />
+    </React.Fragment>
+  );
 }
 export default PostItem;

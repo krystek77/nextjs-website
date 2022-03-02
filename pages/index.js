@@ -6,6 +6,7 @@ import OurServices from '../containers/OurServices/OurServices';
 import Softwash from '../containers/Softwash/Softwash';
 import Gallery from '../containers/Gallery/Gallery';
 import Mop from '../containers/Mop/Mop';
+import News from '../containers/News/News';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Softwash />
       <Gallery />
       <Mop />
+      <News />
     </React.Fragment>
   );
 }
