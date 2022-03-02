@@ -14,16 +14,3 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-
-/**
-* component 
-*/
-.news__item {
-}
-.news__content {
-  padding: 0.5rem 1rem;
-}
-.news__date {
-  display: block;
-  margin-bottom: 0.5rem;
-}

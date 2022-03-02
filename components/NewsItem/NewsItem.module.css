@@ -1,0 +1,8 @@
+
+.newsItem__content {
+  padding: 0.5rem 1rem;
+}
+.newsItem__date {
+  display: block;
+  margin-bottom: 0.5rem;
+}
