@@ -1,3 +1,16 @@
 .restLinks {
-    border:1px solid lightgrey;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+}
+.restLinks__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  flex: 1;
+  position:relative;
+}
+.restLinks__item:hover {
+  filter: brightness(75%);
 }

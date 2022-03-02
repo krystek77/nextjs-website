@@ -21,7 +21,7 @@ const newsData = [
     image: "news_02",
     date: new Date(2022, 0, 25),
     title: "Większe możliwości i lepsze warunki pracy",
-    info: "Our PRIMUS experts worked with l’ESAT du Rangen for the new reorganization of their laundry that had become obsolete. This project is a nice example of a modern, ergonomic laundry redesigned taking the expectations of the management and the handicapped workers into accoun",
+    info: "Our PRIMUS experts worked with lESAT du Rangen for the new reorganization of their laundry that had become obsolete. This project is a nice example of a modern, ergonomic laundry redesigned taking the expectations of the management and the handicapped workers into accoun",
     content: "",
   },
   {

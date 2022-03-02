@@ -6,7 +6,7 @@ import styles from "./SmallScreenNavigation.module.css";
 import { data } from "../../constants/links";
 
 function SmallScreenNavigation() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(true);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const open = () => setIsMenuOpen(true);
   const close = () => setIsMenuOpen(false);

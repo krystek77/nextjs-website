@@ -5,10 +5,6 @@
   padding: 0.5rem 1rem;
   background-color: var(--primary-300);
   position: absolute;
-  top: 0;
-  right: 0;
-  transform-origin: top right;
-  transform: rotate(-90deg) translateY(-100%);
 }
 .label__circle {
   width: 32px;
@@ -25,4 +21,26 @@
   letter-spacing: -0.02em;
   color: var(--dark-500);
   text-transform: lowercase;
+}
+.label_top_right {
+  top: 0;
+  right: 0;
+}
+.label_bottom_right {
+  bottom: 0;
+  right: 0;
+}
+.label_bottom_left {
+  bottom: 0;
+  left: 0;
+}
+.label_top_left {
+  top: 0;
+  left: 0;
+}
+.label_top_right_vertical {
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  transform: rotate(-90deg) translateY(-100%);
 }
