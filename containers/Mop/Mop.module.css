@@ -1,0 +1,16 @@
+.mop {
+  width: 100%;
+  height: 700px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mop__image {
+  filter: hue-rotate(0deg);
+  min-width: 50%;
+}
+.mop__content {
+  margin-left: 3rem;
+}
