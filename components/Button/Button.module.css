@@ -45,3 +45,13 @@
   margin: 0 auto;
   display: block;
 }
+.button_only_icon {
+  padding: 0;
+  line-height: 1;
+}
+.button_only_icon span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
