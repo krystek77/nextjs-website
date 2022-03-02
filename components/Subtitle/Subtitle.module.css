@@ -23,3 +23,9 @@
 .subtitle_light_500 p {
   color: var(--primary-300);
 }
+.subtitle_max_width_100 {
+  max-width: 100%;
+}
+.subtitle_max_width_640 {
+  max-width: 640px;
+}
