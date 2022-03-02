@@ -7,6 +7,8 @@ import Softwash from '../containers/Softwash/Softwash';
 import Gallery from '../containers/Gallery/Gallery';
 import Mop from '../containers/Mop/Mop';
 import News from '../containers/News/News';
+import RestLinks from '../containers/RestLinks/RestLinks';
+import Newsletter from '../containers/Newsletter/Newsletter';
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
       <Gallery />
       <Mop />
       <News />
+      <RestLinks/>
+      <Newsletter/>
     </React.Fragment>
   );
 }

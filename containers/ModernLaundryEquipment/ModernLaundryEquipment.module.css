@@ -1,9 +1,9 @@
-.header {
+.modernLaundryEquipment__header {
   max-width: var(--container);
   margin: 0 auto;
   margin-bottom: 144px;
 }
-.productCards {
+.modernLaundryEquipment__equipments {
   display: flex;
   justify-content: flex-start;
   align-items: center;

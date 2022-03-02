@@ -8,16 +8,16 @@ import { data } from "../../constants/links";
 function ModernLaundryEquipment() {
   const { path, submenu } = data[0];
   return (
-    <section>
+    <section className={styles.modernLaundryEquipment}>
       <ScrollButton />
-      <header className={styles.header}>
+      <header className={styles.modernLaundryEquipment__header}>
         <Subtitle content='Do każdego rodzaju i wielkości pralni przemysłowej' />
         <Title variant='h2' content='Wyposażenie nowoczesnej pralni' />
       </header>
       {/** Product Cards */}
       {submenu.length ? (
-        <div className={styles.productCards}>
-          {submenu.map((item, index) => {
+        <div className={styles.modernLaundryEquipment__equipments}>
+          {submenu.map((item) => {
             return <ProductCard key={item.label} {...item} parent={path} />;
           })}
         </div>

@@ -88,6 +88,10 @@ section {
   padding-bottom: 144px;
   position: relative;
 }
+footer {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
 strong {
   color:var(--primary-700);
 }
