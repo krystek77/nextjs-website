@@ -1,5 +1,4 @@
 import React from 'react';
-import Hero from '../containers/Hero/Hero';
 import ModernLaundryEquipment from '../containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import HygieneBarrier from '../containers/HygieneBarrier/HygieneBarrier';
 import OurServices from '../containers/OurServices/OurServices';
@@ -9,11 +8,11 @@ import Mop from '../containers/Mop/Mop';
 import News from '../containers/News/News';
 import RestLinks from '../containers/RestLinks/RestLinks';
 import Newsletter from '../containers/Newsletter/Newsletter';
+import HomeLayout from '../components/Layout/HomeLayout';
 
 export default function Home() {
   return (
-    <React.Fragment>
-      <Hero />
+    <main>
       <ModernLaundryEquipment />
       <HygieneBarrier />
       <OurServices />
@@ -21,8 +20,12 @@ export default function Home() {
       <Gallery />
       <Mop />
       <News />
-      <RestLinks/>
-      <Newsletter/>
-    </React.Fragment>
+      <RestLinks />
+      <Newsletter />
+    </main>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <HomeLayout>{page}</HomeLayout>;
+};

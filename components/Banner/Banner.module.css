@@ -5,4 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(
+    98.67% 1202.46% at 50% 50%,
+    var(--accent-700) 0%,
+    var(--accent-500) 100%
+  );
+  color: white;
 }

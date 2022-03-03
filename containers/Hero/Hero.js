@@ -39,7 +39,7 @@ const data = [
 
 function Hero() {
   return (
-    <div className={styles.hero}>
+    <header className={styles.hero}>
       {/** hero background */}
       <div className={styles.hero__background}>
         <video loop muted autoPlay className={styles.hero__video}>
@@ -85,7 +85,7 @@ function Hero() {
           </HeroLink>
         ))}
       </div>
-    </div>
+    </header>
   );
 }
 export default Hero;
