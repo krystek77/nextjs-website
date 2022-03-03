@@ -1,4 +1,6 @@
+import React from 'react';
 import ContactItem from '../../components/ContactItem/ContactItem';
+
 import styles from './ContactBar.module.css';
 
 const contactData = [
@@ -38,11 +40,13 @@ const contactData = [
 
 function ContactBar() {
   return (
-    <section className={styles.contactBar}>
-      {contactData.map((item, index) => (
-        <ContactItem key={index} {...item} />
-      ))}
-    </section>
+    <React.Fragment>
+      <section className={styles.contactBar}>
+        {contactData.map((item, index) => (
+          <ContactItem key={index} {...item} />
+        ))}
+      </section>
+    </React.Fragment>
   );
 }
 
