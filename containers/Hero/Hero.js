@@ -78,8 +78,8 @@ function Hero() {
           >
             <Image
               src={`/assets/images/${heroLink.src}`}
-              width="475"
-              height="350"
+              width="760"
+              height="570"
               alt={heroLink.alt}
             />
           </HeroLink>

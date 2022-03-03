@@ -1,0 +1,19 @@
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.contactItem__label {
+  margin-top: 1rem;
+  font-family: var(--font-alt);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--dark-700);
+}
+.contactItem:hover {
+  filter: contrast(0.45);
+}

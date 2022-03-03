@@ -1,3 +1,6 @@
+.modernLaundryEquipment {
+  /* padding-top: 0; */
+}
 .modernLaundryEquipment__header {
   max-width: var(--container);
   margin: 0 auto;

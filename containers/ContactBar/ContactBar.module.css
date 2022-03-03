@@ -1,0 +1,9 @@
+.contactBar {
+  padding-bottom: 64px;
+  padding-top: 64px;
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
