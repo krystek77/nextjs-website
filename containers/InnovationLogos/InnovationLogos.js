@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./InnovationLogos.module.css";
@@ -21,11 +22,26 @@ const innovationLogosData = [
 ];
 
 function InnovationLogos() {
+  const innovationLogosItemsRef = React.useRef(null);
+  const [data,setData] = React.useState(innovationLogosData);
+
+  React.useEffect(() => {
+
+    const interval = setInterval(function () {
+      const [first,...rest] = data;
+      setData([...rest,first]);
+    }, 2000);
+    
+    return () => {
+      clearInterval(interval);
+    };
+  }, [data]);
+
   return (
     <section className={styles.innovationLogos}>
       <div className={styles.innovationLogos__container}>
-        <div className={styles.innovationLogos__items}>
-          {innovationLogosData.map((item) => (
+        <div className={styles.innovationLogos__items} ref={innovationLogosItemsRef}>
+          {data.map((item) => (
             <Link key={item.id} href='/technologie-pralnicze'>
               <a className={styles.innovationLogos__item}>
                 <Image src={`/assets/images/tech_logos/${item.name}.png`} alt={item.name} width='100' height=' 50' />
