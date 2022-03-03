@@ -9,7 +9,8 @@
   justify-content: center;
   cursor: pointer;
   padding: 0.625rem;
-  position: absolute;
+  position: fixed;
+  z-index:100;
   right: 2rem;
   transition: var(--transition);
 }
@@ -22,7 +23,7 @@
   margin-top: 0.5rem;
 }
 .scrollButton_down {
-  top: 2rem;
+  top: 5rem;
 }
 .scrollButton_up {
   bottom: 2rem;

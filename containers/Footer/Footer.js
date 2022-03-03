@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Title from '../../components/Title/Title';
-import ScrollButton from '../../components/ScrollButton/ScrollButton';
 import styles from './Footer.module.css';
 
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <ScrollButton up />
       <div className={styles.footer__inner}>
         <div className={styles.footer__item}>
           <Title variant="h4" content="Firma" />
