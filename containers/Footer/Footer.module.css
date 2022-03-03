@@ -1,3 +1,18 @@
 .footer {
-    border:1px solid lightgrey;
+  border: 1px solid lightgrey;
+  padding-bottom: 0;
+}
+.footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.copyright {
+  font-family: var(--font-alt);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
