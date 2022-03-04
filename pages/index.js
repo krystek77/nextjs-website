@@ -9,10 +9,13 @@ import News from '../containers/News/News';
 import RestLinks from '../containers/RestLinks/RestLinks';
 import Newsletter from '../containers/Newsletter/Newsletter';
 import HomeLayout from '../components/Layout/HomeLayout';
+import HeadMetaTags from '../components/HeadMetaTags/HeadMetaTags';
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <main>
+      <HeadMetaTags />
       <ModernLaundryEquipment />
       <HygieneBarrier />
       <OurServices />
