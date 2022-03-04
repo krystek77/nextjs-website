@@ -277,6 +277,39 @@ function Footer() {
                 height="22"
               />
             </a>
+            <a
+              className={styles.socialMedia__icon}
+              href="http://wwww.pralma.pl"
+            >
+              <Image
+                src="/assets/icons/twitter.svg"
+                alt="twitter"
+                width="32"
+                height="32"
+              />
+            </a>
+            <a
+              className={styles.socialMedia__icon}
+              href="http://wwww.pralma.pl"
+            >
+              <Image
+                src="/assets/icons/linkedin.svg"
+                alt="linkedin"
+                width="32"
+                height="32"
+              />
+            </a>
+            <a
+              className={styles.socialMedia__icon}
+              href="http://wwww.pralma.pl"
+            >
+              <Image
+                src="/assets/icons/pinterest.svg"
+                alt="pinterest"
+                width="32"
+                height="32"
+              />
+            </a>
           </div>
         </div>
         <p className={styles.copyright}>

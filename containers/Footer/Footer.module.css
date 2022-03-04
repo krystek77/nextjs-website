@@ -35,6 +35,9 @@
   align-items: center;
   justify-content: center;
 }
+.socialMedia__icon:hover {
+  filter: contrast(0.5);
+}
 .copyright {
   font-family: var(--font-alt);
   font-weight: 500;
