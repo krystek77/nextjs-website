@@ -14,10 +14,10 @@ function LaundryEquipment() {
       <Banner>
         <Title
           variant="h1"
-          content="Najlepsze z wydajnych, do pralni przemysłowej"
+          content="Najlepsze wyposażenie do pralni przemysłowej"
           classes="title_maxWidth_960 title_bg_white_primary"
         />
-        <PageIndicator label="Urządzenia" />
+        <PageIndicator label="Urządzenia" variant="primary" />
       </Banner>
       <main className={styles.laundryEquipment}>
         <ModernLaundryEquipment />

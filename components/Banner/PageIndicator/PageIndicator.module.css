@@ -21,3 +21,6 @@
 .pageIndicator__label_red {
   color: var(--accent-500);
 }
+.pageIndicator__label_primary {
+  color: var(--primary-700);
+}
