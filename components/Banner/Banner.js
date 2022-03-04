@@ -1,18 +1,15 @@
 import styles from './Banner.module.css';
 import Title from '../Title/Title';
-function Banner({ post: ID, title }) {
+import { classesNames } from '../../lib';
+function Banner({ classes, children }) {
+  const classesString = classesNames(classes, 'banner')(styles);
   return (
-    <header className={styles.banner}>
-      <Title
-        content={title}
-        variant="h1"
-        classes="title_light_500 title_maxWidth_960 title_center"
-      />
-      {ID && <p>For example post: {ID}</p>}
+    <header className={classesString}>
+      <div className={styles.banner__inner}>{children}</div>
     </header>
   );
 }
 Banner.defaultProps = {
-  title: 'Some awesome title',
+  classes: '',
 };
 export default Banner;

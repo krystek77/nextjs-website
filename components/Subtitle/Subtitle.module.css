@@ -12,6 +12,9 @@
   background-color: var(--accent-500);
   flex-shrink: 0;
 }
+.subtitle__ball_dark .subtitle__ball {
+  background-color: var(--dark-700);
+}
 .subtitle__content {
   letter-spacing: -0.02em;
   font-family: var(--font-alt);
@@ -28,4 +31,10 @@
 }
 .subtitle_max_width_640 {
   max-width: 640px;
+}
+.subtitle_max_width_760 {
+  max-width: 760px;
+}
+.subtitle_max_width_960 {
+  max-width: 960px;
 }

@@ -1,0 +1,23 @@
+.pageIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: max-content;
+  margin-bottom: 0rem;
+}
+.pageIndicator__label {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--dark-700);
+  margin-left: 0.5rem;
+  text-transform: lowercase;
+}
+.pageIndicator__label_white {
+  color: var(--primary-300);
+}
+.pageIndicator__label_red {
+  color: var(--accent-500);
+}

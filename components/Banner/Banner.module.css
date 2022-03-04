@@ -1,14 +1,25 @@
 .banner {
   width: 100%;
   height: 550px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(
+  background-image: radial-gradient(
     98.67% 1202.46% at 50% 50%,
     var(--accent-700) 0%,
     var(--accent-500) 100%
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
+}
+.banner__inner {
+  width: var(--container);
+  margin: 0 auto;
+}
+.banner__washerExtractors {
+  background-image: url('/assets/images/for_banners/banner_washerextractors.webp'),
+    radial-gradient(98.67% 1202.46% at 50% 50%, #000000 0%, var(--black) 100%);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center right;
 }

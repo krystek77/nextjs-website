@@ -5,6 +5,8 @@ import React from 'react';
 import HeadMetaTags from '../../../components/HeadMetaTags/HeadMetaTags';
 import Banner from '../../../components/Banner/Banner';
 import styles from './index.module.css';
+import Title from '../../../components/Title/Title';
+import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 
 function WasherExtractors() {
   return (
@@ -18,7 +20,14 @@ function WasherExtractors() {
         og_title="Innowacyjne pralnicowirówki wysokoobrotowe"
         twitter_title="Innowacyjne pralnicowirówki wysokoobrotowe"
       />
-      <Banner title="Innowacyjne pralnicowirówki wysokoobrotowe" />
+      <Banner classes="banner__washerExtractors">
+        <Title
+          variant="h1"
+          content="Innowacyjne pralnicowirówki wysokoobrotowe"
+          classes="title_maxWidth_960 title_light_500 title_bg_white_red"
+        />
+        <PageIndicator label="Pralnicowirówki wysokoobrotowe" variant="red" />
+      </Banner>
       <main className={styles.washerExtractors}></main>
     </React.Fragment>
   );
