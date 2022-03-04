@@ -24,7 +24,7 @@ function WasherExtractors() {
         <Title
           variant="h1"
           content="Innowacyjne pralnicowirówki wysokoobrotowe"
-          classes="title_maxWidth_960 title_light_500 title_bg_white_red"
+          classes="title_maxWidth_960 title_bg_white_red"
         />
         <PageIndicator label="Pralnicowirówki wysokoobrotowe" variant="red" />
       </Banner>

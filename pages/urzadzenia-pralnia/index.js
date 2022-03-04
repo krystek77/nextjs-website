@@ -14,8 +14,8 @@ function LaundryEquipment() {
       <Banner>
         <Title
           variant="h1"
-          content="Najlepsze do pralni przemysłowej"
-          classes="title_maxWidth_960 title_light_500"
+          content="Najlepsze z wydajnych, do pralni przemysłowej"
+          classes="title_maxWidth_960 title_bg_white_primary"
         />
         <PageIndicator label="Urządzenia" />
       </Banner>
