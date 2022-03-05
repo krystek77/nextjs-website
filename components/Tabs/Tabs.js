@@ -1,5 +1,6 @@
 import React from "react";
 import Tab from "./Tab/Tab";
+import Label from "../Label/Label";
 import styles from "./Tabs.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -22,9 +23,15 @@ function Tabs({ initialState = 0 }) {
       {data.map((_, index) => {
         return indexes.includes(index) ? (
           <div key={index} className={`${styles.tabs__contentTab} ${styles.tabs__contentTab_active}`}>
-            <ProductCard parent="/urzadzenia-pralnia" path="/pralnicowirowki/FX105-280/FX105" label="FX105 - 280"/>
-            <ProductCard parent="/urzadzenia-pralnia" path="/pralnicowirowki/FX350-600/FX350" label="FX350 FX450 FX600"/>
-            <ProductCard parent="/urzadzenia-pralnia" path="/pralnicowirowki/FS800-1200/FX800" label="FS800 FS1000 FS1200"/>
+            <ProductCard parent='/urzadzenia-pralnia' path='/pralnicowirowki/FX105-280/FX105'>
+              <Label label='FX105-280' classes='label_top_right_vertical label_uppercase' />
+            </ProductCard>
+            <ProductCard parent='/urzadzenia-pralnia' path='/pralnicowirowki/FX350-600/FX350'>
+              <Label label='FX350 FX450 FX600' classes='label_top_right_vertical label_uppercase' />
+            </ProductCard>
+            <ProductCard parent='/urzadzenia-pralnia' path='/pralnicowirowki/FS800-1200/FX800'>
+              <Label label='FS800 FS1000 FS1200' classes='label_top_right_vertical label_uppercase' />
+            </ProductCard>
           </div>
         ) : null;
       })}

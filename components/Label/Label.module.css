@@ -44,3 +44,6 @@
   transform-origin: top right;
   transform: rotate(-90deg) translateY(-100%);
 }
+.label_uppercase .label__content{
+  text-transform: uppercase;
+}
