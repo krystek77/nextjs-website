@@ -21,4 +21,11 @@ function ProductCard({ parent, label, path, image, list }) {
     </Link>
   );
 }
+ProductCard.defaultProps = {
+  parent:"/",
+  label:"some machines",
+  path:"/",
+  image:"washer_extractors.png",
+  list:["some item 1","some item 2","some item 3"]
+}
 export default ProductCard;

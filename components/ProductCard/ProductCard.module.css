@@ -10,6 +10,7 @@
   overflow: hidden;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  /* flex-grow:1; */
 }
 .productCard__overlay {
   position: absolute;
