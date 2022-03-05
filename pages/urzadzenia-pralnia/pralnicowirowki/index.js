@@ -27,7 +27,7 @@ function WasherExtractors() {
           content="Innowacyjne pralnicowirówki przemysłowe"
           classes="title_maxWidth_960 title_bg_white_red"
         />
-        <PageIndicator label="Pralnicowirówki" variant="red" />
+        <PageIndicator label="pralnicowirówki" variant="red" />
       </Banner>
       <main className={styles.washerExtractors}>
         <Tabs/>

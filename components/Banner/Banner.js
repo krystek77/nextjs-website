@@ -1,5 +1,4 @@
 import styles from './Banner.module.css';
-import Title from '../Title/Title';
 import { classesNames } from '../../lib';
 function Banner({ classes, children }) {
   const classesString = classesNames(classes, 'banner')(styles);

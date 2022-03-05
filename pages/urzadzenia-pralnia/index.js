@@ -18,7 +18,7 @@ function LaundryEquipment({on_premises}) {
           content="Najlepsze wyposażenie do pralni przemysłowej"
           classes="title_maxWidth_960 title_bg_white_primary"
         />
-        <PageIndicator label="Urządzenia" variant="primary" />
+        <PageIndicator label="urządzenia" variant="primary" />
       </Banner>
       <main className={styles.laundryEquipment}>
         <ModernLaundryEquipment data={on_premises} />

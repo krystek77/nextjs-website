@@ -1,11 +1,10 @@
 .banner {
   width: 100%;
   height: 550px;
-  background-image: radial-gradient(
-    98.67% 1202.46% at 50% 50%,
-    var(--accent-700) 0%,
-    var(--accent-500) 100%
-  );
+  background-image: radial-gradient(90% 1000% at 50% 50%, var(--accent-700) 0%, var(--accent-500) 100%);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center right;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,9 +16,14 @@
   margin: 0 auto;
 }
 .banner__washerExtractors {
-  background-image: url('/assets/images/for_banners/banner_washerextractors.webp'),
-    radial-gradient(98.67% 1202.46% at 50% 50%, #000000 0%, var(--black) 100%);
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center right;
+  background-image: url("/assets/images/for_banners/banner_washerextractors.webp"), radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
+.banner__washerExtractors_FX {
+  background-image: url("/assets/images/for_banners/banner_washerextractors_FX105.webp"), radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
+.banner__washerExtractors_FX350 {
+  background-image: radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
+.banner__washerExtractors_FS800 {
+  background-image: radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
