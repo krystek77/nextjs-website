@@ -18,7 +18,7 @@ function ProductInfo({ vertical }) {
       <div className={styles.productInfo__container}>
         <ModelIndicator model='FX 105' />
         <ModelIndicator model='FX 105' down />
-        <ImageSlider data={slider} />
+        <ImageSlider data={slider} initialState={-1} />
 
         <div className={styles.productInfo__content}>
           <Subtitle content='Linia FX 105-280' />
