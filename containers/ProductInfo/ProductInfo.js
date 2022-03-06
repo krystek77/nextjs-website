@@ -4,6 +4,13 @@ import Subtitle from "../../components/Subtitle/Subtitle";
 import Description from "../../components/Description/Description";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import ModelIndicator from "./ModelIndicator/ModelIndicator";
+import ImageSlider from "./ImageSlider/ImageSlider";
+
+const slider = {
+  thumbs: ["thumb_01", "thumb_02", "thumb_03", "thumb_04", "thumb_05", "thumb_06"],
+  main: ["fx105_01", "fx105_02", "fx105_03", "fx105_04", "fx105_05", "fx105_06"],
+  alt: "pralnicowirówka wolnsotojąca",
+};
 
 function ProductInfo({ vertical }) {
   return (
@@ -11,31 +18,7 @@ function ProductInfo({ vertical }) {
       <div className={styles.productInfo__container}>
         <ModelIndicator model='FX 105' />
         <ModelIndicator model='FX 105' down />
-        {/** potential component */}
-        <div className={styles.slider}>
-          <div className={styles.slider__image}>Main IMAGE</div>
-          <div className={styles.slider__thumbs}>
-            <button type='button' className={styles.slider__thumb}>
-              Image 1
-            </button>
-            <button type='button' className={styles.slider__thumb}>
-              Image 2
-            </button>
-            <button type='button' className={styles.slider__thumb}>
-              Image 3
-            </button>
-            <button type='button' className={styles.slider__thumb}>
-              Image 4
-            </button>
-            <button type='button' className={styles.slider__thumb}>
-              Image 5
-            </button>
-            <button type='button' className={styles.slider__thumb}>
-              Image 6
-            </button>
-          </div>
-        </div>
-        {/** end potential component */}
+        <ImageSlider data={slider} />
 
         <div className={styles.productInfo__content}>
           <Subtitle content='Linia FX 105-280' />
