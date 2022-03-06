@@ -1,0 +1,22 @@
+.modelIndicator {
+  position: absolute;
+  padding: 0.625rem;
+  background: var(--accent-500);
+  border: 2px solid var(--accent-700);
+  box-sizing: border-box;
+  border-radius: 0.375rem;
+  font-family: var(--font-alt);
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--primary-300);
+}
+.modelIndicator_up {
+  top: 0;
+  right: 0;
+  }
+.modelIndicator_down {
+  bottom: 0;
+  left: 0;
+}

@@ -1,14 +1,15 @@
 /*
  * http://localhost:3000/urzadzenia-pralnia/pralnicowirowki/FX105-280/FX105
  */
-import { useRouter } from "next/router";
+
+import React from "react";
 import HeadMetaTags from "../../../../components/HeadMetaTags/HeadMetaTags";
 import Banner from "../../../../components/Banner/Banner";
 import Title from "../../../../components/Title/Title";
 import PageIndicator from "../../../../components/Banner/PageIndicator/PageIndicator";
-import React from "react";
+import ProductInfo from "../../../../containers/ProductInfo/ProductInfo";
+
 function FX105280() {
-  const router = useRouter();
   return (
     <React.Fragment>
       <HeadMetaTags
@@ -25,7 +26,7 @@ function FX105280() {
         <PageIndicator label='pralnicowirówki wysokoobrotowe FX' variant='red' />
       </Banner>
       <main>
-      <h2 style={{textAlign:"center"}}>MODEL: {router.query.model}</h2>
+        <ProductInfo />
       </main>
     </React.Fragment>
   );
