@@ -1,0 +1,39 @@
+.parameter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-300);
+}
+.parameter__name {
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+}
+.parameter__valueContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.parameter__value {
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+  margin-right: 0.5rem;
+}
+.parameter__unit {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+}

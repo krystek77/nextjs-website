@@ -31,5 +31,18 @@
 }
 .tab.tab_active {
   background-color: var(--white);
-  filter: drop-shadow(0px -16px 48px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.15));
+}
+.tab_productData {
+  background-color: var(--accent-500);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.tab_productData .tab__title {
+  color: var(--primary-300);
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+.tab_productData.tab_active .tab__title {
+  color: var(--dark-700);
 }

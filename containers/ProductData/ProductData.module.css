@@ -1,0 +1,12 @@
+.productData {
+    overflow: hidden;
+    padding-top:0;
+    padding-bottom: 0;
+  }
+  .productData__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
