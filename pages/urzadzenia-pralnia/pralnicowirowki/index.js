@@ -7,7 +7,28 @@ import Banner from '../../../components/Banner/Banner';
 import styles from './index.module.css';
 import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
-import Tabs from '../../../components/Tabs/Tabs'
+import Tabs from '../../../components/Tabs/Tabs';
+
+const data = [
+  {
+    id: 1,
+    title: 'Pralnicowirówki',
+    subtitle: 'wolnostojące wysokoobrotowe',
+    content: 'content tab 1',
+  },
+  {
+    id: 2,
+    title: 'Pralnicowirówki',
+    subtitle: 'sztywnomocowane szybkoobrotowe',
+    content: 'content tab 2',
+  },
+  {
+    id: 3,
+    title: 'Pralnicowirówki',
+    subtitle: 'sztywnomocowane normalnoobrotowe',
+    content: 'content tab 3',
+  },
+];
 
 function WasherExtractors() {
   return (
@@ -30,7 +51,7 @@ function WasherExtractors() {
         <PageIndicator label="pralnicowirówki" variant="red" />
       </Banner>
       <main className={styles.washerExtractors}>
-        <Tabs/>
+        <Tabs data={data} initialState={0} />
       </main>
     </React.Fragment>
   );
