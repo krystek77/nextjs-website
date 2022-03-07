@@ -14,19 +14,40 @@ const data = [
     id: 1,
     title: 'Pralnicowirówki',
     subtitle: 'wolnostojące wysokoobrotowe',
-    content: 'content tab 1',
+    path: '/urzadzenia-pralnia',
+    content: [
+      { path: '/pralnicowirowki/FX105-280/FX105', label: 'seria FX, 8-32 kg' },
+      {
+        path: '/pralnicowirowki/FX350-600/FX-350',
+        label: 'seria FX, 35-60 kg',
+      },
+      {
+        path: '/pralnicowirowki/FS800-1200/FS-800',
+        label: 'serai FS, 80-120 kg',
+      },
+    ],
   },
   {
     id: 2,
     title: 'Pralnicowirówki',
     subtitle: 'sztywnomocowane szybkoobrotowe',
-    content: 'content tab 2',
+    path: '/urzadzenia-pralnia',
+    content: [
+      { path: 'pralnicowirowki/RX_G200/RX-65', label: 'seria RX, 6.5-35 kg' },
+    ],
   },
   {
     id: 3,
     title: 'Pralnicowirówki',
     subtitle: 'sztywnomocowane normalnoobrotowe',
-    content: 'content tab 3',
+    path: '/urzadzenia-pralnia',
+    content: [
+      { path: '/pralnicowirowki/RX/RX-180', label: 'seria RX, 18-52 kg' },
+      {
+        path: '/pralnicowirowki/Pralma/Pralma-16',
+        label: 'seria Pralma, 10-22 kg',
+      },
+    ],
   },
 ];
 
