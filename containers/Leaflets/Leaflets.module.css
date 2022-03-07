@@ -1,0 +1,7 @@
+.leaflets {
+    padding-top:0;
+}
+.leaflets__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}

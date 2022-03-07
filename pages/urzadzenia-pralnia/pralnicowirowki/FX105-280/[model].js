@@ -9,6 +9,7 @@ import Title from "../../../../components/Title/Title";
 import PageIndicator from "../../../../components/Banner/PageIndicator/PageIndicator";
 import ProductInfo from "../../../../containers/ProductInfo/ProductInfo";
 import ProductData from "../../../../containers/ProductData/ProductData";
+import Leaflets from "../../../../containers/Leaflets/Leaflets";
 
 const parameters = [
   { name: "załadunek (moduł załadunku 1:10)", value: "10.5", unit: "kg" },
@@ -41,6 +42,10 @@ const features = [
   "moduł podłączenia do 8 sygnałów pomp płynnych środków piorących",
   "napęd z przemiennikiem częstotliwości",
 ];
+const leaflets = [
+  { label: "karta informacyjna", fileName: "karta" },
+  { label: "instrukcja instalacji", fileName: "instalacja" },
+];
 
 function FX105280() {
   return (
@@ -62,6 +67,7 @@ function FX105280() {
         <ProductInfo />
       </main>
       <ProductData features={features} parameters={parameters} />
+      <Leaflets leaflets={leaflets} />
     </React.Fragment>
   );
 }
