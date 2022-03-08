@@ -1,7 +1,31 @@
 .leaflets {
-    padding-top:0;
+  padding-top: 0;
 }
 .leaflets__container {
   max-width: var(--container);
   margin: 0 auto;
+}
+.leaflets__item {
+  width: max-content;
+  margin-bottom: 2rem;
+}
+.leaflets__item:last-child {
+  margin-bottom: 0;
+}
+.leaflets__link {
+  font-family: var(--font-decorative);
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+.leaflets__name {
+  margin-left: 1rem;
+}
+.leaflets__link:hover {
+  color: var(--dark-300);
 }
