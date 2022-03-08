@@ -26,7 +26,11 @@ function ProductControls({ controls, initialState = 0 }) {
               <React.Fragment key={index}>
                 <button
                   type="button"
-                  className={styles.accordion__button}
+                  className={`${
+                    indexes.includes(index)
+                      ? `${styles.accordion__button} ${styles.accordion__button_active}`
+                      : styles.accordion__button
+                  }`}
                   onClick={() => handleAccordion(index)}
                 >
                   {indexes.includes(index) ? (
@@ -38,7 +42,7 @@ function ProductControls({ controls, initialState = 0 }) {
                     />
                   ) : (
                     <Image
-                      src="/assets/icons/expand_menu.svg"
+                      src="/assets/icons/expand_menu_dark.svg"
                       alt="rozwiń"
                       width="32"
                       height="32"

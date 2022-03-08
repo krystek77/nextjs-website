@@ -19,10 +19,12 @@
   cursor: pointer;
   outline: none;
   border: 0;
-  background-color: var(--primary-700);
+  background-color: var(--primary-300);
   margin-bottom: 0.5rem;
 }
-
+.accordion__button_active {
+  background-color: var(--primary-700);
+}
 .accordion__buttonLabel {
   font-family: var(--font-alt);
   font-weight: 800;
