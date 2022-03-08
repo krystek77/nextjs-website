@@ -9,6 +9,7 @@ import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
 import ProductInfo from '../../../../containers/ProductInfo/ProductInfo';
 import ProductData from '../../../../containers/ProductData/ProductData';
+import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
 
 const parameters = [
@@ -62,6 +63,44 @@ const leaflets = [
   },
 ];
 
+const controls = [
+  {
+    name: 'XControl FLEX +',
+    image: 'XControl FLEX Plus',
+    list: [
+      '7 calowy ekran dotykoway',
+      'możliwość wyświetlania komunikatów w 34 językach',
+      'wbudowane wifi',
+      'zdalne programowanie i aktualizacje',
+      'w pełni programowalny',
+      '20 fabrycznych programów prania spełniających wszystkie podstawowe potrzeby',
+      'do 99 programów użytkownika',
+    ],
+  },
+  {
+    name: 'XControl +',
+    image: 'XControl Plus',
+    list: [
+      'do 99 programów prania',
+      'w pełni programowalny',
+      'wyświetlacz graficzny',
+      'obsługa w 21 językach, w tym polskim',
+      'port USB',
+    ],
+  },
+  {
+    name: 'XControl',
+    image: 'XControl',
+    list: [
+      '15 programów prania',
+      'w pełni programowalny',
+      'wyświetlacz graficzny',
+      'obsługa w 25 językach, w tym w polskim',
+      'port USB',
+    ],
+  },
+];
+
 function FX105280() {
   return (
     <React.Fragment>
@@ -89,6 +128,7 @@ function FX105280() {
         <ProductInfo />
       </main>
       <ProductData features={features} parameters={parameters} />
+      <ProductControls controls={controls} />
       <Leaflets leaflets={leaflets} />
     </React.Fragment>
   );
