@@ -6,9 +6,15 @@
   color: #a8a32d;
   transform-origin: top left;
   position: absolute;
+  text-transform: uppercase;
 }
 .bigLabel_top_left {
   top: 0;
   left: 0;
   transform: rotate(-90deg) translateX(-100%) translateY(100%);
+}
+.bigLabel_top_right {
+  top: 0;
+  right: 0;
+  transform: translateX(100%) rotate(-90deg) translateY(-200%) translateX(-80%);
 }

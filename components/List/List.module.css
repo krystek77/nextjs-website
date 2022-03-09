@@ -28,3 +28,6 @@
 .list_mb_3 .list__item {
   margin-bottom: 3rem;
 }
+.list_mb_05 .list__item {
+  margin-bottom: 0.5rem;
+}

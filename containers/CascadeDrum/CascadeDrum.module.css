@@ -1,0 +1,27 @@
+.cascadeDrum {
+  background-color: #fcfbf3;
+}
+.cascadeDrum__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.cascadeDrum__article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cascadeDrum__image {
+  width: 480px;
+  height: 360px;
+  border: 1px solid lightgray;
+}
+
+.cascadeDrum__content {
+  width: 100%;
+  margin-top: 7rem;
+}
+.cascadeDrum__content ul {
+  max-width: 760px;
+}
