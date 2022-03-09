@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Title from "../../components/Title/Title";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Description from "../../components/Description/Description";
@@ -7,7 +8,9 @@ import styles from "./Friendly.module.css";
 function Friendly() {
   return (
     <section className={styles.friendly}>
-      <div className={styles.friendly__image}></div>
+      <div className={styles.friendly__image}>
+        <Image src="/assets/images/details/bg_friendly.webp" alt="pralnicowirówka wolnostojąca wysokoobrotowa" layout="fill"/>
+      </div>
       <div className={styles.friendly__content}>
         <Subtitle content='Prosta instalacja, wygodna konserwacja' />
         <Title content='Przyjazna użytkownikowi' variant='h2' />
