@@ -1,4 +1,5 @@
 .FXDesign {
+  background-color: #fff0f0;
 }
 .FXDesign__container {
   max-width: var(--container);
