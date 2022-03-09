@@ -5,6 +5,7 @@ import Description from '../../components/Description/Description';
 import LinkButton from '../../components/LinkButton/LinkButton';
 import ModelIndicator from './ModelIndicator/ModelIndicator';
 import ImageSlider from './ImageSlider/ImageSlider';
+import ScrollToAnchor from '../../components/ScrollToAnchor/ScrollToAnchor';
 
 const slider = {
   thumbs: [
@@ -79,6 +80,7 @@ function ProductInfo({ vertical }) {
             </LinkButton>
           </div>
           {/** end potential component */}
+          <ScrollToAnchor anchor="specyfikacja" label="zobacz specyfikację" />
         </div>
       </div>
     </section>

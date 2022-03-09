@@ -1,0 +1,15 @@
+.scrollToAnchor {
+  margin-top: 3rem;
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--darkt-700);
+  transition: var(--transition);
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.scrollToAnchor:hover {
+  color: var(--light-300);
+}
