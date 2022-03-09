@@ -1,0 +1,96 @@
+.ECO3 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ECO3__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ECO3__header {
+  margin: 0 auto;
+}
+.ECO3__image {
+  min-width: 50%;
+  position: relative;
+  height: 700px;
+}
+.ECO3__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+.ECO3__content {
+  padding-top: 144px;
+  padding-bottom: 144px;
+  width: 100%;
+  position: relative;
+}
+.ECO3__contentContainer {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ECO3__list {
+  margin-right: 10rem;
+}
+.ECO3__posters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ECO3__poster {
+  width: 412px;
+  height: 412px;
+  border: 1px solid grey;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ECO3__poster:last-child {
+  margin-bottom: 0;
+}
+.ECO3__poster_braun {
+  background: url(/assets/images/details/consumption_water.webp), #d5883e;
+  background-position: 293px 32px;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+.ECO3__poster_green {
+  background: url(/assets/images/details/consumption_energy.webp), #a8a32d;
+  background-position: 293px 32px;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+.ECO3__poster_blue {
+  background: url(/assets/images/details/consumption_humidity.webp), #91cdef;
+  background-position: 251px 32px;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+.ECO3__percentage {
+  font-family: var(--font-alt);
+  line-height: 1.3;
+  color: var(--dark-500);
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ECO3__name {
+  font-weight: 600;
+  font-size: 2.25rem;
+  letter-spacing: 0.035em;
+}
+.ECO3__value {
+  font-weight: 800;
+  font-size: 4rem;
+}

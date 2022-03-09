@@ -12,6 +12,7 @@ import ProductData from '../../../../containers/ProductData/ProductData';
 import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
 import Extreme from '../../../../containers/Extreme/Extreme';
+import ECO3 from '../../../../containers/ECO3/ECO3';
 
 const parameters = [
   { name: 'załadunek (moduł załadunku 1:10)', value: '10.5', unit: 'kg' },
@@ -108,6 +109,14 @@ const extreme = [
   'Ekstremalnie ergonomiczne',
 ];
 
+const eco = [
+  'As in all Primus equipment, only premium materials are used in the fabrication of our machines,to ensure one of the largest lifespans on the market',
+  'A soap mixer makes sure the soap is properly blended with water before being in contact with the linen, optimizing the action of the soap and protecting loads from undiluted chemicals',
+  'Up to 8 liquid soap pumps can be added, to use exactly the right detergent dosages for each load',
+  'U Our CASCADE DRUM provides additional mechanical action to deeply wash linens. In addition,the load is distributed more evenly in the drum, so water flows through the cylinder better,delivering an improved wash',
+  'A 400 G-Force spin helps bring loads to 50% residual moisture or less.Smartload semi-automatic weighing system makes sure you use only the waterand energy needed (for XControl+)',
+];
+
 function FX105280() {
   return (
     <React.Fragment>
@@ -135,6 +144,7 @@ function FX105280() {
         <ProductInfo />
       </main>
       <Extreme items={extreme} />
+      <ECO3 items={eco} />
       <ProductData features={features} parameters={parameters} />
       <ProductControls controls={controls} />
       <Leaflets leaflets={leaflets} />

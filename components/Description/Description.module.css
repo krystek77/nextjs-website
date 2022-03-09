@@ -27,5 +27,8 @@
   max-width: 960px;
 }
 .description_flex_grow {
-  flex:1;
+  flex: 1;
+}
+.description_center {
+  text-align: center;
 }

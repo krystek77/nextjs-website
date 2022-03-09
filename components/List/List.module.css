@@ -25,3 +25,6 @@
 .list.list_light .list__content {
   color: var(--primary-300);
 }
+.list_mb_3 .list__item {
+  margin-bottom: 3rem;
+}

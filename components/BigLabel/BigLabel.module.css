@@ -1,0 +1,14 @@
+.bigLabel {
+  font-family: var(--font-alt);
+  font-weight: 800;
+  font-size: 144px;
+  line-height: 1;
+  color: #a8a32d;
+  transform-origin: top left;
+  position: absolute;
+}
+.bigLabel_top_left {
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg) translateX(-100%) translateY(100%);
+}
