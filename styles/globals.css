@@ -93,6 +93,5 @@ footer {
   padding-bottom: 144px;
 }
 strong {
-  color:var(--primary-700);
+  color: var(--light-700);
 }
-

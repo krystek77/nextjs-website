@@ -11,6 +11,7 @@ import ProductInfo from '../../../../containers/ProductInfo/ProductInfo';
 import ProductData from '../../../../containers/ProductData/ProductData';
 import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
+import Extreme from '../../../../containers/Extreme/Extreme';
 
 const parameters = [
   { name: 'załadunek (moduł załadunku 1:10)', value: '10.5', unit: 'kg' },
@@ -101,6 +102,12 @@ const controls = [
   },
 ];
 
+const extreme = [
+  'Ekstremalny design',
+  'Ekstremalnie ekologiczne',
+  'Ekstremalnie ergonomiczne',
+];
+
 function FX105280() {
   return (
     <React.Fragment>
@@ -127,6 +134,7 @@ function FX105280() {
       <main>
         <ProductInfo />
       </main>
+      <Extreme items={extreme} />
       <ProductData features={features} parameters={parameters} />
       <ProductControls controls={controls} />
       <Leaflets leaflets={leaflets} />

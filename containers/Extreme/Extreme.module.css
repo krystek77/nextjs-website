@@ -1,0 +1,20 @@
+.extreme {
+  /* padding-top: 0; */
+  background-color: #e8f7fd;
+}
+.extreme__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.extreme__articles {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  padding-top: 144px;
+}
+.extreme__article {
+  min-width: 320px;
+}
+.extreme__articleImage {
+  margin-bottom: 3rem;
+}
