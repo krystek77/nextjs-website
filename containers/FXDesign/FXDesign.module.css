@@ -1,0 +1,26 @@
+.FXDesign {
+}
+.FXDesign__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.FXDesign__content {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+}
+.FXDesign__card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 2rem 2rem 0rem;
+}
+.FXDesign__cardImage {
+  min-width: 200px;
+  height: 200px;
+  background-image: radial-gradient(200% 200% at 50% 50%, var(--light-300), var(--light-700));
+}
+.FXDesign__cardContent {
+  margin-left: 1.5rem;
+}

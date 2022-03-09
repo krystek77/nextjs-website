@@ -14,6 +14,7 @@ import Leaflets from '../../../../containers/Leaflets/Leaflets';
 import Extreme from '../../../../containers/Extreme/Extreme';
 import ECO3 from '../../../../containers/ECO3/ECO3';
 import CascadeDrum from '../../../../containers/CascadeDrum/CascadeDrum';
+import FXDesign from '../../../../containers/FXDesign/FXDesign';
 
 const parameters = [
   { name: 'załadunek (moduł załadunku 1:10)', value: '10.5', unit: 'kg' },
@@ -147,6 +148,7 @@ function FX105280() {
       <Extreme items={extreme} />
       <ECO3 items={eco} />
       <CascadeDrum />
+      <FXDesign/>
       <ProductData features={features} parameters={parameters} />
       <ProductControls controls={controls} />
       <Leaflets leaflets={leaflets} />
