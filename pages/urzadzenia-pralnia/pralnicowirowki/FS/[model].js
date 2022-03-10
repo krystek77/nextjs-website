@@ -22,11 +22,11 @@ function FS() {
       <Banner classes="banner__washerExtractors_FS800">
         <Title
           variant="h1"
-          content="Seria FS o załadunku od 80 kg do 120 kg"
+          content="Pralnicowirówka wolnsotojąca wysokoobrotowa, FS-800"
           classes="title_maxWidth_960 title_bg_white_red"
         />
         <PageIndicator
-          label="pralnicowirówki wysokoobrotowe FS"
+          label="pralnicowirówki wysokoobrotowe"
           variant="red"
         />
       </Banner>

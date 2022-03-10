@@ -24,11 +24,11 @@ function FX350() {
       <Banner classes="banner__washerExtractors_FX350">
         <Title
           variant="h1"
-          content="Seria FX o załadunku od 35 kg do 60 kg"
+          content="Pralnicowirówka wolnsotojąca wysokoobrotowa, FX-350"
           classes="title_maxWidth_960 title_bg_white_red"
         />
         <PageIndicator
-          label="pralnicowirówki wysokoobrotowe FX"
+          label="pralnicowirówki wysokoobrotowe"
           variant="red"
         />
       </Banner>

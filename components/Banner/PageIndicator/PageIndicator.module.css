@@ -13,7 +13,7 @@
   letter-spacing: -0.02em;
   color: var(--dark-700);
   margin-left: 0.5rem;
-  /* text-transform: lowercase; */
+  text-transform: lowercase;
 }
 .pageIndicator__label_white {
   color: var(--primary-300);

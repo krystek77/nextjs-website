@@ -6,6 +6,9 @@ import List from '../../components/List/List';
 import BigLabel from '../../components/BigLabel/BigLabel';
 import styles from './ECO3.module.css';
 
+
+
+
 function ECO3({ items }) {
   return (
     <section className={styles.ECO3}>

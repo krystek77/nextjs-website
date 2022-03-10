@@ -5,6 +5,8 @@ import Description from '../../components/Description/Description';
 import List from '../../components/List/List';
 import styles from './Extreme.module.css';
 
+
+
 function Extreme({ items }) {
   return (
     <section className={styles.extreme}>

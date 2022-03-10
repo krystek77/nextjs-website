@@ -31,7 +31,7 @@ function ProductInfo({ vertical }) {
         <ImageSlider data={slider} initialState={-1} />
 
         <div className={styles.productInfo__content}>
-          <Subtitle content="Linia FX 105-280" />
+          <Subtitle content="Linia FX" />
           <Title variant="h2" content="Pralnicowirówki wysokoobrotowe" />
           <Description classes="description_mb_3">
             Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga
