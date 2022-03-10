@@ -20,7 +20,7 @@
 .FXDesign__cardImage {
   min-width: 200px;
   height: 200px;
-  background-image: radial-gradient(200% 200% at 50% 50%, var(--light-300), var(--light-700));
+  /* background-image: radial-gradient(200% 200% at 50% 50%, var(--light-300), var(--light-700)); */
 }
 .FXDesign__cardContent {
   margin-left: 1.5rem;
