@@ -26,8 +26,8 @@ function ProductInfo({ vertical }) {
       }
     >
       <div className={styles.productInfo__container}>
-        <ModelIndicator model="FX 105" />
-        <ModelIndicator model="FX 105" down />
+        <ModelIndicator model="FX-65" />
+        <ModelIndicator model="FX-65" down />
         <ImageSlider data={slider} initialState={-1} />
 
         <div className={styles.productInfo__content}>
@@ -46,25 +46,25 @@ function ProductInfo({ vertical }) {
 
           {/** potential component */}
           <div className={styles.linksToModels}>
-            <LinkButton label="FX 65" classes="linkButton_model" to="/">
+            <LinkButton label="FX-65" classes="linkButton_model" to="/">
               załadunek 6.5 - 7 kg
             </LinkButton>
-            <LinkButton label="FX 80" classes="linkButton_model" to="/">
+            <LinkButton label="FX-80" classes="linkButton_model" to="/">
               załadunek 8 - 9 kg
             </LinkButton>
-            <LinkButton label="FX 105" classes="linkButton_model" to="/">
+            <LinkButton label="FX-105" classes="linkButton_model" to="/">
               załadunek 10.5 - 12 kg
             </LinkButton>
-            <LinkButton label="FX 135" classes="linkButton_model" to="/">
+            <LinkButton label="FX-135" classes="linkButton_model" to="/">
               załadunek 13.5 kg
             </LinkButton>
-            <LinkButton label="FX 180" classes="linkButton_model" to="/">
+            <LinkButton label="FX-180" classes="linkButton_model" to="/">
               załadunek 18 kg
             </LinkButton>
-            <LinkButton label="FX 240" classes="linkButton_model" to="/">
+            <LinkButton label="FX-240" classes="linkButton_model" to="/">
               załadunek 24 - 27 kg
             </LinkButton>
-            <LinkButton label="FX 280" classes="linkButton_model" to="/">
+            <LinkButton label="FX-280" classes="linkButton_model" to="/">
               załadunek 28 - 32 kg
             </LinkButton>
           </div>
