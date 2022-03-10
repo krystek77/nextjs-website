@@ -30,6 +30,13 @@
   outline: none;
   border: 1px solid #ededed;
   border-radius: 0.25rem;
+  position: relative;
+}
+.slider__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .slider__thumb:hover {
   filter: brightness(0.5);

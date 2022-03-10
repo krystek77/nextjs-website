@@ -7,25 +7,14 @@ import ModelIndicator from './ModelIndicator/ModelIndicator';
 import ImageSlider from './ImageSlider/ImageSlider';
 import ScrollToAnchor from '../../components/ScrollToAnchor/ScrollToAnchor';
 
-const slider = {
-  thumbs: [
-    'thumb_01',
-    'thumb_02',
-    'thumb_03',
-    'thumb_04',
-    'thumb_05',
-    'thumb_06',
-  ],
-  main: [
-    'fx105_01',
-    'fx105_02',
-    'fx105_03',
-    'fx105_04',
-    'fx105_05',
-    'fx105_06',
-  ],
-  alt: 'pralnicowirówka wolnsotojąca',
-};
+const slider = [
+  'fx105_01',
+  'fx105_02',
+  'fx105_03',
+  'fx105_04',
+  'fx105_05',
+  'fx105_06',
+];
 
 function ProductInfo({ vertical }) {
   return (
