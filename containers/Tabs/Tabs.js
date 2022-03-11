@@ -6,7 +6,7 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 
 import styles from './Tabs.module.css';
 
-function Tabs({ initialState = 0, data = [] }) {
+function Tabs({ initialState = 0, data = {} }) {
   const [indexes, setIndexes] = React.useState([initialState]);
   const handleToggleTab = (index) => setIndexes([index]);
 
@@ -17,17 +17,17 @@ function Tabs({ initialState = 0, data = [] }) {
           <Tab
             toggleTab={() => handleToggleTab(index)}
             key={index}
-            title={button.title}
-            subtitle={button.subtitle}
+            title={button.category}
+            subtitle={button.line}
             classes={indexes.includes(index) ? 'tab_active' : ''}
           />
         ))}
       </div>
-      {data.map((_, index) => {
+      {data.map((item, index) => {
         return indexes.includes(index) ? (
           <ContentTab key={index} classes="contentTab_active">
-            {_.content.length
-              ? _.content.map((item, index) => (
+            {item.family.length
+              ? item.family.map((item, index) => (
                   <ProductCard key={index} path={item.path} image={item.image}>
                     <Label
                       label={item.label}

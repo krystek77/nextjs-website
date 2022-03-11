@@ -1,4 +1,4 @@
-export const data = [
+export const fx = [
   {
     model: 'FX-65',
     title: 'Pralnicowirówka wysokoobrotowa, typ FX-65',

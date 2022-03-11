@@ -9,61 +9,13 @@ import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
 
-const data = [
-  {
-    id: 1,
-    title: 'Pralnicowirówki',
-    subtitle: 'wolnostojące wysokoobrotowe',
-    content: [
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/FX/FX-65',
-        label: 'FX: 8-32 kg',
-        image: 'fx.webp',
-      },
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/FX350/FX-350',
-        label: 'FX: 35-60 kg',
-        image: 'fx350.webp',
-      },
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/FS/FS-800',
-        label: 'FS: 80-120 kg',
-        image: 'fs.webp',
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: 'Pralnicowirówki',
-    subtitle: 'sztywnomocowane szybkoobrotowe',
-    content: [
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/RX_G200/RX-65',
-        label: 'RX G200: 6.5-35 kg',
-        image: 'rx.webp',
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Pralnicowirówki',
-    subtitle: 'sztywnomocowane normalnoobrotowe',
-    content: [
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/RX/RX-180',
-        label: 'RX: 18-52 kg',
-        image: 'rx.webp',
-      },
-      {
-        path: 'urzadzenia-pralnia/pralnicowirowki/Pralma/Pralma-16',
-        label: 'Pralma: 10-22 kg',
-        image: 'rx.webp',
-      },
-    ],
-  },
-];
-
-function WasherExtractors() {
+function WasherExtractors(props) {
+  const { title, category, series } = props;
+  const withCategory = series.map((item) => ({
+    ...item,
+    family: [...item.family],
+    category: category,
+  }));
   return (
     <React.Fragment>
       <HeadMetaTags
@@ -78,15 +30,23 @@ function WasherExtractors() {
       <Banner classes="banner__washerExtractors">
         <Title
           variant="h1"
-          content="Innowacyjne pralnicowirówki przemysłowe"
+          content={title}
           classes="title_maxWidth_960 title_bg_white_red"
         />
-        <PageIndicator label="pralnicowirówki" variant="red" />
+        <PageIndicator label={category} variant="red" />
       </Banner>
       <main className={styles.washerExtractors}>
-        <Tabs data={data} initialState={0} />
+        <Tabs data={withCategory} initialState={0} />
       </main>
     </React.Fragment>
   );
 }
+
+import { washerextractors } from '../../../constants/washerextractors';
+export async function getStaticProps() {
+  return {
+    props: washerextractors,
+  };
+}
+
 export default WasherExtractors;

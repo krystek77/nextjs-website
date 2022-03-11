@@ -90,13 +90,12 @@ export async function getStaticPaths(context) {
   };
 }
 
-import { data } from '../../../../constants/data';
-
+import { fx } from '../../../../constants/fx';
 export async function getStaticProps(context) {
   //fetch data for a single washer extractors
   // console.log(context);
   // console.log(context.params.model);
-  const washerExtractor = data.find(
+  const washerExtractor = fx.find(
     (item) => item.model === context.params.model
   );
 
