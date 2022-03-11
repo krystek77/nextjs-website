@@ -5,9 +5,13 @@ import Description from '../../components/Description/Description';
 import List from '../../components/List/List';
 import styles from './Extreme.module.css';
 
+const extreme = [
+  'Ekstremalny design',
+  'Ekstremalnie ekologiczne',
+  'Ekstremalnie ergonomiczne',
+];
 
-
-function Extreme({ items }) {
+function Extreme() {
   return (
     <section className={styles.extreme}>
       <div className={styles.extreme__container}>
@@ -17,7 +21,7 @@ function Extreme({ items }) {
           variant="h2"
           classes="title_mb_3"
         />
-        <List items={items} classes="list_decorative" />
+        <List items={extreme} classes="list_decorative" />
         <div className={styles.extreme__articles}>
           <article className={styles.extreme__article}>
             <div className={styles.extreme__articleImage}>

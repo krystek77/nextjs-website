@@ -6,10 +6,15 @@ import List from '../../components/List/List';
 import BigLabel from '../../components/BigLabel/BigLabel';
 import styles from './ECO3.module.css';
 
+const eco = [
+  'As in all Primus equipment, only premium materials are used in the fabrication of our machines,to ensure one of the largest lifespans on the market',
+  'A soap mixer makes sure the soap is properly blended with water before being in contact with the linen, optimizing the action of the soap and protecting loads from undiluted chemicals',
+  'Up to 8 liquid soap pumps can be added, to use exactly the right detergent dosages for each load',
+  'U Our CASCADE DRUM provides additional mechanical action to deeply wash linens. In addition,the load is distributed more evenly in the drum, so water flows through the cylinder better,delivering an improved wash',
+  'A 400 G-Force spin helps bring loads to 50% residual moisture or less.Smartload semi-automatic weighing system makes sure you use only the waterand energy needed (for XControl+)',
+];
 
-
-
-function ECO3({ items }) {
+function ECO3() {
   return (
     <section className={styles.ECO3}>
       <article className={styles.ECO3__container}>
@@ -34,7 +39,7 @@ function ECO3({ items }) {
           <BigLabel classes="bigLabel_top_left" content="ECO3" />
           <div className={styles.ECO3__contentContainer}>
             <div className={styles.ECO3__list}>
-              <List items={items} classes="list_mb_3" />
+              <List items={eco} classes="list_mb_3" />
             </div>
             {/** potential component */}
             <div className={styles.ECO3__posters}>
