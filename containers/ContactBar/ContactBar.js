@@ -36,6 +36,14 @@ const contactData = [
     width: '41',
     height: '64',
   },
+  {
+    to: 'tel:664 962 002',
+    label: '664 962 002',
+    src: 'contact_service',
+    alt: 'komórka',
+    width: '64',
+    height: '54',
+  },
 ];
 
 function ContactBar() {
