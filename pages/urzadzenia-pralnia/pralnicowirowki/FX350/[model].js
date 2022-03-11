@@ -9,6 +9,7 @@ import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
 import ProductInfo from '../../../../containers/ProductInfo/ProductInfo';
+import IconLink from '../../../../components/IconLink/IconLink';
 import ProductData from '../../../../containers/ProductData/ProductData';
 import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
@@ -56,6 +57,7 @@ function FX350(props) {
           slider={slider}
           vertical={isSliderVertical}
         />
+         <IconLink to='/' src='arrow_back' alt='arrow back' width='16' height='11' label='wróć' />
         <ProductData features={features} parameters={parameters} />
         <ProductControls controls={controls} />
         <Leaflets leaflets={leaflets} />
