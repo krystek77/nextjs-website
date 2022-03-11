@@ -1,17 +1,17 @@
 export const data = [
   {
     label: 'Urządzenia',
-    path: '/urzadzenia-pralnia',
+    path: 'urzadzenia-pralnia',
     submenu: [
       {
         label: 'Pralnicowirówki',
-        path: '/pralnicowirowki',
+        path: 'urzadzenia-pralnia/pralnicowirowki',
         image: 'washer_extractors.png',
         list: ['sztywnomocowane', 'normalnoobrotowe', 'wysokoobrotowe'],
       },
       {
         label: 'Suszarki',
-        path: '/suszarki-bebnowe',
+        path: 'urzadzenia-pralnia/suszarki-bebnowe',
         image: 'dryers.png',
         list: [
           'suszarki bębnowe',
@@ -21,7 +21,7 @@ export const data = [
       },
       {
         label: 'Prasownice',
-        path: '/prasownice',
+        path: 'urzadzenia-pralnia/prasownice',
         image: 'ironers.png',
         list: [
           'nieckowe',
@@ -34,7 +34,7 @@ export const data = [
       },
       {
         label: 'Bariery higieny',
-        path: '/bariery-higieny',
+        path: 'urzadzenia-pralnia/bariery-higieny',
         image: 'barriers.png',
         list: [
           'wolnostojące przelotowe',
@@ -44,7 +44,7 @@ export const data = [
       },
       {
         label: 'Wirówki pralnicze',
-        path: '/wirowki-pralnicze',
+        path: 'urzadzenia-pralnia/wirowki-pralnicze',
         image: 'washer_extractors.png',
         list: [
           'sterowanie automatyczne',
@@ -53,13 +53,13 @@ export const data = [
       },
       {
         label: 'Pralnice',
-        path: '/pralnice',
+        path: 'urzadzenia-pralnia/pralnice',
         image: 'washer_extractors.png',
         list: ['bębnowe o załadunku czołowym', 'bębnowe o załadunku bocznym'],
       },
       {
         label: 'Profesjonalne pralnico - suszarki',
-        path: '/profesionalne-pralnico-suszarki',
+        path: 'urzadzenia-pralnia/profesionalne-pralnico-suszarki',
         image: 'washer_dryer.png',
         list: [
           'kompaktowa budowa',
@@ -69,7 +69,7 @@ export const data = [
       },
       {
         label: 'Profesjonalne suszarko - suszarki',
-        path: '/profesjonalne-suszarko-suszarki',
+        path: 'urzadzenia-pralnia/profesjonalne-suszarko-suszarki',
         image: 'dryer_dryer.png',
         list: [
           'kompaktowa budowa',
@@ -79,19 +79,19 @@ export const data = [
       },
       {
         label: 'Małe komercyjne pralnicowirówki',
-        path: '/male-komercyjne-pralnicowirowki',
+        path: 'urzadzenia-pralnia/male-komercyjne-pralnicowirowki',
         image: 'small_washer_2.png',
         list: ['kompaktowa budowa', 'idelane dla złobków i przedszkoli'],
       },
       {
         label: 'Małe komercyjne suszarki',
-        path: '/male-komercyjne-suszarki',
+        path: 'urzadzenia-pralnia/male-komercyjne-suszarki',
         image: 'small_dryers.png',
         list: ['kompaktowa budowa', 'idelane dla złobków i przedszkoli'],
       },
       {
         label: 'Wózki i regały',
-        path: '/wozki-i-regaly',
+        path: 'urzadzenia-pralnia/wozki-i-regaly',
         image: 'trolleys.png',
         list: [
           'na suche, brudne pranie',
@@ -103,7 +103,7 @@ export const data = [
       },
       {
         label: 'Prasowanie fasonowe',
-        path: '/prasowanie-fasonowe',
+        path: 'urzadzenia-pralnia/prasowanie-fasonowe',
         image: 'ironing.png',
         list: ['zestawy do prasowania', 'prasy'],
       },
@@ -111,27 +111,27 @@ export const data = [
   },
   {
     label: 'Urządzenia do samoobsługi',
-    path: '/urzadzenia-pralnia-samoobslugowa',
+    path: 'urzadzenia-pralnia-samoobslugowa',
     submenu: [
-      { label: 'Pralnicowirówki', path: '/pralnicowirowki' },
-      { label: 'Suszarki', path: '/suszarki-bebnowe' },
-      { label: 'Prasownice', path: '/prasownice' },
+      { label: 'Pralnicowirówki', path: 'pralnicowirowki' },
+      { label: 'Suszarki', path: 'suszarki-bebnowe' },
+      { label: 'Prasownice', path: 'prasownice' },
       {
         label: 'Profesjonalne pralnico - suszarki',
-        path: '/profesionalne-pralnico-suszarki',
+        path: 'profesionalne-pralnico-suszarki',
       },
       {
         label: 'Profesjonalne suszarko - suszarki',
-        path: '/profesjonalne-suszarko-suszarki',
+        path: 'profesjonalne-suszarko-suszarki',
       },
       {
         label: 'Małe komercyjne pralnicowirówki',
-        path: '/male-komercyjne-pralnicowirowki',
+        path: 'male-komercyjne-pralnicowirowki',
       },
-      { label: 'Małe komercyjne suszarki', path: '/male-komercyjne-suszarki' },
+      { label: 'Małe komercyjne suszarki', path: 'male-komercyjne-suszarki' },
     ],
   },
-  { label: 'Klienci', path: '/nasi-klienci', submenu: [] },
-  { label: 'Wiadomości', path: '/wiadomosci', submenu: [] },
-  { label: 'Kontakt', path: '/kontakt-do-pralma', submenu: [] },
+  { label: 'Klienci', path: 'nasi-klienci', submenu: [] },
+  { label: 'Wiadomości', path: 'wiadomosci', submenu: [] },
+  { label: 'Kontakt', path: 'kontakt-do-pralma', submenu: [] },
 ];

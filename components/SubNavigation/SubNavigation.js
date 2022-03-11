@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import styles from "./SubNavigation.module.css";
+import styles from './SubNavigation.module.css';
 
-function SubNavigation({ menu }) {
-  return menu.submenu.length ? (
+function SubNavigation({ submenu }) {
+  return submenu.length ? (
     <ul className={styles.subNavigation}>
-      {menu.submenu.map((item, index) => {
+      {submenu.map((item, index) => {
         return (
           <li className={styles.subNavigation__item} key={`item_${index + 1}`}>
-            <Link href={`${menu.path}${item.path}`}>
+            <Link href={`/${item.path}`}>
               <a className={styles.subNavigation__link}>{item.label}</a>
             </Link>
           </li>

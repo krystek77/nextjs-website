@@ -8,14 +8,11 @@ function MainNavigation() {
     <ul className={styles.mainNavigation}>
       {data.map((menu, index) => {
         return (
-          <li
-            className={styles.mainNavigation__item}
-            key={`page_${index + 1}`}
-          >
-            <Link href={menu.path}>
+          <li className={styles.mainNavigation__item} key={`page_${index + 1}`}>
+            <Link href={`/${menu.path}`}>
               <a className={styles.mainNavigation__link}>{menu.label}</a>
             </Link>
-            <SubNavigation menu={menu}/>
+            <SubNavigation submenu={menu.submenu} />
           </li>
         );
       })}

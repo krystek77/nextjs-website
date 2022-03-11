@@ -16,7 +16,7 @@ function ModernLaundryEquipment({ data }) {
         <div className={styles.modernLaundryEquipment__equipments}>
           {data.submenu.map((item) => {
             return (
-              <ProductCard key={item.label} {...item} parent={data.path}>
+              <ProductCard key={item.label} {...item}>
                 <Label label={item.label} classes="label_top_right_vertical" />
               </ProductCard>
             );

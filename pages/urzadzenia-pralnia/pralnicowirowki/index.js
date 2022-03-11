@@ -14,16 +14,21 @@ const data = [
     id: 1,
     title: 'Pralnicowirówki',
     subtitle: 'wolnostojące wysokoobrotowe',
-    path: '/urzadzenia-pralnia',
     content: [
-      { path: '/pralnicowirowki/FX/FX-105', label: 'seria FX, 8-32 kg' },
       {
-        path: '/pralnicowirowki/FS/FS-800',
-        label: 'serai FS, 80-120 kg',
+        path: 'urzadzenia-pralnia/pralnicowirowki/FX/FX-65',
+        label: 'FX: 8-32 kg',
+        image: 'fx.webp',
       },
       {
-        path: '/pralnicowirowki/FX350/FX-350',
-        label: 'seria FX, 35-60 kg',
+        path: 'urzadzenia-pralnia/pralnicowirowki/FX350/FX-350',
+        label: 'FX: 35-60 kg',
+        image: 'fx350.webp',
+      },
+      {
+        path: 'urzadzenia-pralnia/pralnicowirowki/FS/FS-800',
+        label: 'FS: 80-120 kg',
+        image: 'fs.webp',
       },
     ],
   },
@@ -31,21 +36,28 @@ const data = [
     id: 2,
     title: 'Pralnicowirówki',
     subtitle: 'sztywnomocowane szybkoobrotowe',
-    path: '/urzadzenia-pralnia',
     content: [
-      { path: 'pralnicowirowki/RX_G200/RX-65', label: 'seria RX, 6.5-35 kg' },
+      {
+        path: 'urzadzenia-pralnia/pralnicowirowki/RX_G200/RX-65',
+        label: 'RX G200: 6.5-35 kg',
+        image: 'rx.webp',
+      },
     ],
   },
   {
     id: 3,
     title: 'Pralnicowirówki',
     subtitle: 'sztywnomocowane normalnoobrotowe',
-    path: '/urzadzenia-pralnia',
     content: [
-      { path: '/pralnicowirowki/RX/RX-180', label: 'seria RX, 18-52 kg' },
       {
-        path: '/pralnicowirowki/Pralma/Pralma-16',
-        label: 'seria Pralma, 10-22 kg',
+        path: 'urzadzenia-pralnia/pralnicowirowki/RX/RX-180',
+        label: 'RX: 18-52 kg',
+        image: 'rx.webp',
+      },
+      {
+        path: 'urzadzenia-pralnia/pralnicowirowki/Pralma/Pralma-16',
+        label: 'Pralma: 10-22 kg',
+        image: 'rx.webp',
       },
     ],
   },
