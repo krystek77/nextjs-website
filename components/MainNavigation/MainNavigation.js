@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import SubNavigation from '../SubNavigation/SubNavigation';
 import styles from './MainNavigation.module.css';
-import { data } from '../../constants/links';
+import { links } from '../../constants/links';
 
 function MainNavigation() {
   return (
     <ul className={styles.mainNavigation}>
-      {data.map((menu, index) => {
+      {links.map((link, index) => {
         return (
           <li className={styles.mainNavigation__item} key={`page_${index + 1}`}>
-            <Link href={`/${menu.path}`}>
-              <a className={styles.mainNavigation__link}>{menu.label}</a>
+            <Link href={`/${link.path}`}>
+              <a className={styles.mainNavigation__link}>{link.label}</a>
             </Link>
-            <SubNavigation submenu={menu.submenu} />
+            <SubNavigation submenu={link.submenu} />
           </li>
         );
       })}

@@ -1,4 +1,4 @@
-export const data = [
+export const links = [
   {
     label: 'Urządzenia',
     path: 'urzadzenia-pralnia',

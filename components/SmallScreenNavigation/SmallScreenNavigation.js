@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SubNavigation from '../SubNavigation/SubNavigation';
 import styles from './SmallScreenNavigation.module.css';
-import { data } from '../../constants/links';
+import { links } from '../../constants/links';
 
 function SmallScreenNavigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -46,7 +46,7 @@ function SmallScreenNavigation() {
             </button>
           </div>
           <div className={styles.smallScreenNavigation__content}>
-            {data.map((menu, index) => {
+            {links.map((link, index) => {
               return (
                 <React.Fragment key={`menu_${index + 1}`}>
                   <button
@@ -54,22 +54,22 @@ function SmallScreenNavigation() {
                     type="button"
                   >
                     <span className={styles.smallScreenNavigation__title}>
-                      {menu.label}
+                      {link.label}
                     </span>
                     <Image
                       src="/assets/icons/collapse_menu.svg"
-                      alt="collapse menu"
+                      alt="collapse link"
                       width="32"
                       height="32"
                     />
                   </button>
                   <div>
-                    <Link href={`/${menu.path}`}>
+                    <Link href={`/${link.path}`}>
                       <a className={styles.smallScreenNavigation__titleLink}>
-                        {menu.label}
+                        {link.label}
                       </a>
                     </Link>
-                    <SubNavigation submenu={menu.submenu} />
+                    <SubNavigation submenu={link.submenu} />
                   </div>
                 </React.Fragment>
               );

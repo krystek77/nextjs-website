@@ -7,9 +7,8 @@ import Title from '../../components/Title/Title';
 import ModernLaundryEquipment from '../../containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import PageIndicator from '../../components/Banner/PageIndicator/PageIndicator';
 import React from 'react';
-import {data} from '../../constants/links'
 
-function LaundryEquipment({on_premises}) {
+function LaundryEquipment({ on_premises }) {
   return (
     <React.Fragment>
       <Banner>
@@ -28,11 +27,13 @@ function LaundryEquipment({on_premises}) {
 }
 export default LaundryEquipment;
 
+import { links } from '../../constants/links';
 export async function getStaticProps() {
   //fetch data from the API
+
   return {
     props: {
-      on_premises:data[0]
+      on_premises: links[0],
     },
   };
 }
