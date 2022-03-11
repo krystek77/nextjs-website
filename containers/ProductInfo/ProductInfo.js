@@ -13,6 +13,7 @@ function ProductInfo({
   model = '',
   line = '',
   category = '',
+  description = '',
   available_models = [],
   slider = [],
 }) {
@@ -32,15 +33,7 @@ function ProductInfo({
         <div className={styles.productInfo__content}>
           <Subtitle content={line} />
           <Title variant="h2" content={category} />
-          <Description classes="description_mb_3">
-            Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga
-            najlepszych z najlepszych rozwiązań pralniczych. Zaprojektowane, aby
-            zapewnić najniższe koszty zużycia wody i energii, wysoką wydajność i
-            przyjazną obsługę. Innowacyjne technologie:{' '}
-            <strong>CascadeDrum</strong>, <strong>supereco</strong>,{' '}
-            <strong>Xcontrol FLEX +</strong> czy <strong>TRACE-TECH</strong>,
-            czynią je bezkonkurencyjne na rynku.
-          </Description>
+          <Description classes="description_mb_3">{description}</Description>
           <AvailableModels items={available_models} model={model} />
           <ScrollToAnchor anchor="specyfikacja" label="zobacz specyfikację" />
         </div>

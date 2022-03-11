@@ -4,14 +4,31 @@ import React from 'react';
  * http://localhost:3000/urzadzenia-pralnia/pralnicowirowki/FX350/FX-350
  */
 
-import { useRouter } from 'next/router';
 import HeadMetaTags from '../../../../components/HeadMetaTags/HeadMetaTags';
 import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
+import ProductInfo from '../../../../containers/ProductInfo/ProductInfo';
+import ProductData from '../../../../containers/ProductData/ProductData';
+import ProductControls from '../../../../containers/ProductControls/ProductControls';
+import Leaflets from '../../../../containers/Leaflets/Leaflets';
+import CascadeDrum from '../../../../containers/CascadeDrum/CascadeDrum';
 
-function FX350() {
-  const router = useRouter();
+function FX350(props) {
+  const {
+    model,
+    title,
+    category,
+    description,
+    line,
+    available_models,
+    slider,
+    isSliderVertical,
+    features,
+    parameters,
+    controls,
+    leaflets,
+  } = props;
   return (
     <React.Fragment>
       <HeadMetaTags
@@ -24,17 +41,26 @@ function FX350() {
       <Banner classes="banner__washerExtractors_FX350">
         <Title
           variant="h1"
-          content="Pralnicowirówka wolnsotojąca wysokoobrotowa, FX-350"
+          content={title}
           classes="title_maxWidth_960 title_bg_white_red"
         />
-        <PageIndicator
-          label="pralnicowirówki wysokoobrotowe"
-          variant="red"
-        />
+        <PageIndicator label={category} variant="red" />
       </Banner>
       <main>
-        <h2 style={{ textAlign: 'center' }}>MODEL: {router.query.model}</h2>
+        <ProductInfo
+          model={model}
+          line={line}
+          category={category}
+          description={description}
+          available_models={available_models}
+          slider={slider}
+          vertical={isSliderVertical}
+        />
+        <ProductData features={features} parameters={parameters} />
+        <ProductControls controls={controls} />
+        <Leaflets leaflets={leaflets} />
       </main>
+      <CascadeDrum />
     </React.Fragment>
   );
 }
@@ -50,9 +76,13 @@ export async function getStaticPaths(context) {
   };
 }
 
-export async function getStaticProps() {
+import { products } from '../../../../constants/products';
+export async function getStaticProps(context) {
+  const washerExtractor = products.find(
+    (item) => item.model === context.params.model
+  );
   return {
-    props: {},
+    props: washerExtractor,
   };
 }
 

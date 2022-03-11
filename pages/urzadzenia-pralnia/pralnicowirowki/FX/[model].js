@@ -22,6 +22,7 @@ function FX(props) {
     model,
     title,
     category,
+    description,
     line,
     available_models,
     slider,
@@ -34,14 +35,9 @@ function FX(props) {
   return (
     <React.Fragment>
       <HeadMetaTags
-        title="Pralnicowirówki wolnostojące wysokoobrotowe"
-        description="
-        Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga najlepszych
-        z najlepszych rozwiązań pralniczych. Zaprojektowane, aby zapewnić najniższe koszty zużycia wody
-        i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum,
-        supereco, Xcontrol FLEX plus czy TRACE-TECH, czynią ją bezkonkurencyjne na rynku."
-        og_title="Pralnicowirówki wolnostojące wysokoobrotowe"
-        twitter_title="Pralnicowirówki wolnostojące wysokoobrotowe"
+        title={title}
+        description={description}
+        twitter_title={title}
       />
       <Banner classes="banner__washerExtractors_FX">
         <Title
@@ -59,6 +55,7 @@ function FX(props) {
           available_models={available_models}
           slider={slider}
           vertical={isSliderVertical}
+          description={description}
         />
         <ProductData features={features} parameters={parameters} />
         <ProductControls controls={controls} />
@@ -90,12 +87,12 @@ export async function getStaticPaths(context) {
   };
 }
 
-import { fx } from '../../../../constants/fx';
+import { products } from '../../../../constants/products';
 export async function getStaticProps(context) {
   //fetch data for a single washer extractors
   // console.log(context);
   // console.log(context.params.model);
-  const washerExtractor = fx.find(
+  const washerExtractor = products.find(
     (item) => item.model === context.params.model
   );
 
