@@ -15,11 +15,3 @@
   flex: 1;
   margin-left: 4rem;
 }
-/*
-* links to the models
-*/
-.linksToModels {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 0.5rem;
-}
