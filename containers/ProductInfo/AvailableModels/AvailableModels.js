@@ -6,7 +6,9 @@ import styles from './AvailableModels.module.css';
 
 function AvailableModels({ items, model }) {
   const router = useRouter();
-  //   console.log(model); // item.title replace that later
+  // console.log(router);
+  // console.log(router.query.model);
+  // console.log(model); // item.title replace that later
   return items.length ? (
     <React.Fragment>
       <Title variant="h3" content="Dostępne modele" classes="title_mb_3" />
@@ -15,7 +17,9 @@ function AvailableModels({ items, model }) {
           <LinkButton
             key={item.title}
             label={item.title}
-            classes="linkButton_model"
+            classes={`linkButton_model ${
+              router.query.model === item.title && 'linkButton_activeModel'
+            }`}
             to={{
               pathname: router.pathname,
               query: { model: item.title },

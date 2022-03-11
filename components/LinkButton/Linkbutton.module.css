@@ -38,8 +38,6 @@
   font-size: 1.5rem;
   line-height: 1;
 }
-.linkButton.linkButton_model .linkButton__sublabel {
-}
 
 .linkButton_disabled {
   background-color: var(--light-500);
@@ -52,7 +50,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  content: "";
+  content: '';
   display: block;
   inset: -1px;
   position: absolute;
@@ -71,4 +69,26 @@
 .linkButton_center {
   margin: 0 auto;
   display: block;
+}
+
+.linkButton.linkButton_activeModel {
+  border-color: var(--accent-500);
+}
+.linkButton_activeModel {
+  background-color: transparent;
+}
+.linkButton_activeModel .linkButton__sublabel {
+  color: var(--accent-500);
+}
+.linkButton_activeModel .linkButton__label {
+  color: var(--accent-500);
+}
+.linkButton.linkButton_activeModel:hover {
+  background-color: var(--white);
+}
+.linkButton.linkButton_activeModel:focus::after {
+  border-color: var(--accent-500);
+}
+.linkButton_disabled:focus::after {
+  border-color: var(--light-700);
 }
