@@ -18,8 +18,13 @@ import CascadeDrum from "../../../../containers/CascadeDrum/CascadeDrum";
 import FXDesign from "../../../../containers/FXDesign/FXDesign";
 import Friendly from "../../../../containers/Friendly/Friendly";
 
+import { useRouter } from "next/router";
+import { cutURL } from "../../../../lib";
+
 function FX(props) {
   const { model, title, category, description, line, available_models, slider, isSliderVertical, features, parameters, controls, leaflets } = props;
+  const router = useRouter();
+
   return (
     <React.Fragment>
       <HeadMetaTags title={title} description={description} twitter_title={title} />
@@ -29,7 +34,7 @@ function FX(props) {
       </Banner>
       <main>
         <ProductInfo model={model} line={line} category={category} available_models={available_models} slider={slider} vertical={isSliderVertical} description={description} />
-        <IconLink to='/' src='arrow_back' alt='arrow back' width='16' height='11' label='wróć' />
+        <IconLink to={cutURL(router, -2)} src='arrow_back' alt='arrow back' width='16' height='11' label='wróć' />
         <ProductData features={features} parameters={parameters} />
         <ProductControls controls={controls} />
         <Leaflets leaflets={leaflets} />

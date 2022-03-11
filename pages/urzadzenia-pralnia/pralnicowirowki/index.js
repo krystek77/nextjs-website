@@ -9,6 +9,7 @@ import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
 
+
 function WasherExtractors(props) {
   const { title, category, series } = props;
   const withCategory = series.map((item) => ({
