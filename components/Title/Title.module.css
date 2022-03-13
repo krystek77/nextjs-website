@@ -49,3 +49,15 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+.title_bg_white_dark {
+  background: linear-gradient(
+    135deg,
+    var(--primary-300) 0%,
+    var(--primary-300) 50%,
+    var(--dark-500) 50%,
+    var(--dark-500) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
