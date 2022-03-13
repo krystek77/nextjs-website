@@ -1,0 +1,15 @@
+.sparePartsSearchForm {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+.sparePartsSearchForm__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.sparePartsSearchForm__header {
+  margin-bottom: 9rem;
+}
+.sparePartsSearchForm__form {
+  max-width: 760px;
+  margin: 0 auto;
+}
