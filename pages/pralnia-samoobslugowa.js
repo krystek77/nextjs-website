@@ -1,7 +1,15 @@
 /*
  * http://localhost:3000/pralnia-samoobslugowa
  */
+import React from "react";
+import HeadMetaTags from "../components/HeadMetaTags/HeadMetaTags";
+import SiteInProgress from "../containers/SiteInProgress/SiteInProgress";
 function SelfServiceLaundry() {
-  return <h1>Self Service Laundry</h1>;
+  return (
+    <React.Fragment>
+      <HeadMetaTags />
+      <SiteInProgress page='TECHNOLOGIA ECO4' />
+    </React.Fragment>
+  );
 }
 export default SelfServiceLaundry;
