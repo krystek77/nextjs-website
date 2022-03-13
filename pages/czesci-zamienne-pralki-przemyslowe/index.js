@@ -11,8 +11,8 @@ function SpareParts() {
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner classes=''>
-        <Subtitle content='Do przemysłowych urządzeń pralniczych' classes="subtitle__ball_dark" />
+      <Banner classes='banner__spareParts '>
+        <Subtitle content='Do przemysłowych urządzeń pralniczych' classes='subtitle__ball_dark' />
         <Title content='Popularne części eksploatacyjne i zamienne' classes='title_bg_white_dark title_maxWidth_960' />
       </Banner>
       <SiteInProgess page='CZĘŚCI ZAMIENNE' />

@@ -34,6 +34,15 @@
 .banner__washerExtractors_FS800 {
   background-image: url('/assets/images/for_banners/banner_washerextractors_FS.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
-
   background-position: center right;
+}
+.banner__spareParts {
+  background-image: url('/assets/images/for_banners/banner_spareparts.webp'),
+  radial-gradient(
+    90% 1000% at 50% 50%,
+    var(--accent-700) 0%,
+    var(--accent-500) 100%
+  );
+  background-position: center right;
+  background-blend-mode: darken;
 }
