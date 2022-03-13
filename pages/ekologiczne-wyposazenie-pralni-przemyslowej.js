@@ -1,7 +1,10 @@
 /*
  * http://localhost:3000/ekologiczne-wyposazenie-pralni-przemyslowej
  */
+
+import SiteInProgress from "../containers/SiteInProgress/SiteInProgress";
+
 function GreenPassport() {
-  return <h1>GreenPassport</h1>;
+  return <SiteInProgress page="GREEN PASSPORT" />;
 }
 export default GreenPassport;

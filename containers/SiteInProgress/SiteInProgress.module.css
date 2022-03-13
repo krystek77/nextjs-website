@@ -1,0 +1,18 @@
+.siteInProgress {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
+.siteInProgress__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.siteInProgress__link {
+  text-decoration: underline;
+  color: var(--dark-700);
+  transition: var(--transition);
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.siteInProgress__link:hover {
+  color: var(--light-500);
+}
