@@ -1,6 +1,6 @@
 export const spare_parts = [
   {
-    partID: 1,
+    partID: "1",
     title: 'Uszczelka',
     tags: ['pralnice', 'pralnicowirówki'],
     image: 'spare_part_01',
@@ -15,7 +15,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 2,
+    partID: "2",
     title: 'Mikrowyłącznik wibracji',
     tags: ['pralnice'],
     image: 'spare_part_02',
@@ -30,7 +30,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 3,
+    partID: "3",
     title: 'Amortyzator',
     tags: ['pralnicowirówki'],
     image: 'spare_part_03',
@@ -45,7 +45,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 4,
+    partID: "4",
     title: 'Sprężyna zawieszenia',
     tags: ['pralnicowirówki'],
     image: 'spare_part_04',
@@ -60,7 +60,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 5,
+    partID: "5",
     title: 'Uszczelka',
     tags: ['pralnicowirówki'],
     image: 'spare_part_05',
@@ -75,7 +75,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 6,
+    partID: "6",
     title: 'Uszczelka okna',
     tags: ['pralnicowirówki'],
     image: 'spare_part_06',
@@ -90,7 +90,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 7,
+    partID: "7",
     title: 'Zawór spustowy MDB-03RA',
     tags: ['pralnicowirówki'],
     image: 'spare_part_07',
@@ -105,7 +105,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 8,
+    partID: "8",
     title: 'Plytka mocy sterownika',
     tags: ['pralnicowirówki'],
     image: 'spare_part_08',
@@ -120,7 +120,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 9,
+    partID: "9",
     title: 'Uszczlkea',
     tags: ['pralnice', 'pralnicowirówki'],
     image: 'spare_part_01',
@@ -135,7 +135,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 10,
+    partID: "10",
     title: 'Mikrowyłącznik wibracji',
     tags: ['pralnice'],
     image: 'spare_part_02',
@@ -150,7 +150,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 11,
+    partID: "11",
     title: 'Amortyzator',
     tags: ['pralnicowirówki'],
     image: 'spare_part_03',
@@ -165,7 +165,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 12,
+    partID: "12",
     title: 'Sprężyna zawieszenia',
     tags: ['pralnicowirówki'],
     image: 'spare_part_04',
@@ -180,7 +180,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 13,
+    partID: "13",
     title: 'Uszczelka',
     tags: ['pralnicowirówki'],
     image: 'spare_part_05',
@@ -195,7 +195,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 14,
+    partID: "14",
     title: 'Uszczelka okna',
     tags: ['pralnicowirówki'],
     image: 'spare_part_06',
@@ -210,7 +210,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 15,
+    partID: "15",
     title: 'Zawór spustowy MDB-03RA',
     tags: ['pralnicowirówki'],
     image: 'spare_part_07',
@@ -225,7 +225,7 @@ export const spare_parts = [
     isAllegro: false,
   },
   {
-    partID: 16,
+    partID: "16",
     title: 'Plytka mocy sterownika',
     tags: ['pralnicowirówki'],
     image: 'spare_part_08',

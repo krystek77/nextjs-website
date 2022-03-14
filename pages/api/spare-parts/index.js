@@ -1,4 +1,4 @@
-import { spare_parts } from '../../constants/spare_parts';
+import { spare_parts } from '../../../constants/spare_parts';
 
 //GET /api/spareParts
 function requestHandler(req, res) {
