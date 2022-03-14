@@ -1,5 +1,4 @@
 import SparePartCard from './SparePartCard/SparePartCard';
-
 import styles from './SparePartsList.module.css';
 
 function SparePartsList({ items }) {

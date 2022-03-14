@@ -1,7 +1,7 @@
 export const spare_parts = [
   {
     partID: 1,
-    title: 'Uszczlkea',
+    title: 'Uszczelka',
     tags: ['pralnice', 'pralnicowirówki'],
     image: 'spare_part_01',
     description:
