@@ -2,8 +2,8 @@
 * spare part details
 */
 .sparePart {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
   background: transparent;
   background: -moz-linear-gradient(to bottom, var(--accent-500) 0%, var(--accent-500) 5%, var(--light-300) 5%, var(--light-500) 95%, var(--accent-700) 95%, var(--accent-700) 100%);
   background: -webkit-linear-gradient(to bottom, var(--accent-500) 0%, var(--accent-500) 5%, var(--light-300) 5%, var(--light-500) 95%, var(--accent-700) 95%, var(--accent-700) 100%);
@@ -17,8 +17,6 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-}
-.sparePart__header {
 }
 .sparePart__imageWrapper {
   width: 480px;

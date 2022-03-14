@@ -1,16 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { server } from "../../config";
 import HeadMetaTags from "../../components/HeadMetaTags/HeadMetaTags";
 import Title from "../../components/Title/Title";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Description from "../../components/Description/Description";
+import IconLink from "../../components/IconLink/IconLink";
+import { cutURL } from "../../lib";
 
 import styles from "../../styles/czesci-zamienne-pralki-przemyslowe.module.css";
 /*
  * http://localhost:3000/czesci-zamienne-pralki-przemyslowe/MDB-03-RA (now: /ID)
  */
 function SparePart({ item }) {
+  const router = useRouter();
   const { title, tags, image, description, weight, net_price, countryOfOrigin, available } = item;
   return (
     <React.Fragment>
@@ -29,7 +33,7 @@ function SparePart({ item }) {
           </div>
         </article>
       </main>
-      ;
+      <IconLink to={cutURL(router, -1)} src='arrow_back' alt='arrow back' width='16' height='11' label='wróć' />
     </React.Fragment>
   );
 }
