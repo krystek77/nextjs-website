@@ -26,7 +26,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
@@ -41,7 +41,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
@@ -86,7 +86,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
@@ -101,7 +101,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
@@ -146,7 +146,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
@@ -176,7 +176,7 @@ export const spare_parts = [
     net_price: '0 PLN',
     countryOfOrigin: 'Polska',
     available: 'YES',
-    isBlue: false,
+    isBlue: true,
     isAllegro: false,
   },
   {
