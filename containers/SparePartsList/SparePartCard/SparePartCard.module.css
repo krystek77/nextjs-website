@@ -1,14 +1,3 @@
-.sparePartsList {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.sparePartsList__container {
-  max-width: 1680px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2rem;
-}
 /*
 * sparePartCard
 */
