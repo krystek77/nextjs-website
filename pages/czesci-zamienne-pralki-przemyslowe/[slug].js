@@ -9,6 +9,7 @@ import Description from '../../components/Description/Description';
 import TechnicalData from '../../components/TechnicalData/TechnicalData';
 import IconLink from '../../components/IconLink/IconLink';
 import { cutURL } from '../../lib';
+import { spare_parts as data } from '../../constants/spare_parts';
 
 import styles from '../../styles/czesci-zamienne-pralki-przemyslowe.module.css';
 /*
@@ -55,8 +56,9 @@ function SparePart({ item }) {
 export default SparePart;
 
 export async function getStaticPaths(context) {
-  const response = await fetch(`${server}/api/spare-parts`);
-  const result = await response.json();
+  // const response = await fetch(`${server}/api/spare-parts`);
+  // const result = await response.json();
+  const result = data;
   const paths = result.map((item) => {
     return {
       params: {
@@ -70,7 +72,6 @@ export async function getStaticPaths(context) {
     fallback: false,
   };
 }
-import { spare_parts as data } from '../../constants/spare_parts';
 
 export async function getStaticProps(context) {
   console.log(

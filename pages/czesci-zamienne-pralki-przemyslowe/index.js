@@ -1,6 +1,8 @@
 /*
  * http://localhost:3000/czesci-zamienne-pralki-przemyslowe
  */
+import { getSpareParts } from '../../lib/spareparts';
+
 import React from 'react';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
 import SiteInProgess from '../../containers/SiteInProgress/SiteInProgress';
@@ -9,7 +11,6 @@ import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
 import SparePartsSearchForm from '../../containers/SparePartsSearchForm/SparePartsSearchForm';
 import SparePartsList from '../../containers/SparePartsList/SparePartsList';
-import { server } from '../../config';
 
 function SpareParts({ items }) {
   return (
@@ -33,15 +34,15 @@ function SpareParts({ items }) {
 }
 
 export default SpareParts;
-import { spare_parts as data } from '../../constants/spare_parts';
+
 export async function getStaticProps() {
   console.log('FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ');
   // const result = await fetch(`${server}/api/spare-parts`);
   // const data = await result.json();
-
+  const cachedSpareParts = await getSpareParts();
   return {
     props: {
-      items: data,
+      items: cachedSpareParts,
     },
   };
 }
