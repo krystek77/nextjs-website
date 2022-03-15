@@ -33,10 +33,12 @@ function SpareParts({ items }) {
 }
 
 export default SpareParts;
-
+import { spare_parts as data } from '../../constants/spare_parts';
 export async function getStaticProps() {
-  const result = await fetch(`${server}/api/spare-parts`);
-  const data = await result.json();
+  console.log('FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ');
+  // const result = await fetch(`${server}/api/spare-parts`);
+  // const data = await result.json();
+
   return {
     props: {
       items: data,
