@@ -8,10 +8,18 @@ import styles from "./SparePartsSearchForm.module.css";
 function SparePartsSearchForm() {
   const [formData, setFormData] = React.useState({ sparePartName: "", tags: "" });
 
-  const handleSearch = (e) => {
+  const searchSparePartsEndpoint = ({ sparePartName, tags }) => `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}`;
+
+  const handleSearch = async (e) => {
     e.preventDefault();
-    console.log("SEARCH SPARE PARTS");
-    clearForm();
+    try {
+      const response = await fetch(searchSparePartsEndpoint(formData));
+      const result = await response.json();
+      console.log(result);
+      clearForm();
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const handleInput = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +35,7 @@ function SparePartsSearchForm() {
         <form className={styles.sparePartsSearchForm__form} onSubmit={handleSearch}>
           <Input classes='input_mb_1' type='text' value={formData.sparePartName} fieldName='sparePartName' handleInput={handleInput} placeholder='według nazwy: np. zawór' />
           <Input classes='input_mb_2' type='text' value={formData.tags} fieldName='tags' handleInput={handleInput} placeholder='według tagów np. pralnice,pralnicowirówki' />
-          <Button type='submit' label='szukaj' classes="button_center" />
+          <Button type='submit' label='szukaj' classes='button_center' />
         </form>
       </div>
     </div>

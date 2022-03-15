@@ -34,7 +34,7 @@ export const spare_parts = [
   {
     partID: "3",
     title: "Amortyzator",
-    tags: ["pralnicowirówki"],
+    tags: ["pralnice"],
     image: "spare_part_03",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At culpa asperiores consequatur perspiciatis, placeat blanditiis delectus id illo! Aperiam corrupti dolorum perferendis nemo quia at nulla doloribus libero porro! Adipisci.",
     replacedByPartID: "",
@@ -82,7 +82,7 @@ export const spare_parts = [
   {
     partID: "6",
     title: "Uszczelka okna",
-    tags: ["pralnicowirówki"],
+    tags: ["suszarki"],
     image: "spare_part_06",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At culpa asperiores consequatur perspiciatis, placeat blanditiis delectus id illo! Aperiam corrupti dolorum perferendis nemo quia at nulla doloribus libero porro! Adipisci.",
     replacedByPartID: "",
