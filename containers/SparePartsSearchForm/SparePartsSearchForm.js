@@ -1,41 +1,39 @@
-import React from "react";
-import Title from "../../components/Title/Title";
-import Subtitle from "../../components/Subtitle/Subtitle";
-import Button from "../../components/Button/Button";
-import Input from "../../components/Input/Input";
-import styles from "./SparePartsSearchForm.module.css";
+import React from 'react';
+import Title from '../../components/Title/Title';
+import Subtitle from '../../components/Subtitle/Subtitle';
+import Button from '../../components/Button/Button';
+import Input from '../../components/Input/Input';
+import styles from './SparePartsSearchForm.module.css';
 
-function SparePartsSearchForm() {
-  const [formData, setFormData] = React.useState({ sparePartName: "", tags: "" });
-
-  const searchSparePartsEndpoint = ({ sparePartName, tags }) => `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}`;
-
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch(searchSparePartsEndpoint(formData));
-      const result = await response.json();
-      console.log(result);
-      clearForm();
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const handleInput = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-  const clearForm = () => setFormData({ sparePartName: "", tags: "" });
-
+function SparePartsSearchForm({ handleSearch, handleInput, formData }) {
   return (
     <div className={styles.sparePartsSearchForm}>
       <div className={styles.sparePartsSearchForm__container}>
         <header className={styles.sparePartsSearchForm__header}>
-          <Subtitle content='Podaj nazwę części lub rodzaj urządzenia' />
-          <Title content='Znajdź części zamienne lub eksploatacyjne do swojego urządzenia pralniczego' />
+          <Subtitle content="Podaj nazwę części lub rodzaj urządzenia" />
+          <Title content="Znajdź części zamienne lub eksploatacyjne do swojego urządzenia pralniczego" />
         </header>
-        <form className={styles.sparePartsSearchForm__form} onSubmit={handleSearch}>
-          <Input classes='input_mb_1' type='text' value={formData.sparePartName} fieldName='sparePartName' handleInput={handleInput} placeholder='według nazwy: np. zawór' />
-          <Input classes='input_mb_2' type='text' value={formData.tags} fieldName='tags' handleInput={handleInput} placeholder='według tagów np. pralnice,pralnicowirówki' />
-          <Button type='submit' label='szukaj' classes='button_center' />
+        <form
+          className={styles.sparePartsSearchForm__form}
+          onSubmit={handleSearch}
+        >
+          <Input
+            classes="input_mb_1"
+            type="text"
+            value={formData.sparePartName}
+            fieldName="sparePartName"
+            handleInput={handleInput}
+            placeholder="według nazwy: np. zawór"
+          />
+          <Input
+            classes="input_mb_2"
+            type="text"
+            value={formData.tags}
+            fieldName="tags"
+            handleInput={handleInput}
+            placeholder="według tagów np. pralnice,pralnicowirówki"
+          />
+          <Button type="submit" label="szukaj" classes="button_center" />
         </form>
       </div>
     </div>
