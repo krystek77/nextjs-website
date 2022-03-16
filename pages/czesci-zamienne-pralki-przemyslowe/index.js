@@ -1,26 +1,25 @@
 /*
  * http://localhost:3000/czesci-zamienne-pralki-przemyslowe
  */
-import React from 'react';
-import { getSpareParts } from '../../lib/spareparts';
-import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
-import Banner from '../../components/Banner/Banner';
-import Title from '../../components/Title/Title';
-import Subtitle from '../../components/Subtitle/Subtitle';
-import SparePartsSearchForm from '../../containers/SparePartsSearchForm/SparePartsSearchForm';
-import SparePartsList from '../../containers/SparePartsList/SparePartsList';
-import Pagination from '../../components/Pagination/Pagination';
-import styles from './index.module.css';
+import React from "react";
+import { getSpareParts } from "../../lib/spareparts";
+import HeadMetaTags from "../../components/HeadMetaTags/HeadMetaTags";
+import Banner from "../../components/Banner/Banner";
+import Title from "../../components/Title/Title";
+import Subtitle from "../../components/Subtitle/Subtitle";
+import SparePartsSearchForm from "../../containers/SparePartsSearchForm/SparePartsSearchForm";
+import SparePartsList from "../../containers/SparePartsList/SparePartsList";
+import Pagination from "../../components/Pagination/Pagination";
+import styles from "./index.module.css";
 
 function SpareParts({ items, pageNumber, page }) {
   const [filteredSPareParts, setFilteredSpareParts] = React.useState(items);
   const [formData, setFormData] = React.useState({
-    sparePartName: '',
-    tags: '',
+    sparePartName: "",
+    tags: "",
   });
 
-  const searchSparePartsEndpoint = ({ sparePartName, tags }, page) =>
-    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
+  const searchSparePartsEndpoint = ({ sparePartName, tags }, page) => `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -35,31 +34,20 @@ function SpareParts({ items, pageNumber, page }) {
     }
   };
 
-  const handleInput = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  const clearForm = () => setFormData({ sparePartName: '', tags: '' });
+  const handleInput = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const clearForm = () => setFormData({ sparePartName: "", tags: "" });
 
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner classes="banner__spareParts ">
-        <Subtitle
-          content="Do przemysłowych urządzeń pralniczych"
-          classes="subtitle__ball_dark"
-        />
-        <Title
-          content="Popularne części eksploatacyjne i zamienne"
-          classes="title_bg_white_dark title_maxWidth_960"
-        />
+      <Banner classes='banner__spareParts '>
+        <Subtitle content='Do przemysłowych urządzeń pralniczych' classes='subtitle__ball_dark' />
+        <Title content='Popularne części eksploatacyjne i zamienne' classes='title_bg_white_dark title_maxWidth_960' />
       </Banner>
       <main className={styles.main}>
-        <SparePartsSearchForm
-          handleSearch={handleSearch}
-          formData={formData}
-          handleInput={handleInput}
-        />
+        <SparePartsSearchForm handleSearch={handleSearch} formData={formData} handleInput={handleInput} />
         <SparePartsList items={filteredSPareParts} />
-        <Pagination pageNumber={pageNumber} />
+        <Pagination page={page} pageNumber={pageNumber} href='/czesci-zamienne-pralki-przemyslowe/strona' />
       </main>
     </React.Fragment>
   );
@@ -68,7 +56,7 @@ function SpareParts({ items, pageNumber, page }) {
 export default SpareParts;
 
 export async function getStaticProps() {
-  console.log('FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ');
+  console.log("FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ");
   // const result = await fetch(`${server}/api/spare-parts`);
   // const data = await result.json();
   const LIMIT = 10;
