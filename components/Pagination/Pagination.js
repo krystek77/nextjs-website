@@ -4,11 +4,16 @@ import styles from "./Pagination.module.css";
 import router from "next/router";
 
 function Pagination({ pageNumber, href, page }) {
+  console.log(page)
   const prev = () => {
-    router.push(`${href}/${page - 1}`);
+    if (page > 1) {
+      router.push(`${href}/${page - 1}`);
+    }
   };
   const next = () => {
-    router.push(`${href}/${page + 1}`);
+    if (page < pageNumber) {
+      router.push(`${href}/${page + 1}`);
+    }
   };
   return (
     <section className={styles.pagination}>
