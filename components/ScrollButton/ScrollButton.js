@@ -23,15 +23,15 @@ function ScrollButton(props) {
       <Image
         src={
           props.up
-            ? '/assets/icons/arrow_up.svg'
-            : '/assets/icons/arrow_down.svg'
+            ? '/assets/icons/arrow_up_thin.svg'
+            : '/assets/icons/arrow_down_thin.svg'
         }
         alt={props.up ? 'arrow up' : 'arrow down'}
-        width="32"
-        height="32"
+        width="16"
+        height="18"
       />
       <span className={styles.scrollButton__text}>
-        {props.up ? 'scroll up' : 'scroll down'}
+        {props.up ? 'GÓRA' : 'DÓŁ'}
       </span>
     </button>
   );
