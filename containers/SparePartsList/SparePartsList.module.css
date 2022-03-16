@@ -1,9 +1,21 @@
 .sparePartsList {
-  /* padding-top: 0;
-  padding-bottom: 0; */
-  background: -moz-radial-gradient(100% 200% at 50% 50%, rgba(149, 154, 157, 0.05), rgba(109, 114, 117, 0.1));
-  background: -webkit-radial-gradient(100% 200% at 50% 50%, rgba(149, 154, 157, 0.05), rgba(109, 114, 117, 0.1));
-  background: radial-gradient(100% 200% at 50% 50%, rgba(149, 154, 157, 0.05), rgba(109, 114, 117, 0.1));
+  padding-top: 0rem;
+  padding-bottom: 4.5rem;
+  /* background: -moz-radial-gradient(
+    100% 200% at 50% 50%,
+    rgba(149, 154, 157, 0.05),
+    rgba(109, 114, 117, 0.1)
+  );
+  background: -webkit-radial-gradient(
+    100% 200% at 50% 50%,
+    rgba(149, 154, 157, 0.05),
+    rgba(109, 114, 117, 0.1)
+  );
+  background: radial-gradient(
+    100% 200% at 50% 50%,
+    rgba(149, 154, 157, 0.05),
+    rgba(109, 114, 117, 0.1)
+  ); */
 }
 .sparePartsList__container {
   max-width: 1680px;
