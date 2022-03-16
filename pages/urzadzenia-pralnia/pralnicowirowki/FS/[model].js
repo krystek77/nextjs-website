@@ -37,9 +37,9 @@ function FS({ washerExtractor }) {
 export async function getStaticPaths(context) {
   return {
     paths: [
-      { params: { model: 'FS-800' } },
-      { params: { model: 'FS-1000' } },
-      { params: { model: 'FS-1200' } },
+      // { params: { model: 'FS-800' } },
+      // { params: { model: 'FS-1000' } },
+      // { params: { model: 'FS-1200' } },
     ],
     fallback: false,
   };

@@ -91,11 +91,11 @@ export async function getStaticPaths(context) {
     paths: [
       { params: { model: 'FX-65' } },
       { params: { model: 'FX-80' } },
-      { params: { model: 'FX-105' } },
-      { params: { model: 'FX-135' } },
-      { params: { model: 'FX-180' } },
-      { params: { model: 'FX-240' } },
-      { params: { model: 'FX-280' } },
+      // { params: { model: 'FX-105' } },
+      // { params: { model: 'FX-135' } },
+      // { params: { model: 'FX-180' } },
+      // { params: { model: 'FX-240' } },
+      // { params: { model: 'FX-280' } },
     ],
     fallback: false,
   };

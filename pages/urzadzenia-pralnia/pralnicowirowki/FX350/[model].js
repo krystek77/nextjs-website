@@ -84,8 +84,8 @@ export async function getStaticPaths(context) {
   return {
     paths: [
       { params: { model: 'FX-350' } },
-      { params: { model: 'FX-450' } },
-      { params: { model: 'FX-600' } },
+      // { params: { model: 'FX-450' } },
+      // { params: { model: 'FX-600' } },
     ],
     fallback: false,
   };
