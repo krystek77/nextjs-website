@@ -8,7 +8,7 @@ import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
 
-function FS() {
+function FS({ washerExtractor }) {
   const router = useRouter();
   return (
     <React.Fragment>
@@ -25,10 +25,7 @@ function FS() {
           content="Pralnicowirówka wolnsotojąca wysokoobrotowa, FS-800"
           classes="title_maxWidth_960 title_bg_white_red"
         />
-        <PageIndicator
-          label="pralnicowirówki wysokoobrotowe"
-          variant="red"
-        />
+        <PageIndicator label="pralnicowirówki wysokoobrotowe" variant="red" />
       </Banner>
       <main>
         <h2 style={{ textAlign: 'center' }}>MODEL: {router.query.model}</h2>
@@ -47,10 +44,15 @@ export async function getStaticPaths(context) {
     fallback: false,
   };
 }
-
-export async function getStaticProps() {
+import { products } from '../../../../constants/products';
+export async function getStaticProps(context) {
+  const washerExtractor = products.find(
+    (item) => item.model === context.params.model
+  );
   return {
-    props: {},
+    props: {
+      washerExtractor: washerExtractor,
+    },
   };
 }
 
