@@ -28,7 +28,7 @@ function Pagination({ pageNumber, href, page }) {
       {Array.from({ length: pageNumber }).map((_, index) => {
         return index <= COUNT_LINKS - 1 ? (
           <Link key={index} href={`${href}/${index + 1}`} scroll={false}>
-            <a className={styles.pagination__link}>{index + 1}</a>
+            <a className={`${styles.pagination__link} ${page === index + 1 && styles.pagination__link_active}`}>{index + 1}</a>
           </Link>
         ) : null;
       })}

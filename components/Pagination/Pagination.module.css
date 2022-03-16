@@ -45,3 +45,7 @@
   background-color: var(--light-300);
   border-color: var(--light-500);
 }
+.pagination__link_active {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.75));
+}
