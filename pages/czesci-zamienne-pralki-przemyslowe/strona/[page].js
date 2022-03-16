@@ -9,20 +9,20 @@ import Title from '../../../components/Title/Title';
 import Pagination from '../../../components/Pagination/Pagination';
 import styles from '../index.module.css';
 
-function SparePartsPerPage({ items }) {
+function SparePartsPerPage({ items, pageNumber, page }) {
   const [filteredSPareParts, setFilteredSpareParts] = React.useState(items);
   const [formData, setFormData] = React.useState({
     sparePartName: '',
     tags: '',
   });
 
-  const searchSparePartsEndpoint = ({ sparePartName, tags }) =>
-    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}`;
+  const searchSparePartsEndpoint = ({ sparePartName, tags }, page) =>
+    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
 
   const handleSearch = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(searchSparePartsEndpoint(formData));
+      const response = await fetch(searchSparePartsEndpoint(formData, page));
       const result = await response.json();
       setFilteredSpareParts(result);
     } catch (error) {
@@ -60,7 +60,7 @@ function SparePartsPerPage({ items }) {
           handleInput={handleInput}
         />
         <SparePartsList items={filteredSPareParts} />
-        <Pagination />
+        <Pagination pageNumber={pageNumber} />
       </main>
     </React.Fragment>
   );
@@ -84,10 +84,13 @@ export async function getStaticProps(context) {
   /** FETCH PAGE DATA */
   const LIMIT = 10;
   const page = context.params.page;
+  const pageNumber = Math.ceil(data.length / LIMIT);
   const dataPerPage = data.slice(LIMIT * (page - 1), LIMIT * page);
   return {
     props: {
       items: dataPerPage,
+      pageNumber: pageNumber,
+      page: page,
     },
   };
 }

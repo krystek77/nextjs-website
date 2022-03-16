@@ -1,12 +1,15 @@
-import { data } from "../../../cache/spareparts";
+import { data } from '../../../cache/spareparts';
 /*
  *  path: http://localhost:3000/api/spare-parts/search?title=uszczelka&tags=pralnice,pralnicowirówki
  */
 
 function searchSpareParts(req, res) {
-  const { title, tags } = req.query;
+  const { title, tags, page } = req.query;
+  const LIMIT = 10;
   const queryTitle = title.trim().toLowerCase();
-  const queryTags = tags ? tags.split(",").map((tag) => tag.trim().toLowerCase()) : [];
+  const queryTags = tags
+    ? tags.split(',').map((tag) => tag.trim().toLowerCase())
+    : [];
   let filteredData = data;
 
   if (queryTitle || queryTags.length) {
@@ -30,6 +33,8 @@ function searchSpareParts(req, res) {
         });
       });
     }
+  } else {
+    filteredData = data.slice(LIMIT * (page - 1), LIMIT * page);
   }
   return res.status(200).json(filteredData);
 }

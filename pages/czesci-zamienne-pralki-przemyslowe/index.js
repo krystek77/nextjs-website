@@ -12,20 +12,20 @@ import SparePartsList from '../../containers/SparePartsList/SparePartsList';
 import Pagination from '../../components/Pagination/Pagination';
 import styles from './index.module.css';
 
-function SpareParts({ items }) {
+function SpareParts({ items, pageNumber, page }) {
   const [filteredSPareParts, setFilteredSpareParts] = React.useState(items);
   const [formData, setFormData] = React.useState({
     sparePartName: '',
     tags: '',
   });
 
-  const searchSparePartsEndpoint = ({ sparePartName, tags }) =>
-    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}`;
+  const searchSparePartsEndpoint = ({ sparePartName, tags }, page) =>
+    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
 
   const handleSearch = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(searchSparePartsEndpoint(formData));
+      const response = await fetch(searchSparePartsEndpoint(formData, page));
       const result = await response.json();
       setFilteredSpareParts(result);
     } catch (error) {
@@ -59,7 +59,7 @@ function SpareParts({ items }) {
           handleInput={handleInput}
         />
         <SparePartsList items={filteredSPareParts} />
-        <Pagination />
+        <Pagination pageNumber={pageNumber} />
       </main>
     </React.Fragment>
   );
@@ -71,10 +71,15 @@ export async function getStaticProps() {
   console.log('FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ');
   // const result = await fetch(`${server}/api/spare-parts`);
   // const data = await result.json();
+  const LIMIT = 10;
   const cachedSpareParts = await getSpareParts();
+  const pageNumber = Math.ceil(cachedSpareParts.length / LIMIT);
+  const dataPerPage = cachedSpareParts.slice(LIMIT * (1 - 1), LIMIT * 1);
   return {
     props: {
-      items: cachedSpareParts,
+      items: dataPerPage,
+      pageNumber: pageNumber,
+      page: 1,
     },
   };
 }
