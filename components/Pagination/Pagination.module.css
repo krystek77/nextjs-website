@@ -39,3 +39,9 @@
 .pagination__button:hover {
   background-color: var(--primary-700);
 }
+.pagination__button_disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: var(--light-300);
+  border-color: var(--light-500);
+}

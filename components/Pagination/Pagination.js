@@ -4,7 +4,6 @@ import styles from "./Pagination.module.css";
 import router from "next/router";
 
 function Pagination({ pageNumber, href, page }) {
-  console.log(page)
   const prev = () => {
     if (page > 1) {
       router.push(`${href}/${page - 1}`);
@@ -17,7 +16,7 @@ function Pagination({ pageNumber, href, page }) {
   };
   return (
     <section className={styles.pagination}>
-      <button className={styles.pagination__button} type='button' onClick={prev}>
+      <button className={`${styles.pagination__button} ${page === 1 && styles.pagination__button_disabled}`} type='button' onClick={prev}>
         <Image src='/assets/icons/arrow_left_thin.svg' alt='poprzednia strona' width='16' height='14' />
       </button>
       {Array.from({ length: pageNumber }).map((_, index) => {
@@ -27,7 +26,7 @@ function Pagination({ pageNumber, href, page }) {
           </Link>
         );
       })}
-      <button className={styles.pagination__button} type='button' onClick={next}>
+      <button className={`${styles.pagination__button} ${page === pageNumber && styles.pagination__button_disabled}`} type='button' onClick={next}>
         <Image src='/assets/icons/arrow_right_thin.svg' alt='następna strona' width='16' height='14' />
       </button>
     </section>
