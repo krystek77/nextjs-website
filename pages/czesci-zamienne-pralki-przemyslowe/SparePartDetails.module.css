@@ -5,9 +5,33 @@
   padding-top: 9rem;
   padding-bottom: 9rem;
   background: transparent;
-  background: -moz-linear-gradient(to bottom, var(--accent-500) 0%, var(--accent-500) 5%, #fdfdfd 5%, #c1c1c1 95%, var(--accent-700) 95%, var(--accent-700) 100%);
-  background: -webkit-linear-gradient(to bottom, var(--accent-500) 0%, var(--accent-500) 5%, #fdfdfd 5%, #c1c1c1 95%, var(--accent-700) 95%, var(--accent-700) 100%);
-  background: linear-gradient(to bottom, var(--accent-500) 0%, var(--accent-500) 5%, #fdfdfd 5%, #c1c1c1 95%, var(--accent-700) 95%, var(--accent-700) 100%);
+  background: -moz-linear-gradient(
+    to bottom,
+    var(--accent-500) 0%,
+    var(--accent-500) 5%,
+    #fdfdfd 5%,
+    #c1c1c1 95%,
+    var(--accent-700) 95%,
+    var(--accent-700) 100%
+  );
+  background: -webkit-linear-gradient(
+    to bottom,
+    var(--accent-500) 0%,
+    var(--accent-500) 5%,
+    #fdfdfd 5%,
+    #c1c1c1 95%,
+    var(--accent-700) 95%,
+    var(--accent-700) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    var(--accent-500) 0%,
+    var(--accent-500) 5%,
+    #fdfdfd 5%,
+    #c1c1c1 95%,
+    var(--accent-700) 95%,
+    var(--accent-700) 100%
+  );
 }
 .sparePart__container {
   max-width: var(--container);

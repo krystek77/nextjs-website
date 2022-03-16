@@ -1,18 +1,15 @@
-/*
- * http://localhost:3000/czesci-zamienne-pralki-przemyslowe
- */
 import React from 'react';
-import { getSpareParts } from '../../lib/spareparts';
-import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
-import Banner from '../../components/Banner/Banner';
-import Title from '../../components/Title/Title';
-import Subtitle from '../../components/Subtitle/Subtitle';
-import SparePartsSearchForm from '../../containers/SparePartsSearchForm/SparePartsSearchForm';
-import SparePartsList from '../../containers/SparePartsList/SparePartsList';
-import Pagination from '../../components/Pagination/Pagination';
-import styles from './index.module.css';
+import { data } from '../../../cache/spareparts';
+import HeadMetaTags from '../../../components/HeadMetaTags/HeadMetaTags';
+import Subtitle from '../../../components/Subtitle/Subtitle';
+import Banner from '../../../components/Banner/Banner';
+import SparePartsSearchForm from '../../../containers/SparePartsSearchForm/SparePartsSearchForm';
+import SparePartsList from '../../../containers/SparePartsList/SparePartsList';
+import Title from '../../../components/Title/Title';
+import Pagination from '../../../components/Pagination/Pagination';
+import styles from '../index.module.css';
 
-function SpareParts({ items }) {
+function SparePartsPerPage({ items }) {
   const [filteredSPareParts, setFilteredSpareParts] = React.useState(items);
   const [formData, setFormData] = React.useState({
     sparePartName: '',
@@ -39,6 +36,10 @@ function SpareParts({ items }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const clearForm = () => setFormData({ sparePartName: '', tags: '' });
 
+  React.useEffect(() => {
+    setFilteredSpareParts(items);
+  }, [items]);
+
   return (
     <React.Fragment>
       <HeadMetaTags />
@@ -64,17 +65,29 @@ function SpareParts({ items }) {
     </React.Fragment>
   );
 }
+export default SparePartsPerPage;
 
-export default SpareParts;
+export async function getStaticPaths() {
+  /** REQUEST CACHE DATA TO CALCULATE TOTAL PAGE NUMBER */
+  const LIMIT = 10;
+  const pageNumber = Math.ceil(data.length / LIMIT);
+  const paths = Array.from({ length: pageNumber }).map((_, index) => {
+    return { params: { page: (index + 1).toString() } };
+  });
+  return {
+    paths: paths,
+    fallback: false,
+  };
+}
 
-export async function getStaticProps() {
-  console.log('FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ');
-  // const result = await fetch(`${server}/api/spare-parts`);
-  // const data = await result.json();
-  const cachedSpareParts = await getSpareParts();
+export async function getStaticProps(context) {
+  /** FETCH PAGE DATA */
+  const LIMIT = 10;
+  const page = context.params.page;
+  const dataPerPage = data.slice(LIMIT * (page - 1), LIMIT * page);
   return {
     props: {
-      items: cachedSpareParts,
+      items: dataPerPage,
     },
   };
 }

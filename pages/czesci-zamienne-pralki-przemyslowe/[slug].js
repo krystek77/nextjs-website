@@ -11,7 +11,7 @@ import IconLink from '../../components/IconLink/IconLink';
 import { cutURL } from '../../lib';
 import { spare_parts as data } from '../../constants/spare_parts';
 
-import styles from '../../styles/czesci-zamienne-pralki-przemyslowe.module.css';
+import styles from './SparePartDetails.module.css';
 /*
  * http://localhost:3000/czesci-zamienne-pralki-przemyslowe/MDB-03-RA (now: /ID)
  */
