@@ -38,11 +38,21 @@
 }
 .banner__spareParts {
   background-image: url('/assets/images/for_banners/banner_spareparts.webp'),
-  radial-gradient(
-    90% 1000% at 50% 50%,
-    var(--accent-700) 0%,
-    var(--accent-500) 100%
-  );
+    radial-gradient(
+      90% 1000% at 50% 50%,
+      var(--accent-700) 0%,
+      var(--accent-500) 100%
+    );
   background-position: center right;
   background-blend-mode: darken;
+}
+.banner__news {
+  background-image: url('/assets/images/for_banners/banner_news.webp'),
+    radial-gradient(
+      90% 1000% at 50% 50%,
+      var(--light-700) 0%,
+      var(--dark-700) 100%
+    );
+  background-position: center;
+  background-blend-mode: multiply;
 }
