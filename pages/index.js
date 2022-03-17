@@ -23,7 +23,7 @@ function Home({ on_premises }) {
       <Softwash />
       <Gallery />
       <Mop />
-      <LastNews />
+      {/* <LastNews /> */}
       <RestLinks />
       <Newsletter />
     </React.Fragment>

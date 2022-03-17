@@ -32,45 +32,32 @@
   max-width: 960px;
 }
 .title_bg_white_red {
-  background: linear-gradient(
-    135deg,
-    var(--primary-300) 0%,
-    var(--primary-300) 50%,
-    var(--accent-500) 50%,
-    var(--accent-500) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-300) 0%, var(--primary-300) 50%, var(--accent-500) 50%, var(--accent-500) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 .title_bg_white_primary {
-  background: linear-gradient(
-    135deg,
-    var(--primary-300) 0%,
-    var(--primary-300) 50%,
-    var(--primary-700) 50%,
-    var(--primary-700) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-300) 0%, var(--primary-300) 50%, var(--primary-700) 50%, var(--primary-700) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 .title_bg_white_dark {
-  background: linear-gradient(
-    135deg,
-    var(--primary-300) 0%,
-    var(--primary-300) 50%,
-    var(--dark-500) 50%,
-    var(--dark-500) 100%
-  );
+  background: linear-gradient(135deg, var(--primary-300) 0%, var(--primary-300) 50%, var(--dark-500) 50%, var(--dark-500) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
-
+.title_display_h4 {
+  font-size: 1.75rem;
+}
 .title_display_h5 {
   font-size: 1.125rem;
 }
 .title_weight_small {
   font-weight: 600;
+}
+.title_flex_grow {
+  flex-grow: 1;
 }

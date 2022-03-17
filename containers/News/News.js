@@ -1,51 +1,15 @@
-import styles from './News.module.css';
+import NewsItem from "../../components/NewsItem/NewsItem";
+import styles from "./News.module.css";
 
-function News() {
-  return (
+function News({ items }) {
+  return items.length ? (
     <section className={styles.news}>
       <div className={styles.news__container}>
-        <article className={styles.news__item}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-            dignissimos voluptatem perspiciatis eveniet dolorem consequatur
-            possimus fuga placeat sit nisi quo laudantium at maiores debitis
-            architecto ipsum, porro eligendi tempora!`
-          </p>
-        </article>
-        <article className={styles.news__item}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-            dignissimos voluptatem perspiciatis eveniet dolorem consequatur
-            possimus fuga placeat sit nisi quo laudantium at maiores debitis
-            architecto ipsum, porro eligendi tempora!`
-          </p>
-        </article>
-        <article className={styles.news__item}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-            dignissimos voluptatem perspiciatis eveniet dolorem consequatur
-            possimus fuga placeat sit nisi quo laudantium at maiores debitis
-            architecto ipsum, porro eligendi tempora!`
-          </p>
-        </article>
-        <article className={styles.news__item}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-            dignissimos voluptatem perspiciatis eveniet dolorem consequatur
-            possimus fuga placeat sit nisi quo laudantium at maiores debitis
-            architecto ipsum, porro eligendi tempora!`
-          </p>
-        </article>
-        <article className={styles.news__item}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-            dignissimos voluptatem perspiciatis eveniet dolorem consequatur
-            possimus fuga placeat sit nisi quo laudantium at maiores debitis
-            architecto ipsum, porro eligendi tempora!`
-          </p>
-        </article>
+        {items.map((item, index) => {
+          return <NewsItem key={index} {...item} />;
+        })}
       </div>
     </section>
-  );
+  ) : null;
 }
 export default News;
