@@ -1,4 +1,4 @@
-.news__header {
+.latestPosts__header {
   max-width: var(--container);
   margin: 0 auto;
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   margin-bottom: 144px;
 }
-.news__container {
+.latestPosts__container {
   max-width: var(--container);
   margin: 0 auto;
   display: grid;

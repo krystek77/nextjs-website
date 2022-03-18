@@ -34,7 +34,7 @@ function PostDetails({ item }) {
         alt="arrow back"
         width="16"
         height="11"
-        label="wróć"
+        label="wszystkie wiadomości"
       />
     </React.Fragment>
   );
