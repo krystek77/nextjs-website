@@ -6,11 +6,11 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541653/uploads/po
 tags: "technologie, primus, bariery higieny"
 ---
 
-![3 lata gwarancji na przemysłowe urządzenia pralnicze](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541653/uploads/posts/3-lata-gwarancji_zcezwo.webp)
-
 Od ponad 110 lat Primus produkuje wyjątkowy sprzęt do prania, zaprojektowany, aby zapewnić wyjątkową wydajność prania i suszenia przy niezrównanej żywotności. Primus wprowadził innowacje, aby zoptymalizować codzienną pracę profesjonalistów zajmujących się pralnią, bez uszczerbku dla jakości i niezawodności. W ten sposób zbudowaliśmy naszą reputację doskonałości.
 
 Ciesz się maksymalnym spokojem dzięki najlepszej gwarancji na rynku.
+
+![3 lata gwarancji na przemysłowe urządzenia pralnicze](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541653/uploads/posts/3-lata-gwarancji_zcezwo.webp)
 
 Dzisiaj, kiedy niezawodność procesu prania nigdy nie była ważniejsza, aby zagwarantować nienaganną wydajność i zapewnić stały wysoki poziom higieny, Primus z dumą udziela trzyletniej gwarancji na wszystkie produkty*.
 

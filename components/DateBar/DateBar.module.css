@@ -1,0 +1,11 @@
+.dateBar {
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: var(--dark-700);
+  background: radial-gradient(
+    90% 1000% at 50% 50%,
+    var(--light-700) 0%,
+    var(--dark-700) 100%
+  );
+  color: var(--primary-300);
+}

@@ -1,5 +1,5 @@
 ---
-title: "Pranie ponad 3500 mopów dziennie w urządzeniach Primus"
+title: "Ponad 3500 mopów dziennie w urządzeniach Primus"
 date: "2021-12-20"
 info: "Katzer GmbH to hamburska firma z ponad 100-letnią historią w dziedzinie czyszczenia budynków. Katzer oznacza wysoką jakość i rozwiązania szyte na miarę oraz oferuje szeroki zakres usług, takich jak czyszczenie, dezynfekcja i wiele innych. Firma Katzer GMbH na wczesnym etapie dostrzegła zwiększoną ilość czyszczenia tekstyliów, zwłaszcza z powodu pandemii Covid i opracowała rozwiązanie tego problemu. Ręczne czyszczenie doprowadziło do zwiększenia liczby tekstyliów do czyszczenia, które trzeba było bezpiecznie i szybko ponownie przetwarzać. Firma Katzer już na wczesnym etapie pomyślała o rozbudowie i modernizacji centralnego systemu prania."
 image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541655/uploads/posts/mop__3500_vz5xjx.webp"
@@ -32,7 +32,7 @@ Fakt, że maszyny są tej samej wielkości, umożliwił zoptymalizowanie całego
 - specjalne programy do prania mopów
 - dezynfekcja chemiczna/termiczna
 - programy do dezynfekcji
-- zintegrowany z pralnicowirówką kolktor filtra pozostałości po praniu
+- zintegrowany z pralnicowirówką kolektor filtra pozostałości po praniu
 
 Źródło: [Primus](https://primuslaundry.com/washing-3500-mops-a-day-with-primus-laundry)
 

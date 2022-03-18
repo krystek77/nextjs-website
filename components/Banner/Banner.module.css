@@ -15,9 +15,16 @@
   align-items: center;
   color: white;
 }
+.banner_height_auto {
+  height: auto;
+  padding: 4rem 2rem;
+}
 .banner__inner {
-  width: var(--container);
+  max-width: var(--container);
   margin: 0 auto;
+}
+.banner_maxWidth_960 .banner__inner {
+  max-width: 960px;
 }
 .banner__washerExtractors {
   background-image: url('/assets/images/for_banners/banner_washerextractors.webp'),
