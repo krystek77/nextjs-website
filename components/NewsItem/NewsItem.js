@@ -2,6 +2,10 @@ import Image from 'next/image';
 import Title from '../Title/Title';
 import Description from '../Description/Description';
 import LinkButton from '../LinkButton/LinkButton';
+import moment from 'moment';
+import 'moment/locale/pl';
+moment.locale('pl');
+
 import { trimmedStringToWord } from '../../lib';
 
 import styles from './NewsItem.module.css';
@@ -10,11 +14,12 @@ function NewsItem({ id, title, date, image, info }) {
   return (
     <article className={styles.newsItem}>
       <aside className={styles.newsItem__image}>
-        {/* <Image src={image} alt={title} width='426' height='320' /> */}
         <img src={image} alt={title} width="360" height="270" />
       </aside>
       <header className={styles.newsItem__header}>
-        <span className={styles.newsItem__date}>{date}</span>
+        <span className={styles.newsItem__date}>
+          {moment(date, 'YYYY-MM-DD').fromNow()}
+        </span>
         <Title
           content={title}
           variant="h2"
@@ -29,7 +34,7 @@ function NewsItem({ id, title, date, image, info }) {
       </div>
       <LinkButton
         label="Przeczytaj"
-        to={`/wiadomosci/${encodeURIComponent(id)}`} //for slug
+        to={`/wiadomosci/${encodeURIComponent(id)}`}
       />
     </article>
   );
