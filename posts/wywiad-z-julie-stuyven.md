@@ -3,7 +3,7 @@ title: "Wartość przywództwa kobiet w dzisiejszej branży pralniczej"
 date: "2022-03-07"
 info: "Z okazji Międzynarodowego Dnia Kobiet 8 marca 2022 przeprowadziliśmy wywiad z Julie Stuyven z LDL Group (Belgia). Julie zajmuje wiodącą pozycję w komercyjnej branży pralniczej i od kilku lat na co dzień współpracuje z Alliance Laundry Systems. Julie dostarczyła ważnych informacji na temat znaczenia kobiecego przywództwa i wyzwań stojących przed branżą pralniczą."
 image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/posts/intwrview-julie-stuyven_kglejz.webp"
-tags: "wywiad, primus"
+tags: "wywiad"
 ---
 
 ![Julie Stuyven](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/posts/intwrview-julie-stuyven_kglejz.webp)

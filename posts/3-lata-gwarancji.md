@@ -3,7 +3,7 @@ title: "3 letnia gwarancja na urządzenia Primus'a, najlepsza na rynku"
 date: "2021-05-12"
 info: "Od ponad 110 lat Primus produkuje wyjątkowy sprzęt do prania, zaprojektowany, aby zapewnić wyjątkową wydajność prania i suszenia przy niezrównanej żywotności. Primus wprowadził innowacje, aby zoptymalizować codzienną pracę profesjonalistów zajmujących się pralnią, bez uszczerbku dla jakości i niezawodności. W ten sposób zbudowaliśmy naszą reputację doskonałości."
 image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541653/uploads/posts/3-lata-gwarancji_zcezwo.webp"
-tags: "technologie, primus, bariery higieny"
+tags: "gwarancja, informacje prawne"
 ---
 
 Od ponad 110 lat Primus produkuje wyjątkowy sprzęt do prania, zaprojektowany, aby zapewnić wyjątkową wydajność prania i suszenia przy niezrównanej żywotności. Primus wprowadził innowacje, aby zoptymalizować codzienną pracę profesjonalistów zajmujących się pralnią, bez uszczerbku dla jakości i niezawodności. W ten sposób zbudowaliśmy naszą reputację doskonałości.

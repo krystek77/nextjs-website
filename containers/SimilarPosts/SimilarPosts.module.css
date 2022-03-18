@@ -1,0 +1,16 @@
+.similarPosts {
+  background-color: rgba(149, 154, 157, 0.15);
+}
+.similarPosts__header {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.similarPosts__container {
+  max-width: 1680px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 4.5rem;
+}

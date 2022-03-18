@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 420px;
 }
 .postItemCard__image {
   width: 100%;
@@ -22,4 +23,8 @@
 .postItemCard__content {
   padding-bottom: 2rem;
   flex-grow: 1;
+}
+.postItemCard_padding_side {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

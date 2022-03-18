@@ -9,7 +9,7 @@ function LatestPosts({ posts }) {
     <section className={styles.latestPosts}>
       <header className={styles.latestPosts__header}>
         <Subtitle content="Aktualności ze świata Pralmy" />
-        <Title content="Ostatenie wiadomości" />
+        <Title content="Ostatnie wiadomości" />
       </header>
       {posts.length ? (
         <div className={styles.latestPosts__container}>
