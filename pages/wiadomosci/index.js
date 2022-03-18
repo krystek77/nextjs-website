@@ -6,7 +6,6 @@ import React from 'react';
 import Banner from '../../components/Banner/Banner';
 import Title from '../../components/Title/Title';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
-import SiteInProgress from '../../containers/SiteInProgress/SiteInProgress';
 import Subtitle from '../../components/Subtitle/Subtitle';
 import News from '../../containers/News/News';
 import { getPosts } from '../../lib/posts';
@@ -28,7 +27,6 @@ function Posts({ items }) {
       <main>
         <News items={items} />
       </main>
-      <SiteInProgress page="WIADOMOŚCI" />
     </React.Fragment>
   );
 }

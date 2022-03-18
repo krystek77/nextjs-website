@@ -6,8 +6,6 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/po
 tags: "wywiad, primus"
 ---
 
-# Wartość przywództwa kobiet w dzisiejszej branży pralniczej
-
 ![Julie Stuyven](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/posts/intwrview-julie-stuyven_kglejz.webp)
 _Fot.Primus_
 

@@ -6,7 +6,6 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541655/uploads/po
 tags: "primus"
 ---
 
-# Pranie ponad 3500 mopów dziennie w urządzeniach Primus
 
 ![Firma świadcząca uslugi sprzątania i czyszczenia pomieszczeń](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541655/uploads/posts/mop__3500_3_egnw9c.webp)
 *Fot.Primus*

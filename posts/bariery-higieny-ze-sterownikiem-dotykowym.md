@@ -6,8 +6,6 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/po
 tags: "technologie, primus, bariery higieny"
 ---
 
-# Bariery higieny z nową technologią dotykowego sterowania
-
 ![Pralnicowirówki z barierą higieny ze sterownikiem dotykowym](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541654/uploads/posts/hygienic-barrier-with-touch-control_adocvu.webp)
 
 Nasza platforma sterowania dotykowego XControl FLEX PLUS jest teraz dostępna dla linii MXB i FXB od 18 kg do 70 kg pralnico-wirówek z barierą.

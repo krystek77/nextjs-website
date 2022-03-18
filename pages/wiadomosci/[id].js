@@ -7,6 +7,7 @@ import Banner from '../../components/Banner/Banner';
 import Title from '../../components/Title/Title';
 import { useRouter } from 'next/router';
 import IconLink from '../../components/IconLink/IconLink';
+import PostDetailsContent from '../../containers/PostDetailsContent/PostDetailsContent';
 import { getPost, getPosts } from '../../lib/posts';
 import { cutURL } from '../../lib';
 
@@ -22,7 +23,7 @@ function PostDetails({ item }) {
           classes="title_maxWidth_960 title_light_500"
         />
       </Banner>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <PostDetailsContent content={content} />
       <IconLink
         to={cutURL(router, -1)}
         src="arrow_back"
@@ -55,7 +56,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = decodeURIComponent(context.params.id);
   const postData = await getPost(id);
-  console.log(postData);
   return {
     props: {
       item: postData,

@@ -6,8 +6,6 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541656/uploads/po
 tags: "primus"
 ---
 
-# Renowacja pralni Primus - zwiększenie wydajności i poprawa warunków pracy
-
 Wydajna i mniej energochłonna renowacja pralni PRIMUS została przeprowadzona w ESAT de la Bièvre, centrum Francji, które promuje autonomię społeczną i zawodową, integrację i reintegrację osób niepełnosprawnych.
 
 ![Renowacja pralni przemysłowej, rozbudowa](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541656/uploads/posts/news_03_zisy2i.webp)

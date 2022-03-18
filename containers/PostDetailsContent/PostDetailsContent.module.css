@@ -1,0 +1,92 @@
+.postDetailsContent {
+  padding: 4.5rem 2rem;
+}
+.postDetailsContent__container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.postDetailsContent h1,
+.postDetailsContent h2 {
+  font-family: var(--font-alt);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.postDetailsContent h1 {
+  margin-bottom: 0;
+}
+.postDetailsContent h2 {
+  margin-bottom: 2rem;
+}
+.postDetailsContent p {
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: 1.375rem;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: var(--dark-500);
+}
+.postDetailsContent p > img {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  border: 1px solid var(--light-300);
+}
+.postDetailsContent__container > p:last-of-type {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-base);
+  margin-bottom: 0;
+  width: max-content;
+}
+.postDetailsContent__container > p:last-of-type > a {
+  color: var(--dark-500);
+  text-decoration: underline;
+  font-size: 0.75rem;
+  transition: var(--transition);
+}
+.postDetailsContent__container > p:last-of-type > a:hover {
+  color: var(--light-500);
+}
+.postDetailsContent__container > p:nth-last-of-type(2) {
+  color: var(--dark-700);
+  font-size: 0.625rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-family: var(--font-alt);
+}
+.postDetailsContent__container > p:nth-last-of-type(2) > a:first-child {
+  font-size: 0.875rem;
+  /* text-transform: lowercase; */
+  text-decoration: underline;
+  font-weight: 400;
+  margin-left: 0.25rem;
+  color: var(--dark-700);
+  transition: var(--transition);
+}
+.postDetailsContent__container > p:nth-last-of-type(2) > a:first-child:hover {
+  color: var(--light-500);
+}
+.postDetailsContent img + em {
+  display: block;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 0.625rem;
+  text-align: right;
+  padding-right: 0.5rem;
+  /* background-color: var(--primary-500); */
+}
+.postDetailsContent ul {
+  list-style-type: disc;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+}
+.postDetailsContent ul > li {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-family: var(--font-base);
+}

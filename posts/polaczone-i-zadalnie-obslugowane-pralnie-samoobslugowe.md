@@ -6,8 +6,6 @@ image: "https://res.cloudinary.com/doydwvtkw/image/upload/v1647541658/uploads/po
 tags: "samoobsługowe, primus, technologie"
 ---
 
-# Połączone i w pełni zdalnie obsługiwane, zarządzane pralnie samoobsługowe z technologią XControl FLEX
-
 Primus, jako część Alliance Laundry Systems, **światowego lidera w produkcji komercyjnych urządzeń pralniczych**, wprowadza kolejną na swojej liście innowacjię – **XControl FLEX**, sterowanie z ekranem dotykowym. Ekran dotykowy nie tylko zapewnia wyjątkową wszechstronność klientom z pralni samoobsługowymi, ale także pomaga zredukować punkty styku – to znacząca premia w związku z rozprzestrzenianiem się COVID-19 na wszystkich umysłach. 
 
 ![XControl FLEX - zdalnie zarządzane pralnie samoobsługowe](https://res.cloudinary.com/doydwvtkw/image/upload/v1647541658/uploads/posts/xcontrol_flex_connected_laundries_cuqeww.webp)
