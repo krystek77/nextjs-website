@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { server } from '../../config';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
 import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
