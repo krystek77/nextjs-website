@@ -1,25 +1,25 @@
-.newsItem {
+.postItemCard {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.newsItem__image {
+.postItemCard__image {
   width: 100%;
   height: 270px;
   margin-bottom: 1rem;
 }
-.newsItem__image img {
+.postItemCard__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.newsItem__date {
+.postItemCard__date {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: 400;
 }
-.newsItem__content {
+.postItemCard__content {
   padding-bottom: 2rem;
   flex-grow: 1;
 }

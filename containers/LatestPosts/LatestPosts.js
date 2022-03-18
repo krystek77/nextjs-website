@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
-import NewsItem from '../../components/NewsItem/NewsItem';
+import PostItemCard from '../../components/PostItemCard/PostItemCard';
 
 import styles from './LatestPosts.module.css';
 
@@ -15,7 +14,7 @@ function LatestPosts({ posts }) {
       {posts.length ? (
         <div className={styles.latestPosts__container}>
           {posts.map((post, index) => (
-            <NewsItem key={index} {...post} />
+            <PostItemCard key={index} {...post} />
           ))}
         </div>
       ) : null}

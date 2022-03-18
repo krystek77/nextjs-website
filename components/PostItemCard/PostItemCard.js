@@ -1,4 +1,4 @@
-import Image from 'next/image';
+
 import Title from '../Title/Title';
 import Description from '../Description/Description';
 import LinkButton from '../LinkButton/LinkButton';
@@ -8,16 +8,16 @@ moment.locale('pl');
 
 import { trimmedStringToWord } from '../../lib';
 
-import styles from './NewsItem.module.css';
+import styles from './PostItemCard.module.css';
 
-function NewsItem({ id, title, date, image, info }) {
+function PostItemCard({ id, title, date, image, info }) {
   return (
-    <article className={styles.newsItem}>
-      <aside className={styles.newsItem__image}>
+    <article className={styles.postItemCard}>
+      <aside className={styles.postItemCard__image}>
         <img src={image} alt={title} width="360" height="270" />
       </aside>
-      <header className={styles.newsItem__header}>
-        <span className={styles.newsItem__date}>
+      <header className={styles.postItemCard__header}>
+        <span className={styles.postItemCard__date}>
           {moment(date, 'YYYY-MM-DD').fromNow()}
         </span>
         <Title
@@ -26,7 +26,7 @@ function NewsItem({ id, title, date, image, info }) {
           classes="title_display_h5 title_uppercase title_weight_small"
         />
       </header>
-      <div className={styles.newsItem__content}>
+      <div className={styles.postItemCard__content}>
         <Description
           content={trimmedStringToWord(info)}
           classes="description_18"
@@ -39,4 +39,4 @@ function NewsItem({ id, title, date, image, info }) {
     </article>
   );
 }
-export default NewsItem;
+export default PostItemCard;

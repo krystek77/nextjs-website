@@ -7,7 +7,7 @@ import Banner from '../../components/Banner/Banner';
 import Title from '../../components/Title/Title';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
 import Subtitle from '../../components/Subtitle/Subtitle';
-import News from '../../containers/News/News';
+import PostsList from '../../containers/PostsList/PostsList';
 import { getPosts } from '../../lib/posts';
 
 import styles from './index.module.css';
@@ -25,7 +25,7 @@ function Posts({ items }) {
         />
       </Banner>
       <main>
-        <News items={items} />
+        <PostsList items={items} />
       </main>
     </React.Fragment>
   );
