@@ -8,7 +8,7 @@ moment.locale("pl");
 import { trimmedStringToWord, classesNames } from "../../lib";
 import styles from "./PostItemCard.module.css";
 
-function PostItemCard({ id, title, date, image, info, classes = "" }) {
+function PostItemCard({ id, title, date, image, info, classes = "", tags }) {
   const classesString = classesNames(classes, "postItemCard")(styles);
   return (
     <article className={classesString}>
@@ -21,6 +21,9 @@ function PostItemCard({ id, title, date, image, info, classes = "" }) {
       </header>
       <div className={styles.postItemCard__content}>
         <Description content={trimmedStringToWord(info)} classes='description_18' />
+        <p className={styles.postItemCard__tags}>
+          Kategoria: <span className={styles.postItemCard__tag}>{tags}</span>
+        </p>
       </div>
       <LinkButton label='Przeczytaj' to={`/wiadomosci/${encodeURIComponent(id)}`} />
     </article>

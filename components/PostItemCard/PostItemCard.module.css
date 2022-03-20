@@ -28,3 +28,13 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.postItemCard__tags {
+  font-family: var(--font-base);
+  font-size: 0.75rem;
+}
+.postItemCard__tag {
+  font-family: var(--font-alt);
+  color: var(--accent-700);
+  font-size: 0.875rem;
+  margin-left:0.5rem;
+}
