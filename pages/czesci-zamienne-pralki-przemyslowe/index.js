@@ -3,6 +3,7 @@
  */
 import React from "react";
 import { getSpareParts } from "../../lib/spareparts";
+import { pagination } from "../../lib";
 import HeadMetaTags from "../../components/HeadMetaTags/HeadMetaTags";
 import Banner from "../../components/Banner/Banner";
 import Title from "../../components/Title/Title";
@@ -55,19 +56,12 @@ function SpareParts({ items, pageNumber, page }) {
 
 export default SpareParts;
 
-export async function getStaticProps() {
-  console.log("FROM GETSTATICPROPS - czesci-zamienne-pralki-przemyslowe ");
-  // const result = await fetch(`${server}/api/spare-parts`);
-  // const data = await result.json();
-  const LIMIT = 10;
+export async function getStaticProps(context) {
   const cachedSpareParts = await getSpareParts();
-  const pageNumber = Math.ceil(cachedSpareParts.length / LIMIT);
-  const dataPerPage = cachedSpareParts.slice(LIMIT * (1 - 1), LIMIT * 1);
+  const paginationData = pagination(cachedSpareParts, context, 10);
   return {
     props: {
-      items: dataPerPage,
-      pageNumber: pageNumber,
-      page: 1,
+      ...paginationData,
     },
   };
 }

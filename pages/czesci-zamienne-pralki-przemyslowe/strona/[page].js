@@ -7,6 +7,8 @@ import SparePartsSearchForm from "../../../containers/SparePartsSearchForm/Spare
 import SparePartsList from "../../../containers/SparePartsList/SparePartsList";
 import Title from "../../../components/Title/Title";
 import Pagination from "../../../components/Pagination/Pagination";
+import { pagination, paginationPaths } from "../../../lib";
+
 import styles from "../index.module.css";
 
 function SparePartsPerPage({ items, pageNumber, page }) {
@@ -56,29 +58,18 @@ function SparePartsPerPage({ items, pageNumber, page }) {
 export default SparePartsPerPage;
 
 export async function getStaticPaths() {
-  /** REQUEST CACHE DATA TO CALCULATE TOTAL PAGE NUMBER */
-  const LIMIT = 10;
-  const pageNumber = Math.ceil(data.length / LIMIT);
-  const paths = Array.from({ length: pageNumber }).map((_, index) => {
-    return { params: { page: (index + 1).toString() } };
-  });
+  const paths = paginationPaths(data, 10);
   return {
-    paths: paths,
+    paths,
     fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
-  /** FETCH PAGE DATA */
-  const LIMIT = 10;
-  const page = Number(context.params.page);
-  const pageNumber = Math.ceil(data.length / LIMIT);
-  const dataPerPage = data.slice(LIMIT * (page - 1), LIMIT * page);
+  const paginationData = pagination(data, context, 10);
   return {
     props: {
-      items: dataPerPage,
-      pageNumber: pageNumber,
-      page: page,
+      ...paginationData,
     },
   };
 }

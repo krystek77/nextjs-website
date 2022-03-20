@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Pagination.module.css";
-import router from "next/router";
 
 function Pagination({ pageNumber, href, page, count = 5 }) {
   // const COUNT_LINKS = 2;
