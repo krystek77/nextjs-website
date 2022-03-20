@@ -15,9 +15,10 @@ import { pagination } from "../../lib";
 import styles from "./index.module.css";
 
 function Posts({ items, pageNumber, page }) {
+  const title = "Wiadomośći z branży 📰 pralni przemysłowych - PPUP Pralma, Kielce";
   return (
     <React.Fragment>
-      <HeadMetaTags />
+      <HeadMetaTags title={title} og_title={title} twitter_title={title} description='Bądź na bieżąco z nowoczesnymi rozwiązaniami z branży przemysłowych urządeń pralniczych i pralni przemysłowych. Innowacyjne, ekologiczne pralnie, 🍀 ciekawostki, technologie i wypsażenie pralncze' />
       <Banner classes='banner__news'>
         <Subtitle content='Bądź na bieżąco' />
         <Title variant='h1' content='Wiadomości ze świata Pralma' classes='title_bg_white_red title_maxWidth_640 title_light_500' />

@@ -19,7 +19,7 @@ function PostDetails({ item, similarPosts }) {
   const router = useRouter();
   return (
     <React.Fragment>
-      <HeadMetaTags title={title} description={info} />
+      <HeadMetaTags title={title} og_title={title} twitter_title={title} description={info} />
       <Banner classes='banner_height_auto banner_maxWidth_960'>
         <Title variant='h1' content={title} classes='title_light_500 title_display_h4 title_mb_0 title_center title_uppercase title_weight_small' />
       </Banner>
