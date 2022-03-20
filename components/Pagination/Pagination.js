@@ -16,7 +16,7 @@ function Pagination({ pageNumber, href, page, count = 5 }) {
   // };
   return (
     <section className={styles.pagination}>
-      <Link href={`${href}/${page - 1}`} type='button' scroll={false}>
+      <Link href={page > 1 ? `${href}/${page - 1}` : `${href}/${page}`} type='button' scroll={false}>
         <a className={`${styles.pagination__button} ${page === 1 && styles.pagination__button_disabled}`}>
           <Image src='/assets/icons/arrow_left_thin.svg' alt='poprzednia strona' width='16' height='14' />
         </a>
@@ -31,7 +31,7 @@ function Pagination({ pageNumber, href, page, count = 5 }) {
           </Link>
         ) : null;
       })}
-      <Link href={`${href}/${page + 1}`} type='button' scroll={false}>
+      <Link href={page < pageNumber ? `${href}/${page + 1}` : `${href}/${page}`} type='button' scroll={false}>
         <a className={`${styles.pagination__button} ${page === pageNumber && styles.pagination__button_disabled}`}>
           <Image src='/assets/icons/arrow_right_thin.svg' alt='następna strona' width='16' height='14' />
         </a>
