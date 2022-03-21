@@ -18,3 +18,23 @@
 .input_mb_2 {
   margin-bottom: 2rem;
 }
+.input_bg_primary_300 {
+  background-color: var(--primary-300);
+}
+.input_border_primary_700 {
+  border: 1px solid var(--primary-700);
+  border-radius: 0.25rem;
+}
+.input_border_dark_700 {
+  border: 1px solid var(--dark-700);
+  border-radius: 0.25rem;
+}
+.input.input_border_primary_700:focus {
+  box-shadow: inset 0px 0px 0px 1px var(--primary-700);
+  background-color: var(--white);
+}
+.input_border_primary_700::placeholder {
+  color: var(--dark-700);
+  font-weight: 400;
+  opacity: 0.35;
+}

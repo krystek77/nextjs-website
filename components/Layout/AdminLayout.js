@@ -8,7 +8,7 @@ function AdminLayout({ children }) {
     <div className={styles.adminLayout}>
       <div className={styles.adminLayout__inner}>
         <aside className={styles.adminLayout__aside}>
-          <Logo width="96" height="40" classes="logo_admin logo_mb_2" />
+          <Logo width="144" height="60" classes="logo_admin logo_mb_2" />
           {/** potential component */}
           <nav className={styles.adminNavigation}>
             <Link href="/admin/czesc-zamienna">

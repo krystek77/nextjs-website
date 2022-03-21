@@ -26,8 +26,6 @@
   width: max-content;
   margin: 0 auto;
   border-radius: 0.25rem;
-  /* border: 1px solid var(--primary-700); */
-  /* background: var(--primary-300); */
 }
 .logo_mb_2 {
   margin-bottom: 2rem;

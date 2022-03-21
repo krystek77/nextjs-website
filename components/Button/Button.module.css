@@ -55,3 +55,6 @@
   align-items: center;
   justify-content: center;
 }
+.button_no_wrap {
+  white-space: nowrap;
+}

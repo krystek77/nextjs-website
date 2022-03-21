@@ -1,7 +1,8 @@
 .admin {
   /* border: 1px solid grey; */
+  padding-top: 9rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
