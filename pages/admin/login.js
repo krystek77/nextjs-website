@@ -21,8 +21,8 @@ function Login() {
         <form className={styles.loginPageForm} onSubmit={login}>
           <Title
             content="LOGOWANIE"
-            variant="h4"
-            classes="title_center title_mb_3 title_bg_primary_dark"
+            variant="h2"
+            classes="title_center title_mb_3"
           />
           <Input
             type="text"
@@ -30,7 +30,6 @@ function Login() {
             value=""
             fieldName="email"
             handleInput={() => {}}
-            classes="input_bg_primary_300 input_border_primary_700"
           />
           <Input
             type="text"
@@ -38,7 +37,6 @@ function Login() {
             value=""
             fieldName="password"
             handleInput={() => {}}
-            classes="input_bg_primary_300 input_border_primary_700"
           />
           <Button
             type="submit"

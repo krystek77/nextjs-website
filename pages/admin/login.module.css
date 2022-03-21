@@ -16,16 +16,9 @@
   padding-top: 4.5rem;
 }
 .loginPageForm {
-  border: 1px solid var(--primary-700);
-  border-radius: 0.25rem;
   padding: 3rem 2rem;
   margin-bottom: 0.5rem;
   width: 100%;
-  background-image: radial-gradient(
-    300% 200% at 50% 50%,
-    var(--primary-300) 0%,
-    var(--primary-700) 100%
-  );
 }
 .loginPage__info,
 .loginPage__emailAddress {
