@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import PageLayout from '../../../../components/Layout/PageLayout';
 import HeadMetaTags from '../../../../components/HeadMetaTags/HeadMetaTags';
 import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
@@ -86,6 +87,12 @@ function FX({ washerExtractor }) {
   );
 }
 
+FX.getLayout = (page) => {
+  return <PageLayout>{page}</PageLayout>;
+};
+
+export default FX;
+
 export async function getStaticPaths(context) {
   return {
     paths: [
@@ -114,4 +121,3 @@ export async function getStaticProps(context) {
     props: { washerExtractor },
   };
 }
-export default FX;

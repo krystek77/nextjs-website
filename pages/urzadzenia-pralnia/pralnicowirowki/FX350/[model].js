@@ -5,6 +5,7 @@ import React from 'react';
  */
 
 import HeadMetaTags from '../../../../components/HeadMetaTags/HeadMetaTags';
+import PageLayout from '../../../../components/Layout/PageLayout';
 import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
@@ -14,6 +15,7 @@ import ProductData from '../../../../containers/ProductData/ProductData';
 import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
 import CascadeDrum from '../../../../containers/CascadeDrum/CascadeDrum';
+import { products } from '../../../../constants/products';
 
 import { useRouter } from 'next/router';
 import { cutURL } from '../../../../lib';
@@ -80,6 +82,12 @@ function FX350({ washerExtractor }) {
   );
 }
 
+FX350.getLayout = (page) => {
+  return <PageLayout>{page}</PageLayout>;
+};
+
+export default FX350;
+
 export async function getStaticPaths(context) {
   return {
     paths: [
@@ -91,7 +99,6 @@ export async function getStaticPaths(context) {
   };
 }
 
-import { products } from '../../../../constants/products';
 export async function getStaticProps(context) {
   const washerExtractor = products.find(
     (item) => item.model === context.params.model
@@ -100,5 +107,3 @@ export async function getStaticProps(context) {
     props: { washerExtractor },
   };
 }
-
-export default FX350;

@@ -8,7 +8,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  content: "";
+  content: '';
   display: block;
   inset: 0px;
   position: absolute;
@@ -16,4 +16,27 @@
 }
 .logo:focus::after {
   border-color: var(--accent-700);
+}
+
+.logo_admin {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  /* border: 1px solid var(--primary-700); */
+  /* background: var(--primary-300); */
+}
+.logo_mb_2 {
+  margin-bottom: 2rem;
+}
+
+.logo_center {
+  width: 100%;
+  text-align: center;
+}
+.logo_mb_1 {
+  margin-bottom: 1rem;
 }

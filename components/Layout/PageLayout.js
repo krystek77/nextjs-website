@@ -1,22 +1,18 @@
 import React from 'react';
 import ScrollButton from '../ScrollButton/ScrollButton';
-import Hero from '../../containers/Hero/Hero';
 import ContactBar from '../../containers/ContactBar/ContactBar';
-import InnovationLogos from '../../containers/InnovationLogos/InnovationLogos';
 import Footer from '../../containers/Footer/Footer';
+import InnovationLogos from '../../containers/InnovationLogos/InnovationLogos';
 import Topbar from '../../containers/Topbar/Topbar';
-import styles from './HomeLayout.module.css';
+import styles from './PageLayout.module.css';
 
-function HomeLayout({ children }) {
+function PageLayout({ children }) {
   return (
     <React.Fragment>
       <ScrollButton down />
       <ScrollButton up />
       <Topbar />
-      <Hero />
-      <InnovationLogos />
-      <ContactBar />
-      {children}
+      <React.Fragment>{children}</React.Fragment>
       <InnovationLogos />
       <ContactBar />
       <Footer />
@@ -24,4 +20,4 @@ function HomeLayout({ children }) {
   );
 }
 
-export default HomeLayout;
+export default PageLayout;

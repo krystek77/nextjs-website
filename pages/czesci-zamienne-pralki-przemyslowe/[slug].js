@@ -1,4 +1,5 @@
 import React from 'react';
+import PageLayout from '../../components/Layout/PageLayout';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
@@ -51,6 +52,10 @@ function SparePart({ item }) {
     </React.Fragment>
   );
 }
+
+SparePart.getLayout = (page) => {
+  return <PageLayout>{page}</PageLayout>;
+};
 
 export default SparePart;
 

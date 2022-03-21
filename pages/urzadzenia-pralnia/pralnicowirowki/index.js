@@ -2,13 +2,14 @@
  * http://localhost:3000/urzadzenia-pralnia/pralnicowirowki
  */
 import React from 'react';
+import PageLayout from '../../../components/Layout/PageLayout';
 import HeadMetaTags from '../../../components/HeadMetaTags/HeadMetaTags';
 import Banner from '../../../components/Banner/Banner';
-import styles from './index.module.css';
 import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
-
+import { washerextractors } from '../../../constants/washerextractors';
+import styles from './index.module.css';
 
 function WasherExtractors(props) {
   const { title, category, series } = props;
@@ -43,11 +44,14 @@ function WasherExtractors(props) {
   );
 }
 
-import { washerextractors } from '../../../constants/washerextractors';
+WasherExtractors.getLayout = (page) => {
+  return <PageLayout>{page}</PageLayout>;
+};
+
+export default WasherExtractors;
+
 export async function getStaticProps() {
   return {
     props: washerextractors,
   };
 }
-
-export default WasherExtractors;

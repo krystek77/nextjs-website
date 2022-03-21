@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Title from '../../components/Title/Title';
 import styles from './Footer.module.css';
+import Copyright from '../../components/Copyright/Copyright';
 
 function Footer() {
   return (
@@ -312,10 +313,8 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p className={styles.copyright}>
-          Copyright 2022 by Krystian Wrona. Wszystkie prawa zastrzeżone.
-        </p>
       </div>
+      <Copyright />
     </footer>
   );
 }

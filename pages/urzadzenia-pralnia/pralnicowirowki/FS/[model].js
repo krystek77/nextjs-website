@@ -2,11 +2,13 @@
  * http://localhost:3000/urzadzenia-pralnia/pralnicowirowki/FS/FS-800
  */
 import React from 'react';
+import PageLayout from '../../../../components/Layout/PageLayout';
 import { useRouter } from 'next/router';
 import HeadMetaTags from '../../../../components/HeadMetaTags/HeadMetaTags';
 import Banner from '../../../../components/Banner/Banner';
 import Title from '../../../../components/Title/Title';
 import PageIndicator from '../../../../components/Banner/PageIndicator/PageIndicator';
+import { products } from '../../../../constants/products';
 
 function FS({ washerExtractor }) {
   const router = useRouter();
@@ -34,6 +36,12 @@ function FS({ washerExtractor }) {
   );
 }
 
+FS.getLayout = (page) => {
+  return <PageLayout>{page}</PageLayout>;
+};
+
+export default FS;
+
 export async function getStaticPaths(context) {
   return {
     paths: [
@@ -44,7 +52,7 @@ export async function getStaticPaths(context) {
     fallback: false,
   };
 }
-import { products } from '../../../../constants/products';
+
 export async function getStaticProps(context) {
   const washerExtractor = products.find(
     (item) => item.model === context.params.model
@@ -55,5 +63,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-export default FS;
