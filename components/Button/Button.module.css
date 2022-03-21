@@ -58,3 +58,6 @@
 .button_no_wrap {
   white-space: nowrap;
 }
+.button_span_2 {
+  grid-column: 1/3;
+}
