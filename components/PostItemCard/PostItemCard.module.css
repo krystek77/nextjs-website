@@ -1,7 +1,7 @@
 .postItemCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   max-width: 420px;
 }
 .postItemCard__image {
@@ -36,5 +36,5 @@
   font-family: var(--font-alt);
   color: var(--accent-700);
   font-size: 0.875rem;
-  margin-left:0.5rem;
+  margin-left: 0.5rem;
 }

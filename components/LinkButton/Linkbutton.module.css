@@ -92,3 +92,7 @@
 .linkButton_disabled:focus::after {
   border-color: var(--light-700);
 }
+.linkButton_center {
+  display: block;
+  margin: 0 auto;
+}
