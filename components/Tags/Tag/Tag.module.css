@@ -1,0 +1,9 @@
+.tag {
+  font-family: var(--font-alt);
+  font-size: 0.875rem;
+  padding: 0.25rem;
+  background: linear-gradient(-45deg, var(--accent-500) 0%, var(--accent-500) 50%, var(--accent-700) 50%, var(--accent-700) 100%);
+  background-clip: text;
+  color: transparent;
+  margin-right: 0.25rem;
+}

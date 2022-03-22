@@ -1,0 +1,12 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tags__label {
+  font-family: var(--font-base);
+  color: var(--dark-700);
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
+}
