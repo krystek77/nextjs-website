@@ -1,25 +1,53 @@
-import path from "path";
-import fs from "fs";
+import path from 'path';
+import fs from 'fs';
 /*
  *  path: http://localhost:3000/api/posts/add
  */
 
-const POSTS_DIRECTORY = path.join(process.cwd(), "posts");
+const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');
 
-async function requestHandler(req, res) {
-  /*
-   * {   fileName:"",
-   *     data:{ title:"", info:"", date:"", image:"", tags:""},
-   *     content:""
-   * }
-   */
+function requestHandler(req, res) {
   const { body } = req;
-  //save to fileName.md in posts folder
-  const fileName = body.fileName;
+  // const fileName = body.fileName.trim().toLowerCase().replace(/\s/g, '-');
+  const fileName = body.fileName
+    .split(' ')
+    .map((partFileName) => {
+      const formattedPartFileName = partFileName
+        .toLowerCase()
+        .replace(/ó/g, 'o')
+        .replace(/ę/g, 'e')
+        .replace(/ó/g, 'o')
+        .replace(/ą/g, 'a')
+        .replace(/ć/g, 'c')
+        .replace(/ś/g, 's')
+        .replace(/ń/g, 'n')
+        .replace(/ż/g, 'z')
+        .replace(/ź/g, 'z')
+        .replace(/\s+/g, '');
+      return formattedPartFileName;
+    })
+    .filter((item) => item !== '')
+    .join('-');
   const fullPath = path.join(POSTS_DIRECTORY, `${fileName}.md`);
-  
-  fs.writeFileSync(fullPath, JSON.stringify("HELLO WORLD"), { encoding: "utf8" });
 
-  return res.status(201).json(body);
+  const fileContent = `---\n
+  title: '${body.data.title}'
+  date: '${body.data.date}'
+  info: '${body.data.info}'
+  image: '${body.data.image}'
+  tags: '${body.data.tags}'\n---\n
+  ${body.content}
+  `;
+  try {
+    fs.writeFileSync(fullPath, fileContent, {
+      encoding: 'utf8',
+    });
+  } catch (error) {
+    return res.status(400).json({
+      message: `Dodanie wiadomości nie powiodło się. ERROR: ${error.message}`,
+    });
+  }
+
+  return res.status(201).json({ message: 'Wiadomość dodana pomyślnie' });
 }
 export default requestHandler;
