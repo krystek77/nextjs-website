@@ -1,12 +1,12 @@
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 /*
  *  path: http://localhost:3000/api/posts/add
  */
 
 const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');
 
-function requestHandler(req, res) {
+async function requestHandler(req, res) {
   const { body } = req;
   // const fileName = body.fileName.trim().toLowerCase().replace(/\s/g, '-');
   const fileName = body.fileName

@@ -19,4 +19,9 @@ function Modal({ isOpen, toggleModal, children }) {
   ) : null;
 }
 
+Modal.defaultProps = {
+  isOpen: false,
+  toggleModal: () => {},
+  children: undefined,
+};
 export default Modal;
