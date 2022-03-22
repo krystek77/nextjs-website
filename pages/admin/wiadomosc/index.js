@@ -6,9 +6,8 @@ import Title from '../../../components/Title/Title';
 import Description from '../../../components/Description/Description';
 import Modal from '../../../components/Modal/Modal';
 import styles from './index.module.css';
-import { server } from '../../../config';
 
-const ADD_POST_URL = `${server}/api/posts/add`;
+const ADD_POST_URL = `/api/posts/add`;
 const FOOTER_OF_MARKDOWN = `Źródło: [Primus]()
 
 <http://www.pralma.pl>

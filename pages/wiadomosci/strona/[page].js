@@ -51,7 +51,7 @@ export function getStaticPaths() {
   const paths = paginationPaths(data);
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -62,5 +62,6 @@ export function getStaticProps(context) {
     props: {
       ...paginationData,
     },
+    revalidate: 10,
   };
 }

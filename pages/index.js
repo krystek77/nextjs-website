@@ -45,5 +45,6 @@ export async function getStaticProps() {
       on_premises: links[0],
       posts: threeLatestPosts,
     },
+    revalidate: 10,
   };
 }

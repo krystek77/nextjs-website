@@ -43,7 +43,7 @@ async function requestHandler(req, res) {
       encoding: 'utf8',
     });
   } catch (error) {
-    return res.status(400).json({
+    return res.status(401).json({
       message: `Dodanie wiadomości nie powiodło się. ERROR: ${error.message}`,
     });
   }
