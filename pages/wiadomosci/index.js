@@ -53,7 +53,6 @@ export default Posts;
 export async function getStaticProps(context) {
   const data = getPosts();
   const paginationData = pagination(data, context);
-  console.log('revalidate');
   return {
     props: {
       ...paginationData,
