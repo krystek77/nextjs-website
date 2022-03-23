@@ -18,6 +18,7 @@ function CustomersLinks({ customers }) {
       <div className={styles.customersLinks__content}>
         {customers.map(({ title, image }, index) => (
           <Link
+            scroll={false}
             key={index}
             href={`/nasi-klienci#${title
               .replace(/[\s+,*]/g, '')
