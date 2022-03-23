@@ -6,8 +6,9 @@ import PageLayout from '../components/Layout/PageLayout';
 import Banner from '../components/Banner/Banner';
 import Title from '../components/Title/Title';
 import HeadMetaTags from '../components/HeadMetaTags/HeadMetaTags';
-import SiteInProgress from '../containers/SiteInProgress/SiteInProgress';
+import CustomersList from '../containers/CustomersList/CustomersList';
 
+import { customers } from '../constants/customers';
 import styles from '../styles/nasi-klienci.module.css';
 
 function Customers() {
@@ -21,7 +22,7 @@ function Customers() {
           classes="title_maxWidth_960 title_light_500"
         />
       </Banner>
-      <SiteInProgress page="Klienci" />
+      <CustomersList customers={customers} />
     </React.Fragment>
   );
 }

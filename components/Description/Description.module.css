@@ -23,6 +23,9 @@
 .description_mb_9 {
   margin-bottom: 9rem;
 }
+.description_maxWidth_480 {
+  max-width: 480px;
+}
 .description_maxWidth_640 {
   max-width: 640px;
 }
