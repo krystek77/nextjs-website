@@ -71,6 +71,6 @@
       var(--primary-300) 100%
     );
   background-position: center;
-  border-top: 20px solid var(--accent-700);
-  border-bottom: 20px solid var(--accent-700);
+  border-top: 5px solid var(--accent-700);
+  border-bottom: 5px solid var(--accent-700);
 }
