@@ -8,7 +8,10 @@ import styles from './CustomerItem.module.css';
 
 function CustomerItem({ image, title, subtitle, description, page }) {
   return (
-    <div className={styles.customerItem}>
+    <div
+      className={styles.customerItem}
+      id={title.replace(/[\s+,*]/g, '').toLowerCase()}
+    >
       <div className={styles.customerItem__image}>
         <Image
           src={`/assets/images/customers/${image}.webp`}

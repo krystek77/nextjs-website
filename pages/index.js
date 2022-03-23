@@ -1,6 +1,7 @@
 import React from 'react';
 import ModernLaundryEquipment from '../containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import HygieneBarrier from '../containers/HygieneBarrier/HygieneBarrier';
+import CustomersLinks from '../containers/CustomersLinks/CustomersLinks';
 import OurServices from '../containers/OurServices/OurServices';
 import Softwash from '../containers/Softwash/Softwash';
 import Gallery from '../containers/Gallery/Gallery';
@@ -10,6 +11,7 @@ import RestLinks from '../containers/RestLinks/RestLinks';
 import Newsletter from '../containers/Newsletter/Newsletter';
 import HomeLayout from '../components/Layout/HomeLayout';
 import HeadMetaTags from '../components/HeadMetaTags/HeadMetaTags';
+import { customers } from '../constants/customers';
 import { getPosts } from '../lib/posts';
 
 function Home({ on_premises, posts }) {
@@ -20,6 +22,7 @@ function Home({ on_premises, posts }) {
         <ModernLaundryEquipment data={on_premises} />
       </main>
       <HygieneBarrier />
+      <CustomersLinks customers={customers} />
       <OurServices />
       <Softwash />
       <Gallery />

@@ -12,9 +12,18 @@ import { customers } from '../constants/customers';
 import styles from '../styles/nasi-klienci.module.css';
 
 function Customers() {
+  const title =
+    'Przemysłowe wyposażenie pralni dla różnych sektorów pralniczych';
+  const description =
+    'Znajdz optymalne do swoich potrzeb wyposażenie pralni przemysłowej 👆 lub rozbuduj istniejącą, w oparciu o najnowocześniejsze urządzenia pralnicze. Wyposażenie pralncze dla hoteli, domów opieki, pralni uslugowych, pralni komercyjnych, żłobków i przedszkoli ... dla każdego.';
   return (
     <React.Fragment>
-      <HeadMetaTags />
+      <HeadMetaTags
+        title={title}
+        og_title={title}
+        twitter_title={title}
+        description={description}
+      />
       <Banner classes="banner__customers">
         <Title
           variant="h1"
