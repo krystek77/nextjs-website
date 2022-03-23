@@ -19,7 +19,7 @@ function CustomerItem({ image, title, subtitle, description, page }) {
       <div className={styles.customerItem__content}>
         <Subtitle content={subtitle} />
         <Title content={title} />
-        <Description classes="description_maxWidth_480 description_light_500 description_18 description_mb_2">
+        <Description classes="description_maxWidth_480 description_18 description_mb_2">
           {description}
         </Description>
 

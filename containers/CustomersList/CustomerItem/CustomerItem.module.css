@@ -3,18 +3,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
-  background: radial-gradient(
+  /* background: radial-gradient(
     75% 100% at 100% 0%,
     var(--primary-300),
     var(--dark-300)
-  );
+  ); */
 }
 .customerItem:nth-child(odd) {
-  background: radial-gradient(
+  /* background: radial-gradient(
     75% 100% at 0% 0%,
     var(--primary-300),
     var(--dark-300)
-  );
+  ); */
 }
 .customerItem:nth-child(odd) .customerItem__image {
   grid-column: 2/3;

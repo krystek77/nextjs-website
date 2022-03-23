@@ -1,9 +1,9 @@
 .customersList {
-  background: radial-gradient(
+  /* background: radial-gradient(
     75% 100% at 0% 0%,
     var(--primary-300),
     var(--dark-300)
-  );
+  ); */
 }
 .customersList__container {
   max-width: var(--container);

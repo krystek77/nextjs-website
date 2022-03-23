@@ -63,3 +63,14 @@
   background-position: center;
   background-blend-mode: multiply;
 }
+.banner__customers {
+  background-image: url('/assets/images/for_banners/bg_customers.webp'),
+    radial-gradient(
+      90% 1000% at 50% 50%,
+      var(--white) 0%,
+      var(--primary-300) 100%
+    );
+  background-position: center;
+  border-top: 20px solid var(--accent-700);
+  border-bottom: 20px solid var(--accent-700);
+}

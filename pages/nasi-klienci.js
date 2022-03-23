@@ -15,11 +15,11 @@ function Customers() {
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner>
+      <Banner classes="banner__customers">
         <Title
           variant="h1"
-          content="Wyposażymy każdą pralnię"
-          classes="title_maxWidth_960 title_light_500"
+          content="dla CIEBIE też posiadamy odpowiednie wyposażenie PRALNICZE"
+          classes="title_maxWidth_960 title_bg_primary_dark"
         />
       </Banner>
       <CustomersList customers={customers} />
