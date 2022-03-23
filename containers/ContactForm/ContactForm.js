@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import Title from "../../components/Title/Title";
+import Subtitle from "../../components/Subtitle/Subtitle";
 import styles from "./ContactForm.module.css";
 
 function ContactForm() {
@@ -19,7 +21,7 @@ function ContactForm() {
 
   const handleForm = (e) => {
     e.preventDefault();
-    handleNewsletter(e)
+    handleNewsletter(e);
     //send data
     clearForm();
   };
@@ -45,6 +47,10 @@ function ContactForm() {
   return (
     <section className={styles.contactFormSection}>
       <div className={styles.contactFormSection__container}>
+        <header className={styles.contactFormSection__header}>
+          <Subtitle content='Napisz do nas' />
+          <Title content='Formularz kontaktowy' />
+        </header>
         <form className={styles.contactFormSection__form} onSubmit={handleForm}>
           <div className={styles.contactFormSection__reason}>
             <Input classes='input_mb_1' type='text' fieldName='reason' handleInput={handleInput} value={formData.reason} placeholder='powód kontaktu' />

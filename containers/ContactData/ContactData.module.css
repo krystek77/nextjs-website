@@ -1,0 +1,17 @@
+.contactData__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, auto);
+  grid-auto-rows: auto;
+}
+.contactData__header {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-bottom: 4.5rem;
+}
+.contactData__item {
+  border: 1px solid gray;
+  min-height: 300px;
+}
