@@ -18,8 +18,8 @@ function Customers() {
       <Banner classes="banner__customers">
         <Title
           variant="h1"
-          content="dla CIEBIE też posiadamy odpowiednie wyposażenie PRALNICZE"
-          classes="title_maxWidth_960 title_bg_primary_dark"
+          content="dla CIEBIE też posiadamy odpowiednie WYPOSAŻENIE PRALNICZE"
+          classes="title_maxWidth_960 title_bg_primary_dark title_drop_shadow"
         />
       </Banner>
       <CustomersList customers={customers} />

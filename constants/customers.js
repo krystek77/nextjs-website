@@ -5,7 +5,7 @@ export const customers = [
     subtitle: 'Twój biznes',
     page: '',
     description:
-      'Wybierz dedykowane rozwiązania do prania mop-ów i skup się tylko na swoich Klientach. Korzystaj ze specjalnie stworzonych programów do prania mopów i nie martw się o koszty eksploatacji urządzeń.',
+      'Jeżeli pralnia komercyjna to Twój biznes, wówczas Pralma jest idealnym partnerem dla Ciebie, gwarantującym niezawdoność wyposażenia, dużą wydajność oraz ekonomię i komfort pracy .',
   },
   {
     image: 'opieka-zdrowotna',

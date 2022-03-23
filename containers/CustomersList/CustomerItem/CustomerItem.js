@@ -11,7 +11,7 @@ function CustomerItem({ image, title, subtitle, description, page }) {
     <div className={styles.customerItem}>
       <div className={styles.customerItem__image}>
         <Image
-          src={`/assets/images/customers/${image}.jpg`}
+          src={`/assets/images/customers/${image}.webp`}
           alt={title}
           layout="fill"
         />
