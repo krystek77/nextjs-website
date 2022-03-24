@@ -13,6 +13,8 @@
  * - add logic to navigation for small screens (maybe custom hook from accordion)
  * - add login logic
  * - add media query to make the website responsive
+ * - add recaptcha to forms
+ * - validate form data
  * - website optimization - React, accessibilty, SEO
  * - testing
  * - deploy website

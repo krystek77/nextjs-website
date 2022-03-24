@@ -4,12 +4,46 @@ import Input from '../../components/Input/Input';
 import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
 import Description from '../../components/Description/Description';
+// import Image from 'next/image';
+
 import styles from './ContactForm.module.css';
+
+const reasons = [
+  'oferta na wyposażenie pralni przemysłowej',
+  'części zamienne',
+  'wsparcie techniczne',
+  'zlecenie serwisu',
+  'gwarancja',
+  'dokumnety urządzeń',
+  'ogólne',
+  'księgowość',
+  'współpraca',
+];
+const markets = [
+  'pralnie komercyjne',
+  'domy opieki i domy pomocy społecznej',
+  'przedszkola i żłobki',
+  'hotele, motele i pensjonaty',
+  'kluby sportowe',
+  'SPA & Wellness',
+  'szpitale i kliniki',
+  'kempingi, ośrodki wczasowe',
+  'apartamenty, akademiki',
+  'pralnie i urządzenia samoobslugowe',
+  'zarządzanie obiektami, czyszczenie i sprzątanie',
+  'służby cywilne np. straż pożarna',
+  'marynarka wojenna - pralnice na statek',
+  'stadniny koni, schroniska dla zwierząt',
+  'przemysł spozywczy i przetworstwo',
+  'firmy, zakłady pracy',
+  'pralnia Softwash',
+  'inne',
+];
 
 function ContactForm() {
   const [formData, setFormData] = React.useState({
-    reason: '',
-    market: '',
+    reason: reasons[0],
+    market: markets[0],
     name: '',
     lastName: '',
     phone: '',
@@ -23,17 +57,21 @@ function ContactForm() {
   const handleForm = (e) => {
     e.preventDefault();
     handleNewsletter(e);
+
     //send data
     clearForm();
   };
-  const handleInput = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleInput = React.useCallback(
+    (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    },
+    [formData]
+  );
   const handleNewsletter = (e) => setIsNewsletter(!isNewsletter);
   const clearForm = () => {
     setFormData({
-      reason: '',
-      market: '',
+      reason: reasons[0],
+      market: markets[0],
       name: '',
       lastName: '',
       phone: '',
@@ -62,24 +100,54 @@ function ContactForm() {
         </header>
         <form className={styles.contactFormSection__form} onSubmit={handleForm}>
           <div className={styles.contactFormSection__reason}>
-            <Input
-              classes="input_bg_light_300"
-              type="text"
-              fieldName="reason"
-              handleInput={handleInput}
-              value={formData.reason}
-              placeholder="powód kontaktu"
-            />
+            {/** potential component */}
+            <div className={styles.select}>
+              <select
+                name="reason"
+                className={styles.select__input}
+                onChange={handleInput}
+              >
+                {reasons.map((item, index) => {
+                  return (
+                    <option
+                      className={styles.select__option}
+                      key={index}
+                      value={item}
+                      selected={item === formData.reason ? true : false}
+                    >
+                      {item}
+                    </option>
+                  );
+                })}
+              </select>
+              <span className={styles.select__outline}></span>
+            </div>
+            {/** potential component */}
           </div>
           <div className={styles.contactFormSection__market}>
-            <Input
-              classes="input_bg_light_300"
-              type="text"
-              fieldName="market"
-              handleInput={handleInput}
-              value={formData.market}
-              placeholder="sektor pralniczy"
-            />
+            {/** potential component */}
+            <div className={styles.select}>
+              <select
+                name="market"
+                className={styles.select__input}
+                onChange={handleInput}
+              >
+                {markets.map((item, index) => {
+                  return (
+                    <option
+                      className={styles.select__option}
+                      key={index}
+                      value={item}
+                      selected={item === formData.market ? true : false}
+                    >
+                      {item}
+                    </option>
+                  );
+                })}
+              </select>
+              <span className={styles.select__outline}></span>
+            </div>
+            {/** potential component */}
           </div>
           <div className={styles.contactFormSection__name}>
             <Input

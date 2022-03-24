@@ -31,7 +31,8 @@
   height: 2px;
 }
 .input:focus + .input__outline {
-  width: 100%;
+  -webkit-animation: expand 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: expand 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .input_mb_1 input {
@@ -53,4 +54,21 @@
 .input_bg_light_300 input::placeholder {
   color: var(--dark-700);
   opacity: 1;
+}
+
+@-webkit-keyframes expand {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes expand {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
