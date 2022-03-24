@@ -1,13 +1,13 @@
 :root {
-  --primary-700: rgb(116, 210, 208);
-  --primary-500: rgb(168, 227, 226);
+  --primary-700: #74d2d0;
+  --primary-500: #a8e3e2;
   --primary-300: #f0fafa;
-  --accent-700: rgb(184, 0, 0);
+  --accent-700: #b80000;
   --accent-500: #ff0000;
   --accent-300: #ff5c5c;
   --light-700: #45484a;
   --light-500: #6d7275;
-  --light-300: rgb(149, 154, 157);
+  --light-300: #959a9d;
   --dark-700: #000f14;
   --dark-500: #001a23;
   --dark-300: #005c74;
