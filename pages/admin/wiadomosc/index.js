@@ -70,7 +70,6 @@ function PostForm() {
               handleInput={(e) =>
                 setFormData({ ...formData, fileName: e.target.value })
               }
-              classes="input_mb_1"
               type="type"
               fieldName="fileName"
               value={formData.fileName}
@@ -83,7 +82,6 @@ function PostForm() {
                   data: { ...formData.data, title: e.target.value },
                 })
               }
-              classes="input_mb_2"
               type="type"
               fieldName="title"
               value={formData.data.title}
@@ -109,7 +107,6 @@ function PostForm() {
                   data: { ...formData.data, date: e.target.value },
                 })
               }
-              classes="input_mb_2"
               type="date"
               fieldName="date"
               value={formData.data.date}
@@ -121,7 +118,6 @@ function PostForm() {
                   data: { ...formData.data, image: e.target.value },
                 })
               }
-              classes="input_mb_2"
               type="text"
               fieldName="image"
               value={formData.data.image}
@@ -134,7 +130,6 @@ function PostForm() {
                   data: { ...formData.data, tags: e.target.value },
                 })
               }
-              classes="input_mb_2"
               type="type"
               fieldName="tags"
               value={formData.data.tags}

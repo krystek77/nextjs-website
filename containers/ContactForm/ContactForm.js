@@ -63,7 +63,7 @@ function ContactForm() {
         <form className={styles.contactFormSection__form} onSubmit={handleForm}>
           <div className={styles.contactFormSection__reason}>
             <Input
-              classes="input_mb_1"
+              classes="input_bg_light_300"
               type="text"
               fieldName="reason"
               handleInput={handleInput}
@@ -73,7 +73,7 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__market}>
             <Input
-              classes="input_mb_1"
+              classes="input_bg_light_300"
               type="text"
               fieldName="market"
               handleInput={handleInput}
@@ -83,7 +83,6 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__name}>
             <Input
-              classes="input_mb_1"
               type="text"
               fieldName="name"
               handleInput={handleInput}
@@ -93,7 +92,6 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__lastName}>
             <Input
-              classes="input_mb_1"
               type="text"
               fieldName="lastName"
               handleInput={handleInput}
@@ -112,7 +110,6 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__city}>
             <Input
-              classes="input_mb_1"
               type="text"
               fieldName="city"
               handleInput={handleInput}
@@ -122,7 +119,6 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__company}>
             <Input
-              classes="input_mb_1"
               type="text"
               fieldName="company"
               handleInput={handleInput}
@@ -132,7 +128,6 @@ function ContactForm() {
           </div>
           <div className={styles.contactFormSection__email}>
             <Input
-              classes="input_mb_1"
               type="text"
               fieldName="email"
               handleInput={handleInput}

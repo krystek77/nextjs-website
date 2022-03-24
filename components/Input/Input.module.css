@@ -24,22 +24,33 @@
 }
 .input__outline {
   position: absolute;
-  left:0;
-  bottom:0;
-  width:0%;
-  background-color:var(--dark-700);
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background-color: var(--dark-700);
   height: 2px;
 }
 .input:focus + .input__outline {
-  width:100%;
+  width: 100%;
 }
 
-.input_mb_1 {
+.input_mb_1 input {
   margin-bottom: 1rem;
 }
-.input_mb_2 {
+.input_mb_2 input {
   margin-bottom: 2rem;
 }
-.input_bg_primary_300 {
-  background-color: var(--primary-300);
+.input_bg_primary_300 input {
+  background-color: rgba(149, 154, 157, 0.15);
+}
+.input_bg_light_300 input {
+  background-color: rgba(149, 154, 157, 0.15);
+}
+.input_bg_primary_300 input::placeholder {
+  color: var(--dark-700);
+  opacity: 1;
+}
+.input_bg_light_300 input::placeholder {
+  color: var(--dark-700);
+  opacity: 1;
 }
