@@ -4,7 +4,7 @@ import Input from '../../components/Input/Input';
 import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
 import Description from '../../components/Description/Description';
-// import Image from 'next/image';
+import SelectInput from '../../components/Select/Select';
 
 import styles from './ContactForm.module.css';
 
@@ -100,54 +100,20 @@ function ContactForm() {
         </header>
         <form className={styles.contactFormSection__form} onSubmit={handleForm}>
           <div className={styles.contactFormSection__reason}>
-            {/** potential component */}
-            <div className={styles.select}>
-              <select
-                name="reason"
-                className={styles.select__input}
-                onChange={handleInput}
-              >
-                {reasons.map((item, index) => {
-                  return (
-                    <option
-                      className={styles.select__option}
-                      key={index}
-                      value={item}
-                      selected={item === formData.reason ? true : false}
-                    >
-                      {item}
-                    </option>
-                  );
-                })}
-              </select>
-              <span className={styles.select__outline}></span>
-            </div>
-            {/** potential component */}
+            <SelectInput
+              options={reasons}
+              action={handleInput}
+              name="reason"
+              selected={formData.reason}
+            />
           </div>
           <div className={styles.contactFormSection__market}>
-            {/** potential component */}
-            <div className={styles.select}>
-              <select
-                name="market"
-                className={styles.select__input}
-                onChange={handleInput}
-              >
-                {markets.map((item, index) => {
-                  return (
-                    <option
-                      className={styles.select__option}
-                      key={index}
-                      value={item}
-                      selected={item === formData.market ? true : false}
-                    >
-                      {item}
-                    </option>
-                  );
-                })}
-              </select>
-              <span className={styles.select__outline}></span>
-            </div>
-            {/** potential component */}
+            <SelectInput
+              options={markets}
+              action={handleInput}
+              name="market"
+              selected={formData.market}
+            />
           </div>
           <div className={styles.contactFormSection__name}>
             <Input
