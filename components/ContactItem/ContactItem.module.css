@@ -17,3 +17,16 @@
 .contactItem:hover {
   filter: contrast(0.45);
 }
+.contactItem_flex_row {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contactItem_flex_row .contactItem__label {
+  margin-top: 0;
+  font-family: var(--font-alt);
+  font-size: 1rem;
+  margin-left: 1rem;
+}

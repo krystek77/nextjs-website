@@ -32,6 +32,9 @@
 .subtitle_max_width_640 {
   max-width: 640px;
 }
+.subtitle_max_width_480 {
+  max-width: 480px;
+}
 .subtitle_max_width_760 {
   max-width: 760px;
 }
