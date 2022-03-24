@@ -1,8 +1,9 @@
 .topbar {
-    padding-left:6rem;
-    padding-right:6rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
 }
-
