@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
     "gray-matter": "^4.0.3",
     "moment": "^2.29.1",
     "next": "12.1.0",

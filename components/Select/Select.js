@@ -3,14 +3,13 @@ import styles from './Select.module.css';
 function SelectInput({ options, action, name, selected }) {
   return (
     <div className={styles.select}>
-      <select name={name} className={styles.select__input} onChange={action}>
+      <select name={name} className={styles.select__input} onChange={action} value={selected}>
         {options.map((item, index) => {
           return (
             <option
               className={styles.select__option}
               key={index}
               value={item}
-              selected={item === selected ? true : false}
             >
               {item}
             </option>
