@@ -1,6 +1,6 @@
 
 import sendGrid from "@sendgrid/mail";
-sendGrid.setApiKey = process.env.SEND_GRID_API_KEY;
+sendGrid.setApiKey(process.env.SEND_GRID_API_KEY);
 console.log(process.env.SEND_GRID_API_KEY);
 
 /**
