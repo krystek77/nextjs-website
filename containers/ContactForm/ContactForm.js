@@ -118,7 +118,7 @@ function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
       });
       const result = await response.json();
-      handleNewsletter(e);
+      handleNewsletter();
       setMessage(result.message);
       setIsOpen(true);
       clearForm();
@@ -130,7 +130,7 @@ function ContactForm() {
     },
     [formData]
   );
-  const handleNewsletter = (e) => setIsNewsletter(!isNewsletter);
+  const handleNewsletter = () => setIsNewsletter(!isNewsletter);
   const clearForm = () => {
     setFormData({
       reason: reasons[0],
@@ -144,6 +144,18 @@ function ContactForm() {
       message: '',
     });
     setIsNewsletter(true);
+  };
+  const reset = () => {
+    clearForm();
+    setIsNewsletter(true);
+    setErrors({
+      name: false,
+      lastName: false,
+      phone: false,
+      city: false,
+      company: false,
+      email: false,
+    });
   };
   return (
     <React.Fragment>
@@ -288,7 +300,15 @@ function ContactForm() {
                 checked={isNewsletter}
               />
             </div>
-            <Button classes="button_center" label="wyślij" type="submit" />
+            <div className={styles.contactFormSection__actionButtons}>
+              <Button classes="button_mr_1" label="wyślij" type="submit" />
+              <Button
+                classes=""
+                label="zresetuj"
+                type="button"
+                action={reset}
+              />
+            </div>
           </form>
         </div>
       </section>
