@@ -18,7 +18,7 @@ export default async function newsletter(req, res) {
 
   try {
     const response = await client.request(request);
-    return res.status(201).json({ response });
+    return res.status(201).json({ message: `Dziękujemy za subskrypcję ${response[1].job_id}` });
   } catch (error) {
     if (error.code) {
       if (error.code === 403) {
@@ -30,7 +30,7 @@ export default async function newsletter(req, res) {
         return res.status(400).json({ message: "Niepoprawne żądanie" });
       }
       return res.status(401).json({
-        message: `Zapisanie na newsletter nie powiodło się`,
+        message: `Subskrypcja nie powiodło się`,
       });
     }
   }
