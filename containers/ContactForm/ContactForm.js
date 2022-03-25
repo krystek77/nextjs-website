@@ -105,7 +105,9 @@ function ContactForm() {
       tempErrors.city = true;
       isValid = false;
     }
-    if (formData.company.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]{3,}$/) === null) {
+    if (
+      formData.company.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.-]{3,}$/) === null
+    ) {
       tempErrors.company = true;
       isValid = false;
     }
