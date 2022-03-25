@@ -13,20 +13,20 @@ export default async function sendEmail(req, res) {
     <title>${data.reason}</title>
   </head>
   <body>
-  <header style="margin-bottom:24px;">
-      <h1 style="color:#001a23;margin:0px; font-size:22px;"><span style="font-weight:normal;font-size:14px;text-transform:uppercase;">Dotyczy:</span> ${data.reason}</h1>
-      <p style="font-size:22px;margin:0px;padding:0px"><span style="font-weight:normal;font-size:14px;text-transform:uppercase;">Sektor:</span> <b>${data.market}<b/></p>
+  <header>
+      <h1 style="color:#001a23;margin:0px; font-size:20px;text-transform:uppercase;"><span style="font-weight:normal;font-size:14px;">Dotyczy:</span> ${data.reason}</h1>
+      <p style="color:#001a23;font-size:20px;margin:0px;padding:0px;text-transform:uppercase;"><span style="font-weight:normal;font-size:14px;">Sektor:</span> <b>${data.market}</b></p>
   </header>
   <main">
-    <h2 style="color:#001a23;margin:0px;">Dane nadawcy wiadomości</h2>
+    <h2 style="color:#001a23;">Dane nadawcy wiadomości</h2>
     <hr style="color:#001a23"/>
     <p style="margin:0px;"><span style="font-weight:400;">Imię: </span><b>${data.name}</b></p>
     <p style="margin:0px;"><span style="font-weight:400;">Nazwisko: </span><b>${data.lastName}</b></p>
     <p style="margin:0px;"><span style="font-weight:400;">Telefon kontaktowy: </span><b>${data.phone}</b></p>
     <p style="margin:0px;"><span style="font-weight:400;">Email: </span><a href="mailto:${data.email}"><b>${data.email}</b></a></p>
-    <h2 style="color:#001a23;margin:0px;">Treść wiadomości</h2>
+    <h2 style="color:#001a23;">Treść wiadomości</h2>
     <hr style="color:#001a23"/>
-    <p style="font-size:18px;line=height:1.3;background-color:#999999;margin:0px;padding-top:16px;padding-bottom:16px;padding-left:32px;padding-right:32px;">${data.message}</p>
+    <p style="font-size:18px;line=height:1.3;background-color:#f0fafa;margin:0px;font-weight:normal;">${data.message}</p>
     <hr style="color:#001a23"/>
     <p>Firma / instytucja: <b>${data.company}</b>, ${data.city}</p>
     <span>Z poważaniem, </span>
