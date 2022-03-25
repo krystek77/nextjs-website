@@ -305,7 +305,11 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__actionButtons}>
-              <Button classes="button_mr_1" label="wyślij" type="submit" />
+              <Button
+                classes="button_mr_2 button_no_wrap"
+                label="wyślij wiadomość"
+                type="submit"
+              />
               <Button
                 classes="button_dangerous"
                 label="zresetuj"
