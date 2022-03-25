@@ -6,6 +6,7 @@ import Subtitle from '../../components/Subtitle/Subtitle';
 import Description from '../../components/Description/Description';
 import SelectInput from '../../components/Select/Select';
 import Modal from '../../components/Modal/Modal';
+import { useModal } from '../../hooks';
 
 import styles from './ContactForm.module.css';
 
@@ -56,8 +57,7 @@ function ContactForm() {
     message: '',
   });
   const [isNewsletter, setIsNewsletter] = React.useState(true);
-  const [message, setMessage] = React.useState('');
-  const [isOpen, setIsOpen] = React.useState(false);
+  const { isOpen, setIsOpen, message, setMessage } = useModal();
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -93,15 +93,15 @@ function ContactForm() {
     });
     setIsNewsletter(true);
   };
-  React.useEffect(() => {
-    const timer = setTimeout(function () {
-      setIsOpen(false);
-      setMessage('');
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [message]);
+  // React.useEffect(() => {
+  //   const timer = setTimeout(function () {
+  //     setIsOpen(false);
+  //     setMessage('');
+  //   }, 2000);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [message]);
   return (
     <React.Fragment>
       <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)}>

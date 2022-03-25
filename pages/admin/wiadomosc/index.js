@@ -1,10 +1,11 @@
-import AdminLayout from '../../../components/Layout/AdminLayout';
 import React from 'react';
+import AdminLayout from '../../../components/Layout/AdminLayout';
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
 import Title from '../../../components/Title/Title';
 import Description from '../../../components/Description/Description';
 import Modal from '../../../components/Modal/Modal';
+import { useModal } from '../../../hooks';
 import styles from './index.module.css';
 
 const ADD_POST_URL = `/api/posts/add`;
@@ -18,9 +19,8 @@ function PostForm() {
     data: { title: '', info: '', date: '', image: '', tags: '' },
     content: FOOTER_OF_MARKDOWN,
   });
-  const [message, setMessage] = React.useState('');
-  const [isOpen, setIsOpen] = React.useState(false);
 
+  const { isOpen, setIsOpen, message, setMessage } = useModal();
   const handlePostForm = async (e) => {
     e.preventDefault();
     const response = await fetch(ADD_POST_URL, {
@@ -40,15 +40,6 @@ function PostForm() {
       content: FOOTER_OF_MARKDOWN,
     });
 
-  React.useEffect(() => {
-    const timer = setTimeout(function () {
-      setIsOpen(false);
-      setMessage('');
-    }, 2000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [message]);
   return (
     <React.Fragment>
       <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)}>

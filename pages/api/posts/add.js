@@ -44,10 +44,10 @@ async function requestHandler(req, res) {
     });
   } catch (error) {
     return res.status(401).json({
-      message: `Dodanie wiadomości nie powiodło się. ERROR: ${error.message}`,
+      message: `Dodanie artykułu nie powiodło się. ERROR: ${error.message}`,
     });
   }
 
-  return res.status(201).json({ message: 'Wiadomość dodana pomyślnie' });
+  return res.status(201).json({ message: 'Artykuł dodany pomyślnie' });
 }
 export default requestHandler;
