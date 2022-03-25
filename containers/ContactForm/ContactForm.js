@@ -7,6 +7,7 @@ import Description from '../../components/Description/Description';
 import SelectInput from '../../components/Select/Select';
 import Modal from '../../components/Modal/Modal';
 import { useModal } from '../../hooks';
+import InputError from '../../components/InputError/InputError';
 
 import styles from './ContactForm.module.css';
 
@@ -56,7 +57,7 @@ function ContactForm() {
     email: '',
     message: '',
   });
-  const [errors, setErros] = React.useState({
+  const [errors, setErrors] = React.useState({
     name: false,
     lastName: false,
     phone: false,
@@ -64,6 +65,7 @@ function ContactForm() {
     company: false,
     email: false,
   });
+
   const [isNewsletter, setIsNewsletter] = React.useState(true);
   const { isOpen, setIsOpen, message, setMessage } = useModal();
 
@@ -77,12 +79,31 @@ function ContactForm() {
       company: false,
       email: false,
     };
+    if (formData.email.match(/^[A-Za-z]{3,}$/) === null) {
+      tempErrors.email = true;
+      isValid = false;
+    }
+    if (formData.name.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
+      tempErrors.name = true;
+      isValid = false;
+    }
+    if (formData.lastName.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
+      tempErrors.lastName = true;
+      isValid = false;
+    }
     if (formData.phone.match(/^(\+48)?[0-9]{9}$/) === null) {
-      console.log('phone is incorrect');
       tempErrors.phone = true;
       isValid = false;
     }
-    setErros({ ...tempErrors });
+    if (formData.city.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]{3,}$/) === null) {
+      tempErrors.city = true;
+      isValid = false;
+    }
+    if (formData.company.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]{3,}$/) === null) {
+      tempErrors.company = true;
+      isValid = false;
+    }
+    setErrors(tempErrors);
     return isValid;
   };
 
@@ -100,8 +121,8 @@ function ContactForm() {
       handleNewsletter(e);
       setMessage(result.message);
       setIsOpen(true);
+      clearForm();
     }
-    clearForm();
   };
   const handleInput = React.useCallback(
     (e) => {
@@ -165,6 +186,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__name}>
+              <InputError
+                message="Imie ma tylko litery i minimum 3 znaki"
+                isError={errors.name}
+              />
               <Input
                 type="text"
                 fieldName="name"
@@ -174,6 +199,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__lastName}>
+              <InputError
+                message="Nazwisko ma tylko litery i minimum 3 znaki"
+                isError={errors.lastName}
+              />
               <Input
                 type="text"
                 fieldName="lastName"
@@ -183,6 +212,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__phone}>
+              <InputError
+                message="Niepoprawny numer telefonu"
+                isError={errors.phone}
+              />
               <Input
                 type="phone"
                 fieldName="phone"
@@ -192,6 +225,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__city}>
+              <InputError
+                message="Miasto ma tylko litery, spację i minimum 3 znaki"
+                isError={errors.city}
+              />
               <Input
                 type="text"
                 fieldName="city"
@@ -201,6 +238,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__company}>
+              <InputError
+                message="Firma ma tylko litery, spację i minimum 3 znaki"
+                isError={errors.company}
+              />
               <Input
                 type="text"
                 fieldName="company"
@@ -210,6 +251,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__email}>
+              <InputError
+                message="Nie poprawny adres email"
+                isError={errors.email}
+              />
               <Input
                 type="text"
                 fieldName="email"
