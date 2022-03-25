@@ -5,6 +5,7 @@ import Title from '../../components/Title/Title';
 import Subtitle from '../../components/Subtitle/Subtitle';
 import Description from '../../components/Description/Description';
 import SelectInput from '../../components/Select/Select';
+import Modal from '../../components/Modal/Modal';
 
 import styles from './ContactForm.module.css';
 
@@ -55,6 +56,8 @@ function ContactForm() {
     message: '',
   });
   const [isNewsletter, setIsNewsletter] = React.useState(true);
+  const [message, setMessage] = React.useState('');
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -65,7 +68,8 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/json' },
     });
     const result = await response.json();
-    console.log(result);
+    setMessage(result.message);
+    setIsOpen(true);
     clearForm();
   };
   const handleInput = React.useCallback(
@@ -89,122 +93,139 @@ function ContactForm() {
     });
     setIsNewsletter(true);
   };
-
+  React.useEffect(() => {
+    const timer = setTimeout(function () {
+      setIsOpen(false);
+      setMessage('');
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [message]);
   return (
-    <section className={styles.contactFormSection}>
-      <div className={styles.contactFormSection__container}>
-        <header className={styles.contactFormSection__header}>
-          <Subtitle content="Napisz do nas" />
-          <Title content="Formularz kontaktowy" />
-          <Description classes="description_maxWidth_960 description_18">
-            Masz pytania dotyczące przemysłowych urządzeń pralniczych marki{' '}
-            <strong>Pralma</strong> lub <strong>Primus</strong>? Aby uzyskać
-            pomoc techniczną, rozwiązć problemy z eksploatcją, konserwacją
-            urządzeń, zapytać o ofertę na odpowiednie do Twoich potrzeb
-            wyposażenie pralnicze lub masz inne pytania dotyczące naszej
-            współpracy lub dokumnetów, wypełnij i prześlij poniższy formularz.
-          </Description>
-        </header>
-        <form className={styles.contactFormSection__form} onSubmit={handleForm}>
-          <div className={styles.contactFormSection__reason}>
-            <SelectInput
-              options={reasons}
-              action={handleInput}
-              name="reason"
-              selected={formData.reason}
-            />
-          </div>
-          <div className={styles.contactFormSection__market}>
-            <SelectInput
-              options={markets}
-              action={handleInput}
-              name="market"
-              selected={formData.market}
-            />
-          </div>
-          <div className={styles.contactFormSection__name}>
-            <Input
-              type="text"
-              fieldName="name"
-              handleInput={handleInput}
-              value={formData.name}
-              placeholder="imię"
-            />
-          </div>
-          <div className={styles.contactFormSection__lastName}>
-            <Input
-              type="text"
-              fieldName="lastName"
-              handleInput={handleInput}
-              value={formData.lastName}
-              placeholder="nazwisko"
-            />
-          </div>
-          <div className={styles.contactFormSection__phone}>
-            <Input
-              type="phone"
-              fieldName="phone"
-              handleInput={handleInput}
-              value={formData.phone}
-              placeholder="telefon"
-            />
-          </div>
-          <div className={styles.contactFormSection__city}>
-            <Input
-              type="text"
-              fieldName="city"
-              handleInput={handleInput}
-              value={formData.city}
-              placeholder="miasto"
-            />
-          </div>
-          <div className={styles.contactFormSection__company}>
-            <Input
-              type="text"
-              fieldName="company"
-              handleInput={handleInput}
-              value={formData.company}
-              placeholder="firma / instytucja"
-            />
-          </div>
-          <div className={styles.contactFormSection__email}>
-            <Input
-              type="text"
-              fieldName="email"
-              handleInput={handleInput}
-              value={formData.email}
-              placeholder="email"
-            />
-          </div>
-          <div className={styles.contactFormSection__message}>
-            <textarea
-              rows="10"
-              name="message"
-              onChange={handleInput}
-              value={formData.message}
-              placeholder="wpisz treść..."
-            />
-          </div>
-          <div className={styles.contactFormSection__newsletter}>
-            <label
-              className={styles.contactFormSection__label}
-              htmlFor="newsletter"
-            >
-              zapisz się na newsletter
-            </label>
-            <input
-              className={styles.contactFormSection__input}
-              name="newsletter"
-              id="newsletter"
-              type="checkbox"
-              onChange={handleNewsletter}
-              checked={isNewsletter}
-            />
-          </div>
-          <Button classes="button_center" label="wyślij" type="submit" />
-        </form>
-      </div>
-    </section>
+    <React.Fragment>
+      <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)}>
+        <Title content="Komunikat" variant="h4" />
+        <Description classes="description_18">{message}</Description>
+      </Modal>
+      <section className={styles.contactFormSection}>
+        <div className={styles.contactFormSection__container}>
+          <header className={styles.contactFormSection__header}>
+            <Subtitle content="Napisz do nas" />
+            <Title content="Formularz kontaktowy" />
+            <Description classes="description_maxWidth_960 description_18">
+              Masz pytania dotyczące przemysłowych urządzeń pralniczych marki{' '}
+              <strong>Pralma</strong> lub <strong>Primus</strong>? Aby uzyskać
+              pomoc techniczną, rozwiązć problemy z eksploatcją, konserwacją
+              urządzeń, zapytać o ofertę na odpowiednie do Twoich potrzeb
+              wyposażenie pralnicze lub masz inne pytania dotyczące naszej
+              współpracy lub dokumnetów, wypełnij i prześlij poniższy formularz.
+            </Description>
+          </header>
+          <form
+            className={styles.contactFormSection__form}
+            onSubmit={handleForm}
+          >
+            <div className={styles.contactFormSection__reason}>
+              <SelectInput
+                options={reasons}
+                action={handleInput}
+                name="reason"
+                selected={formData.reason}
+              />
+            </div>
+            <div className={styles.contactFormSection__market}>
+              <SelectInput
+                options={markets}
+                action={handleInput}
+                name="market"
+                selected={formData.market}
+              />
+            </div>
+            <div className={styles.contactFormSection__name}>
+              <Input
+                type="text"
+                fieldName="name"
+                handleInput={handleInput}
+                value={formData.name}
+                placeholder="imię"
+              />
+            </div>
+            <div className={styles.contactFormSection__lastName}>
+              <Input
+                type="text"
+                fieldName="lastName"
+                handleInput={handleInput}
+                value={formData.lastName}
+                placeholder="nazwisko"
+              />
+            </div>
+            <div className={styles.contactFormSection__phone}>
+              <Input
+                type="phone"
+                fieldName="phone"
+                handleInput={handleInput}
+                value={formData.phone}
+                placeholder="telefon"
+              />
+            </div>
+            <div className={styles.contactFormSection__city}>
+              <Input
+                type="text"
+                fieldName="city"
+                handleInput={handleInput}
+                value={formData.city}
+                placeholder="miasto"
+              />
+            </div>
+            <div className={styles.contactFormSection__company}>
+              <Input
+                type="text"
+                fieldName="company"
+                handleInput={handleInput}
+                value={formData.company}
+                placeholder="firma / instytucja"
+              />
+            </div>
+            <div className={styles.contactFormSection__email}>
+              <Input
+                type="text"
+                fieldName="email"
+                handleInput={handleInput}
+                value={formData.email}
+                placeholder="email"
+              />
+            </div>
+            <div className={styles.contactFormSection__message}>
+              <textarea
+                rows="10"
+                name="message"
+                onChange={handleInput}
+                value={formData.message}
+                placeholder="wpisz treść..."
+              />
+            </div>
+            <div className={styles.contactFormSection__newsletter}>
+              <label
+                className={styles.contactFormSection__label}
+                htmlFor="newsletter"
+              >
+                zapisz się na newsletter
+              </label>
+              <input
+                className={styles.contactFormSection__input}
+                name="newsletter"
+                id="newsletter"
+                type="checkbox"
+                onChange={handleNewsletter}
+                checked={isNewsletter}
+              />
+            </div>
+            <Button classes="button_center" label="wyślij" type="submit" />
+          </form>
+        </div>
+      </section>
+    </React.Fragment>
   );
 }
 export default ContactForm;
