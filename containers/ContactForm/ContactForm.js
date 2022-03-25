@@ -56,20 +56,51 @@ function ContactForm() {
     email: '',
     message: '',
   });
+  const [errors, setErros] = React.useState({
+    name: false,
+    lastName: false,
+    phone: false,
+    city: false,
+    company: false,
+    email: false,
+  });
   const [isNewsletter, setIsNewsletter] = React.useState(true);
   const { isOpen, setIsOpen, message, setMessage } = useModal();
 
+  const validateForm = () => {
+    const isValid = true;
+    const tempErrors = {
+      name: false,
+      lastName: false,
+      phone: false,
+      city: false,
+      company: false,
+      email: false,
+    };
+    if (formData.phone.match(/^(\+48)?[0-9]{9}$/) === null) {
+      console.log('phone is incorrect');
+      tempErrors.phone = true;
+      isValid = false;
+    }
+    setErros({ ...tempErrors });
+    return isValid;
+  };
+
   const handleForm = async (e) => {
     e.preventDefault();
-    handleNewsletter(e);
-    const response = await fetch(API_ROUTE_TO_SEND_EMAIL, {
-      method: 'POST',
-      body: JSON.stringify(formData),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const result = await response.json();
-    setMessage(result.message);
-    setIsOpen(true);
+    const isValidForm = validateForm();
+
+    if (isValidForm) {
+      const response = await fetch(API_ROUTE_TO_SEND_EMAIL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const result = await response.json();
+      handleNewsletter(e);
+      setMessage(result.message);
+      setIsOpen(true);
+    }
     clearForm();
   };
   const handleInput = React.useCallback(
@@ -93,15 +124,6 @@ function ContactForm() {
     });
     setIsNewsletter(true);
   };
-  // React.useEffect(() => {
-  //   const timer = setTimeout(function () {
-  //     setIsOpen(false);
-  //     setMessage('');
-  //   }, 2000);
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [message]);
   return (
     <React.Fragment>
       <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)}>
@@ -166,7 +188,7 @@ function ContactForm() {
                 fieldName="phone"
                 handleInput={handleInput}
                 value={formData.phone}
-                placeholder="telefon"
+                placeholder="telefon np: +48413450561"
               />
             </div>
             <div className={styles.contactFormSection__city}>
