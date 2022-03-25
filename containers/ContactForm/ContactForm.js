@@ -64,6 +64,7 @@ function ContactForm() {
     city: false,
     company: false,
     email: false,
+    message: false,
   });
 
   const [isNewsletter, setIsNewsletter] = React.useState(true);
@@ -78,6 +79,7 @@ function ContactForm() {
       city: false,
       company: false,
       email: false,
+      message: false,
     };
     if (
       formData.email.match(
@@ -107,7 +109,12 @@ function ContactForm() {
       tempErrors.company = true;
       isValid = false;
     }
-    setErrors(tempErrors);
+    if (formData.message.length <= 50) {
+      tempErrors.message = true;
+      isValid = false;
+    }
+
+    setErrors({ ...tempErrors });
     return isValid;
   };
 
@@ -159,6 +166,7 @@ function ContactForm() {
       city: false,
       company: false,
       email: false,
+      message: false,
     });
   };
   return (
@@ -280,6 +288,10 @@ function ContactForm() {
               />
             </div>
             <div className={styles.contactFormSection__message}>
+              <InputError
+                message="Wiadomość musi zawierać conajmniej 50 znaków ..."
+                isError={errors.message}
+              />
               <textarea
                 rows="10"
                 name="message"
