@@ -64,3 +64,18 @@
 .button_mr_1 {
   margin-right: 1rem;
 }
+
+.button_dangerous {
+  background-color: var(--accent-500);
+  border: 1px solid var(--accent-700);
+  color: var(--primary-300);
+}
+.button.button_dangerous:hover {
+  background-color: var(--accent-700);
+}
+.button.button_dangerous:focus::after {
+  border-color: var(--accent-700);
+}
+.button_disabled.button_dangerous:focus::after {
+  border-color: var(--light-700);
+}

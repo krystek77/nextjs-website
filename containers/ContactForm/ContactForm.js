@@ -79,7 +79,11 @@ function ContactForm() {
       company: false,
       email: false,
     };
-    if (formData.email.match(/^[A-Za-z]{3,}$/) === null) {
+    if (
+      formData.email.match(
+        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+      ) === null
+    ) {
       tempErrors.email = true;
       isValid = false;
     }
@@ -303,7 +307,7 @@ function ContactForm() {
             <div className={styles.contactFormSection__actionButtons}>
               <Button classes="button_mr_1" label="wyślij" type="submit" />
               <Button
-                classes=""
+                classes="button_dangerous"
                 label="zresetuj"
                 type="button"
                 action={reset}
