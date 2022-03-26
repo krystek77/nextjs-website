@@ -11,6 +11,7 @@ import { useModal } from "../../hooks";
 import styles from "./Newsletter.module.css";
 
 const API_ROUTE_NEWSLETTER = "/api/sendgrid/newsletter";
+const API_ROUTE_CONFIRMATION_EMAIL = "/api/sendgrid/confirmation";
 
 function Newsletter() {
   const [email, setEmail] = useState("");
@@ -33,8 +34,18 @@ function Newsletter() {
 
     if (isEmail()) {
       try {
-        const response = await fetch(API_ROUTE_NEWSLETTER, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(email) });
-        const result = await response.json();
+        const newsletter = await fetch(API_ROUTE_NEWSLETTER, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(email),
+        });
+        await fetch(API_ROUTE_CONFIRMATION_EMAIL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(email),
+        });
+
+        const result = await newsletter.json();
         setMessage(result.message);
         setIsOpen(true);
       } catch (error) {

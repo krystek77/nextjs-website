@@ -1,4 +1,4 @@
-import sendGrid from '@sendgrid/mail';
+import sendGrid from "@sendgrid/mail";
 sendGrid.setApiKey(process.env.SEND_GRID_API_KEY);
 
 /**
@@ -53,34 +53,32 @@ export default async function sendEmail(req, res) {
 `;
 
   const message = {
-    to: 'k.wrona@pralma.pl',
+    to: "k.wrona@pralma.pl",
     cc: {
-      email: 'krystianwrona.kielce@gmail.com',
-      name: 'Adresat kopii wiadomości',
+      email: "krystianwrona.kielce@gmail.com",
+      name: "Adresat kopii wiadomości",
     },
     bcc: {
-      email: 'krystian.wrona77@gmail.com',
-      name: 'Ukryty odbiorca kopii',
+      email: "krystian.wrona77@gmail.com",
+      name: "Ukryty odbiorca kopii",
     },
-    from: { email: 'k.wrona@pralma.pl', name: 'Ze strony PPUP Pralma' },
+    from: { email: "k.wrona@pralma.pl", name: "Ze strony PPUP Pralma" },
     subject: `TEMAT: ${data.reason}`,
     text: TEXT,
     html: HTML,
   };
   try {
     await sendGrid.send(message);
-    return res.status(200).json({ message: 'Wiadomość wysłana pomyślnie' });
+    return res.status(200).json({ message: "Wiadomość wysłana pomyślnie" });
   } catch (error) {
-    // console.log(error);
     if (error.code) {
       if (error.code === 403) {
         return res.status(403).json({
-          message:
-            'Wyslano już 100 maili tego dnia. Plan nie pozwala wysłać już dzisiaj wiadomości',
+          message: "Odmowa spełnienia żądania wysłania wiadomości",
         });
       }
       if (error.code === 400) {
-        return res.status(400).json({ message: 'Niepoprawne żądanie' });
+        return res.status(400).json({ message: "Niepoprawne żądanie" });
       }
       return res.status(401).json({
         message: `Wysłanie wiadomości nie powiodło się`,
