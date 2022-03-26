@@ -40,7 +40,12 @@
   outline: none;
   cursor: pointer;
 }
-
+.modal_center .modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 @-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(25%);

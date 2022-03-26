@@ -17,8 +17,8 @@ export default async function newsletter(req, res) {
   };
 
   try {
-    const response = await client.request(request);
-    return res.status(201).json({ message: `Dziękujemy za subskrypcję ${response[1].job_id}` });
+    await client.request(request);
+    return res.status(201).json({ message: "Wysłaliśmy do Ciebie wiadomość z pewną niespodzianką" });
   } catch (error) {
     if (error.code) {
       if (error.code === 403) {
