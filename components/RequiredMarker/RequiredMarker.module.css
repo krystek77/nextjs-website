@@ -1,0 +1,18 @@
+.requiredMarker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: max-content;
+  font-family: var(--font-alt);
+  font-size: 0.75rem;
+  z-index: 1;
+}
+.requiredMarker_bottom_1 {
+  bottom: 1rem;
+}
+.requiredMarker_bottom_minus_1 {
+  bottom: -1rem;
+}
+.requiredMarker_bottom_1_5 {
+  bottom: 1.5rem;
+}
