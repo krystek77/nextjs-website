@@ -73,3 +73,12 @@
   background-position: center;
   box-shadow: 0px 100px 100px 0px rgba(0, 0, 0, 0.15);
 }
+.banner__contact {
+  background-image: url('/assets/images/for_banners/banner_contact.webp'),
+    radial-gradient(
+      90% 1000% at 50% 50%,
+      var(--accent-700) 0%,
+      var(--accent-500) 100%
+    );
+  background-position: center;
+}

@@ -14,11 +14,11 @@ function Contact() {
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner classes="banner_height_auto">
+      <Banner classes="banner__contact">
         <Title
           variant="h1"
           content="Skontaktuj się z nami"
-          classes="title_maxWidth_960 title_bg_white_dark"
+          classes="title_maxWidth_480 title_bg_white_primary"
         />
       </Banner>
       <ContactData />
