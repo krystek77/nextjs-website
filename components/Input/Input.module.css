@@ -35,10 +35,16 @@
   animation: expand 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.input_mb_1 input {
+/* .input_mb_1 input {
   margin-bottom: 1rem;
 }
 .input_mb_2 input {
+  margin-bottom: 2rem;
+} */
+.inputWrapper.input_mb_1 {
+  margin-bottom: 1rem;
+}
+.inputWrapper.input_mb_2 {
   margin-bottom: 2rem;
 }
 .input_bg_primary_300 input {
@@ -54,6 +60,12 @@
 .input_bg_light_300 input::placeholder {
   color: var(--dark-700);
   opacity: 1;
+}
+.input_required_bottom_minus_1 em {
+  bottom: -1rem;
+}
+.input_required_bottom_minus_1_5 em {
+  bottom: -1.5rem;
 }
 
 @-webkit-keyframes expand {

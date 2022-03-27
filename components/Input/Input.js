@@ -1,5 +1,6 @@
 import { classesNames } from "../../lib";
 import styles from "./Input.module.css";
+import RequiredMarker from "../RequiredMarker/RequiredMarker";
 
 function Input({ classes = "", type = "text", value = "", fieldName = "", handleInput, placeholder = "", required = false }) {
   const classesString = classesNames(classes, "inputWrapper")(styles);
@@ -7,6 +8,7 @@ function Input({ classes = "", type = "text", value = "", fieldName = "", handle
     <div className={classesString}>
       <input required={required} className={styles.input} type={type} value={value} name={fieldName} onChange={handleInput} placeholder={placeholder} />
       <span className={styles.input__outline}></span>
+      {required && <RequiredMarker/>}
     </div>
   );
 }
