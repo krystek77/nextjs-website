@@ -89,28 +89,34 @@ function ContactForm() {
       tempErrors.email = true;
       isValid = false;
     }
-    if (formData.name.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
+    // not required
+    if (formData.name !== "" && formData.name.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
       tempErrors.name = true;
       isValid = false;
     }
-    if (formData.lastName.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
+    // not required
+    if (formData.lastName !== "" && formData.lastName.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,}$/) === null) {
       tempErrors.lastName = true;
       isValid = false;
     }
+    //required
     if (formData.phone.match(/^(\+48)?[0-9]{9}$/) === null) {
       tempErrors.phone = true;
       isValid = false;
     }
-    if (formData.city.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]{3,}$/) === null) {
+    // not required
+    if (formData.city !== "" && formData.city.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]{3,}$/) === null) {
       tempErrors.city = true;
       isValid = false;
     }
+    //not required
     if (
-      formData.company.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.-]{3,}$/) === null
+      formData.company !== "" && formData.company.match(/^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.-]{3,}$/) === null
     ) {
       tempErrors.company = true;
       isValid = false;
     }
+    //required
     if (formData.message.length <= 50) {
       tempErrors.message = true;
       isValid = false;
