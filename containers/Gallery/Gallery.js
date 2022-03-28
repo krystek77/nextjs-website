@@ -44,7 +44,7 @@ function Gallery() {
         />
         <div className={styles.galleryImageModal}>
           <Image
-            src={`/assets/images/${photoGallery[indexes[0]].src}.png`}
+            src={`/assets/images/${photoGallery[indexes[0]].src}.webp`}
             alt={`wyposażenie pralni przemysłowej ${
               photoGallery[indexes[0]].src
             }`}
@@ -78,7 +78,7 @@ function Gallery() {
                     }}
                   >
                     <Image
-                      src={`/assets/images/${item.src}.png`}
+                      src={`/assets/images/${item.src}.webp`}
                       alt={`wyposażenie pralni przemysłowej ${item.src}`}
                       width="440"
                       height="586"

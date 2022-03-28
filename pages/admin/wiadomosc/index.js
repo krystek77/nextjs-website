@@ -22,6 +22,7 @@ function PostForm() {
 
   const { isOpen, setIsOpen, message, setMessage } = useModal();
   const handlePostForm = async (e) => {
+    console.log(formData.data)
     e.preventDefault();
     const response = await fetch(ADD_POST_URL, {
       method: "POST",

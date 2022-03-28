@@ -1,7 +1,6 @@
 .footer {
   padding-bottom: 0;
-  background-color: var(--primary-300);
-  background-image: url('/assets/images/bg_footer.png');
+  background: radial-gradient(300% 1000% at 50% 50%, var(--primary-300), var(--dark-700));
   background-blend-mode: color;
 }
 .footer__inner {

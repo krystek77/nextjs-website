@@ -10,6 +10,14 @@
 .softwash__image {
   filter: hue-rotate(0deg);
   min-width: 50%;
+  /* height:100%; */
+  position: relative;
+}
+.softwash__image img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+
 }
 .softwash__content {
   margin-left: 3rem;

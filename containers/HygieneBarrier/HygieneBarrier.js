@@ -7,7 +7,7 @@ function HygieneBarrier() {
   return (
     <section className={styles.hygieneBarrier}>
       <Image
-        src="/assets/images/bg_hygiene_barrier.png"
+        src="/assets/images/bg_hygiene_barrier.webp"
         alt="bariera higieny"
         layout="fill"
       />
