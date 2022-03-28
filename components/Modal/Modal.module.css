@@ -46,6 +46,15 @@
   align-items: center;
   justify-content: center;
 }
+.modal_pb_3 .modal__container {
+  padding-bottom: 3rem;
+}
+.modal_pb_2 .modal__container {
+  padding-bottom: 2rem;
+}
+.modal_pb_1 .modal__container {
+  padding-bottom: 1rem;
+}
 @-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(25%);

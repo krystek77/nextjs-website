@@ -1,8 +1,5 @@
 /**
  * TODO:
- * - create customers section
- * - create contact form
- * - create contact page
  * - create testimonials section
  * - add content to other pages
  * - customieze product data structure
