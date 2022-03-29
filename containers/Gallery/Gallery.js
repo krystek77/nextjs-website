@@ -1,71 +1,165 @@
-import React, { useRef, useState } from "react";
-import Image from "next/image";
-import Title from "../../components/Title/Title";
-import Subtitle from "../../components/Subtitle/Subtitle";
-import Description from "../../components/Description/Description";
-import Button from "../../components/Button/Button";
-import Modal from "../../components/Modal/Modal";
-import { useModal } from "../../hooks";
-import styles from "./Gallery.module.css";
+import React, { useRef, useState } from 'react';
+import Image from 'next/image';
+import Title from '../../components/Title/Title';
+import Subtitle from '../../components/Subtitle/Subtitle';
+import Description from '../../components/Description/Description';
+import Button from '../../components/Button/Button';
+import Modal from '../../components/Modal/Modal';
+import moment from 'moment';
+import 'moment/locale/pl';
+moment.locale('pl');
 
-const photoGallery = [
-  { src: "laundry_01", title: "Pralnia samoobslugowa" },
-  { src: "laundry_02", title: 'Szpital - pralnia z "bariera higieny"' },
-  { src: "laundry_03", title: "Pralnia w Domu Pomocy Społecznej" },
-  { src: "laundry_04", title: "Pralnia komercyjna" },
-  { src: "laundry_05", title: "Pralnia w apartamentowcu" },
-  { src: "laundry_06", title: "Pralnai w Domu Pomocy Społecznej" },
-];
+import { useModal } from '../../hooks';
+import styles from './Gallery.module.css';
 
 function Gallery({ laundries }) {
-  console.log(laundries);
-  
   const imagesRef = useRef(null);
-  const [indexes, setIndexes] = useState([0]);
+  const [index, setIndex] = useState(laundries[0]._id);
   const { isOpen, setIsOpen } = useModal();
 
   const scroll = (direction) => {
-    if (direction === "TO_LEFT") {
+    if (direction === 'TO_LEFT') {
       imagesRef.current.scrollLeft += 336;
     } else {
       imagesRef.current.scrollLeft -= 336;
     }
   };
+  const laundry = laundries.find((item) => item._id === index);
 
   return (
     <React.Fragment>
-      <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)} classes='modal_center modal_pb_3'>
-        <Title content={photoGallery[indexes[0]].title} variant='h3' classes='title_display_h5 title_uppercase title_weight_small title_center' />
-        <div className={styles.galleryImageModal}>
-          <Image src={`/assets/images/${photoGallery[indexes[0]].src}.webp`} alt={`wyposażenie pralni przemysłowej ${photoGallery[indexes[0]].src}`} width='440' height='586' />
-        </div>
+      <Modal
+        isOpen={isOpen}
+        toggleModal={() => setIsOpen(!isOpen)}
+        classes="modal_maxWidth_1280 modal_pb_2 modal_bg_squares"
+      >
+        <article className={styles.gallery__modal}>
+          <div className={styles.gallery__modalInner}>
+            <aside className={styles.gallery__modalImage}>
+              <Image
+                src={laundry.image}
+                alt={`wyposażenie pralni przemysłowej ${laundry.title}`}
+                width="440"
+                height="586"
+                unoptimized
+              />
+            </aside>
+            <div className={styles.gallery__modalDescription}>
+              <div className={styles.gallery__modalHeader}>
+                <Subtitle
+                  content={`dodano: ${moment(
+                    laundry.createdAt,
+                    'YYYY-MM-DD'
+                  ).fromNow()}`}
+                  classes="subtitle_small"
+                />
+                <Title
+                  content={laundry.title}
+                  variant="h3"
+                  classes="title_display_h5 title_uppercase"
+                />
+              </div>
+              <div className={styles.gallery__modalContent}>
+                <Title
+                  content="Wyposażenie"
+                  variant="h4"
+                  classes="title_display_h6"
+                />
+                {laundry.equipments.length ? (
+                  <ul className={styles.gallery__equipmentsList}>
+                    {laundry.equipments.map((item, index) => (
+                      <li
+                        key={index}
+                        className={styles.gallery__equipmentsListItem}
+                      >
+                        <div className={styles.gallery__equipmentsListType}>
+                          <span
+                            className={styles.gallery__equipmentsListProduct}
+                          >
+                            {item.product.toLowerCase()}
+                          </span>
+                          , typ
+                          <strong
+                            className={styles.gallery__equipmentsListModel}
+                          >
+                            {item.model}
+                          </strong>
+                        </div>
+                        <span className={styles.gallery__equipmentsListAmount}>
+                          - szt. <b>{item.amount}</b>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                <Description classes="description_18" content={laundry.desc} />
+              </div>
+              {laundry.realization && (
+                <footer className={styles.gallery__modalFooter}>
+                  <Title
+                    content="Okres realizacji"
+                    variant="h4"
+                    classes="title_display_h6"
+                  />
+                  <div className={styles.gallery__modalRealizationPeriod}>
+                    <strong className={styles.gallery__modalRealizationLabel}>
+                      od:
+                    </strong>
+                    <span className={styles.gallery__modalRealizationDate}>
+                      {laundry.realization?.from}
+                    </span>
+                    <strong className={styles.gallery__modalRealizationLabel}>
+                      do:
+                    </strong>
+                    <span className={styles.gallery__modalRealizationDate}>
+                      {laundry.realization?.to}
+                    </span>
+                  </div>
+                </footer>
+              )}
+            </div>
+          </div>
+        </article>
       </Modal>
       <section className={styles.gallery}>
         <div className={styles.gallery__content}>
-          <Subtitle content='Projekty pralni każdego typu i wielkości' />
-          <Title content='Nasze realizacje' variant='h2' />
+          <Subtitle content="Projekty pralni każdego typu i wielkości" />
+          <Title content="Nasze realizacje" variant="h2" />
           <Description
-            content='Realizujemy projekty wyposażenia pralni przemysłowych już dziesiątki lat.
+            content="Realizujemy projekty wyposażenia pralni przemysłowych już dziesiątki lat.
         Wiemy, że Twoja pralnia to konkretne potrzeby prania, warunki lokalowe czy sposób finansowania. Dzięki
         wielu latom doświadczenia dostarczymy Ci wyposażenie pralni każdego typu i wielkości, optymalne
-        do Twoich potrzeb.'
+        do Twoich potrzeb."
           />
         </div>
         <div className={styles.gallery__outer}>
           <div className={styles.gallery__images} ref={imagesRef}>
             <div className={styles.gallery__container}>
-              {photoGallery.map((item, index) => {
+              {laundries.map((item) => {
+                const { _id, image, title } = item;
                 return (
                   <div
-                    key={index}
+                    key={_id}
                     className={styles.gallery__image}
                     onClick={() => {
-                      setIndexes([index]);
+                      setIndex(_id);
                       setIsOpen(true);
-                    }}>
-                    <Image src={`/assets/images/${item.src}.webp`} alt={`wyposażenie pralni przemysłowej ${item.src}`} width='440' height='586' />
+                    }}
+                  >
+                    <Image
+                      src={image}
+                      alt={`wyposażenie pralni przemysłowej ${title}`}
+                      width="440"
+                      height="586"
+                      unoptimized
+                    />
                     <div className={styles.gallery__zoom}>
-                      <Image src='/assets/icons/zoom.svg' alt='scroll to right' width='32' height='32' />
+                      <Image
+                        src="/assets/icons/zoom.svg"
+                        alt="scroll to right"
+                        width="32"
+                        height="32"
+                      />
                     </div>
                   </div>
                 );
@@ -73,11 +167,24 @@ function Gallery({ laundries }) {
             </div>
           </div>
           <div className={styles.gallery__controls}>
-            <Button action={() => scroll("TO_LEFT")} classes='button_only_icon'>
-              <Image src='/assets/icons/to_left.svg' alt='scroll to Left' width='24' height='24' />
+            <Button action={() => scroll('TO_LEFT')} classes="button_only_icon">
+              <Image
+                src="/assets/icons/to_left.svg"
+                alt="scroll to Left"
+                width="24"
+                height="24"
+              />
             </Button>
-            <Button action={() => scroll("TO_RIGHT")} classes='button_only_icon'>
-              <Image src='/assets/icons/to_right.svg' alt='scroll to right' width='24' height='24' />
+            <Button
+              action={() => scroll('TO_RIGHT')}
+              classes="button_only_icon"
+            >
+              <Image
+                src="/assets/icons/to_right.svg"
+                alt="scroll to right"
+                width="24"
+                height="24"
+              />
             </Button>
           </div>
         </div>

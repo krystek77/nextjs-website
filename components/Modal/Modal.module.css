@@ -55,6 +55,44 @@
 .modal_pb_1 .modal__container {
   padding-bottom: 1rem;
 }
+.modal_maxWidth_100 .modal__container {
+  max-width: 100%;
+}
+.modal_maxWidth_1280 .modal__container {
+  max-width: 1280px;
+}
+.modal_bg_transparent_primary .modal__container {
+  background: radial-gradient(
+    50% 50% at 100% 100%,
+    rgba(168, 227, 226, 1),
+    rgba(240, 250, 250, 1)
+  );
+  background: -moz-radial-gradient(
+    50% 50% at 100% 100%,
+    rgba(168, 227, 226, 1),
+    rgba(240, 250, 250, 1)
+  );
+  background: -webkit-radial-gradient(
+    50% 50% at 100% 100%,
+    rgba(168, 227, 226, 1),
+    rgba(240, 250, 250, 1)
+  );
+}
+.modal_bg_squares .modal__container {
+  background: url('/assets/images/squares.webp'),
+    radial-gradient(
+      50% 50% at 100% 100%,
+      rgba(168, 227, 226, 1),
+      rgba(240, 250, 250, 1)
+    );
+  background: url('/assets/images/squares.webp'),
+    -moz-radial-gradient(50% 50% at 100% 100%, rgba(168, 227, 226, 1), rgba(240, 250, 250, 1));
+  background: url('/assets/images/squares.webp'),
+    -webkit-radial-gradient(50% 50% at 100% 100%, rgba(168, 227, 226, 1), rgba(240, 250, 250, 1));
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+}
 @-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(25%);

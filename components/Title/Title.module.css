@@ -107,6 +107,10 @@
   font-size: 1.375rem;
   line-height: 1.2;
 }
+.title_display_h6 {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
 .title_weight_small {
   font-weight: 600;
 }

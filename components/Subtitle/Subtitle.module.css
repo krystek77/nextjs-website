@@ -41,3 +41,16 @@
 .subtitle_max_width_960 {
   max-width: 960px;
 }
+.subtitle_small {
+  margin-bottom: 1rem;
+}
+.subtitle_small .subtitle__ball {
+  width: 1rem;
+  height: 1rem;
+}
+.subtitle_small .subtitle__content {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  font-family: var(--font-base);
+  color: var(--dark-700);
+}
