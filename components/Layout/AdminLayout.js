@@ -12,13 +12,14 @@ function AdminLayout({ children }) {
           {/** potential component */}
           <nav className={styles.adminNavigation}>
             <Link href="/admin/czesc-zamienna">
-              <a className={styles.adminNavigation__link}>
-                formularz części zamiennej
-              </a>
+              <a className={styles.adminNavigation__link}>części zamienne</a>
             </Link>
             <Link href="/admin/wiadomosc">
+              <a className={styles.adminNavigation__link}>wiadomości</a>
+            </Link>
+            <Link href="/admin/nasze-pralnie">
               <a className={styles.adminNavigation__link}>
-                formularz wiadomości
+                zrealizowane pralnie
               </a>
             </Link>
             <Link href="/admin">

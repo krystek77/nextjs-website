@@ -1,0 +1,16 @@
+.ourLaundries {
+  width: 100%;
+  max-width: 760px;
+}
+
+.ourLaundries__description {
+  width: 100%;
+  resize: none;
+  padding: 1rem;
+}
+.ourLaundries__description::placeholder {
+  font-family: var(--font-base);
+  font-size: 1.125rem;
+  color: var(--dark-700);
+  opacity: 0.35;
+}
