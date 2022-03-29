@@ -11,6 +11,7 @@ const models = ["FX-150", "FX-180", "FX-135", "FX-280", "FX-240"];
 
 function OurLaundries() {
   const selectedFile = React.useRef(null);
+  const [equipmentAdded, setEquipmentAdded] = React.useState(false);
   const [formData, setFormData] = React.useState({
     title: "",
     desc: "",
@@ -59,7 +60,18 @@ function OurLaundries() {
     const equipments = [...formData.equipments, equipment];
     console.log(equipments);
     setFormData({ ...formData, equipments: equipments });
+    setEquipmentAdded(true);
+    //clear equipments
+    setFormData({ ...formData, equipments: [...equipments], product: products[0], model: models[0], amount: 1 });
   };
+  React.useEffect(() => {
+    const timer = setTimeout(function () {
+      setEquipmentAdded(false);
+    }, 2000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [equipmentAdded]);
 
   return (
     <div className={styles.ourLaundries}>
@@ -80,6 +92,7 @@ function OurLaundries() {
           <Button label='dodaj wyposażenie' classes='button_small button_no_wrap button_mb_1 button_to_right' action={handleEquipments}>
             +
           </Button>
+          {equipmentAdded && <span className={styles.ourLaundries_equipmentAddedIndicator}>Wyposażenie dodane</span>}
         </div>
         {/** equipments */}
         <div className={styles.contactFormSection__actionButtons}>

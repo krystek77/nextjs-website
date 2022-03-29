@@ -49,7 +49,7 @@ function Gallery({ laundries }) {
                 <Subtitle
                   content={`dodano: ${moment(
                     laundry.createdAt,
-                    'YYYY-MM-DD'
+                    'DD.MM.YYYY'
                   ).fromNow()}`}
                   classes="subtitle_small"
                 />

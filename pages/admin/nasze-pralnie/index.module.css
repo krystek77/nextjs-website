@@ -24,4 +24,40 @@
   padding: 1rem;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.ourLaundries_equipmentAddedIndicator {
+  border: 1px solid var(--accent-700);
+  border-radius: 0.125rem;
+  bottom: 2rem;
+  color: var(--accent-500);
+  position: absolute;
+  left: 1rem;
+  font-family: var(--font-alt);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  -webkit-animation: to-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: to-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes to-right {
+  0% {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes to-right {
+  0% {
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
 }
