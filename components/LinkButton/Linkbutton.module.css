@@ -97,3 +97,11 @@
   margin: 0 auto;
   max-width: max-content;
 }
+.linkButton_small_text {
+  padding: 0.25rem 1rem;
+}
+.linkButton_small_text .linkButton__label {
+  font-family: var(--font-alt);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
