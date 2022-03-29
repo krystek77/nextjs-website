@@ -25,7 +25,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  content: '';
+  content: "";
   display: block;
   inset: -1px;
   position: absolute;
@@ -43,6 +43,10 @@
 }
 .button_center {
   margin: 0 auto;
+  display: block;
+}
+.button_to_right {
+  margin-left: auto;
   display: block;
 }
 .button_only_icon {
@@ -68,7 +72,22 @@
 .button_mr_2 {
   margin-right: 2rem;
 }
-
+.button_mb_2 {
+  margin-bottom: 2rem;
+}
+.button_mb_1 {
+  margin-bottom: 1rem;
+}
+.button_small {
+  font-family: var(--font-alt);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+}
+.button_small span {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
 .button_dangerous {
   background-color: var(--accent-500);
   border: 1px solid var(--accent-700);

@@ -14,3 +14,14 @@
   color: var(--dark-700);
   opacity: 0.35;
 }
+.ourLaundries__dates {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.ourLaundries__equipmentsSection {
+  border: 1px solid var(--light-300);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
