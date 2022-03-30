@@ -7,12 +7,21 @@
   font-size: 0.75rem;
   z-index: 1;
 }
+.requiredMarker_bottom_05 {
+  bottom: 0.5rem;
+}
 .requiredMarker_bottom_1 {
   bottom: 1rem;
+}
+.requiredMarker_bottom_1_5 {
+  bottom: 1.5rem;
 }
 .requiredMarker_bottom_minus_1 {
   bottom: -1rem;
 }
-.requiredMarker_bottom_1_5 {
-  bottom: 1.5rem;
+.requiredMarker_bottom_minus_1_5 {
+  bottom: -1.5rem;
+}
+.requiredMarker_bottom_minus_05 {
+  bottom: -0.5rem;
 }

@@ -7,6 +7,9 @@ import SelectInput from '../../../components/Select/Select';
 import Button from '../../../components/Button/Button';
 import FileBase64 from 'react-file-base64';
 import Modal from '../../../components/Modal/Modal';
+import InputError from '../../../components/InputError/InputError';
+import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
+
 import { useModal } from '../../../hooks';
 import styles from './index.module.css';
 
@@ -33,6 +36,34 @@ function OurLaundries() {
     equipments: [],
     image: '',
   });
+  const [errors, setErrors] = React.useState({
+    title: false,
+    description: false,
+    selectedFileBase64: false,
+  });
+  const validateForm = () => {
+    const isValid = true;
+    const tempErrors = {
+      title: false,
+      description: false,
+      selectedFileBase64: false,
+    };
+
+    if (formData.title.length <= 2) {
+      tempErrors.title = true;
+      isValid = false;
+    }
+    if (formData.desc.length <= 50) {
+      tempErrors.description = true;
+      isValid = false;
+    }
+    if (formData.image === '') {
+      tempErrors.selectedFileBase64 = true;
+      isValid = false;
+    }
+    setErrors({ ...tempErrors });
+    return isValid;
+  };
   const handleForm = async (e) => {
     e.preventDefault();
     const data = {
@@ -46,16 +77,18 @@ function OurLaundries() {
       equipments: formData.equipments,
       image: formData.image,
     };
-
-    const response = await fetch(API_ROUTE_TO_ADD_LAUNDRY, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    const result = await response.json();
-    setIsOpen(true);
-    setMessage(result.message);
-    resetForm();
+    const isValidForm = validateForm();
+    if (isValidForm) {
+      const response = await fetch(API_ROUTE_TO_ADD_LAUNDRY, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      setIsOpen(true);
+      setMessage(result.message);
+      resetForm();
+    }
   };
   const resetForm = () => {
     setFormData({
@@ -68,6 +101,11 @@ function OurLaundries() {
       amount: 1,
       equipments: [],
       image: '',
+    });
+    setErrors({
+      title: false,
+      description: false,
+      selectedFileBase64: false,
     });
   };
   const handleEquipments = () => {
@@ -105,114 +143,138 @@ function OurLaundries() {
       <div className={styles.ourLaundries}>
         <Title
           content="Dodaj zrealizowane wyposażenie pralni"
-          classes="title_display_h5"
+          classes="title_display_h5 title_center title_mb_3"
           variant="h2"
         />
         <form className={styles.ourLaundries__form} onSubmit={handleForm}>
-          <Input
-            type="text"
-            fieldName="title"
-            placeholder="wpisz odbiorcę wyposażenia np.: Dom Pomocy Społecznej w Piłce Zamyślin"
-            value={formData.title}
-            handleInput={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
-            classes="input_mb_1"
-          />
-          {/** potential component */}
-          <textarea
-            className={styles.ourLaundries__description}
-            onChange={(e) => setFormData({ ...formData, desc: e.target.value })}
-            value={formData.desc}
-            name="desc"
-            rows="10"
-            placeholder="Krótki opis dostarczonego wyposażenia"
-          />
-          {/** end potential component */}
-          {/** potential component */}
-          <FileBase64
-            multiple={false}
-            onDone={({ base64 }) => setFormData({ ...formData, image: base64 })}
-          />
-          {/* <input
-          className={styles.ourLaundries__fileInput}
-          type="file"
-          ref={selectedFile}
-        /> */}
-          {/** end potential component */}
-          <Title
-            content="Okres dostaw"
-            variant="h3"
-            classes="title_display_h6 title_uppercase"
-          />
-          <div className={styles.ourLaundries__dates}>
-            <Input
-              type="date"
-              fieldName="from"
-              value={formData.from}
-              handleInput={(e) =>
-                setFormData({ ...formData, from: e.target.value })
-              }
-              classes="input_mb_1"
-            />
-            <Input
-              type="date"
-              fieldName="to"
-              value={formData.to}
-              handleInput={(e) =>
-                setFormData({ ...formData, to: e.target.value })
-              }
-              classes="input_mb_1"
-            />
+          <div className={styles.ourLaundries__inputGroup}>
+            <div className={styles.ourLaundries__inputWrapper}>
+              <Input
+                type="text"
+                fieldName="title"
+                placeholder="wpisz odbiorcę wyposażenia np.: Dom Pomocy Społecznej w Piłce Zamyślin"
+                value={formData.title}
+                handleInput={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
+                classes="input_mb_1"
+              />
+              <InputError
+                isError={errors.title}
+                message="Tytuł musi mieć co najmniej 3 znaki"
+              />
+              <RequiredMarker classes="requiredMarker_bottom_minus_1_5" />
+            </div>
+            <div className={styles.ourLaundries__inputWrapper}>
+              {/** potential component */}
+              <textarea
+                className={styles.ourLaundries__description}
+                onChange={(e) =>
+                  setFormData({ ...formData, desc: e.target.value })
+                }
+                value={formData.desc}
+                name="desc"
+                rows="10"
+                placeholder="Krótki opis dostarczonego wyposażenia"
+              />
+              <InputError
+                isError={errors.description}
+                message="Opis musi zawierać conajmniej 50 znaków ..."
+                classes="inputError_top_minus_1_5"
+              />
+              <RequiredMarker classes="" />
+              {/** end potential component */}
+            </div>
+            <div className={styles.ourLaundries__inputWrapper}>
+              <FileBase64
+                multiple={false}
+                onDone={({ base64 }) =>
+                  setFormData({ ...formData, image: base64 })
+                }
+              />
+              <InputError
+                isError={errors.selectedFileBase64}
+                message="Zdjęciem musi zostać dodane"
+                classes="inputError_top_minus_1_5"
+              />
+              <RequiredMarker classes="requiredMarker_bottom_05" />
+            </div>
           </div>
-          {/** equipments */}
-          <Title
-            content="Wyposażenie"
-            variant="h3"
-            classes="title_display_h6 title_uppercase"
-          />
-          <div className={styles.ourLaundries__equipmentsSection}>
-            <SelectInput
-              options={products}
-              action={(e) =>
-                setFormData({ ...formData, product: e.target.value })
-              }
-              name="product"
-              selected={formData.product}
+          <div className={styles.ourLaundries__inputGroup}>
+            <Title
+              content="Okres dostaw"
+              variant="h3"
+              classes="title_display_h6 title_uppercase"
             />
-            <SelectInput
-              options={models}
-              action={(e) =>
-                setFormData({ ...formData, model: e.target.value })
-              }
-              name="model"
-              selected={formData.model}
+            <div className={styles.ourLaundries__dates}>
+              <Input
+                type="date"
+                fieldName="from"
+                value={formData.from}
+                handleInput={(e) =>
+                  setFormData({ ...formData, from: e.target.value })
+                }
+                classes="input_mb_1"
+              />
+              <Input
+                type="date"
+                fieldName="to"
+                value={formData.to}
+                handleInput={(e) =>
+                  setFormData({ ...formData, to: e.target.value })
+                }
+                classes="input_mb_1"
+              />
+            </div>
+            {/** equipments */}
+            <Title
+              content="Wyposażenie"
+              variant="h3"
+              classes="title_display_h6 title_uppercase"
             />
-            <Input
-              type="number"
-              fieldName="amount"
-              value={formData.amount}
-              placeholder="ilość"
-              handleInput={(e) =>
-                setFormData({ ...formData, amount: e.target.value })
-              }
-              classes="input_mb_1"
-            />
-            <Button
-              label="dodaj wyposażenie"
-              classes="button_small button_no_wrap button_mb_1 button_to_right"
-              action={handleEquipments}
-            >
-              +
-            </Button>
-            {equipmentAdded && (
-              <span className={styles.ourLaundries_equipmentAddedIndicator}>
-                Wyposażenie dodane
-              </span>
-            )}
+            <div className={styles.ourLaundries__equipmentsSection}>
+              <SelectInput
+                options={products}
+                action={(e) =>
+                  setFormData({ ...formData, product: e.target.value })
+                }
+                name="product"
+                selected={formData.product}
+              />
+              <SelectInput
+                options={models}
+                action={(e) =>
+                  setFormData({ ...formData, model: e.target.value })
+                }
+                name="model"
+                selected={formData.model}
+              />
+              <Input
+                type="number"
+                fieldName="amount"
+                value={formData.amount}
+                placeholder="ilość"
+                handleInput={(e) =>
+                  setFormData({ ...formData, amount: e.target.value })
+                }
+                classes="input_mb_1"
+              />
+              <Button
+                label="dodaj wyposażenie"
+                classes="button_small button_no_wrap button_mb_1 button_to_right"
+                action={handleEquipments}
+              >
+                +
+              </Button>
+              {equipmentAdded && (
+                <span className={styles.ourLaundries_equipmentAddedIndicator}>
+                  Wyposażenie dodane
+                </span>
+              )}
+            </div>
+            {/** equipments */}
           </div>
-          {/** equipments */}
-          <div className={styles.contactFormSection__actionButtons}>
+          <div className={styles.ourLaundries__actionButtons}>
             <Button
               classes="button_mr_2 button_no_wrap"
               label="dodaj"
