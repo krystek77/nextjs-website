@@ -12,6 +12,8 @@
  * - add media query to make the website responsive
  * - add recaptcha to forms
  * - validate form data : add post, add laundry
+ * - extract textarea component
+ * - extract input file (base64) component
  * - handle errors
  * - website optimization - React, accessibilty, SEO
  * - testing
