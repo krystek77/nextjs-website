@@ -42,13 +42,12 @@ export default Home;
 
 import { links } from '../constants/links';
 export async function getStaticProps() {
-  const { database: db } = await connectMongoDB();
+  const { database: db, client } = await connectMongoDB();
   const laundriesPhotos = await db
     .collection('gallery')
     .find({})
     .sort({ createdAt: -1 })
     .toArray();
-
   const threeLatestPosts = getPosts().slice(0, 3);
   return {
     props: {

@@ -11,7 +11,8 @@
  * - add login logic
  * - add media query to make the website responsive
  * - add recaptcha to forms
- * - validate form data
+ * - validate form data : add post, add laundry
+ * - handle errors
  * - website optimization - React, accessibilty, SEO
  * - testing
  * - deploy website

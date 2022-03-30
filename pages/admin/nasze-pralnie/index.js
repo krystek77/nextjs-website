@@ -1,10 +1,13 @@
 import React from 'react';
 import AdminLayout from '../../../components/Layout/AdminLayout';
 import Title from '../../../components/Title/Title';
+import Description from '../../../components/Description/Description';
 import Input from '../../../components/Input/Input';
 import SelectInput from '../../../components/Select/Select';
 import Button from '../../../components/Button/Button';
 import FileBase64 from 'react-file-base64';
+import Modal from '../../../components/Modal/Modal';
+import { useModal } from '../../../hooks';
 import styles from './index.module.css';
 
 const products = [
@@ -15,9 +18,9 @@ const products = [
   'prasownica walcowa',
 ];
 const models = ['FX-150', 'FX-180', 'FX-135', 'FX-280', 'FX-240'];
-
+const API_ROUTE_TO_ADD_LAUNDRY = '/api/laundries/add';
 function OurLaundries() {
-  // const selectedFile = React.useRef(null);
+  const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const [equipmentAdded, setEquipmentAdded] = React.useState(false);
   const [formData, setFormData] = React.useState({
     title: '',
@@ -28,9 +31,9 @@ function OurLaundries() {
     model: models[0],
     amount: 1,
     equipments: [],
-    selectedFileBase64: '',
+    image: '',
   });
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
     const data = {
       title: formData.title,
@@ -41,14 +44,20 @@ function OurLaundries() {
         to: formData.to,
       },
       equipments: formData.equipments,
-      selectedFileBase64: formData.selectedFileBase64,
-      // image: selectedFile.current.files[0]?.name,
+      image: formData.image,
     };
-    console.log(data);
+
+    const response = await fetch(API_ROUTE_TO_ADD_LAUNDRY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    setIsOpen(true);
+    setMessage(result.message);
     resetForm();
   };
   const resetForm = () => {
-    console.log('RESET FORM');
     setFormData({
       title: '',
       desc: '',
@@ -58,9 +67,8 @@ function OurLaundries() {
       model: models[0],
       amount: 1,
       equipments: [],
-      selectedFileBase64: '',
+      image: '',
     });
-    // selectedFile.current.value = '';
   };
   const handleEquipments = () => {
     const equipment = {
@@ -69,10 +77,8 @@ function OurLaundries() {
       amount: Number(formData.amount),
     };
     const equipments = [...formData.equipments, equipment];
-    console.log(equipments);
     setFormData({ ...formData, equipments: equipments });
     setEquipmentAdded(true);
-    //clear equipments
     setFormData({
       ...formData,
       equipments: [...equipments],
@@ -91,131 +97,137 @@ function OurLaundries() {
   }, [equipmentAdded]);
 
   return (
-    <div className={styles.ourLaundries}>
-      <Title
-        content="Dodaj zrealizowane wyposażenie pralni"
-        classes="title_display_h5"
-        variant="h2"
-      />
-      <form className={styles.ourLaundries__form} onSubmit={handleForm}>
-        <Input
-          type="text"
-          fieldName="title"
-          placeholder="wpisz odbiorcę wyposażenia np.: Dom Pomocy Społecznej w Piłce Zamyślin"
-          value={formData.title}
-          handleInput={(e) =>
-            setFormData({ ...formData, title: e.target.value })
-          }
-          classes="input_mb_1"
+    <React.Fragment>
+      <Modal isOpen={isOpen} toggleModal={() => setIsOpen(!isOpen)}>
+        <Title content="Komunikat" variant="h4" classes="title_display_h5" />
+        <Description classes="description_18">{message}</Description>
+      </Modal>
+      <div className={styles.ourLaundries}>
+        <Title
+          content="Dodaj zrealizowane wyposażenie pralni"
+          classes="title_display_h5"
+          variant="h2"
         />
-        {/** potential component */}
-        <textarea
-          className={styles.ourLaundries__description}
-          onChange={(e) => setFormData({ ...formData, desc: e.target.value })}
-          value={formData.desc}
-          name="desc"
-          rows="10"
-          placeholder="Krótki opis dostarczonego wyposażenia"
-        />
-        {/** end potential component */}
-        {/** potential component */}
-        <FileBase64
-          multiple={false}
-          onDone={({ base64 }) =>
-            setFormData({ ...formData, selectedFileBase64: base64 })
-          }
-        />
-        {/* <input
+        <form className={styles.ourLaundries__form} onSubmit={handleForm}>
+          <Input
+            type="text"
+            fieldName="title"
+            placeholder="wpisz odbiorcę wyposażenia np.: Dom Pomocy Społecznej w Piłce Zamyślin"
+            value={formData.title}
+            handleInput={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
+            classes="input_mb_1"
+          />
+          {/** potential component */}
+          <textarea
+            className={styles.ourLaundries__description}
+            onChange={(e) => setFormData({ ...formData, desc: e.target.value })}
+            value={formData.desc}
+            name="desc"
+            rows="10"
+            placeholder="Krótki opis dostarczonego wyposażenia"
+          />
+          {/** end potential component */}
+          {/** potential component */}
+          <FileBase64
+            multiple={false}
+            onDone={({ base64 }) => setFormData({ ...formData, image: base64 })}
+          />
+          {/* <input
           className={styles.ourLaundries__fileInput}
           type="file"
           ref={selectedFile}
         /> */}
-        {/** end potential component */}
-        <Title
-          content="Okres dostaw"
-          variant="h3"
-          classes="title_display_h6 title_uppercase"
-        />
-        <div className={styles.ourLaundries__dates}>
-          <Input
-            type="date"
-            fieldName="from"
-            value={formData.from}
-            handleInput={(e) =>
-              setFormData({ ...formData, from: e.target.value })
-            }
-            classes="input_mb_1"
+          {/** end potential component */}
+          <Title
+            content="Okres dostaw"
+            variant="h3"
+            classes="title_display_h6 title_uppercase"
           />
-          <Input
-            type="date"
-            fieldName="to"
-            value={formData.to}
-            handleInput={(e) =>
-              setFormData({ ...formData, to: e.target.value })
-            }
-            classes="input_mb_1"
+          <div className={styles.ourLaundries__dates}>
+            <Input
+              type="date"
+              fieldName="from"
+              value={formData.from}
+              handleInput={(e) =>
+                setFormData({ ...formData, from: e.target.value })
+              }
+              classes="input_mb_1"
+            />
+            <Input
+              type="date"
+              fieldName="to"
+              value={formData.to}
+              handleInput={(e) =>
+                setFormData({ ...formData, to: e.target.value })
+              }
+              classes="input_mb_1"
+            />
+          </div>
+          {/** equipments */}
+          <Title
+            content="Wyposażenie"
+            variant="h3"
+            classes="title_display_h6 title_uppercase"
           />
-        </div>
-        {/** equipments */}
-        <Title
-          content="Wyposażenie"
-          variant="h3"
-          classes="title_display_h6 title_uppercase"
-        />
-        <div className={styles.ourLaundries__equipmentsSection}>
-          <SelectInput
-            options={products}
-            action={(e) =>
-              setFormData({ ...formData, product: e.target.value })
-            }
-            name="product"
-            selected={formData.product}
-          />
-          <SelectInput
-            options={models}
-            action={(e) => setFormData({ ...formData, model: e.target.value })}
-            name="model"
-            selected={formData.model}
-          />
-          <Input
-            type="number"
-            fieldName="amount"
-            value={formData.amount}
-            placeholder="ilość"
-            handleInput={(e) =>
-              setFormData({ ...formData, amount: e.target.value })
-            }
-            classes="input_mb_1"
-          />
-          <Button
-            label="dodaj wyposażenie"
-            classes="button_small button_no_wrap button_mb_1 button_to_right"
-            action={handleEquipments}
-          >
-            +
-          </Button>
-          {equipmentAdded && (
-            <span className={styles.ourLaundries_equipmentAddedIndicator}>
-              Wyposażenie dodane
-            </span>
-          )}
-        </div>
-        {/** equipments */}
-        <div className={styles.contactFormSection__actionButtons}>
-          <Button
-            classes="button_mr_2 button_no_wrap"
-            label="dodaj"
-            type="submit"
-          />
-          <Button
-            classes="button_dangerous"
-            label="zresetuj"
-            type="button"
-            action={resetForm}
-          />
-        </div>
-      </form>
-    </div>
+          <div className={styles.ourLaundries__equipmentsSection}>
+            <SelectInput
+              options={products}
+              action={(e) =>
+                setFormData({ ...formData, product: e.target.value })
+              }
+              name="product"
+              selected={formData.product}
+            />
+            <SelectInput
+              options={models}
+              action={(e) =>
+                setFormData({ ...formData, model: e.target.value })
+              }
+              name="model"
+              selected={formData.model}
+            />
+            <Input
+              type="number"
+              fieldName="amount"
+              value={formData.amount}
+              placeholder="ilość"
+              handleInput={(e) =>
+                setFormData({ ...formData, amount: e.target.value })
+              }
+              classes="input_mb_1"
+            />
+            <Button
+              label="dodaj wyposażenie"
+              classes="button_small button_no_wrap button_mb_1 button_to_right"
+              action={handleEquipments}
+            >
+              +
+            </Button>
+            {equipmentAdded && (
+              <span className={styles.ourLaundries_equipmentAddedIndicator}>
+                Wyposażenie dodane
+              </span>
+            )}
+          </div>
+          {/** equipments */}
+          <div className={styles.contactFormSection__actionButtons}>
+            <Button
+              classes="button_mr_2 button_no_wrap"
+              label="dodaj"
+              type="submit"
+            />
+            <Button
+              classes="button_dangerous"
+              label="zresetuj"
+              type="button"
+              action={resetForm}
+            />
+          </div>
+        </form>
+      </div>
+    </React.Fragment>
   );
 }
 OurLaundries.getLayout = (page) => {

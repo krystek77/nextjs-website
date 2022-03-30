@@ -35,15 +35,17 @@ function Gallery({ laundries }) {
       >
         <article className={styles.gallery__modal}>
           <div className={styles.gallery__modalInner}>
-            <aside className={styles.gallery__modalImage}>
-              <Image
-                src={laundry.image}
-                alt={`wyposażenie pralni przemysłowej ${laundry.title}`}
-                width="440"
-                height="586"
-                unoptimized
-              />
-            </aside>
+            {laundry.image && (
+              <aside className={styles.gallery__modalImage}>
+                <Image
+                  src={laundry.image}
+                  alt={`wyposażenie pralni przemysłowej ${laundry.title}`}
+                  width="440"
+                  height="586"
+                  unoptimized
+                />
+              </aside>
+            )}
             <div className={styles.gallery__modalDescription}>
               <div className={styles.gallery__modalHeader}>
                 <Subtitle
@@ -146,21 +148,25 @@ function Gallery({ laundries }) {
                       setIsOpen(true);
                     }}
                   >
-                    <Image
-                      src={image}
-                      alt={`wyposażenie pralni przemysłowej ${title}`}
-                      width="440"
-                      height="586"
-                      unoptimized
-                    />
-                    <div className={styles.gallery__zoom}>
-                      <Image
-                        src="/assets/icons/zoom.svg"
-                        alt="scroll to right"
-                        width="32"
-                        height="32"
-                      />
-                    </div>
+                    {image && (
+                      <React.Fragment>
+                        <Image
+                          src={image}
+                          alt={`wyposażenie pralni przemysłowej ${title}`}
+                          width="440"
+                          height="586"
+                          unoptimized
+                        />
+                        <div className={styles.gallery__zoom}>
+                          <Image
+                            src="/assets/icons/zoom.svg"
+                            alt="scroll to right"
+                            width="32"
+                            height="32"
+                          />
+                        </div>
+                      </React.Fragment>
+                    )}
                   </div>
                 );
               })}
