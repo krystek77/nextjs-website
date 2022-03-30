@@ -22,7 +22,9 @@
 .ourLaundries__fileInput {
   margin-bottom: 1rem;
 }
-
+.ourLaundries input[type='file'] {
+  margin-bottom: 1rem;
+}
 .ourLaundries__dates {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

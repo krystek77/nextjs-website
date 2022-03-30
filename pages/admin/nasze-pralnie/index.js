@@ -4,6 +4,7 @@ import Title from '../../../components/Title/Title';
 import Input from '../../../components/Input/Input';
 import SelectInput from '../../../components/Select/Select';
 import Button from '../../../components/Button/Button';
+import FileBase64 from 'react-file-base64';
 import styles from './index.module.css';
 
 const products = [
@@ -16,7 +17,7 @@ const products = [
 const models = ['FX-150', 'FX-180', 'FX-135', 'FX-280', 'FX-240'];
 
 function OurLaundries() {
-  const selectedFile = React.useRef(null);
+  // const selectedFile = React.useRef(null);
   const [equipmentAdded, setEquipmentAdded] = React.useState(false);
   const [formData, setFormData] = React.useState({
     title: '',
@@ -27,6 +28,7 @@ function OurLaundries() {
     model: models[0],
     amount: 1,
     equipments: [],
+    selectedFileBase64: '',
   });
   const handleForm = (e) => {
     e.preventDefault();
@@ -39,9 +41,11 @@ function OurLaundries() {
         to: formData.to,
       },
       equipments: formData.equipments,
-      image: selectedFile.current.files[0]?.name,
+      selectedFileBase64: formData.selectedFileBase64,
+      // image: selectedFile.current.files[0]?.name,
     };
     console.log(data);
+    resetForm();
   };
   const resetForm = () => {
     console.log('RESET FORM');
@@ -54,8 +58,9 @@ function OurLaundries() {
       model: models[0],
       amount: 1,
       equipments: [],
+      selectedFileBase64: '',
     });
-    selectedFile.current.value = '';
+    // selectedFile.current.value = '';
   };
   const handleEquipments = () => {
     const equipment = {
@@ -89,7 +94,7 @@ function OurLaundries() {
     <div className={styles.ourLaundries}>
       <Title
         content="Dodaj zrealizowane wyposażenie pralni"
-        classes="title_display_h5 "
+        classes="title_display_h5"
         variant="h2"
       />
       <form className={styles.ourLaundries__form} onSubmit={handleForm}>
@@ -114,11 +119,17 @@ function OurLaundries() {
         />
         {/** end potential component */}
         {/** potential component */}
-        <input
+        <FileBase64
+          multiple={false}
+          onDone={({ base64 }) =>
+            setFormData({ ...formData, selectedFileBase64: base64 })
+          }
+        />
+        {/* <input
           className={styles.ourLaundries__fileInput}
           type="file"
           ref={selectedFile}
-        />
+        /> */}
         {/** end potential component */}
         <Title
           content="Okres dostaw"
