@@ -13,14 +13,144 @@ import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
 import { useModal } from '../../../hooks';
 import styles from './index.module.css';
 
-const products = [
-  'pralnicowirówka',
-  'suszarka bębnwoa',
-  'wózek',
-  'prasownica nieckowa',
-  'prasownica walcowa',
+const select = [
+  {
+    product: 'pralnicowirówka wysokoobrotowa',
+    models: [
+      'FX65',
+      'FX80',
+      'FX105',
+      'FX135',
+      'FX180',
+      'FX240',
+      'FX280',
+      'FX350',
+      'FX450',
+      'FX600',
+      'FS800',
+      'FS1000',
+      'FS1200',
+      'SC70',
+      'SF10',
+      'SFC10',
+      'FS33',
+      'FS40',
+      'FS55',
+      'SD10',
+      'SDC10',
+      'SC65',
+    ],
+  },
+  {
+    product: 'pralnicowirówka sztywnomocowana',
+    models: [
+      'RX80',
+      'RX105',
+      'RX135',
+      'RX180',
+      'RX240',
+      'RX280',
+      'RX350',
+      'RX520',
+      'Pralma-10F',
+      'Pralma-16F',
+      'Pralma-22F',
+    ],
+  },
+  {
+    product: 'suszarka bębnowa',
+    models: [
+      'T9',
+      'T11',
+      'T13',
+      'T16',
+      'T24',
+      'T35',
+      'T9HP',
+      'T11HP',
+      'T13HP',
+      'T16HP',
+      'T13/13',
+      'SE-08RM',
+      'SE-10R',
+      'SE-16R',
+      'SE-25R',
+      'SE-35R',
+      'SP-10R',
+      'SP-16R',
+      'SP-25R',
+      'SP-35R',
+      'DX-11',
+      'DX-13',
+      'DX-16',
+      'DX-24',
+      'DX-25',
+      'DX-34',
+      'DX-55',
+      'DX-70',
+      'DX-90',
+      'DX-13/13',
+      'DX-20/20',
+      'DAM7',
+      'DAMC7',
+      'DAM7 HP',
+      'DAM6',
+      'DAM6 HP',
+    ],
+  },
+  {
+    product: 'pralnicowirówka wysokoobrotowa z barierą higieny',
+    models: [
+      'MXB-360',
+      'MXB-500',
+      'MXB-700',
+      'FXB-180',
+      'FXB-240',
+      'FXB-280',
+      'MB-33',
+      'MB-44',
+      'MB-66',
+      'MB-70',
+      'MB-90',
+      'MB-110',
+      'MB-140',
+      'MB-180',
+    ],
+  },
+  {
+    product: 'prasownica nieckowa',
+    models: [
+      'I25-100',
+      'I25-100V',
+      'I25-120',
+      'I25-120V',
+      'I25-140',
+      'I25-140V',
+      'I25-140AV',
+      'I30-160',
+      'I30-160V',
+      'I30-160AV',
+      'I30-200AV',
+    ],
+  },
+  {
+    product: 'prasownica walcowa',
+    models: ['I33-160', 'I33-200', 'I50-160', 'I50-200', 'I50-250', 'I50-320'],
+  },
+  {
+    product: 'prasownica walcowa z wbudowaną wprowadzarką',
+    models: ['IF/IR50-250', 'IF/IR50-320'],
+  },
+  {
+    product: 'prasownica walcowa ze składarką wzdłużną i wprowadzarką ',
+    models: ['IFF50-200', 'IFF50-250', 'IFF50-320'],
+  },
+  {
+    product: 'wirowka pralnicza',
+    models: ['C-8', 'WR-15F', 'WR-30F'],
+  },
 ];
-const models = ['FX-150', 'FX-180', 'FX-135', 'FX-280', 'FX-240'];
+
 const API_ROUTE_TO_ADD_LAUNDRY = '/api/laundries/add';
 function OurLaundries() {
   const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
@@ -30,8 +160,8 @@ function OurLaundries() {
     desc: '',
     from: '',
     to: '',
-    product: products[0],
-    model: models[0],
+    product: select[0].product,
+    model: select[0].models[0],
     amount: 1,
     equipments: [],
     image: '',
@@ -96,8 +226,8 @@ function OurLaundries() {
       desc: '',
       from: '',
       to: '',
-      product: products[0],
-      model: models[0],
+      product: select[0].product,
+      model: select[0].models[0],
       amount: 1,
       equipments: [],
       image: '',
@@ -236,7 +366,7 @@ function OurLaundries() {
             />
             <div className={styles.ourLaundries__equipmentsSection}>
               <SelectInput
-                options={products}
+                options={select.map((item) => item.product)}
                 action={(e) =>
                   setFormData({ ...formData, product: e.target.value })
                 }
@@ -244,7 +374,10 @@ function OurLaundries() {
                 selected={formData.product}
               />
               <SelectInput
-                options={models}
+                options={
+                  select.find((item) => item.product === formData.product)
+                    ?.models
+                }
                 action={(e) =>
                   setFormData({ ...formData, model: e.target.value })
                 }
