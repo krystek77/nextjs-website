@@ -50,6 +50,10 @@
   border-radius: 0.25rem;
   margin-bottom: 1rem;
 }
+.ourLaundries__label {
+  padding-left: 1rem;
+  font-family: var(--font-alt);
+}
 .ourLaundries__equipmentsSection {
   border: 1px solid var(--light-300);
   padding: 1rem 1rem 0rem;

@@ -207,6 +207,8 @@ function OurLaundries() {
               classes="title_display_h6 title_uppercase"
             />
             <div className={styles.ourLaundries__dates}>
+              <span className={styles.ourLaundries__label}>od:</span>
+              <span className={styles.ourLaundries__label}>do:</span>
               <Input
                 type="date"
                 fieldName="from"
