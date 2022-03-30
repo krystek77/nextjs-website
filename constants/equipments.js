@@ -1,0 +1,125 @@
+export const equipmenst = [
+  {
+    product: "pralnica bębnowa o załadunku czołowym",
+    models: ["PBE-08", "PBE-08A", "PBE-15", "PBE-15A", "PBP-15", "PBP-15A", "PBE-22", "PBE-22A", "PBP-22", "PBP-22A", "PCE-30", "PCP-30", "PCE-50", "PCP-50", "PCE-30A", "PCP-30A", "PCE-50A", "PCP-50A"],
+  },
+  {
+    product: "pralnica bębnowa o bocznym",
+    models: ["PBE-30", "PBP-30", "PBE-50", "PBP-50"],
+  },
+  {
+    product: "pralnicowirówka wysokoobrotowa",
+    models: ["FX65", "FX80", "FX105", "FX135", "FX180", "FX240", "FX280", "FX350", "FX450", "FX600", "FS800", "FS1000", "FS1200", "SC70", "SF10", "SFC10", "FS33", "FS40", "FS55", "SD10", "SDC10", "SC65"],
+  },
+  {
+    product: "pralnicowirówka sztywnomocowana",
+    models: ["RX80", "RX105", "RX135", "RX180", "RX240", "RX280", "RX350", "RX520", "Pralma-10F", "Pralma-16F", "Pralma-22F"],
+  },
+  {
+    product: "wózek",
+    models: ["WS-150", "WM-150", "WST-280", "WST-400", "WPD-400", "WPR", "WTP-140"],
+  },
+  {
+    product: "regał",
+    models: ["RS", "RJ"],
+  },
+  {
+    product: "kontener jezdny",
+    models: ["KJ - (1810x800x720 mm)", "KJ - (1600x650x800 mm)"],
+  },
+  {
+    product: "wieszak jezdny",
+    models: ["WJ"],
+  },
+  {
+    product: "stół manipuacyjny",
+    models: ["SM - (1960x960x800 mm)"],
+  },
+  {
+    product: "suszarka bębnowa",
+    models: [
+      "TX9",
+      "TX9 HP",
+      "T9",
+      "T11",
+      "T13",
+      "T16",
+      "T24",
+      "T35",
+      "T9HP",
+      "T11HP",
+      "T13HP",
+      "T16HP",
+      "T13/13",
+      "SE-08RM",
+      "SE-10R",
+      "SE-16R",
+      "SE-25R",
+      "SE-35R",
+      "SP-10R",
+      "SP-16R",
+      "SP-25R",
+      "SP-35R",
+      "DX-11",
+      "DX-13",
+      "DX-16",
+      "DX-24",
+      "DX-25",
+      "DX-34",
+      "DX-55",
+      "DX-70",
+      "DX-90",
+      "DX-13/13",
+      "DX-20/20",
+      "DAM7",
+      "DAMC7",
+      "DAM7 HP",
+      "DAM6",
+      "DAM6 HP",
+    ],
+  },
+  {
+    product: "pralnicowirówka wysokoobrotowa z barierą higieny",
+    models: ["MXB-360", "MXB-500", "MXB-700", "FXB-180", "FXB-240", "FXB-280", "MB-33", "MB-44", "MB-66", "MB-70", "MB-90", "MB-110", "MB-140", "MB-180"],
+  },
+  {
+    product: "prasownica nieckowa",
+    models: ["I25-100", "I25-100V", "I25-120", "I25-120V", "I25-140", "I25-140V", "I25-140AV", "I30-160", "I30-160V", "I30-160AV", "I30-200AV"],
+  },
+  {
+    product: "prasownica walcowa",
+    models: ["I33-160", "I33-200", "I50-160", "I50-200", "I50-250", "I50-320","I80-320"],
+  },
+  {
+    product: "prasownica walcowa z wbudowaną wprowadzarką",
+    models: ["IF/IR50-250", "IF/IR50-320"],
+  },
+  {
+    product: "prasownica nieckowa jedno walcowa",
+    models: ["ACL500", "ACL600","ACL800"],
+  },
+  {
+    product: "prasownica walcowa ze składarką wzdłużną i wprowadzarką ",
+    models: ["IFF50-200", "IFF50-250", "IFF50-320"],
+  },
+  {
+    product: "wirowka pralnicza",
+    models: ["C-8", "WR-15F", "WR-30F"],
+  },
+  {
+    product: "suszarka do pończoch",
+    models: ["SuS-800"],
+  },
+  {
+    product: "urządzenie do uszlachetniania tkanin",
+    models: ["PB-50", "BP-200", "PB-300", "PC-30", "PC-50", "PC-90", "PC-120"],
+  },
+  {
+    product: "wirówka do owoców",
+    models: ["WR"],
+  },
+  {
+    product: "obrotowy, samoczyszczący wymiennik ciepła",
+    models: ["OWC"],
+  },
+];
