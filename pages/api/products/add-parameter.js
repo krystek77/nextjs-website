@@ -1,10 +1,10 @@
-import { connectMongoDB } from '../../../utils/database';
+import { connectMongoDB } from "../../../utils/database";
 
 /*
  * ENDPOINT: http://localhost:3000/api/products/add-parameter
  */
 
-const COLLECTION_NAME = 'parameters';
+const COLLECTION_NAME = "parameters";
 
 export default async function addParameter(req, res) {
   const { body: data } = req;
@@ -12,47 +12,23 @@ export default async function addParameter(req, res) {
   try {
     const { database: db } = await connectMongoDB();
     const collections = await db.listCollections().toArray();
-    const isExists = collections.some(
-      (collection) => collection.name === COLLECTION_NAME
-    );
+    const isExists = collections.some((collection) => collection.name === COLLECTION_NAME);
 
     if (!isExists) {
       await db.createCollection(COLLECTION_NAME, {
         validator: {
           $jsonSchema: {
-            bsonType: 'object',
-            required: ['name', 'unit'],
+            bsonType: "object",
+            required: ["name", "unit"],
             properties: {
               name: {
-                bsonType: 'string',
-                pattern: /^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.-]{5,}$/,
-                description:
-                  'Nazwa musi być ciągiem znaków o długości co najmniej 5 i jest wymagana',
+                bsonType: "string",
+                pattern: "^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.-]{5,}$",
+                description: "Nazwa musi być ciągiem znaków o długości co najmniej 5 i jest wymagana",
               },
               unit: {
-                enum: [
-                  '-',
-                  'kg',
-                  'mm',
-                  'litrów',
-                  'kW',
-                  'obr./min.',
-                  'm3',
-                  'dm3',
-                  'dB(A)',
-                  'bar',
-                  'kPa',
-                  'cal',
-                  'litrów / minutę',
-                  'litrów / sekundę',
-                  'gramów / minutę',
-                  'm3 / godzinę',
-                  'kg / godzinę',
-                  'metrów / minutę',
-                  '&deg;C',
-                ],
-                description:
-                  'Jednostka może być tylko jedną z wartości wyliczeniowych i jest wymagana',
+                enum: ["-", "kg", "mm", "litrów", "kW", "obr./min.", "m3", "dm3", "dB(A)", "bar", "kPa", "cal", "litrów / minutę", "litrów / sekundę", "gramów / minutę", "m3 / godzinę", "kg / godzinę", "metrów / minutę", "&deg;C"],
+                description: "Jednostka może być tylko jedną z wartości wyliczeniowych i jest wymagana",
               },
             },
           },
@@ -70,7 +46,7 @@ export default async function addParameter(req, res) {
       });
     }
     await parameters.insertOne(data);
-    return res.status(201).json({ message: 'Parametr dodany' });
+    return res.status(201).json({ message: "Parametr dodany" });
   } catch (error) {
     return res.json({
       message: `${error.message}. Error code: ${error.code}`,
