@@ -5,8 +5,9 @@ import Description from '../../../components/Description/Description';
 import Input from '../../../components/Input/Input';
 import SelectInput from '../../../components/Select/Select';
 import Button from '../../../components/Button/Button';
-import FileBase64 from 'react-file-base64';
+import InputFileBase64 from '../../../components/InpufileBase64/InputFileBase64';
 import Modal from '../../../components/Modal/Modal';
+
 import InputError from '../../../components/InputError/InputError';
 import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
 
@@ -113,8 +114,6 @@ function OurLaundries() {
     setFormData({
       ...formData,
       equipments: [...equipments],
-      // product: select[0].product,
-      // model: select[0].models[0],
       amount: 1,
     });
   };
@@ -159,7 +158,6 @@ function OurLaundries() {
               <RequiredMarker classes="requiredMarker_bottom_minus_1_5" />
             </div>
             <div className={styles.ourLaundries__inputWrapper}>
-              {/** potential component */}
               <textarea
                 className={styles.ourLaundries__description}
                 onChange={(e) =>
@@ -175,23 +173,20 @@ function OurLaundries() {
                 message="Opis musi zawierać conajmniej 50 znaków ..."
                 classes="inputError_top_minus_1_5"
               />
-              <RequiredMarker classes="" />
-              {/** end potential component */}
+              <RequiredMarker />
             </div>
-            <div className={styles.ourLaundries__inputWrapper}>
-              <FileBase64
-                multiple={false}
-                onDone={({ base64 }) =>
-                  setFormData({ ...formData, image: base64 })
-                }
-              />
+            <InputFileBase64
+              action={({ base64 }) =>
+                setFormData({ ...formData, image: base64 })
+              }
+            >
               <InputError
                 isError={errors.selectedFileBase64}
-                message="Zdjęciem musi zostać dodane"
+                message="Zdjęcie musi zostać dodane"
                 classes="inputError_top_minus_1_5"
               />
-              <RequiredMarker classes="requiredMarker_bottom_05" />
-            </div>
+              <RequiredMarker classes="requiredMarker_bottom_minus_1_5" />
+            </InputFileBase64>
           </div>
           <div className={styles.ourLaundries__inputGroup}>
             <Title
