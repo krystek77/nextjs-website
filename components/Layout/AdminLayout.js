@@ -22,12 +22,17 @@ function AdminLayout({ children }) {
                 zrealizowane pralnie
               </a>
             </Link>
-            <Link href="/admin/produkty/parametr">
-              <a className={styles.adminNavigation__link}>+ parametr</a>
-            </Link>
-            <Link href="/admin/produkty/sterownik">
-              <a className={styles.adminNavigation__link}>+ sterownik</a>
-            </Link>
+            <div className={styles.adminNavigation__product}>
+              <span className={styles.adminNavigation__titleLinks}>
+                Produkt
+              </span>
+              <Link href="/admin/produkty/parametr">
+                <a className={styles.adminNavigation__link}>+ parametr</a>
+              </Link>
+              <Link href="/admin/produkty/sterownik">
+                <a className={styles.adminNavigation__link}>+ sterownik</a>
+              </Link>
+            </div>
             <Link href="/admin">
               <a className={styles.adminNavigation__link}>admin</a>
             </Link>

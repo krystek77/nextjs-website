@@ -41,6 +41,19 @@
   display: flex;
   flex-direction: column;
 }
+.adminNavigation__product {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-500);
+  padding-bottom: 1rem;
+  margin-bottom: 0.125rem;
+}
+.adminNavigation__titleLinks {
+  font-family: var(--font-alt);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+}
 .adminNavigation__link {
   background-color: var(--accent-500);
   border: 1px solid var(--accent-700);
