@@ -6,6 +6,7 @@ import Input from '../../../components/Input/Input';
 import SelectInput from '../../../components/Select/Select';
 import Button from '../../../components/Button/Button';
 import InputFileBase64 from '../../../components/InpufileBase64/InputFileBase64';
+import TextareaInput from '../../../components/InputTextarea/InputTextarea';
 import Modal from '../../../components/Modal/Modal';
 
 import InputError from '../../../components/InputError/InputError';
@@ -157,24 +158,20 @@ function OurLaundries() {
               />
               <RequiredMarker classes="requiredMarker_bottom_minus_1_5" />
             </div>
-            <div className={styles.ourLaundries__inputWrapper}>
-              <textarea
-                className={styles.ourLaundries__description}
-                onChange={(e) =>
-                  setFormData({ ...formData, desc: e.target.value })
-                }
-                value={formData.desc}
-                name="desc"
-                rows="10"
-                placeholder="Krótki opis dostarczonego wyposażenia"
-              />
+            <TextareaInput
+              action={(e) => setFormData({ ...formData, desc: e.target.value })}
+              classes="textareaWrapper_mb_4"
+              value={formData.desc}
+              name="desc"
+              placeholder="Krótki opis dostarczonego wyposażenia"
+            >
               <InputError
                 isError={errors.description}
                 message="Opis musi zawierać conajmniej 50 znaków ..."
                 classes="inputError_top_minus_1_5"
               />
               <RequiredMarker />
-            </div>
+            </TextareaInput>
             <InputFileBase64
               action={({ base64 }) =>
                 setFormData({ ...formData, image: base64 })

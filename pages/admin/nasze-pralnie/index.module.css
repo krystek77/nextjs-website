@@ -13,21 +13,6 @@
   position: relative;
   margin-bottom: 4rem;
 }
-/*
-* textarea
-*/
-.ourLaundries__description {
-  width: 100%;
-  resize: none;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.ourLaundries__description::placeholder {
-  font-family: var(--font-base);
-  font-size: 1.125rem;
-  color: var(--dark-700);
-  opacity: 0.35;
-}
 .ourLaundries__dates {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
