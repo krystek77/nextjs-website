@@ -1,3 +1,21 @@
-.parameterFrom {
-  border: 1px solid green;
+.parameterForm {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.parameterForm__form {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+.parameterForm__inputWrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.parameterForm__actionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

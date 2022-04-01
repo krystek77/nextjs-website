@@ -38,7 +38,7 @@ function OurLaundries() {
     selectedFileBase64: false,
   });
   const validateForm = () => {
-    const isValid = true;
+    let isValid = true;
     const tempErrors = {
       title: false,
       description: false,
