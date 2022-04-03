@@ -20,7 +20,7 @@ function SparePartsPerPage({ items, pageNumber, page }) {
   });
 
   const searchSparePartsEndpoint = ({ sparePartName, tags }, page) =>
-    `/api/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
+    `/api/dashboard/spare-parts/search/?title=${sparePartName}&tags=${tags}&page=${page}`;
 
   const handleSearch = async (event) => {
     event.preventDefault();

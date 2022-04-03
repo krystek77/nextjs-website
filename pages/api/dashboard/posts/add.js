@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 /*
- *  path: http://localhost:3000/api/posts/add
+ *  path: http://localhost:3000/api/dashboard/posts/add
  */
 
 const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');

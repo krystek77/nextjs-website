@@ -1,7 +1,7 @@
-import { connectMongoDB } from "../../../utils/database";
+import { connectMongoDB } from "../../../../utils/database";
 
 /*
- * ENDPOINT: http://localhost:3000/api/products/add-parameter
+ * ENDPOINT: http://localhost:3000/api/dashboard/products/add-parameter
  */
 
 const COLLECTION_NAME = "parameters";

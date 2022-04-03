@@ -1,6 +1,6 @@
-import { data } from '../../../cache/spareparts';
+import { data } from '../../../../cache/spareparts';
 /*
- *  path: http://localhost:3000/api/spare-parts/search?title=uszczelka&tags=pralnice,pralnicowirówki
+ *  endpoint: http://localhost:3000/api/dashboard/spare-parts/search?title=uszczelka&tags=pralnice,pralnicowirówki
  */
 
 function searchSpareParts(req, res) {

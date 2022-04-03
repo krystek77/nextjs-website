@@ -15,7 +15,7 @@ import { equipmenst as select } from '../../../../constants/equipments';
 import { useModal } from '../../../../hooks';
 import styles from './index.module.css';
 
-const API_ROUTE_TO_ADD_LAUNDRY = '/api/laundries/add';
+const API_ROUTE_TO_ADD_LAUNDRY = '/api/dashboard/laundries/add';
 function OurLaundries() {
   const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const [equipmentAdded, setEquipmentAdded] = React.useState(false);
