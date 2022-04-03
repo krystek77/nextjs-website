@@ -1,11 +1,11 @@
 import React from "react";
-import AdminLayout from "../../../components/Layout/AdminLayout";
-import Input from "../../../components/Input/Input";
-import Button from "../../../components/Button/Button";
-import Title from "../../../components/Title/Title";
-import Description from "../../../components/Description/Description";
-import Modal from "../../../components/Modal/Modal";
-import { useModal } from "../../../hooks";
+import AdminLayout from "../../../../components/Layout/AdminLayout";
+import Input from "../../../../components/Input/Input";
+import Button from "../../../../components/Button/Button";
+import Title from "../../../../components/Title/Title";
+import Description from "../../../../components/Description/Description";
+import Modal from "../../../../components/Modal/Modal";
+import { useModal } from "../../../../hooks";
 import styles from "./index.module.css";
 
 const ADD_POST_URL = `/api/posts/add`;

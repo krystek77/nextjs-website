@@ -1,7 +1,7 @@
-import AdminLayout from '../../components/Layout/AdminLayout';
-import Description from '../../components/Description/Description';
-import Title from '../../components/Title/Title';
-import Subtitle from '../../components/Subtitle/Subtitle';
+import AdminLayout from '../../../components/Layout/AdminLayout';
+import Description from '../../../components/Description/Description';
+import Title from '../../../components/Title/Title';
+import Subtitle from '../../../components/Subtitle/Subtitle';
 
 import styles from './index.module.css';
 

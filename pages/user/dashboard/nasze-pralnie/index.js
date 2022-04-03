@@ -1,18 +1,18 @@
 import React from 'react';
-import AdminLayout from '../../../components/Layout/AdminLayout';
-import Title from '../../../components/Title/Title';
-import Description from '../../../components/Description/Description';
-import Input from '../../../components/Input/Input';
-import SelectInput from '../../../components/Select/Select';
-import Button from '../../../components/Button/Button';
+import AdminLayout from '../../../../components/Layout/AdminLayout';
+import Title from '../../../../components/Title/Title';
+import Description from '../../../../components/Description/Description';
+import Input from '../../../../components/Input/Input';
+import SelectInput from '../../../../components/Select/Select';
+import Button from '../../../../components/Button/Button';
 import FileBase64 from 'react-file-base64';
-import Modal from '../../../components/Modal/Modal';
-import InputError from '../../../components/InputError/InputError';
-import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
+import Modal from '../../../../components/Modal/Modal';
+import InputError from '../../../../components/InputError/InputError';
+import RequiredMarker from '../../../../components/RequiredMarker/RequiredMarker';
 
-import { equipmenst as select } from '../../../constants/equipments';
+import { equipmenst as select } from '../../../../constants/equipments';
 
-import { useModal } from '../../../hooks';
+import { useModal } from '../../../../hooks';
 import styles from './index.module.css';
 
 const API_ROUTE_TO_ADD_LAUNDRY = '/api/laundries/add';
