@@ -1,6 +1,6 @@
 import styles from './sterownik.module.css';
-import AdminLayout from '../../../components/Layout/AdminLayout';
-import Title from '../../../components/Title/Title';
+import AdminLayout from '../../../../components/Layout/AdminLayout';
+import Title from '../../../../components/Title/Title';
 
 function ControlFrom() {
   return (

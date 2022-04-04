@@ -1,14 +1,14 @@
 import React from 'react';
-import AdminLayout from '../../../components/Layout/AdminLayout';
-import Title from '../../../components/Title/Title';
-import Description from '../../../components/Description/Description';
-import Input from '../../../components/Input/Input';
-import InputError from '../../../components/InputError/InputError';
-import Button from '../../../components/Button/Button';
-import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
-import SelectInput from '../../../components/Select/Select';
-import Modal from '../../../components/Modal/Modal';
-import { useModal } from '../../../hooks';
+import AdminLayout from '../../../../components/Layout/AdminLayout';
+import Title from '../../../../components/Title/Title';
+import Description from '../../../../components/Description/Description';
+import Input from '../../../../components/Input/Input';
+import InputError from '../../../../components/InputError/InputError';
+import Button from '../../../../components/Button/Button';
+import RequiredMarker from '../../../../components/RequiredMarker/RequiredMarker';
+import SelectInput from '../../../../components/Select/Select';
+import Modal from '../../../../components/Modal/Modal';
+import { useModal } from '../../../../hooks';
 import styles from './parametr.module.css';
 
 const units = [

@@ -30,7 +30,7 @@ function AdminLayout({ children }) {
               <Link href="/user/dashboard/produkty/parametr">
                 <a className={styles.adminNavigation__link}>+ parametr</a>
               </Link>
-              <Link href="/user/dashboardprodukty/sterownik">
+              <Link href="/user/dashboard/produkty/sterownik">
                 <a className={styles.adminNavigation__link}>+ sterownik</a>
               </Link>
             </div>

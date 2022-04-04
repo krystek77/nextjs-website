@@ -1,7 +1,7 @@
 import React from 'react';
 
-import InputFileBase64 from '../../../components/InpufileBase64/InputFileBase64';
-import TextareaInput from '../../../components/InputTextarea/InputTextarea';
+import InputFileBase64 from '../../../../components/InpufileBase64/InputFileBase64';
+import TextareaInput from '../../../../components/InputTextarea/InputTextarea';
 import AdminLayout from '../../../../components/Layout/AdminLayout';
 import Title from '../../../../components/Title/Title';
 import Description from '../../../../components/Description/Description';

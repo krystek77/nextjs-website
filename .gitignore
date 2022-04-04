@@ -34,7 +34,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-# migration 
-mm-config.js
-/migrations
 
