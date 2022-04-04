@@ -1,7 +1,19 @@
+### LOGIN
 POST http://localhost:3000/api/user/login HTTP/1.1
 content-type: application/json
 
 {
    "email":"kryniu77@wp.pl",
-   "password":"password"
+   "password":""
+}
+
+### SIGNUP USER
+POST http://localhost:3000/api/admin/signup-user HTTP/1.1
+content-type: application/json
+
+{
+   "email":"kryniu77@wp.pl",
+   "password":"",
+   "confirmationPassword":"",
+   "role":"user"
 }
