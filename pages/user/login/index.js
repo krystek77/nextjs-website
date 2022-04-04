@@ -1,11 +1,11 @@
-import Copyright from '../../components/Copyright/Copyright';
-import Button from '../../components/Button/Button';
-import Input from '../../components/Input/Input';
-import Title from '../../components/Title/Title';
-import Description from '../../components/Description/Description';
-import Logo from '../../components/Logo/Logo';
+import Copyright from '../../../components/Copyright/Copyright';
+import Button from '../../../components/Button/Button';
+import Input from '../../../components/Input/Input';
+import Title from '../../../components/Title/Title';
+import Description from '../../../components/Description/Description';
+import Logo from '../../../components/Logo/Logo';
 import { useRouter } from 'next/router';
-import styles from './login.module.css';
+import styles from './index.module.css';
 
 function Login() {
   const router = useRouter();

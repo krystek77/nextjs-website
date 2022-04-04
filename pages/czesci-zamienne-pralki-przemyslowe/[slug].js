@@ -78,9 +78,7 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
-  console.log(
-    'FROM GETSTATICPROPS -/czesci-zamienne-pralki-przemyslowe/[slug]'
-  );
+
   const slug = context.params.slug;
   // const response = await fetch(`${server}/api/spare-parts/${slug}`);
   // const result = await response.json();

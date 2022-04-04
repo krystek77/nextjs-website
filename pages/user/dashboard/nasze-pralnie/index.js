@@ -1,23 +1,23 @@
 import React from 'react';
-import AdminLayout from '../../../components/Layout/AdminLayout';
-import Title from '../../../components/Title/Title';
-import Description from '../../../components/Description/Description';
-import Input from '../../../components/Input/Input';
-import SelectInput from '../../../components/Select/Select';
-import Button from '../../../components/Button/Button';
+
 import InputFileBase64 from '../../../components/InpufileBase64/InputFileBase64';
 import TextareaInput from '../../../components/InputTextarea/InputTextarea';
-import Modal from '../../../components/Modal/Modal';
+import AdminLayout from '../../../../components/Layout/AdminLayout';
+import Title from '../../../../components/Title/Title';
+import Description from '../../../../components/Description/Description';
+import Input from '../../../../components/Input/Input';
+import SelectInput from '../../../../components/Select/Select';
+import Button from '../../../../components/Button/Button';
+import Modal from '../../../../components/Modal/Modal';
+import InputError from '../../../../components/InputError/InputError';
+import RequiredMarker from '../../../../components/RequiredMarker/RequiredMarker';
 
-import InputError from '../../../components/InputError/InputError';
-import RequiredMarker from '../../../components/RequiredMarker/RequiredMarker';
+import { equipmenst as select } from '../../../../constants/equipments';
 
-import { equipmenst as select } from '../../../constants/equipments';
-
-import { useModal } from '../../../hooks';
+import { useModal } from '../../../../hooks';
 import styles from './index.module.css';
 
-const API_ROUTE_TO_ADD_LAUNDRY = '/api/laundries/add';
+const API_ROUTE_TO_ADD_LAUNDRY = '/api/dashboard/laundries/add';
 function OurLaundries() {
   const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const [equipmentAdded, setEquipmentAdded] = React.useState(false);

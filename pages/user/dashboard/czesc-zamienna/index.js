@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import AdminLayout from '../../../components/Layout/AdminLayout';
+import AdminLayout from '../../../../components/Layout/AdminLayout';
 function SparePartForm() {
   return (
     <section className={styles.sparePartFormSection}>

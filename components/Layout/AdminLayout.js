@@ -11,29 +11,31 @@ function AdminLayout({ children }) {
           <Logo width="144" height="60" classes="logo_admin logo_mb_2" />
           {/** potential component */}
           <nav className={styles.adminNavigation}>
-            <Link href="/admin/czesc-zamienna">
+            <Link href="/user/dashboard/czesc-zamienna">
               <a className={styles.adminNavigation__link}>części zamienne</a>
             </Link>
-            <Link href="/admin/wiadomosc">
+            <Link href="/user/dashboard/wiadomosc">
               <a className={styles.adminNavigation__link}>wiadomości</a>
             </Link>
-            <Link href="/admin/nasze-pralnie">
+            <Link href="/user/dashboard/nasze-pralnie">
               <a className={styles.adminNavigation__link}>
                 zrealizowane pralnie
               </a>
             </Link>
+
             <div className={styles.adminNavigation__product}>
               <span className={styles.adminNavigation__titleLinks}>
                 Produkt
               </span>
-              <Link href="/admin/produkty/parametr">
+              <Link href="/user/dashboard/produkty/parametr">
                 <a className={styles.adminNavigation__link}>+ parametr</a>
               </Link>
-              <Link href="/admin/produkty/sterownik">
+              <Link href="/user/dashboardprodukty/sterownik">
                 <a className={styles.adminNavigation__link}>+ sterownik</a>
               </Link>
             </div>
-            <Link href="/admin">
+
+            <Link href="/user/dashboard">
               <a className={styles.adminNavigation__link}>admin</a>
             </Link>
             <Link href="/">

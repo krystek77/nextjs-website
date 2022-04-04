@@ -1,5 +1,5 @@
 /*
- * ENDPOINT http://localhost:3000/api/products/add-control
+ * ENDPOINT http://localhost:3000/api/dashboard/products/add-control
  */
 import { connectMongoDB } from "../../../utils/database";
 const COLLECTION_NAME = "controls";
