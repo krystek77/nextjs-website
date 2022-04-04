@@ -1,4 +1,4 @@
-import { spare_parts } from '../../../constants/spare_parts';
+import { spare_parts } from '../../../../constants/spare_parts';
 
 /*
  *  path: http://localhost:3000/api/dashboard/spare-parts/1
