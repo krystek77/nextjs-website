@@ -15,10 +15,13 @@
   align-items: center;
   padding-top: 4.5rem;
 }
-.loginPageForm {
+.loginPage__form {
   padding: 3rem 2rem;
   margin-bottom: 0.5rem;
   width: 100%;
+}
+.loginPage__inputWrapper {
+  position: relative;
 }
 .loginPage__info,
 .loginPage__emailAddress {
