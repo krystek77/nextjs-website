@@ -7,9 +7,9 @@ import jwt from 'jsonwebtoken';
 
 export default async function login(req, res) {
   const { email, password } = req.body;
-  const { database: db } = await connectMongoDB();
-  const usersCollection = db.collection('users');
   try {
+    const { database: db } = await connectMongoDB();
+    const usersCollection = db.collection('users');
     const existingUser = await usersCollection.findOne({ email: email });
     if (!existingUser)
       return res
