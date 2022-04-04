@@ -36,10 +36,10 @@ function AdminLayout({ children }) {
             </div>
 
             <Link href="/user/dashboard">
-              <a className={styles.adminNavigation__link}>admin</a>
+              <a className={styles.adminNavigation__link}>dashboard</a>
             </Link>
             <Link href="/">
-              <a className={styles.adminNavigation__link}>strona główna</a>
+              <a className={styles.adminNavigation__link}>wyjdź</a>
             </Link>
           </nav>
           {/** end potential component */}

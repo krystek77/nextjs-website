@@ -12,7 +12,7 @@ function Login() {
   const login = (e) => {
     e.preventDefault();
     //send login data and if they are correct
-    router.push('/admin');
+    router.push('/user/dashboard');
   };
   return (
     <div className={styles.loginPage}>
