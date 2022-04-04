@@ -7,7 +7,7 @@ content-type: application/json
    "password":""
 }
 
-### SIGNUP USER
+### SIGNUP USER - admin role
 POST http://localhost:3000/api/admin/signup-user HTTP/1.1
 content-type: application/json
 
@@ -16,4 +16,14 @@ content-type: application/json
    "password":"",
    "confirmationPassword":"",
    "role":"admin"
+}
+### SIGNUP USER - user role
+POST http://localhost:3000/api/admin/signup-user HTTP/1.1
+content-type: application/json
+
+{
+   "email":"kryniu77@wp.pl",
+   "password":"",
+   "confirmationPassword":"",
+   "role":"user"
 }
