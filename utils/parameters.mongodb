@@ -1,0 +1,169 @@
+use('2022_pralma');
+db.parameters.drop();
+db.createCollection('parameters', {
+        'validator': {
+          $jsonSchema: {
+            'bsonType': 'object',
+            'required': ['name', 'unit'],
+            'properties': {
+              'name': {
+                'bsonType': 'string',
+                'pattern': '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\\.\\s():-]{5,}$',
+                'description':
+                  'Nazwa musi być ciągiem znaków o długości co najmniej 5 i jest wymagana',
+              },
+              'unit': {
+                'enum': [
+                  '-',
+                  'kg',
+                  'mm',
+                  'litrów',
+                  'kW',
+                  'kWh',
+                  'obr./min.',
+                  'm3',
+                  'dm3',
+                  'dB(A)',
+                  'bar',
+                  'mbar',
+                  'kPa',
+                  'cal',
+                  'litrów / minutę',
+                  'litrów / sekundę',
+                  'gramów / minutę',
+                  'm3 / godzinę',
+                  'kg / godzinę',
+                  'metrów / minutę',
+                  '0C',
+                ],
+                'description':
+                  'Jednostka może być tylko jedną z wartości wyliczeniowych i jest wymagana',
+              },
+            },
+          },
+        },
+      });
+
+db.parameters.insertMany(
+[{
+  'name': 'załadunek maksymalny (moduł załadunku 1:9)',
+  'unit': 'kg'
+},{
+  'name': 'załadunek maksymalny (moduł załadunku 1:9)',
+  'unit': 'kg'
+},{
+  'name': 'pojemność bębna',
+  'unit': 'litrów'
+},{
+  'name': 'średnica bębna',
+  'unit': 'obr./min.'
+},{
+  'name': 'obroty wirowania',
+  'unit': 'obr./min.'
+},{
+  'name': 'G-faktor',
+  'unit': '-'
+},{
+  'name': 'moc podgrzewu elektrycznego',
+  'unit': 'kW'
+},{
+  'name': 'podłączenie pary (dla podgrzewu parowego)',
+  'unit': 'cal'
+},{
+  'name': 'ciśnienie pary (dla podgrzewu parowego)',
+  'unit': 'bar'
+},{
+  'name': 'podłączenie wody',
+  'unit': 'cal'
+},{
+  'name': 'ciśnienie wody',
+  'unit': 'cal'
+},{
+  'name': 'zasilanie (standard)',
+  'unit': '-'
+},{
+  'name': 'wymiary (w. x sz. x gł.)',
+  'unit': 'mm'
+},{
+  'name': 'masa netto',
+  'unit': 'kg'
+},{
+  'name': 'masa brutto',
+  'unit': 'kg'
+},{
+  'name': 'średncia walca prasującego',
+  'unit': 'mm'
+},{
+  'name': 'długość robocza walca',
+  'unit': 'mm'
+},{
+  'name': 'wydajność prasowania (zgodnie z normą ISO 9398-1)',
+  'unit': 'kg / godzinę'
+},{
+  'name': 'prędkość prasowania',
+  'unit': 'metrów / minutę'
+},{
+  'name': 'wysokość',
+  'unit': 'mm'
+},{
+  'name': 'głębokość',
+  'unit': 'mm'
+},{
+  'name': 'szerokość',
+  'unit': 'mm'
+},{
+  'name': 'wymiary w opakowaniu (w. x sz. x gł.)',
+  'unit': 'mm'
+},{
+  'name': 'wylot wentylacji',
+  'unit': 'mm'
+},{
+  'name': 'moc podgrzewu gazowego',
+  'unit': 'kW'
+},{
+  'name': 'moc podgrzewu parowego',
+  'unit': 'kg / godzinę'
+},{
+  'name': 'moc silnika wentylatora',
+  'unit': 'kW'
+},{
+  'name': 'moc silnika napędu wału',
+  'unit': 'kW'
+},{
+  'name': 'objętość w opakowaniu',
+  'unit': 'm3'
+},{
+  'name': 'wydajność wiatraka',
+  'unit': 'm3 / godzinę'
+},{
+  'name': 'stopień ochrony',
+  'unit': '-'
+},{
+  'name': 'poziom hałasu',
+  'unit': 'dB(A)'
+},{
+  'name': 'zużycie gazu',
+  'unit': 'm3 / godzinę'
+},{
+  'name': 'rodzaje gazów',
+  'unit': '-'
+},{
+  'name': 'zwrotne ciśnienie wody',
+  'unit': 'kPa'
+},{
+  'name': 'średnica zaworu spustowego',
+  'unit': 'mm'
+},{
+  'name': 'średnica zaworu spustowego',
+  'unit': 'cal'
+},{
+  'name': 'średnica zaworu pary',
+  'unit': 'cal'
+},{
+  'name': 'ciśnienie pary',
+  'unit': 'kPa'
+}
+]);
+
+db.parameters.find({});
+

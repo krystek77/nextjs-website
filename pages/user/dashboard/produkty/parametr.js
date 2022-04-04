@@ -35,7 +35,7 @@ const units = [
   '0C',
 ];
 
-const API_ROUTE_ADD_PARAMETER = '/api/products/add-parameter';
+const API_ROUTE_ADD_PARAMETER = '/api/dashboard/products/add-parameter';
 function ParameterFrom() {
   const [formData, setFormData] = React.useState({
     name: '',
@@ -50,7 +50,7 @@ function ParameterFrom() {
       name: false,
     };
     if (
-      formData.name.match(/^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\s\.()-]{5,}$/) === null
+      formData.name.match(/^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\.\s():-]{5,}$/) === null
     ) {
       isValid = false;
       tempErrors.name = true;
