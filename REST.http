@@ -12,8 +12,8 @@ POST http://localhost:3000/api/admin/signup-user HTTP/1.1
 content-type: application/json
 
 {
-   "email":"kryniu77@wp.pl",
+   "email":"k.wrona@pralma.pl",
    "password":"",
    "confirmationPassword":"",
-   "role":"user"
+   "role":"admin"
 }

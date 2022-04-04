@@ -34,7 +34,11 @@ function Login() {
       tempErrors.email = true;
       isValid = false;
     }
-    if (formData.password.length < 6) {
+    if (
+      formData.password.match(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
+      ) === null
+    ) {
       tempErrors.password = true;
       isValid = false;
     }
@@ -117,7 +121,7 @@ function Login() {
                 }
               />
               <InputError
-                message="Hasło musi mieć co najmniej 6 znaków"
+                message="Hasło musi mieć co najmniej 6 znaków, jedną dużą i małą literę oraz jeden znak secjalny"
                 isError={errors.password}
                 classes="inputError_top_minus_05"
               />

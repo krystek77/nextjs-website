@@ -13,8 +13,8 @@ db.users.drop();
 // Insert a few documents into the sales collection.
 
 db.users.insertMany([
-  { '_id': 1, 'email': 'kryniu77@wp.pl', '': '', role:"user" },
-  { '_id': 2, 'email': 'k.wrona@pralma.pl', '': '',role:"admin" },
+  { '_id': 1, 'email': 'kryniu77@wp.pl', 'password':'', role:"user" },
+  { '_id': 2, 'email': 'k.wrona@pralma.pl', 'password':'',role:"admin" },
 ]);
 
 // Run a find command to view items sold on April 4th, 2014.
