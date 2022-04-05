@@ -11,6 +11,7 @@ import { INPUT_PATTERNS } from "constants/patterns";
 import Modal from "components/Modal/Modal";
 import { useModal } from "../../../hooks";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import styles from "./index.module.css";
 
 const API_ROUTE_LOGIN = "/api/user/login";
@@ -20,6 +21,7 @@ function Login() {
   const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const [formData, setFormData] = React.useState({ email: "", password: "" });
   const [errors, setErrors] = React.useState({ email: false, password: false });
+  const [viewedPassword, setViewedPassword] = React.useState(false);
 
   React.useEffect(() => {
     const token = window !== "undefined" && JSON.parse(localStorage.getItem("token"));
@@ -72,7 +74,7 @@ function Login() {
   };
 
   const clear = () => setFormData({ email: "", password: "" });
-
+  const toggleViewedPassword = () => setViewedPassword(!viewedPassword);
   return (
     <React.Fragment>
       <Modal
@@ -95,9 +97,14 @@ function Login() {
               <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
             </div>
             <div className={styles.loginPage__inputWrapper}>
-              <Input type='text' placeholder='hasło' value={formData.password} fieldName='password' handleInput={(e) => setFormData({ ...formData, password: e.target.value })} />
+              <Input type={viewedPassword ? "text" : "password"} placeholder='hasło' value={formData.password} fieldName='password' handleInput={(e) => setFormData({ ...formData, password: e.target.value })} />
               <InputError message='Hasło musi mieć co najmniej 6 znaków, jedną dużą i małą literę oraz jeden znak secjalny' isError={errors.password} classes='inputError_top_minus_05' />
               <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
+              {/** potential component */}
+              <div className={styles.toggleViewedPassword} onClick={toggleViewedPassword}>
+                {viewedPassword ? <Image src='/assets/icons/close_eye.svg' alt='close eye' width={24} height={23} /> : <Image src='/assets/icons/eye.svg' alt='eye' width={24} height={15} />}
+              </div>
+              {/** end potential component */}
             </div>
             <Button type='submit' label='zaloguj się' classes='button_no_wrap button_center' />
           </form>
