@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SubNavigation from '../SubNavigation/SubNavigation';
 import styles from './SmallScreenNavigation.module.css';
+import UserNavigation from 'components/UserNavigation/UserNavigation';
 import { links } from '../../constants/links';
 
 function SmallScreenNavigation() {
@@ -75,6 +76,7 @@ function SmallScreenNavigation() {
               );
             })}
           </div>
+          <UserNavigation classes="userNavigation_vertical" />
         </div>
       )}
     </div>
