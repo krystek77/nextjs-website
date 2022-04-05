@@ -35,4 +35,8 @@
   color: var(--dark-500);
   text-decoration: underline;
 }
-
+.loginPage__actionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -74,7 +74,14 @@ function Login() {
     }
   };
 
-  const clear = () => setFormData({ email: "", password: "" });
+  const clear = () => {
+    setFormData({ email: "", password: "" });
+    setViewedPassword(false);
+    setErrors({
+      email: false,
+      password: false,
+    });
+  };
   const toggleViewedPassword = () => setViewedPassword(!viewedPassword);
   return (
     <React.Fragment>
@@ -103,7 +110,10 @@ function Login() {
               <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
               <ToggleViewedPassword action={toggleViewedPassword} state={viewedPassword} />
             </div>
-            <Button type='submit' label='zaloguj się' classes='button_no_wrap button_center' />
+            <div className={styles.loginPage__actionButtons}>
+              <Button classes='button_mr_2 button_no_wrap' label='zaloguj się' type='submit' />
+              <Button classes='button_dangerous' label='zresetuj' type='button' action={clear} />
+            </div>
           </form>
           <Description classes='description_18'>
             <span className={styles.loginPage__info}>Nie posiadasz konta? Napisz do administratora:</span>
