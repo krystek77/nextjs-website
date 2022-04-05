@@ -1,0 +1,21 @@
+.adminNavigation {
+    display: flex;
+    flex-direction: column;
+  }
+.adminNavigation__link {
+    background-color: var(--accent-500);
+    border: 1px solid var(--accent-700);
+    color: var(--primary-300);
+    font-family: var(--font-alt);
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1, 3;
+    letter-spacing: -0.02em;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+    margin-bottom: 0.125rem;
+    width:100%;
+  }
+  .adminNavigation__link:hover {
+    background-color: var(--accent-700);
+  }

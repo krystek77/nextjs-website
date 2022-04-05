@@ -7,6 +7,9 @@
   position: relative;
   /* text-transform: capitalize; */
 }
+.title_mt_1 {
+  margin-top: 1rem;
+}
 .title_mb_3 {
   margin-bottom: 3rem;
 }

@@ -66,6 +66,7 @@
   padding: 0.5rem 1rem;
   transition: var(--transition);
   margin-bottom: 0.125rem;
+  width:100%;
 }
 .adminNavigation__link:hover {
   background-color: var(--accent-700);
