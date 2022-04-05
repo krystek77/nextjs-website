@@ -7,3 +7,20 @@
   position: relative;
   z-index: 100;
 }
+/*
+* potential component
+*/
+.userNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userNavigation__loggedIn {
+  display: flex;
+  align-items: center;
+}
+.userNavigation__divider {
+  height: 42px;
+  width: 1px;
+  background-color: var(--dark-500);
+}
