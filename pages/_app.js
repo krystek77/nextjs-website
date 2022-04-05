@@ -11,14 +11,35 @@ function MyApp({ Component, pageProps }) {
     const authorizationPathCheck = (url) => {
       const publicPaths = [
         '/user/login',
-        '/',
         '/wiadomosci',
+        '/urzadzenia-pralnia',
+        '/urzadzenia-pralnia-samoobslugowa',
+        '/technologie-pralnicze',
         '/kontakt-do-pralma',
+        '/bariera-higieny',
+        '/do-prania-mop',
+        '/ekologiczne-wyposazenie-pralni-przemyslowej',
+        '/historia-pralma',
+        '/informacje-prawne',
+        '/nasi-klienci',
+        '/o-pralma',
+        '/pompa-ciepla-evo4',
+        '/pralnia-samoobslugowa',
+        '/softwash',
+        '/sterowniki-do-pralek-przemyslowych',
+        '/urzadzenia-pralnicze-dla-marynarki-wojennej',
+        '/urzadzenia-pralnicze-dla-strazy-pozarnej',
+        '/xcontrol-flex',
       ];
       const path = url.split('?')[0];
       const token =
         window !== 'undefined' && JSON.parse(localStorage.getItem('token'));
-      if (!token && !publicPaths.includes(path)) {
+      if (
+        !token &&
+        !publicPaths.find((publicRoute) =>
+          path === '/' ? true : path.includes(publicRoute)
+        )
+      ) {
         setAuthorized(false);
         router.push({
           pathname: '/user/login',
@@ -27,7 +48,6 @@ function MyApp({ Component, pageProps }) {
       } else {
         setAuthorized(true);
       }
-      console.log(router.asPath);
     };
     authorizationPathCheck(router.asPath);
     router.events.on('routeChangeStart', hideContent);
