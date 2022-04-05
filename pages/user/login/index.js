@@ -7,11 +7,12 @@ import Description from "../../../components/Description/Description";
 import InputError from "../../../components/InputError/InputError";
 import RequiredMarker from "../../../components/RequiredMarker/RequiredMarker";
 import Logo from "../../../components/Logo/Logo";
+import ToggleViewedPassword from "components/ToggleViewedPassword/ToggleViewedPassword";
 import { INPUT_PATTERNS } from "constants/patterns";
 import Modal from "components/Modal/Modal";
 import { useModal } from "../../../hooks";
 import { useRouter } from "next/router";
-import Image from "next/image";
+
 import styles from "./index.module.css";
 
 const API_ROUTE_LOGIN = "/api/user/login";
@@ -100,11 +101,7 @@ function Login() {
               <Input type={viewedPassword ? "text" : "password"} placeholder='hasło' value={formData.password} fieldName='password' handleInput={(e) => setFormData({ ...formData, password: e.target.value })} />
               <InputError message='Hasło musi mieć co najmniej 6 znaków, jedną dużą i małą literę oraz jeden znak secjalny' isError={errors.password} classes='inputError_top_minus_05' />
               <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
-              {/** potential component */}
-              <div className={styles.toggleViewedPassword} onClick={toggleViewedPassword}>
-                {viewedPassword ? <Image src='/assets/icons/close_eye.svg' alt='close eye' width={24} height={23} /> : <Image src='/assets/icons/eye.svg' alt='eye' width={24} height={15} />}
-              </div>
-              {/** end potential component */}
+              <ToggleViewedPassword action={toggleViewedPassword} state={viewedPassword} />
             </div>
             <Button type='submit' label='zaloguj się' classes='button_no_wrap button_center' />
           </form>

@@ -35,16 +35,4 @@
   color: var(--dark-500);
   text-decoration: underline;
 }
-/*
-* toggleViewedPassword
-*/
-.toggleViewedPassword {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-.toggleViewedPassword:hover {
-  filter: contrast(0.45);
-}
+
