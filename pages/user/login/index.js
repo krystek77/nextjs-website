@@ -21,6 +21,14 @@ function Login() {
   const [formData, setFormData] = React.useState({ email: '', password: '' });
   const [errors, setErrors] = React.useState({ email: false, password: false });
 
+  React.useEffect(() => {
+    const token =
+      window !== 'undefined' && JSON.parse(localStorage.getItem('token'));
+    if (token) {
+      router.push('/');
+    }
+  }, [router]);
+
   const validateForm = () => {
     let isValid = true;
     const tempErrors = {
@@ -61,7 +69,8 @@ function Login() {
         if (!result.access_token) {
           throw Error(result.message);
         }
-        window.localStorage.token = JSON.stringify(result.access_token);
+        // window.localStorage.token = JSON.stringify(result.access_token);
+        localStorage.setItem('token', JSON.stringify(result.access_token));
         clear();
         router.push('/user/dashboard');
       } catch (error) {
