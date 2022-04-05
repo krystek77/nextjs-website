@@ -1,20 +1,18 @@
 /*
  *  endpoint: http://localhost:3000/api/admin/signup-user
  */
-import { connectMongoDB } from '../../../utils/database';
-import bcryptjs from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import { connectMongoDB } from "../../../utils/database";
+import bcryptjs from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export default async function signUpUser(req, res) {
   const { email, password, confirmationPassword, role } = req.body;
   try {
     const { database: db } = await connectMongoDB();
-    const usersCollection = db.collection('users');
+    const usersCollection = db.collection("users");
     const existingUser = await usersCollection.findOne({ email });
     if (existingUser) {
-      return res
-        .status(409)
-        .json({ message: `Użytkownik o email'u: ${email} już istnieje.` });
+      return res.status(409).json({ message: `Użytkownik o email'u: ${email} już istnieje.` });
     }
     if (password !== confirmationPassword) {
       return res.status(409).json({ message: `Hasła nie są takie same` });
@@ -26,7 +24,6 @@ export default async function signUpUser(req, res) {
       role,
     };
     const result = await usersCollection.insertOne(newUser);
-    console.log(result);
     const access_token = jwt.sign(
       {
         id: result.insertedId,

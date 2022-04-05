@@ -6,6 +6,7 @@ import Description from "../../components/Description/Description";
 import Button from "../../components/Button/Button";
 import InputError from "../../components/InputError/InputError";
 import Modal from "../../components/Modal/Modal";
+import { INPUT_PATTERNS } from "constants/patterns";
 import { useModal } from "../../hooks";
 
 import styles from "./Newsletter.module.css";
@@ -21,7 +22,7 @@ function Newsletter() {
   const isEmail = () => {
     let isValid = true;
     let error = false;
-    if (email.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/) === null) {
+    if (email.match(INPUT_PATTERNS.EMAIL) === null) {
       isValid = false;
       error = true;
     }
