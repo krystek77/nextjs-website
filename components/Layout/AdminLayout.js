@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Logo from '../Logo/Logo';
+import UserNavigation from 'components/UserNavigation/UserNavigation';
 import Copyright from '../Copyright/Copyright';
 import styles from './AdminLayout.module.css';
 
@@ -34,15 +35,12 @@ function AdminLayout({ children }) {
                 <a className={styles.adminNavigation__link}>+ sterownik</a>
               </Link>
             </div>
-
-            <Link href="/user/dashboard">
-              <a className={styles.adminNavigation__link}>dashboard</a>
-            </Link>
             <Link href="/">
               <a className={styles.adminNavigation__link}>home</a>
             </Link>
           </nav>
           {/** end potential component */}
+          <UserNavigation classes="userNavigation_vertical" />
         </aside>
         <main className={styles.adminLayout__content}>{children}</main>
       </div>

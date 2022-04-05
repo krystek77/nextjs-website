@@ -14,8 +14,8 @@ function Admin() {
       />
       <Title content="Panel administratora" />
       <Description>
-        Zarządzaj zawartością kontentu strony internetowej. Tutaj nie wbijesz
-        bez posiadania konta admina.
+        Zarządzaj zawartością strony internetowej. Tutaj nie wbijesz bez
+        posiadania konta.
       </Description>
     </header>
   );

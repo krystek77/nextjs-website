@@ -1,12 +1,14 @@
 import Button from 'components/Button/Button';
 import LinkButton from 'components/LinkButton/LinkButton';
 import { useUser } from 'hooks';
+import { classesNames } from 'lib';
 import styles from './UserNavigation.module.css';
 
-function UserNavigation() {
+function UserNavigation({ classes }) {
   const { user, logout } = useUser();
+  const classesString = classesNames(classes, 'userNavigation')(styles);
   return (
-    <div className={styles.userNavigation}>
+    <div className={classesString}>
       {user ? (
         <div className={styles.userNavigation__loggedIn}>
           <Button
@@ -35,5 +37,9 @@ function UserNavigation() {
     </div>
   );
 }
+
+UserNavigation.defaultProps = {
+  classes: '',
+};
 
 export default UserNavigation;

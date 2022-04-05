@@ -12,3 +12,21 @@
   width: 1px;
   background-color: var(--dark-500);
 }
+.userNavigation.userNavigation_vertical {
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.userNavigation.userNavigation_vertical .userNavigation__divider {
+  width: 80%;
+  height: 1px;
+}
+.userNavigation.userNavigation_vertical .userNavigation__loggedIn {
+  flex-direction: column;
+  width: 100%;
+}
+.userNavigation.userNavigation_vertical a {
+  margin-left: initial;
+  margin-top: 0.5rem;
+}
