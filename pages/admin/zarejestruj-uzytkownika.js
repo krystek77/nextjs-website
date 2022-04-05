@@ -9,6 +9,7 @@ import InputError from "components/InputError/InputError";
 import Button from "components/Button/Button";
 import RequiredMarker from "components/RequiredMarker/RequiredMarker";
 import Modal from "components/Modal/Modal";
+import ToggleViewedPassword from "components/ToggleViewedPassword/ToggleViewedPassword";
 import { useModal } from "hooks";
 import { INPUT_PATTERNS } from "constants/patterns";
 
@@ -21,6 +22,10 @@ function SignUpUserForm() {
     email: false,
     password: false,
     confirmationPassword: false,
+  });
+  const [viewedPasswords, setViewedPasswords] = React.useState({
+    confirmationPassword: false,
+    password: false,
   });
   const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const validateForm = () => {
@@ -85,8 +90,18 @@ function SignUpUserForm() {
       password: false,
       confirmationPassword: false,
     });
+    setViewedPasswords({
+      password: false,
+      confirmationPassword: false,
+    });
   };
-
+  const toggleViewedPaswords = (e) => {
+    if (e.currentTarget.id === "password") {
+      setViewedPasswords({ ...viewedPasswords, password: !viewedPasswords.password });
+    } else {
+      setViewedPasswords({ ...viewedPasswords, confirmationPassword: !viewedPasswords.confirmationPassword });
+    }
+  };
   return (
     <React.Fragment>
       <Modal
@@ -108,13 +123,15 @@ function SignUpUserForm() {
           </div>
           <div className={styles.signUpUserPage__inputWrapper}>
             <InputError message='Hasło musi mieć co najmniej 6 znaków, jedną dużą i małą literę oraz jeden znak secjalny' isError={errors.password} classes='inputError_top_minus_05' />
-            <Input type='text' fieldName='password' placeholder='podaj hasło' value={formData.password} handleInput={(e) => setFormData({ ...formData, password: e.target.value })} classes='input_mb_1' />
+            <Input type={viewedPasswords.password ? "text" : "password"} fieldName='password' placeholder='podaj hasło' value={formData.password} handleInput={(e) => setFormData({ ...formData, password: e.target.value })} classes='input_mb_1' />
             <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
+            <ToggleViewedPassword id='password' action={toggleViewedPaswords} state={viewedPasswords.password} />
           </div>
           <div className={styles.signUpUserPage__inputWrapper}>
             <InputError message='Hasła muszą być takie same' isError={errors.confirmationPassword} classes='inputError_top_minus_05' />
-            <Input type='text' fieldName='confirmationPassword' placeholder='powtórz hasło' value={formData.confirmationPassword} handleInput={(e) => setFormData({ ...formData, confirmationPassword: e.target.value })} classes='input_mb_1' />
+            <Input type={viewedPasswords.confirmationPassword ? "text" : "password"} fieldName='confirmationPassword' placeholder='powtórz hasło' value={formData.confirmationPassword} handleInput={(e) => setFormData({ ...formData, confirmationPassword: e.target.value })} classes='input_mb_1' />
             <RequiredMarker classes='requiredMarker_bottom_minus_1_5' />
+            <ToggleViewedPassword id='confirmationPassword' action={toggleViewedPaswords} state={viewedPasswords.confirmationPassword} />
           </div>
           <div className={styles.signUpUserPage__inputWrapper}>
             <SelectInput selected={formData.role} name='role' options={ROLES} action={(e) => setFormData({ ...formData, role: e.target.value })} />
