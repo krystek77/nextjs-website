@@ -29,7 +29,7 @@ export default async function login(req, res) {
       },
       process.env.JWT_ACCESS_TOKEN_SECRET,
       {
-        expiresIn: 120,
+        expiresIn: 1200,
       }
     );
 
