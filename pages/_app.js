@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
         '/pralnia-samoobslugowa',
         '/softwash',
         '/sterowniki-do-pralek-przemyslowych',
+        '/czesci-zamienne-pralki-przemyslowe',
         '/urzadzenia-pralnicze-dla-marynarki-wojennej',
         '/urzadzenia-pralnicze-dla-strazy-pozarnej',
         '/xcontrol-flex',
