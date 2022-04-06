@@ -34,7 +34,7 @@ export default async function addControl(req, res) {
                 bsonType: ['array'],
                 uniqueItems: true,
                 description: 'Lista musi mieć co najmniej jeden element',
-                pattern: '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\\s\\.\\+-]{10,}$',
+                pattern: '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\\s\\.\\+,:-]{10,}$',
                 items: {
                   bsonType: 'string',
                   description:

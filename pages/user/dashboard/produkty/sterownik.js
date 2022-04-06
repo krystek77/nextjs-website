@@ -10,6 +10,7 @@ import styles from './sterownik.module.css';
 import List from 'components/List/List';
 import { INPUT_PATTERNS } from 'constants/patterns';
 
+const ENDPOINT_ADD_CONTROL = '/api/dashboard/products/add-control';
 function ControlForm() {
   const [formData, setFormData] = React.useState({
     name: '',
@@ -49,12 +50,18 @@ function ControlForm() {
     return isValid;
   };
 
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
     const isValid = validateForm();
     if (isValid) {
-      console.log(formData);
-      //save data to mongodb
+      const response = await fetch(ENDPOINT_ADD_CONTROL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      console.log(result);
+
       resetForm();
     }
   };
