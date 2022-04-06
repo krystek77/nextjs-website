@@ -1,0 +1,79 @@
+
+use('2022_pralma');
+db.categories.drop();
+db.createCollection("categories",{
+  validator:{
+    $jsonSchema:{
+      bsonType:'object',
+      required:['name','image','path','list','title','series'],
+      properties:{
+        name:{
+          bsonType:'string',
+          description:'Some message...'
+        },
+        image:{
+          bsonType:'string',
+          description:'Some message...'
+        },
+        path:{
+          bsonType:'string',
+          description:'Some message...'
+        },
+        list:{
+          bsonType:['array'],
+          minItems: 1,
+          uniqueItems:true,
+          description:'Some message...',
+          items:{
+            bsonType:'string',
+            description:'Some message...'
+          },
+        },
+        title:{
+          bsonType:'string',
+          description:'Some message...'
+        },
+        series:{
+          bsonType:['array'],
+          minItems: 1,
+          uniqueItems:true,
+          description:'Some message...',
+          items:{
+            bsonType:'objectId',
+            description:'Some message...'
+          }
+        }
+      }
+    }
+  }
+});
+
+db.categories.insertMany([
+  {
+  "name":"pralnicowirówki",
+  "image":"washer_extractors.png",
+  "list":["sztywnomocowane","normalnoobrotowe","wysokoobrotowe"],
+  "path":"urzadzenia-pralnia/pralnicowirowki",
+  "title":"Innowacyjne pralnicowirówki przemysłowe",
+  "series":[ObjectId(),ObjectId()]
+  },
+  {
+  "name":"suszarki",
+  "image":"dryers.png",
+  "list":["suszarki bębnowe","suszarki z pompą ciepła","suszarki komorowe"],
+  "path":"urzadzenia-pralnia/suszarki-bebnowe",
+  "title":"Niezawodne i wydajne suszarki przemysłowe",
+  "series":[ObjectId(),ObjectId()]
+  },
+  {
+  "name":"prasownice",
+  "image":"ironers.png'",
+  "list":['nieckowe','walcowe','z wprowadzarką','z wprowadzarka i skladarką','z tylnym wywiezieniem','wielowalcowe'],
+  "path":"urzadzenia-pralnia/prasownice",
+  "title":"Wysoka jakość prasowania i bezpieczna obsługa",
+  "series":[ObjectId(),ObjectId()]
+  },
+]);
+
+db.categories.find({})
+
