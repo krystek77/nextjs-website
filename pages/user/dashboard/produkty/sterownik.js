@@ -8,6 +8,7 @@ import InputFileBase64 from 'components/InpufileBase64/InputFileBase64';
 import Button from 'components/Button/Button';
 import styles from './sterownik.module.css';
 import List from 'components/List/List';
+import { INPUT_PATTERNS } from 'constants/patterns';
 
 function ControlForm() {
   const [formData, setFormData] = React.useState({
@@ -24,12 +25,56 @@ function ControlForm() {
     list: false,
   });
 
-  const handleForm = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    resetForm();
+  const validateForm = () => {
+    let isValid = true;
+    const tempErrors = {
+      name: false,
+      image: false,
+      listItem: false,
+      list: false,
+    };
+    if (formData.name.match(INPUT_PATTERNS.NAME_CONTROL) === null) {
+      tempErrors.name = true;
+      isValid = false;
+    }
+    if (formData.list.length < 1) {
+      tempErrors.list = true;
+      isValid = false;
+    }
+    if (formData.image === '') {
+      tempErrors.image = true;
+      isValid = false;
+    }
+    setErrors({ ...tempErrors });
+    return isValid;
   };
 
+  const handleForm = (e) => {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+      console.log(formData);
+      //save data to mongodb
+      resetForm();
+    }
+  };
+
+  const addFeature = () => {
+    let isValid = true;
+    if (listItem.match(INPUT_PATTERNS.FEATURE) === null) {
+      setErrors({ ...errors, listItem: true, list: false });
+      isValid = false;
+    }
+    if (isValid) {
+      setFormData({
+        ...formData,
+        list: [...formData.list, listItem],
+      });
+      setErrors({ ...errors, listItem: false, list: false });
+      setListItem('');
+      setFeatureAdded(true);
+    }
+  };
   const resetForm = (e) => {
     setFormData({ name: '', image: '', list: [] });
     setListItem('');
@@ -56,7 +101,7 @@ function ControlForm() {
         <form className={styles.controlForm__form} onSubmit={handleForm}>
           <div className={styles.controlForm__inputWrapper}>
             <InputError
-              message="Niepoprawna nazwa sterownika"
+              message="Nazwa sterownika ma co najmniej 5 znaków, może mieć kropki, spacje i myślniki"
               isError={errors.name}
               classes="inputError_top_minus_05"
             />
@@ -78,8 +123,13 @@ function ControlForm() {
           </div>
           <div className={styles.controlForm__inputWrapper}>
             <InputError
-              message="Niepoprawna cecha"
+              message="Cecha musi mieć co najmniej 10 znaków, może mieć kropki, spacje i myślniki"
               isError={errors.listItem}
+              classes="inputError_top_minus_05"
+            />
+            <InputError
+              message="Lista cech musi mieć co najmniej jeden element"
+              isError={errors.list}
               classes="inputError_top_minus_05"
             />
             <Input
@@ -95,14 +145,7 @@ function ControlForm() {
               type="button"
               classes="button_small button_no_wrap button_mb_1 button_to_right"
               label="dodaj cechę"
-              action={() => {
-                setFormData({
-                  ...formData,
-                  list: [...formData.list, listItem],
-                });
-                setListItem('');
-                setFeatureAdded(true);
-              }}
+              action={addFeature}
             >
               +
             </Button>
