@@ -1,6 +1,9 @@
 import React from 'react';
 import AdminLayout from '../../../../components/Layout/AdminLayout';
 import Title from '../../../../components/Title/Title';
+import Description from 'components/Description/Description';
+import Modal from 'components/Modal/Modal';
+import { useModal } from 'hooks';
 import InputError from 'components/InputError/InputError';
 import RequiredMarker from 'components/RequiredMarker/RequiredMarker';
 import Input from 'components/Input/Input';
@@ -25,7 +28,7 @@ function ControlForm() {
     listItem: false,
     list: false,
   });
-
+  const { isOpen, setIsOpen, message, setMessage } = useModal(2000);
   const validateForm = () => {
     let isValid = true;
     const tempErrors = {
@@ -54,15 +57,20 @@ function ControlForm() {
     e.preventDefault();
     const isValid = validateForm();
     if (isValid) {
-      const response = await fetch(ENDPOINT_ADD_CONTROL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      console.log(result);
-
-      resetForm();
+      try {
+        const response = await fetch(ENDPOINT_ADD_CONTROL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        const result = await response.json();
+        setIsOpen(true);
+        setMessage(result.message);
+      } catch (error) {
+        setMessage(error.message);
+      } finally {
+        resetForm();
+      }
     }
   };
 
@@ -99,6 +107,16 @@ function ControlForm() {
 
   return (
     <React.Fragment>
+      <Modal
+        isOpen={isOpen}
+        toggleModal={() => {
+          setIsOpen(!isOpen);
+          setMessage('');
+        }}
+      >
+        <Title content="Komunikat" variant="h4" classes="title_display_h5" />
+        <Description classes="description_18">{message}</Description>
+      </Modal>
       <div className={styles.controlForm}>
         <Title
           content="Dodaj sterownik"
