@@ -22,9 +22,9 @@ export default async function addControl(req, res) {
             properties: {
               name: {
                 bsonType: 'string',
-                pattern: '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻs.-+]{5,}$',
+                pattern: '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\\s\\.\\+-]{5,}$',
                 description:
-                  'Nazwa musi być ciągiem znaków o długości co najmniej 5 i jest wymagana',
+                  'Nazwa musi mieć co najmniej 5 znaków, może mieć kropki, spacje, myślniki, cyfry',
               },
               image: {
                 bsonType: 'string',
@@ -33,9 +33,12 @@ export default async function addControl(req, res) {
               list: {
                 bsonType: ['array'],
                 uniqueItems: true,
+                description: 'Lista musi mieć co najmniej jeden element',
+                pattern: '^[a-zA-Z0-9ąćęłńóśźżĄĘŁŃÓŚŹŻ\\s\\.\\+-]{10,}$',
                 items: {
                   bsonType: 'string',
-                  description: 'Każdy łańcuch znaków musi być unikatowy',
+                  description:
+                    'Każdy łańcuch znaków musi być unikatowy i posiadać co najmniej 10 znaków. Może mieć kropki, spacje, myślniki i cyfry',
                 },
               },
             },

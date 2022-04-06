@@ -101,7 +101,7 @@ function ControlForm() {
         <form className={styles.controlForm__form} onSubmit={handleForm}>
           <div className={styles.controlForm__inputWrapper}>
             <InputError
-              message="Nazwa sterownika ma co najmniej 5 znaków, może mieć kropki, spacje i myślniki"
+              message="Nazwa sterownika ma co najmniej 5 znaków, może mieć kropki, spacje, myślniki, cyfry"
               isError={errors.name}
               classes="inputError_top_minus_05"
             />
