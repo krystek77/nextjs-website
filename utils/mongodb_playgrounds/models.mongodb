@@ -1,0 +1,69 @@
+
+use('2022_pralma');
+db.models.drop();
+db.models.insertMany([
+      { "typeID":ObjectId('624ea00246dd9427ce1cb717'),
+        "model":"FX-65",
+        "label":"załadunek 6.5 - 7 kg",
+        "title":'Pralnicowirówka wysokoobrotowa, typ FX-65',
+        "isSliderVertical": false,
+        "slider": [
+          'fx105_01',
+          'fx105_02',
+          'fx105_03',
+          'fx105_04',
+          'fx105_05',
+          'fx105_06',
+        ],
+        "parameters": [
+           {"name": 'załadunek (moduł załadunku 1:10)', "value": '6.5',"unit": 'kg' },
+           { "name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '7', "unit": 'kg'},
+           { "name": 'pojemność bębna', "value": '65', "unit": 'litrów' },
+        ],
+        "leaflets":[]
+      },
+      {
+        "typeID":ObjectId('624ea00246dd9427ce1cb717'),
+        "model":"FX-80",
+        "label":"załadunek 8 - 9 kg",
+        "title":'Pralnicowirówka wysokoobrotowa, typ FX-80',
+        "isSliderVertical": false,
+        "slider": [
+          'fx105_01',
+          'fx105_02',
+          'fx105_03',
+          'fx105_04',
+          'fx105_05',
+          'fx105_06',
+        ],
+        "parameters": [
+           {"name": 'załadunek (moduł załadunku 1:10)', "value": '8',"unit": 'kg' },
+           {"name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '8', "unit": 'kg'},
+           {"name": 'pojemność bębna', "value": '75', "unit": 'litrów' },
+        ],
+        "leaflets":[]
+      },
+      {
+        "typeID":ObjectId('624ea00246dd9427ce1cb717'),
+        "model":"FX-105",
+        "label":"załadunek 10.5 - 12 kg",
+        "title":'Pralnicowirówka wysokoobrotowa, typ FX-105',
+        "isSliderVertical": false,
+        "slider": [
+          'fx105_01',
+          'fx105_02',
+          'fx105_03',
+          'fx105_04',
+          'fx105_05',
+          'fx105_06',
+        ],
+        "parameters": [
+           {"name": 'załadunek (moduł załadunku 1:10)', "value": '10.5',"unit": 'kg' },
+           { "name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '12', "unit": 'kg'},
+           { "name": 'pojemność bębna', "value": '105', "unit": 'litrów' },
+        ],
+        "leaflets":[]
+      },
+]);
+
+db.models.find({})

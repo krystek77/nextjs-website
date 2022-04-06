@@ -9,15 +9,17 @@ import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
 import { washerextractors } from '../../../constants/washerextractors';
+import { connectMongoDB } from 'utils/database';
 import styles from './index.module.css';
 
 function WasherExtractors(props) {
-  const { title, category, series } = props;
+  const { title, category, series } = washerextractors;
   const withCategory = series.map((item) => ({
     ...item,
     family: [...item.family],
     category: category,
   }));
+  console.log(props.items);
   return (
     <React.Fragment>
       <HeadMetaTags
@@ -27,7 +29,7 @@ function WasherExtractors(props) {
         i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum,
         supereco, Xcontrol FlEX plus czy TRACE-TECH, czynią ją bezkonkurencyjne na rynku."
         og_title="Innowacyjne pralnicowirówki wysokoobrotowe"
-        twitter_title="Innowacyjne pralnicowirówki przemyslowe"
+        twitter_title="Innowacyjne pralnicowirówki przemysłowe"
       />
       <Banner classes="banner__washerExtractors">
         <Title
@@ -51,7 +53,40 @@ WasherExtractors.getLayout = (page) => {
 export default WasherExtractors;
 
 export async function getStaticProps() {
+  let items = [];
+  try {
+    const { database: db } = await connectMongoDB();
+    const categories = db.collection('categories');
+    items = await categories
+      .aggregate([
+        {
+          $lookup: {
+            from: 'subcategories',
+            localField: '_id',
+            foreignField: 'categoryID',
+            as: 'subcategories',
+            pipeline: [
+              {
+                $lookup: {
+                  from: 'types',
+                  localField: '_id',
+                  foreignField: 'subCategoryID',
+                  as: 'types',
+                },
+              },
+            ],
+          },
+        },
+        { $match: { name: 'pralnicowirówki' } },
+      ])
+      .toArray();
+  } catch (error) {
+    console.log(error.message);
+  }
   return {
-    props: washerextractors,
+    props: {
+      washerextractors: washerextractors,
+      items: JSON.parse(JSON.stringify(items)),
+    },
   };
 }

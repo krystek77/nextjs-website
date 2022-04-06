@@ -46,7 +46,7 @@ db.createCollection('parameters', {
 
 db.parameters.insertMany(
 [{
-  'name': 'załadunek maksymalny (moduł załadunku 1:9)',
+  'name': 'załadunek znamionowy (moduł załadunku 1:10)',
   'unit': 'kg'
 },{
   'name': 'załadunek maksymalny (moduł załadunku 1:9)',

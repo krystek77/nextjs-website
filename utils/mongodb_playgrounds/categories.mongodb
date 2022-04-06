@@ -1,0 +1,14 @@
+
+use('2022_pralma');
+db.categories.drop();
+db.createCollection("categories")
+db.categories.insertMany([
+  { "name":"pralnicowirówki",
+    "title":"Innowacyjne pralnicowiówki przemysłowe",
+    "description":"Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga najlepszych z najlepszych rozwiązań pralniczych. Zaprojektowane, aby zapewnić najniższe koszty zużycia wody i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum, supereco, Xcontrol FlEX plus czy TRACE-TECH, czynią ją bezkonkurencyjne na rynku.",
+  },
+  {"name":"suszarki","title":"Ekonomiczne suszarki przemysłowe","description":""},
+]);
+
+db.categories.find({})
+

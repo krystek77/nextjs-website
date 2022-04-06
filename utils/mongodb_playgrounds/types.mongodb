@@ -1,0 +1,88 @@
+
+use('2022_pralma');
+db.types.drop();
+db.createCollection("types");
+
+db.types.insertMany([
+  { "name":"FX",
+    "image":"fx.webp",
+    "label":"FX:8 - 32 KG",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/FX/FX-65",
+    "list":["G-faktor: 400","cascade drum","EasySOAP","UltraBalance"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda7f"),
+    "description":"'Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga najlepszych z najlepszych rozwiązań pralniczych. Zaprojektowane, aby zapewnić najniższe koszty zużycia wody i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum, supereco, Xcontrol FLEX +, czy TRACE-TECH, czynią je bezkonkurencyjne na rynku.",
+    "line":"Linia FX",
+    "features":[     
+      'wolnostojąca wysokoobrotowa',
+      'nierdzewny panel górny',
+      'przedni i boczne panele ocynkowane lakierowane w aktrakcyjnym kolorze stali INOX',
+      'nierdzewny bęben wewnętrzny i zewnętrzny',
+      'XControl - łatwy w użyciu sterownik mikroprocesorowy',
+      'opatentowany pojemnik na detergenty',
+      'duża średnica zaworu spustowego - 76 mm',
+      'łatwy dostęp do wszystkich istotnych podzespołów',
+      'szeroko otwierane drzwi dla łatwego załadunku i wyładunku',
+      'moduł podłączenia do 8 sygnałów pomp płynnych środków piorących',
+      'napęd z przemiennikiem częstotliwości'
+    ],
+    "controls":[]
+  },
+  { "name":"FX350",
+    "image":"fx350.webp",
+    "label":"FX:35 - 60 KG",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/FX/FX-350",
+    "list":["G-faktor:360","EasySOAP","PowerWash"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda7f"),
+    "description":"",
+    "line":"Linia FX",
+    "features":[],
+    "controls":[]
+  },
+  { "name":"FS",
+    "image":"fs.webp",
+    "label":"FS: 80-120 kg",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/FS/FS-800",
+    "list":["G-faktor:360"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda7f"),
+    "description":"",
+    "line":"Linia FS",
+    "features":[],
+    "controls":[]
+  },
+  { "name":"RX_G200",
+    "image":"rx.webp",
+    "label":"RX G200: 6.5-35 kg",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/RX_G200/RX-65",
+    "list":["G-faktor:200-150"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda80"),
+    "description":"",
+    "line":"Linia RX",
+    "features":[],
+    "controls":[]
+  },
+  { "name":"RX",
+    "image":"rx.webp",
+    "label":"RX: 18-52 kg",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/RX/RX-180",
+    "list":["G-faktor:100"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda81"),
+    "description":"",
+    "line":"Linia RX",
+    "features":[],
+    "controls":[]
+  },
+  { "name":"Pralma",
+    "image":"rx.webp",
+    "label":"Pralma: 10-22 kg",
+    "start_path":"urzadzenia-pralnia/pralnicowirowki/Pralma/Pralma-16",
+    "list":["G-faktor:100","oblachowanie nierdzewne","bębny nierdzewne"],
+    "subCategoryID":ObjectId("624eb99706c31dc9074dda81"),
+    "description":"",
+    "line":"Linia Pralma",
+    "features":[],
+    "controls":[]
+  },
+])
+
+db.types.find({})
+

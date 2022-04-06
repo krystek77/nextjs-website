@@ -1,0 +1,13 @@
+
+use('2022_pralma');
+db.subcategories.drop();
+db.createCollection("subcategories");
+
+db.subcategories.insertMany([
+  {"name":"wolnostojące wysokoobrotowe","title":"pralnicowirowki wysokoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
+  {"name":"sztywnomocowane szybkoobrotowe","title":"pralnicowirówki szybkoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
+  {"name":"sztywnomocowane normalnoobrotowe","title":"pralnicowirówki normalnoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
+])
+
+db.subcategories.find({})
+
