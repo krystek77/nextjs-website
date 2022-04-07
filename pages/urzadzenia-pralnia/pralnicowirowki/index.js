@@ -8,28 +8,17 @@ import Banner from '../../../components/Banner/Banner';
 import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
-import { washerextractors } from '../../../constants/washerextractors';
 import { connectMongoDB } from 'utils/database';
 import styles from './index.module.css';
 
-function WasherExtractors(props) {
-  const { title, category, series } = washerextractors;
-  const withCategory = series.map((item) => ({
-    ...item,
-    family: [...item.family],
-    category: category,
-  }));
-  console.log(props.items);
+function WasherExtractors({ items }) {
+  const { title, description, name, subcategories } = items[0];
   return (
     <React.Fragment>
       <HeadMetaTags
-        title="Innowacyjne pralnicowirówki przemysłowe"
-        description="Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga najlepszych
-        z najlepszych rozwiązań pralniczych. Zaprojektowane, aby zapewnić najniższe koszty zużycia wody
-        i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum,
-        supereco, Xcontrol FlEX plus czy TRACE-TECH, czynią ją bezkonkurencyjne na rynku."
-        og_title="Innowacyjne pralnicowirówki wysokoobrotowe"
-        twitter_title="Innowacyjne pralnicowirówki przemysłowe"
+        title={title}
+        description={description}
+        twitter_title={title}
       />
       <Banner classes="banner__washerExtractors">
         <Title
@@ -37,10 +26,10 @@ function WasherExtractors(props) {
           content={title}
           classes="title_maxWidth_960 title_bg_white_red"
         />
-        <PageIndicator label={category} variant="red" />
+        <PageIndicator label={name} variant="red" />
       </Banner>
       <main className={styles.washerExtractors}>
-        <Tabs data={withCategory} initialState={0} />
+        <Tabs data={{ subcategories: subcategories, name }} initialState={0} />
       </main>
     </React.Fragment>
   );
@@ -85,7 +74,6 @@ export async function getStaticProps() {
   }
   return {
     props: {
-      washerextractors: washerextractors,
       items: JSON.parse(JSON.stringify(items)),
     },
   };
