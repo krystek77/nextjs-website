@@ -30,6 +30,10 @@
   background-image: url('/assets/images/for_banners/banner_washerextractors.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
+.banner__thumbleDryers {
+  background-image: url('/assets/images/for_banners/banner_thumble_dryers.webp'),
+    radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
 .banner__washerExtractors_FX {
   background-image: url('/assets/images/for_banners/banner_washerextractors_FX105.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);

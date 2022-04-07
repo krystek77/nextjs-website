@@ -7,7 +7,10 @@ db.subcategories.insertMany([
   {"name":"wolnostojące wysokoobrotowe","title":"pralnicowirowki wysokoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
   {"name":"sztywnomocowane szybkoobrotowe","title":"pralnicowirówki szybkoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
   {"name":"sztywnomocowane normalnoobrotowe","title":"pralnicowirówki normalnoobrotowe","categoryID":ObjectId("624eb0dd603938020ac865e2")},
-])
+  {"name": "przemysłowe bębnowe","title": "suszarki bębnowe","categoryID": ObjectId("624eb60fb38aa11777f1729d")},
+  {"name": "przemysłowe, komorowe (tzw. szafy suszące)","title": "suszarki komorowe","categoryID": ObjectId("624eb60fb38aa11777f1729d")},
+  {"name": "przemysłowe z pompą ciepła","title": "suszarki z pompą ciepła","categoryID": ObjectId("624eb60fb38aa11777f1729d")},
+  {"name": "przemysłowe zestawy suszące","title": "suszarki bębnowe słupkowe","categoryID": ObjectId("624eb60fb38aa11777f1729d")},
 
 db.subcategories.find({})
 

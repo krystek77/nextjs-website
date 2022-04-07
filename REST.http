@@ -45,11 +45,19 @@ content-type: application/json
    ]
 }
 
-### GET LAUNDRY EQUIPMENT BY NAME
+### GET LAUNDRY EQUIPMENT BY NAME - pralnicowirówki
 
 GET http://localhost:3000/api/category/get-category HTTP/1.1
 Content-Type: application/json
 
 {
    "name":"pralnicowirówki"
+}
+### GET LAUNDRY EQUIPMENT BY NAME - suszarki
+
+GET http://localhost:3000/api/category/get-category HTTP/1.1
+Content-Type: application/json
+
+{
+   "name":"suszarki"
 }

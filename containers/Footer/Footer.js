@@ -58,7 +58,7 @@ function Footer() {
               </Link>
             </li>
             <li className={styles.list__item}>
-              <Link href="/urzadzenia-pralnia/suszarki-benowe">
+              <Link href="/urzadzenia-pralnia/suszarki">
                 <a className={styles.list__link}>Suszarki</a>
               </Link>
             </li>
