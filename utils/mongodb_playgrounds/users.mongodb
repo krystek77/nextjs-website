@@ -1,0 +1,10 @@
+
+use('2022_pralma');
+db.users.drop();
+db.users.insertMany([
+  { '_id': 1, 'email': 'kryniu77@wp.pl', 'password':'', role:"user" },
+  { '_id': 2, 'email': 'k.wrona@pralma.pl', 'password':'',role:"admin" },
+]);
+
+db.users.find({})
+
