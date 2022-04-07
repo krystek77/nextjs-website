@@ -11,7 +11,7 @@ export const links = [
       },
       {
         label: 'Suszarki',
-        path: 'urzadzenia-pralnia/suszarki-bebnowe',
+        path: 'urzadzenia-pralnia/suszarki',
         image: 'dryers.png',
         list: [
           'suszarki bębnowe',
