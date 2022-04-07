@@ -15,7 +15,7 @@ const data = [
     label: 'pralnicowirówki +',
   },
   {
-    path: '/urzadzenia-pralnia/suszarki-bebnowe',
+    path: '/urzadzenia-pralnia/suszarki',
     class: 'link_leftTop',
     src: 'hero_dryers.jpeg',
     alt: 'suszarki bębnowe',
