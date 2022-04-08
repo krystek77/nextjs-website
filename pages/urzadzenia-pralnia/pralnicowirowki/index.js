@@ -9,7 +9,6 @@ import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
 import { connectMongoDB } from 'utils/database';
-import styles from './index.module.css';
 
 function WasherExtractors({ items }) {
   const { title, description, name, subcategories } = items[0];
@@ -28,7 +27,7 @@ function WasherExtractors({ items }) {
         />
         <PageIndicator label={name} variant="red" />
       </Banner>
-      <main className={styles.washerExtractors}>
+      <main>
         <Tabs data={{ subcategories: subcategories, name }} initialState={0} />
       </main>
     </React.Fragment>

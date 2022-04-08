@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
   color: white;
+  position: relative;
 }
 .banner_height_auto {
   height: auto;
@@ -31,7 +32,8 @@
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
 .banner__thumbleDryers {
-  background-image: url('/assets/images/for_banners/banner_thumble_dryers.webp'),
+  background: url('/assets/images/for_banners/banner_thumble_dryers.webp')
+      center right no-repeat,
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
 .banner__washerExtractors_FX {
