@@ -6,6 +6,7 @@ db.models.insertMany([
     {
     "typeID":ObjectId("624f0ea6b7c41df0c5d8a13f"),
     "model":'T-13',
+    "label":"załadunek 13 kg",
     "title":"Suszarka bębnowa, typ T-13",
     "description":'',
     "features":[
@@ -53,6 +54,7 @@ db.models.insertMany([
   {
     "typeID":ObjectId("624f0ea6b7c41df0c5d8a13f"),
     "model":'T-16',
+    "label":"załadunek 16 kg",
     "title":"Suszarka bębnowa, typ T-16",
     "description":'',
     "features":[
