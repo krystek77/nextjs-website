@@ -3,7 +3,7 @@
  */
 import { connectMongoDB } from 'utils/database';
 
-export default async function getCategoryByName(req, res) {
+export default async function getNodels(req, res) {
   const { name } = req.body;
   try {
     const { database: db } = await connectMongoDB();

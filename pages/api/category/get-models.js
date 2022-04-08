@@ -1,45 +1,14 @@
+/*
+ * endpoint: http://localhost:3000/api/category/get-models
+ */
 import { connectMongoDB } from 'utils/database';
 
-export async function getCategoryByName(name) {
-  let items = [];
+export default async function getModels(req, res) {
+  const { name } = req.body;
   try {
     const { database: db } = await connectMongoDB();
     const categories = db.collection('categories');
-    items = await categories
-      .aggregate([
-        {
-          $lookup: {
-            from: 'subcategories',
-            localField: '_id',
-            foreignField: 'categoryID',
-            as: 'subcategories',
-            pipeline: [
-              {
-                $lookup: {
-                  from: 'types',
-                  localField: '_id',
-                  foreignField: 'subCategoryID',
-                  as: 'types',
-                },
-              },
-            ],
-          },
-        },
-        { $match: { name } },
-      ])
-      .toArray();
-    return items;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
-
-export async function getModels(name) {
-  let items = [];
-  try {
-    const { database: db } = await connectMongoDB();
-    const categories = db.collection('categories');
-    items = await categories
+    const result = await categories
       .aggregate([
         { $match: { name: name } },
         {
@@ -85,8 +54,8 @@ export async function getModels(name) {
         { $project: { _id: 0, name: 0, title: 0, description: 0 } },
       ])
       .toArray();
-    return items;
+    return res.status(200).json(result);
   } catch (error) {
-    console.log(error.message);
+    return res.status(500).json({ message: error.message });
   }
 }
