@@ -1,16 +1,30 @@
 import React from 'react';
-import ModernLaundryEquipment from '../containers/ModernLaundryEquipment/ModernLaundryEquipment';
-import HygieneBarrier from '../containers/HygieneBarrier/HygieneBarrier';
-import CustomersLinks from '../containers/CustomersLinks/CustomersLinks';
-import OurServices from '../containers/OurServices/OurServices';
-import Softwash from '../containers/Softwash/Softwash';
-import Gallery from '../containers/Gallery/Gallery';
-import Mop from '../containers/Mop/Mop';
-import LatestPosts from '../containers/LatestPosts/LatestPosts';
-import RestLinks from '../containers/RestLinks/RestLinks';
-import Newsletter from '../containers/Newsletter/Newsletter';
-import HomeLayout from '../components/Layout/HomeLayout';
-import HeadMetaTags from '../components/HeadMetaTags/HeadMetaTags';
+import dynamic from 'next/dynamic';
+
+const ModernLaundryEquipment = dynamic(() =>
+  import('../containers/ModernLaundryEquipment/ModernLaundryEquipment')
+);
+const HygieneBarrier = dynamic(() =>
+  import('../containers/HygieneBarrier/HygieneBarrier')
+);
+const CustomersLinks = dynamic(() =>
+  import('../containers/CustomersLinks/CustomersLinks')
+);
+const OurServices = dynamic(() =>
+  import('../containers/OurServices/OurServices')
+);
+const Softwash = dynamic(() => import('../containers/Softwash/Softwash'));
+const Gallery = dynamic(() => import('../containers/Gallery/Gallery'));
+const Mop = dynamic(() => import('../containers/Mop/Mop'));
+const LatestPosts = dynamic(() =>
+  import('../containers/LatestPosts/LatestPosts')
+);
+const RestLinks = dynamic(() => import('../containers/RestLinks/RestLinks'));
+const Newsletter = dynamic(() => import('../containers/Newsletter/Newsletter'));
+const HomeLayout = dynamic(() => import('../components/Layout/HomeLayout'));
+const HeadMetaTags = dynamic(() =>
+  import('../components/HeadMetaTags/HeadMetaTags')
+);
 import { customers } from '../constants/customers';
 import { getPosts } from '../lib/posts';
 import { connectMongoDB } from '../utils/database';
