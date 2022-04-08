@@ -83,7 +83,7 @@ db.types.insertMany([
     "controls":[]
   },
   {  "name": "T",
-     "image": "rx.webp",  
+     "image": "T_9_35.webp",  
      "label": "T: 9 - 35 kg",  
      "start_path": "urzadzenia-pralnia/suszarki/T/T-16",  
      "list": [    "radialno-osiowy lub osiowy przepływ powietrza",    "bęben wewnętrzny ze stali nierdzewnej",    "ECT mikroprocesor w standardzie"  ],  "subCategoryID": {    "$oid": "624f0b60b7c41df0c5d8a136"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -92,7 +92,7 @@ db.types.insertMany([
      "controls": []
   },
   { "name": "DX",  
-    "image": "rx.webp",  
+    "image": "DX_13_90.webp",  
     "label": "DX: 13 - 90 kg",  
     "start_path": "urzadzenia-pralnia/suszarki/DX/DX-16",  
     "list": [    "osiowy przepływ powietrza",    "bęben wewnętrzny ze stali ocynkowanej",    "XQ control w standardzie",    "plastikowa ramka okna"  ],  "subCategoryID": {    "$oid": "624f0b60b7c41df0c5d8a136"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -110,7 +110,7 @@ db.types.insertMany([
     "controls": []
   },
   { "name": "FDC",  
-    "image": "rx.webp",  
+    "image": "FDC.webp",  
     "label": "FDC: 20 kg lub 6 kpl.",  
     "start_path": "urzadzenia-pralnia/suszarki/FDC/FDC",  
     "list": [    "2 niezależne obiegi powietrza",    "suszenie wewnątrz i na zewnątrz kombinezonu",    "dedykowana do wydajnego suszenia i impregnacji ciężkiej odzieży ochronnej"  ],  "subCategoryID": {    "$oid": "624f0b76b7c41df0c5d8a137"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -119,7 +119,7 @@ db.types.insertMany([
     "controls": []
   },
   { "name": "DC",  
-    "image": "rx.webp",  
+    "image": "DC_4_16.webp",  
     "label": "DC: 4 - 16 kg",  
     "start_path": "urzadzenia-pralnia/suszarki/DC/DC-16",  
     "list": [    "Humidity Tracking System",    "suszenie do osiągnięcia ustawionej wilgotności",    "4 programy suszenia",    "1 program suszenia na czas"  ],  "subCategoryID": {    "$oid": "624f0b76b7c41df0c5d8a137"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -128,7 +128,7 @@ db.types.insertMany([
     "controls": []
   },
   { "name": "DC_HP",  
-    "image": "rx.webp",  
+    "image": "DC_HP.webp",  
     "label": "DC HP: 8 kg",  
     "start_path": "urzadzenia-pralnia/suszarki/DC_HP/DC-16HP",  
     "list": [    "Humidity Tracking System",    "suszenie do osiągnięcia ustawionej wilgotności",    "4 programy suszenia",    "1 program suszenia na czas",    "z pompą ciepła"  ],  "subCategoryID": {    "$oid": "624f0b76b7c41df0c5d8a137"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -137,7 +137,7 @@ db.types.insertMany([
     "controls": []
   },
   { "name": "T_HP",  
-    "image": "rx.webp",  
+    "image": "T_HP.webp",  
     "label": "T: 9 - 16 kg",  
     "start_path": "urzadzenia-pralnia/suszarki/T_HP/T-16HP",  
     "list": [    "z pompą ciepła",    "ETC mikroprocesor w standardzie",    "bęben wewnętrzny ocynkowany lub nierdzewny"  ],  "subCategoryID": {    "$oid": "624f0b8eb7c41df0c5d8a138"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
@@ -155,7 +155,7 @@ db.types.insertMany([
     "controls": []
   },
   { "name": "DX_2",  
-    "image": "dx_2x13.webp",  
+    "image": "DX_2x13.webp",  
     "label": "DX: 2x13 - 20 kg",  
     "start_path": "urzadzenia-pralnia/suszarki/DX_2/DX-2x13", 
     "list": [    "kompaktowa budowa",    "Dual Digital Control  w standardzie",    "oszczędność miejsca",    "osiowy przepływ powietrza"  ],  "subCategoryID": {    "$oid": "624f1ca4b7c41df0c5d8a15a"  },  "description": "Suszarki marki Primus oraz Pralma to najlepsze przemysłowe urządzenia suszące na rynku. W każdej pralni przemysłowej, dla której wysoka wydajność oraz zachowanie świeżości i właściwości tkanin jest bardzo istotne, stanowią najlepsze rozwiązanie. Duży wybór różnych wariantów wyposażenia oraz rodzajów suszarek pozwala znaleść Ci tą najbardziej odpowiednią do Twoich potrzeb - od suszarek bębnowych, po suszarki komorowe oraz z pompą ciepła. Bez rewersji i z bębnem ocynkowanym w standardzie, dla mniej wymagających, po suszarki serii SE/SP lub T, z rewersją i bębnem wewnętrznym ze stali nierdzewnej. Nowoczesne technologie jak: radax, senso.dry, SafeTech, gwarantują Ci bezpieczną obsługę i niskie żuzycia energii.",  
