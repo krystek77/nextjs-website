@@ -1,69 +1,102 @@
 
 use('2022_pralma');
 db.models.drop();
+db.createCollection("models")
 db.models.insertMany([
-      { "typeID":ObjectId('624ea00246dd9427ce1cb717'),
-        "model":"FX-65",
-        "label":"załadunek 6.5 - 7 kg",
-        "title":'Pralnicowirówka wysokoobrotowa, typ FX-65',
-        "isSliderVertical": false,
-        "slider": [
-          'fx105_01',
-          'fx105_02',
-          'fx105_03',
-          'fx105_04',
-          'fx105_05',
-          'fx105_06',
-        ],
-        "parameters": [
-           {"name": 'załadunek (moduł załadunku 1:10)', "value": '6.5',"unit": 'kg' },
-           { "name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '7', "unit": 'kg'},
-           { "name": 'pojemność bębna', "value": '65', "unit": 'litrów' },
-        ],
-        "leaflets":[]
+    {
+    "typeID":ObjectId("624f0ea6b7c41df0c5d8a13f"),
+    "model":'T-13',
+    "title":"Suszarka bębnowa, typ T-13",
+    "description":'',
+    "features":[
+      "nierdzewny bęben wewnętrzny",
+      "łatwy w użyciu sterownik ECT",
+      "RADAX - radialno-osiowy przepływ powietrza",
+      "maksymalne przensozenie ciepła",
+      "niskie zużycie energii elektrycznej",
+      "duży otwór wsadowy dla łatwego załadunku i wyładunku",
+      "samoczyszczący filtr włókień",
+      "pełen system zabezpieczeń",
+      "podgrzew elektryczny, gazowy bądź parowy",
+      "w opcji rewersyjne obroty bębna oraz pomiar wilgotności"
+    ],
+    "controls":[
+      {
+      "name":"ECT mikroprocesor",
+      "image":"ECT",
+      "list":[
+        "3 cykle standardowe do typowych zastosowań",
+        "suszenie w niskiej, średniej i wysokiej temperaturze",
+        "dowolne programowanie temperatury suszenia"
+        ]
       },
       {
-        "typeID":ObjectId('624ea00246dd9427ce1cb717'),
-        "model":"FX-80",
-        "label":"załadunek 8 - 9 kg",
-        "title":'Pralnicowirówka wysokoobrotowa, typ FX-80',
-        "isSliderVertical": false,
-        "slider": [
-          'fx105_01',
-          'fx105_02',
-          'fx105_03',
-          'fx105_04',
-          'fx105_05',
-          'fx105_06',
-        ],
-        "parameters": [
-           {"name": 'załadunek (moduł załadunku 1:10)', "value": '8',"unit": 'kg' },
-           {"name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '8', "unit": 'kg'},
-           {"name": 'pojemność bębna', "value": '75', "unit": 'litrów' },
-        ],
-        "leaflets":[]
+        "name":"FCT mikroprocesor",
+        "image":"FCT",
+        "list":[
+          "20 cykli suszenia, w tym 9 wstępnie ustawionych do typowych zastosowa",
+          "dowolnie programowalna temperatura suszenia",
+          "dowolnie programowalny czas suszenia",
+          "dowolnie programowalny czas schładzania",
+          ]
+      }
+    ],
+    "parameters":[
+      {"name":"załadunek znamionowy","unit":"kg","value":"13"},
+      {"name":"pojemność bębna","unit":"litrów","value":"285"},
+      {"name":"średnica bębna","unit":"mm","value":"760"}
+    ],
+    "slider":["T_01","T_02","T_03","T_04","T_05","T_06"],
+    "isVertical":false,
+    "leaflets":[]
+  },
+  {
+    "typeID":ObjectId("624f0ea6b7c41df0c5d8a13f"),
+    "model":'T-16',
+    "title":"Suszarka bębnowa, typ T-16",
+    "description":'',
+    "features":[
+      "nierdzewny bęben wewnętrzny",
+      "łatwy w użyciu sterownik ECT",
+      "RADAX - radialno-osiowy przepływ powietrza",
+      "maksymalne przensozenie ciepła",
+      "niskie zużycie energii elektrycznej",
+      "duży otwór wsadowy dla łatwego załadunku i wyładunku",
+      "samoczyszczący filtr włókień",
+      "pełen system zabezpieczeń",
+      "podgrzew elektryczny, gazowy bądź parowy",
+      "w opcji rewersyjne obroty bębna oraz pomiar wilgotności"
+    ],
+    "controls":[
+      {
+      "name":"ECT mikroprocesor",
+      "image":"ECT",
+      "list":[
+        "3 cykle standardowe do typowych zastosowań",
+        "suszenie w niskiej, średniej i wysokiej temperaturze",
+        "dowolne programowanie temperatury suszenia"
+        ]
       },
       {
-        "typeID":ObjectId('624ea00246dd9427ce1cb717'),
-        "model":"FX-105",
-        "label":"załadunek 10.5 - 12 kg",
-        "title":'Pralnicowirówka wysokoobrotowa, typ FX-105',
-        "isSliderVertical": false,
-        "slider": [
-          'fx105_01',
-          'fx105_02',
-          'fx105_03',
-          'fx105_04',
-          'fx105_05',
-          'fx105_06',
-        ],
-        "parameters": [
-           {"name": 'załadunek (moduł załadunku 1:10)', "value": '10.5',"unit": 'kg' },
-           { "name": 'załadunek maksymalny (moduł załadunku 1:9)',"value": '12', "unit": 'kg'},
-           { "name": 'pojemność bębna', "value": '105', "unit": 'litrów' },
-        ],
-        "leaflets":[]
-      },
+        "name":"FCT mikroprocesor",
+        "image":"FCT",
+        "list":[
+          "20 cykli suszenia, w tym 9 wstępnie ustawionych do typowych zastosowa",
+          "dowolnie programowalna temperatura suszenia",
+          "dowolnie programowalny czas suszenia",
+          "dowolnie programowalny czas schładzania",
+          ]
+      }
+    ],
+    "parameters":[
+      {"name":"załadunek znamionowy","unit":"kg","value":"16"},
+      {"name":"pojemność bębna","unit":"litrów","value":"345"},
+      {"name":"średnica bębna","unit":"mm","value":"760"}
+    ],
+    "slider":["T_01","T_02","T_03","T_04","T_05","T_06"],
+    "isVertical":false,
+    "leaflets":[]
+  }
 ]);
 
 db.models.find({})
