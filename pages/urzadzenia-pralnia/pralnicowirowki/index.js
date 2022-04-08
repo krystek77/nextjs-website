@@ -8,7 +8,7 @@ import Banner from '../../../components/Banner/Banner';
 import Title from '../../../components/Title/Title';
 import PageIndicator from '../../../components/Banner/PageIndicator/PageIndicator';
 import Tabs from '../../../containers/Tabs/Tabs';
-import { connectMongoDB } from 'utils/database';
+import { getCategoryByName } from 'utils/requests';
 
 function WasherExtractors({ items }) {
   const { title, description, name, subcategories } = items[0];
@@ -41,36 +41,7 @@ WasherExtractors.getLayout = (page) => {
 export default WasherExtractors;
 
 export async function getStaticProps() {
-  let items = [];
-  try {
-    const { database: db } = await connectMongoDB();
-    const categories = db.collection('categories');
-    items = await categories
-      .aggregate([
-        {
-          $lookup: {
-            from: 'subcategories',
-            localField: '_id',
-            foreignField: 'categoryID',
-            as: 'subcategories',
-            pipeline: [
-              {
-                $lookup: {
-                  from: 'types',
-                  localField: '_id',
-                  foreignField: 'subCategoryID',
-                  as: 'types',
-                },
-              },
-            ],
-          },
-        },
-        { $match: { name: 'pralnicowirówki' } },
-      ])
-      .toArray();
-  } catch (error) {
-    console.log(error.message);
-  }
+  const items = await getCategoryByName('pralnicowirówki');
   return {
     props: {
       items: JSON.parse(JSON.stringify(items)),
