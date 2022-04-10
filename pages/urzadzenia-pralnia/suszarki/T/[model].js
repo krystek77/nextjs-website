@@ -56,19 +56,10 @@ export async function getStaticPaths() {
   return {
     paths: [
       {
-        params: { model: "T-11" },
-      },
-      {
         params: { model: "T-13" },
       },
       {
         params: { model: "T-16" },
-      },
-      {
-        params: { model: "T-24" },
-      },
-      {
-        params: { model: "T-35" },
       },
       {
         params: { model: "TX-9" },

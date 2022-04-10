@@ -3,6 +3,59 @@ use('2022_pralma');
 db.models.drop();
 db.createCollection("models")
 db.models.insertMany([
+    {  "typeID": ObjectId("624f0ea6b7c41df0c5d8a13f"),  
+    "model": "TX-9",  
+    "title": "Suszarka bębnowa, typ TX-9",  
+    "description": "Suszarka TX-9 w połączeniu z  pralnicowirówką wolnostojącą wysokoobrotową, typ FX-80, to idealny duet pralniczy. Dostępna z bębnem ocynkowanym w standardzie, dla mniej wymagającyh, oraz w opcji, z rewersją i bębnem wewnętrznym nierdzewnym, gdy zachowanie wyższych standardów prania jest niezbędne. Design obu urządzeń współgra ze sobą podkreślając ich innowacyjność. Ta dobrana para to idealny wybór dla przedszkoli, żłobków, a w wersji z układem samoobsługowym, pralni apartamentowców  oraz pralni samoobsługowych. TX-9 i FX-80, to Twój wybór, gdy świadczysz usługi na najwyższym poziomie",  
+    "features": [    
+      "bęben ocynkowany w standardzie",    
+      "panele laminowane wartswą tworzywa sztucznego w kolorze antracytowym",    
+      "panel gótny ze stali nierdzewnej INOX",    
+      "łatwy w użyciu sterownik mikroprocesorowy ETC",    
+      "osiowy przepływ powietrza",    
+      "drzwi otwierane pod kątem 210 stopni ułatwiają załadunek i wyładunek prania",    
+      "intuicyjny panel sterowania z prostą obsługą i 3 programach suszenia",    
+      "w opcji: rewersyjne obroty, bęben oraz przód ze stali nierdzewnej, system Sensodry, rama do wyrównania wysokości z pralką",    
+      "podgrzew elektryczny"  ],  
+      "controls": [    
+        { 
+          "name": "ECT mikroprocesor",      
+          "image": "ECT",      
+          "list": [        
+            "3 cykle standardowe do typowych zastosowań",        
+            "suszenie w niskiej, średniej i wysokiej temperaturze",        
+            "dowolne programowanie temperatury suszenia"      
+            ]    
+          }  
+      ],  
+      "parameters": [    
+        {  
+          "name": "załadunek znamionowy (moduł załadunku 25:1)",      
+          "unit": "kg",      
+          "value": "8"    
+        },    
+        { "name": "załadunek dopuszczalny (moduł załadunku 20:1)",
+          "unit": "kg",      
+          "value": "10"    
+        },    
+        {  
+          "name": "pojemność bębna",      
+          "unit": "litrów",      
+          "value": "195"   
+        }  
+      ],  
+      "slider": [    
+        "T_01",    
+        "T_02",    
+        "T_03",    
+        "T_04",    
+        "T_05",    
+        "T_06"  
+      ],  
+      "isVertical": false,  
+      "leaflets": [],  
+      "label": "załadunek 8 kg"
+    },
     {
     "typeID":ObjectId("624f0ea6b7c41df0c5d8a13f"),
     "model":'T-13',

@@ -10,7 +10,8 @@
   overflow: hidden;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  max-width: 50%;
+  /* max-width: 50%; */
+  min-width: 360px;
 }
 
 .productCard__overlay {
