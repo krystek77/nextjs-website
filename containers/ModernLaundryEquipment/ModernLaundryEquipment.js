@@ -1,15 +1,22 @@
-import styles from "./ModernLaundryEquipment.module.css";
-import Subtitle from "../../components/Subtitle/Subtitle";
-import Title from "../../components/Title/Title";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import Label from "../../components/Label/Label";
+import Subtitle from '../../components/Subtitle/Subtitle';
+import Title from '../../components/Title/Title';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import Label from '../../components/Label/Label';
+import styles from './ModernLaundryEquipment.module.css';
+import { classesNames } from 'lib';
 
-function ModernLaundryEquipment({ product_cards,products_title,products_subtitle }) {
+function ModernLaundryEquipment({
+  product_cards,
+  products_title,
+  products_subtitle,
+  classes,
+}) {
+  const classesString = classesNames(classes, 'modernLaundryEquipment')(styles);
   return (
-    <section className={styles.modernLaundryEquipment}>
+    <section className={classesString}>
       <header className={styles.modernLaundryEquipment__header}>
         <Subtitle content={products_title} classes="subtitle_max_width_640" />
-        <Title variant='h2' content={products_subtitle} />
+        <Title variant="h2" content={products_subtitle} />
       </header>
       {/** Product Cards */}
       {product_cards.length ? (
@@ -17,7 +24,7 @@ function ModernLaundryEquipment({ product_cards,products_title,products_subtitle
           {product_cards.map((item) => {
             return (
               <ProductCard key={item.label} {...item}>
-                <Label label={item.label} classes='label_top_right_vertical' />
+                <Label label={item.label} classes="label_top_right_vertical" />
               </ProductCard>
             );
           })}
@@ -26,5 +33,11 @@ function ModernLaundryEquipment({ product_cards,products_title,products_subtitle
     </section>
   );
 }
+ModernLaundryEquipment.defaultProps = {
+  classes: '',
+  product_cards: [],
+  products_title: '',
+  products_subtitle: '',
+};
 
 export default ModernLaundryEquipment;
