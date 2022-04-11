@@ -88,3 +88,21 @@
     );
   background-position: center;
 }
+.banner__equipments {
+  background-image: url('/assets/images/for_banners/equipments.webp'),
+    radial-gradient(
+      200% 1000% at 50% 50%,
+      var(--dark-700) 0%,
+      var(--dark-500) 100%
+    );
+  background-position: center;
+}
+.banner__vend_equipments {
+  background-image: url('/assets/images/for_banners/vend_equipments.webp'),
+    radial-gradient(
+      200% 1000% at 50% 50%,
+      var(--dark-700) 0%,
+      var(--dark-500) 100%
+    );
+  background-position: center;
+}

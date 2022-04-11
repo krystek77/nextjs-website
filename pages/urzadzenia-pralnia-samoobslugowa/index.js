@@ -14,7 +14,7 @@ function SelfServiceLaundryEquipment(props) {
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner>
+      <Banner classes="banner__vend_equipments">
         <Title
           variant="h1"
           content={props.page_title}
@@ -58,12 +58,11 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page_title: 'Inteligentne pralnie samoobsługowe',
-      page_label: 'urządzenia do samoobsługi',
+      page_title: 'Nowoczesne pralnie samoobsługowe',
+      page_label: 'przemysłowe urządzenia pralnicze do samoobsługi',
       product_cards: JSON.parse(JSON.stringify(vend)),
-      products_title:
-        'Wyposażenie inteligentnej i nowoczesnej pralni samoobsługowej',
-      products_subtitle: 'Dedykowane do pralni usługowych i socjalnych',
+      products_title: 'Wyposażenie pralni samoobsługowej',
+      products_subtitle: 'Twój spokój i komfort obsługi',
     },
   };
 }

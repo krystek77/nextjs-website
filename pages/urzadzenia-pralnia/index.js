@@ -9,6 +9,7 @@ import PageIndicator from '../../components/Banner/PageIndicator/PageIndicator';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
 import ModernLaundryEquipment from '../../containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import { connectMongoDB } from 'utils/database';
+import SquareBackground from 'components/SquareBackground/SquareBackground';
 
 import styles from './index.module.css';
 
@@ -16,7 +17,7 @@ function LaundryEquipment(props) {
   return (
     <React.Fragment>
       <HeadMetaTags />
-      <Banner>
+      <Banner classes="banner__equipments">
         <Title
           variant="h1"
           content={props.page_title}
@@ -60,11 +61,11 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page_title: 'Najlepsze wyposażenie do pralni przemysłowej',
-      page_label: 'urządzenia',
+      page_title: 'Najwyższa jakość i doskonałe rezultaty prania',
+      page_label: 'przemysłowe urządzenia pralnicze',
       product_cards: JSON.parse(JSON.stringify(product_cards)),
-      products_title: 'Wyposażenie nowoczesnej pralni',
-      products_subtitle: 'Do każdego rodzaju i wielkości pralni przemysłowej',
+      products_title: 'Wyposażenie pralni przemysłowej',
+      products_subtitle: 'Dla każdego rodzaju i wielkości',
     },
   };
 }

@@ -101,6 +101,18 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+.title_bg_accent_white {
+  background: linear-gradient(
+    135deg,
+    var(--accent-500) 0%,
+    var(--accent-500) 50%,
+    var(--white) 50%,
+    var(--white) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
 .title_display_h4 {
   font-size: 1.75rem;
