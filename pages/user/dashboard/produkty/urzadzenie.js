@@ -117,6 +117,7 @@ function AddEquipmentForm(props) {
         <Title content='Dodaj urządzenie' classes='title_display_h5 title_center title_mb_1' variant='h2' />
       </div>
       <form className={styles.addEquipmentForm__form}>
+        {/** ---------------------------------------------------------------- */}
         <div className={styles.addEquipmentForm__inputsGroup}>
           <div className={styles.addEquipmentForm__inputWrapper}>
             <Title content='Kategoria' variant='h3' classes='title_display_h6 title_uppercase  title_mb_05' />
@@ -192,6 +193,7 @@ function AddEquipmentForm(props) {
         </div>
         {/** ---------------------------------------------------------------- */}
         <div className={styles.addEquipmentForm__inputsGroup}>
+          {/** model container */}
           <div className={styles.addEquipmentForm__model}>
             {/** model */}
             <div className={styles.addEquipmentForm__inputWrapper}>
@@ -200,7 +202,6 @@ function AddEquipmentForm(props) {
               <InputError isError={true} message='Model jest wymagany' classes='inputError_to_right inputError_top_minus_05' />
               <RequiredMarker classes='requiredMarker_bottom_minus_05' />
             </div>
-            {/**  end model */}
             {/** label */}
             <div className={styles.addEquipmentForm__inputWrapper}>
               <Title content='Etykieta' variant='h3' classes='title_display_h6 title_uppercase title_mb_0' />
@@ -208,7 +209,6 @@ function AddEquipmentForm(props) {
               <InputError isError={true} message='Etykieta jest wymagana' classes='inputError_to_right inputError_top_minus_05' />
               <RequiredMarker classes='requiredMarker_bottom_minus_05' />
             </div>
-            {/**  end label */}
           </div>
           {/** title */}
           <div className={styles.addEquipmentForm__inputWrapper}>
@@ -228,7 +228,10 @@ function AddEquipmentForm(props) {
             {added.control && !exists.control && <span className={styles.addEquipmentForm__Indicator}>Sterownik dodany</span>}
             {exists.control && <span className={styles.addEquipmentForm__Indicator}>Ten sterownik został już dodany</span>}
           </div>
-          {/** add control */}
+          <div className={styles.addEquipmentForm__inputWrapper}>
+            <Title content='Opis modelu' variant='h3' classes='title_display_h6 title_uppercase title_mb_05 title_pt_1' />
+            <TextareaInput placeholder="Dodaj krótki opis modelu" action={(e) => setProduct({ ...product, description: e.target.value })} rows={10} classes='' name='description' value={product.description} />
+          </div>
         </div>
         {/** ---------------------------------------------------------------- */}
         <div className={styles.addEquipmentForm__actionButtons}>
