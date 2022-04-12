@@ -19,7 +19,6 @@ function AddEquipmentForm(props) {
   // console.log(controls);
 
   const [product, setProduct] = React.useState({
-    typeID: "",
     model: "",
     label: "",
     title: "",
@@ -100,7 +99,7 @@ function AddEquipmentForm(props) {
     e.preventDefault();
     const featuresList = features.split("\n").filter((item) => item !== "");
     const newProduct = {
-      typeID: product.typeID,
+      typeID,
       model: product.model,
       label: product.label,
       title: product.title,
@@ -116,7 +115,6 @@ function AddEquipmentForm(props) {
   };
   const resetForm = () => {
     setProduct({
-      typeID: "",
       model: "",
       label: "",
       title: "",
@@ -170,7 +168,6 @@ function AddEquipmentForm(props) {
                 setSubcategoryName(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.name);
                 setTypeName(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.types[0]?.name);
                 setTypeID(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.types[0]?._id);
-                setProduct({ ...product, typeID: typeID });
               }}
             />
           </div>
@@ -184,7 +181,6 @@ function AddEquipmentForm(props) {
                 setSubcategoryName(e.target.value);
                 setTypeName(categories.find((item) => item.name === categoryName)?.subcategories.find((item) => item.name === e.target.value)?.types[0]?.name);
                 setTypeID(categories.find((item) => item.name === categoryName)?.subcategories.find((item) => item.name === e.target.value).types[0]?._id);
-                setProduct({ ...product, typeID: typeID });
               }}
             />
           </div>
@@ -205,7 +201,6 @@ function AddEquipmentForm(props) {
                     ?.subcategories.find((item) => item.name === subcategoryName)
                     .types.find((item) => item.name === e.target.value)?._id
                 );
-                setProduct({ ...product, typeID: typeID });
               }}
             />
           </div>
