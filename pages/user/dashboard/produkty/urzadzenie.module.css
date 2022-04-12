@@ -15,10 +15,7 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.addEquipmentForm__inputsGroup {
-  /* border: 1px solid green; */
-  /* overflow: hidden; */
-}
+
 .addEquipmentForm__inputWrapper {
   position: relative;
   margin-bottom: 0.5rem;

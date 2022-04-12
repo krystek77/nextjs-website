@@ -45,14 +45,23 @@ function AddEquipmentForm(props) {
     slider: false,
     leaflets: false,
   });
-  const [categoryName, setCategoryName] = React.useState(() => categories[0]?.name);
+  const [categoryName, setCategoryName] = React.useState(categories[0]?.name);
   const [subcategoryName, setSubcategoryName] = React.useState(categories[0]?.subcategories[0]?.name);
   const [typeName, setTypeName] = React.useState(categories[0]?.subcategories[0]?.types[0]?.name);
+  const [typeID, setTypeID] = React.useState(categories[0]?.subcategories[0]?.types[0]?._id);
+
+  console.log("C", categoryName);
+  console.log("S", subcategoryName);
+  console.log("T", typeName);
+  console.log("TID", typeID);
+
   const [parameter, setParameter] = React.useState({
     name: parameters[0]?.name,
     unit: parameters[0]?.unit,
     value: "",
   });
+  // add features
+  const [features, setFeatures] = React.useState("");
   // add control
   const [control, setControl] = React.useState(controls[0]?.name);
   const addControl = () => {
@@ -87,8 +96,39 @@ function AddEquipmentForm(props) {
       unit: parameters[0]?.unit,
       value: "",
     });
-
-  const resetForm = () => {};
+  const handleForm = (e) => {
+    e.preventDefault();
+    const featuresList = features.split("\n").filter((item) => item !== "");
+    const newProduct = {
+      typeID: product.typeID,
+      model: product.model,
+      label: product.label,
+      title: product.title,
+      description: product.description,
+      features: featuresList,
+      controls: product.controls,
+      parameters: product.parameters,
+      slider: product.slider,
+      leaflets: [],
+      isVertical: product.isVertical,
+    };
+    console.log(newProduct);
+  };
+  const resetForm = () => {
+    setProduct({
+      typeID: "",
+      model: "",
+      label: "",
+      title: "",
+      description: "",
+      features: [],
+      controls: [],
+      parameters: [],
+      slider: [],
+      leaflets: [],
+      isVertical: false,
+    });
+  };
 
   React.useEffect(() => {
     const timer = setTimeout(function () {
@@ -110,13 +150,13 @@ function AddEquipmentForm(props) {
     return () => {
       clearTimeout(timer);
     };
-  }, [added, exists]);
+  }, []);
   return (
     <React.Fragment>
       <div className={styles.addEquipmentForm}>
         <Title content='Dodaj urządzenie' classes='title_display_h5 title_center title_mb_1' variant='h2' />
       </div>
-      <form className={styles.addEquipmentForm__form}>
+      <form className={styles.addEquipmentForm__form} onSubmit={handleForm}>
         {/** ---------------------------------------------------------------- */}
         <div className={styles.addEquipmentForm__inputsGroup}>
           <div className={styles.addEquipmentForm__inputWrapper}>
@@ -129,6 +169,8 @@ function AddEquipmentForm(props) {
                 setCategoryName(e.target.value);
                 setSubcategoryName(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.name);
                 setTypeName(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.types[0]?.name);
+                setTypeID(categories.find((item) => item.name === e.target.value)?.subcategories[0]?.types[0]?._id);
+                setProduct({ ...product, typeID: typeID });
               }}
             />
           </div>
@@ -141,6 +183,8 @@ function AddEquipmentForm(props) {
               action={(e) => {
                 setSubcategoryName(e.target.value);
                 setTypeName(categories.find((item) => item.name === categoryName)?.subcategories.find((item) => item.name === e.target.value)?.types[0]?.name);
+                setTypeID(categories.find((item) => item.name === categoryName)?.subcategories.find((item) => item.name === e.target.value).types[0]?._id);
+                setProduct({ ...product, typeID: typeID });
               }}
             />
           </div>
@@ -153,7 +197,16 @@ function AddEquipmentForm(props) {
                 .find((item) => item.name === categoryName)
                 ?.subcategories.find((item) => item.name === subcategoryName)
                 ?.types.map((item) => item.name)}
-              action={(e) => setTypeName(e.target.value)}
+              action={(e) => {
+                setTypeName(e.target.value);
+                setTypeID(
+                  categories
+                    .find((item) => item.name === categoryName)
+                    ?.subcategories.find((item) => item.name === subcategoryName)
+                    .types.find((item) => item.name === e.target.value)?._id
+                );
+                setProduct({ ...product, typeID: typeID });
+              }}
             />
           </div>
           {/** parametr */}
@@ -180,7 +233,7 @@ function AddEquipmentForm(props) {
                 <Button label='dodaj parametr' classes='button_small button_no_wrap button_mb_1 button_to_right' action={addParameter}>
                   +
                 </Button>
-                {added.parameter && !exists.parameter && <span className={`${styles.addEquipmentForm__Indicator}`}>Parametr dodany</span>}
+                {added.parameter && !exists.parameter && <span className={`${styles.addEquipmentForm__Indicator} ${styles.addEquipmentForm__Indicator_bottom_3_5}`}>Parametr dodany</span>}
                 {exists.parameter && <span className={`${styles.addEquipmentForm__Indicator} ${styles.addEquipmentForm__Indicator_bottom_3_5}`}>Parametr o tej nazwie już został dodany</span>}
                 <div className={styles.addEquipmentForm__valueContainer}>
                   <span className={styles.addEquipmentForm__value}>{parameter.value ? parameter.value : "-brak wartości-"}</span>
@@ -192,6 +245,16 @@ function AddEquipmentForm(props) {
           <div className={`${styles.addEquipmentForm__inputWrapper} ${styles.addEquipmentForm__inputWrapper_checkbox}`}>
             <input id='vertical' type='checkbox' onChange={(e) => setProduct({ ...product, isVertical: !product.isVertical })} checked={product.isVertical} />
             <label htmlFor='vertical'>Układ pionowy</label>
+          </div>
+          <div className={styles.addEquipmentForm__inputWrapper}>
+            <Title content='Zdjęcia' variant='h3' classes='title_display_h6 title_uppercase  title_mb_05' />
+            <InputFileBase64
+              multiple={true}
+              action={(files) => {
+                const base64 = files.map(({ base64 }) => base64);
+                setProduct({ ...product, slider: [...product.slider, ...base64] });
+              }}
+            />
           </div>
         </div>
         {/** ---------------------------------------------------------------- */}
@@ -232,8 +295,12 @@ function AddEquipmentForm(props) {
             {exists.control && <span className={styles.addEquipmentForm__Indicator}>Ten sterownik został już dodany</span>}
           </div>
           <div className={styles.addEquipmentForm__inputWrapper}>
-            <Title content='Opis modelu' variant='h3' classes='title_display_h6 title_uppercase title_mb_05 title_pt_1' />
-            <TextareaInput placeholder='Dodaj krótki opis modelu' action={(e) => setProduct({ ...product, description: e.target.value })} rows={10} classes='' name='description' value={product.description} />
+            <Title content='Opis modelu' variant='h3' classes='title_display_h6 title_uppercase title_mb_05' />
+            <TextareaInput placeholder='Dodaj krótki opis modelu' action={(e) => setProduct({ ...product, description: e.target.value })} rows={5} classes='' name='description' value={product.description} />
+          </div>
+          <div className={styles.addEquipmentForm__inputWrapper}>
+            <Title content='Cechy modelu' variant='h3' classes='title_display_h6 title_uppercase title_mb_05' />
+            <TextareaInput placeholder='Lista cech' action={(e) => setFeatures(e.target.value)} rows={5} classes='' name='features' value={features} />
           </div>
         </div>
         {/** ---------------------------------------------------------------- */}
