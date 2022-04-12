@@ -1,0 +1,99 @@
+.addEquipmentForm {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow: hidden;
+}
+.addEquipmentForm__form {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.addEquipmentForm__inputsGroup {
+  /* border: 1px solid green; */
+  /* overflow: hidden; */
+}
+.addEquipmentForm__inputWrapper {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.addEquipmentForm__model {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.addEquipmentForm__parameter,
+.addEquipmentForm__control {
+  background-color: var(--primary-300);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--primary-500);
+}
+.addEquipmentForm__valueContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--white);
+}
+.addEquipmentForm__value {
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+}
+.addEquipmentForm__unit {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--dark-500);
+}
+.addEquipmentForm__Indicator {
+  border: 1px solid var(--accent-700);
+  border-radius: 0.125rem;
+  bottom: 2rem;
+  color: var(--accent-500);
+  position: absolute;
+  left: 1rem;
+  bottom: 3.5rem;
+  font-family: var(--font-alt);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+  -webkit-animation: to-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: to-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.addEquipmentForm__actionButtons {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+@-webkit-keyframes to-right {
+  0% {
+    -webkit-transform: translateX(-25%);
+    transform: translateX(-25%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes to-right {
+  0% {
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+}

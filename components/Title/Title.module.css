@@ -7,6 +7,24 @@
   position: relative;
   /* text-transform: capitalize; */
 }
+.title_mt_05 {
+  margin-top: 0.5rem;
+}
+.title_pb_05 {
+  padding-bottom: 0.5rem;
+}
+.title_pb_1 {
+  padding-bottom: 1rem;
+}
+.title_pt_05 {
+  padding-top: 0.5rem;
+}
+.title_pt_1 {
+  padding-top: 1rem;
+}
+.title_pt_1_5 {
+  padding-top: 1.5rem;
+}
 .title_mt_1 {
   margin-top: 1rem;
 }
