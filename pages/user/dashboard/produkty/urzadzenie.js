@@ -189,7 +189,10 @@ function AddEquipmentForm(props) {
               </div>
             </div>
           </div>
-          {/** end parametr */}
+          <div className={`${styles.addEquipmentForm__inputWrapper} ${styles.addEquipmentForm__inputWrapper_checkbox}`}>
+            <input id='vertical' type='checkbox' onChange={(e) => setProduct({ ...product, isVertical: !product.isVertical })} checked={product.isVertical} />
+            <label htmlFor='vertical'>Układ pionowy</label>
+          </div>
         </div>
         {/** ---------------------------------------------------------------- */}
         <div className={styles.addEquipmentForm__inputsGroup}>
@@ -230,7 +233,7 @@ function AddEquipmentForm(props) {
           </div>
           <div className={styles.addEquipmentForm__inputWrapper}>
             <Title content='Opis modelu' variant='h3' classes='title_display_h6 title_uppercase title_mb_05 title_pt_1' />
-            <TextareaInput placeholder="Dodaj krótki opis modelu" action={(e) => setProduct({ ...product, description: e.target.value })} rows={10} classes='' name='description' value={product.description} />
+            <TextareaInput placeholder='Dodaj krótki opis modelu' action={(e) => setProduct({ ...product, description: e.target.value })} rows={10} classes='' name='description' value={product.description} />
           </div>
         </div>
         {/** ---------------------------------------------------------------- */}

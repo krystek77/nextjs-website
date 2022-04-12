@@ -23,6 +23,14 @@
   position: relative;
   margin-bottom: 0.5rem;
 }
+.addEquipmentForm__inputWrapper_checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.addEquipmentForm__inputWrapper_checkbox label {
+  margin-left: 1rem;
+}
 .addEquipmentForm__model {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
