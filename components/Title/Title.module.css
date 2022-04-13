@@ -153,6 +153,9 @@
 .title_uppercase {
   text-transform: uppercase;
 }
+.title_capitalize {
+  text-transform: capitalize;
+}
 .title_drop_shadow {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.75));
 }

@@ -32,7 +32,7 @@ function ProductInfo({
 
         <div className={styles.productInfo__content}>
           <Subtitle content={line} />
-          <Title variant="h2" content={category} />
+          <Title variant="h2" content={category} classes="title_capitalize" />
           <Description classes="description_mb_3">{description}</Description>
           <AvailableModels items={available_models} model={model} />
           <ScrollToAnchor anchor="specyfikacja" label="zobacz specyfikację" />

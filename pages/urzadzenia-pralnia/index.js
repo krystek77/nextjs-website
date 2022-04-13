@@ -9,7 +9,6 @@ import PageIndicator from '../../components/Banner/PageIndicator/PageIndicator';
 import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags';
 import ModernLaundryEquipment from '../../containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import { connectMongoDB } from 'utils/database';
-import SquareBackground from 'components/SquareBackground/SquareBackground';
 
 import styles from './index.module.css';
 
@@ -58,7 +57,6 @@ export async function getStaticProps() {
       },
     ])
     .toArray();
-
   return {
     props: {
       page_title: 'Najwyższa jakość i doskonałe rezultaty prania',

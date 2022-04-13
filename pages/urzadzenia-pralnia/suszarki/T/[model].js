@@ -16,7 +16,6 @@ import { sort } from 'utils/sortAvailableModels';
 
 function TDryers({ item }) {
   const router = useRouter();
-  console.log(item);
   const {
     model,
     title,
@@ -38,13 +37,13 @@ function TDryers({ item }) {
         description={description}
         twitter_title={title}
       />
-      <Banner classes="">
+      <Banner classes="banner__dryer_T">
         <Title
           variant="h1"
           content={title}
-          classes="title_maxWidth_960 title_bg_white_red"
+          classes="title_maxWidth_960 title_bg_white_primary"
         />
-        <PageIndicator label={category} variant="red" />
+        <PageIndicator label={category} variant="primary" />
       </Banner>
       <main>
         <ProductInfo

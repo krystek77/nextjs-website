@@ -49,6 +49,15 @@
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
   background-position: center right;
 }
+.banner__dryer_T {
+  background-image: url('/assets/images/for_banners/banner_T.webp'),
+    radial-gradient(
+      200% 1000% at 50% 50%,
+      var(--dark-700) 0%,
+      var(--dark-500) 100%
+    );
+  background-position: center;
+}
 .banner__spareParts {
   background-image: url('/assets/images/for_banners/banner_spareparts.webp'),
     radial-gradient(

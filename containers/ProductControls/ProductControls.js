@@ -59,8 +59,8 @@ function ProductControls({ controls, initialState = 0 }) {
                       <div className={styles.accordion__image}>
                         <div className={styles.accordion__imageWrapper}>
                           <Image
-                            src={`/assets/images/controls/${item.image}.webp`}
-                            alt={item.image}
+                            src={item.image}
+                            alt="sterownik"
                             layout="fill"
                           />
                         </div>
