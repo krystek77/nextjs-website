@@ -109,6 +109,7 @@ function AddEquipmentForm(props) {
       unit: parameters[0]?.unit,
       value: '',
     });
+  const resetFeatures = () => setFeatures('');
   const handleForm = (e) => {
     e.preventDefault();
     const featuresList = features.split('\n').filter((item) => item !== '');
@@ -128,6 +129,13 @@ function AddEquipmentForm(props) {
     console.log(newProduct);
   };
   const resetForm = () => {
+    setCategoryName(categories[0]?.name);
+    setSubcategoryName(categories[0]?.subcategories[0]?.name);
+    setTypeName(categories[0]?.subcategories[0]?.types[0]?.name);
+    setTypeID(categories[0]?.subcategories[0]?.types[0]?._id);
+    resetParameter();
+    resetControl();
+    resetFeatures();
     setProduct({
       model: '',
       label: '',
@@ -349,7 +357,7 @@ function AddEquipmentForm(props) {
               <Input
                 type="text"
                 fieldName="model"
-                placeholder="Wpisz oznaczenie modelu: np. Pralma-16F"
+                placeholder="Oznaczenie modelu: np. Pralma-16F, FX-105 itp."
                 value={product.model}
                 handleInput={(e) =>
                   setProduct({ ...product, model: e.target.value })
@@ -398,7 +406,7 @@ function AddEquipmentForm(props) {
             <Input
               type="text"
               fieldName="title"
-              placeholder="Wpisz tytuł produktu: np. Suszarka bębnowa, typ TX-9"
+              placeholder="Tytuł produktu: np. Suszarka bębnowa, typ TX-9"
               value={product.title}
               handleInput={(e) =>
                 setProduct({ ...product, title: e.target.value })
