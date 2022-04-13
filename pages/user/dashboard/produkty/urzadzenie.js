@@ -12,6 +12,8 @@ import styles from './urzadzenie.module.css';
 /*
  * route: http://localhost:3000/user/dashboard/produkty/urzadzenie
  */
+
+const ENDPOINT_TO_ADD_MODEL = '/api/dashboard/products/add-equipment';
 function AddEquipmentForm(props) {
   const { categories, parameters, controls } = props;
 
@@ -110,7 +112,7 @@ function AddEquipmentForm(props) {
       value: '',
     });
   const resetFeatures = () => setFeatures('');
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
     const featuresList = features.split('\n').filter((item) => item !== '');
     const newProduct = {
@@ -127,6 +129,21 @@ function AddEquipmentForm(props) {
       isVertical: product.isVertical,
     };
     console.log(newProduct);
+    try {
+      const response = await fetch(ENDPOINT_TO_ADD_MODEL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newProduct),
+      });
+      const result = await response.json();
+      console.log(result.message);
+      resetForm();
+    } catch (error) {
+      console.log(error.message);
+      console.log(result.message);
+    }
   };
   const resetForm = () => {
     setCategoryName(categories[0]?.name);
