@@ -12,6 +12,8 @@ import PageLayout from 'components/Layout/PageLayout';
 import { cutURL } from 'lib';
 import { useRouter } from 'next/router';
 import { getModels } from 'utils/requests';
+import { sort } from 'utils/sortAvailableModels';
+
 function TDryers({ item }) {
   const router = useRouter();
   console.log(item);
@@ -49,7 +51,7 @@ function TDryers({ item }) {
           model={model}
           line={line}
           category={category}
-          available_models={available_models}
+          available_models={sort(available_models)}
           slider={slider}
           vertical={isSliderVertical}
           description={description}
