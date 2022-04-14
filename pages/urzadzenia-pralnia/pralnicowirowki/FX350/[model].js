@@ -17,6 +17,7 @@ import Leaflets from '../../../../containers/Leaflets/Leaflets';
 import { cutURL } from 'lib';
 import { useRouter } from 'next/router';
 import { sort } from 'utils/sortAvailableModels';
+import { model, modelsPaths } from 'utils/models';
 
 function FX350({ item }) {
   const router = useRouter();
@@ -80,7 +81,6 @@ export default FX350;
 
 const TYPE_NAME = 'FX350';
 const CATEGORY = 'pralnicowirówki';
-import { model, modelsPaths } from 'utils/models';
 export async function getStaticPaths() {
   const paths = await modelsPaths(CATEGORY, TYPE_NAME);
   return {
