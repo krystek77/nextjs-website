@@ -21,7 +21,7 @@ function FS({ washerExtractor }) {
         og_title="Pralnicowirówki wolnostojące wysokoobrotowe"
         twitter_title="Pralnicowirówki wolnostojące wysokoobrotowe"
       />
-      <Banner classes="banner__washerExtractors_FS800">
+      <Banner classes="banner__washerExtractors_FS800 banner_height_auto">
         <Title
           variant="h1"
           content="Pralnicowirówka wolnsotojąca wysokoobrotowa, FS-800"

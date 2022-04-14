@@ -46,7 +46,7 @@ function FX({ washerExtractor }) {
         description={description}
         twitter_title={title}
       />
-      <Banner classes="banner__washerExtractors_FX">
+      <Banner classes="banner__washerExtractors_FX banner_height_auto">
         <Title
           variant="h1"
           content={title}

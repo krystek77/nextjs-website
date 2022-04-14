@@ -37,7 +37,7 @@ function TDryers({ item }) {
         description={description}
         twitter_title={title}
       />
-      <Banner classes="banner__dryer_T">
+      <Banner classes="banner__dryer_T banner_height_auto">
         <Title
           variant="h1"
           content={title}

@@ -47,7 +47,7 @@ function FX350({ washerExtractor }) {
         og_title="Pralnicowirówki wolnostojące wysokoobrotowe"
         twitter_title="Pralnicowirówki wolnostojące wysokoobrotowe"
       />
-      <Banner classes="banner__washerExtractors_FX350">
+      <Banner classes="banner__washerExtractors_FX350 banner_height_auto">
         <Title
           variant="h1"
           content={title}
