@@ -16,7 +16,6 @@ import ProductControls from '../../../../containers/ProductControls/ProductContr
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
 import { cutURL } from 'lib';
 import { useRouter } from 'next/router';
-import { getModels } from 'utils/requests';
 import { sort } from 'utils/sortAvailableModels';
 
 function FX350({ item }) {
@@ -80,104 +79,21 @@ FX350.getLayout = (page) => {
 export default FX350;
 
 const TYPE_NAME = 'FX350';
-
+const CATEGORY = 'pralnicowirówki';
+import { model, modelsPaths } from 'utils/models';
 export async function getStaticPaths() {
-  const data = await getModels('pralnicowirówki');
-  const models = data[0].subcategories
-    .reduce((acc, item) => {
-      const category = item.title;
-      const types = item.types
-        .map((item) => {
-          return {
-            category,
-            line: item.line,
-            general_description: item.description,
-            models: item.models,
-            name: item.name,
-          };
-        })
-        .filter((item) => item.name === TYPE_NAME);
-      acc.push(...types);
-      return acc;
-    }, [])
-    .reduce((acc, item) => {
-      if (item.models.length !== 0) {
-        let product = null;
-        let available_models = [];
-        for (const model of item.models) {
-          const title = model.model;
-          const subtitle = model.label;
-          available_models.push({ title, subtitle });
-        }
-        for (const model of item.models) {
-          product = {
-            category: item.category,
-            line: item.line,
-            general_description: item.general_description,
-            ...model,
-            available_models,
-          };
-          acc.push(product);
-        }
-      }
-      return acc;
-    }, []);
-  const paths = models.map((item) => {
-    return {
-      params: { model: item.model },
-    };
-  });
+  const paths = await modelsPaths(CATEGORY, TYPE_NAME);
   return {
     paths,
     fallback: false,
   };
 }
-export async function getStaticProps(context) {
-  const data = await getModels('pralnicowirówki');
-  const model = data[0].subcategories
-    .reduce((acc, item) => {
-      const category = item.title;
-      const types = item.types
-        .map((item) => {
-          return {
-            category,
-            line: item.line,
-            general_description: item.description,
-            models: item.models,
-            name: item.name,
-          };
-        })
-        .filter((item) => item.name === TYPE_NAME);
-      acc.push(...types);
-      return acc;
-    }, [])
-    .reduce((acc, item) => {
-      if (item.models.length !== 0) {
-        let product = null;
-        let available_models = [];
-        for (const model of item.models) {
-          const title = model.model;
-          const subtitle = model.label;
-          available_models.push({ title, subtitle });
-        }
-        for (const model of item.models) {
-          product = {
-            category: item.category,
-            line: item.line,
-            general_description: item.general_description,
-            ...model,
-            available_models,
-          };
-          acc.push(product);
-        }
-      }
-      return acc;
-    }, [])
-    .find((item) => item.model === context.params.model);
 
+export async function getStaticProps(context) {
+  const oneModel = await model(CATEGORY, context, TYPE_NAME);
   return {
     props: {
-      item: JSON.parse(JSON.stringify(model)),
+      item: JSON.parse(JSON.stringify(oneModel)),
     },
   };
 }
