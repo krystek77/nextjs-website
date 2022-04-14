@@ -18,11 +18,13 @@ import ECO3 from '../../../../containers/ECO3/ECO3';
 import CascadeDrum from '../../../../containers/CascadeDrum/CascadeDrum';
 import FXDesign from '../../../../containers/FXDesign/FXDesign';
 import Friendly from '../../../../containers/Friendly/Friendly';
-
+import { cutURL } from 'lib';
 import { useRouter } from 'next/router';
-import { cutURL } from '../../../../lib';
+import { getModels } from 'utils/requests';
+import { sort } from 'utils/sortAvailableModels';
 
-function FX({ washerExtractor }) {
+function FX({ item }) {
+  const router = useRouter();
   const {
     model,
     title,
@@ -31,13 +33,12 @@ function FX({ washerExtractor }) {
     line,
     available_models,
     slider,
-    isSliderVertical,
+    isVertical,
     features,
     parameters,
     controls,
     leaflets,
-  } = washerExtractor;
-  const router = useRouter();
+  } = item;
 
   return (
     <React.Fragment>
@@ -47,11 +48,7 @@ function FX({ washerExtractor }) {
         twitter_title={title}
       />
       <Banner classes="banner__washerExtractors_FX banner_height_auto">
-        <Title
-          variant="h1"
-          content={title}
-          classes="title_maxWidth_960 title_bg_white_red"
-        />
+        <Title variant="h1" content={title} classes="title_bg_white_red" />
         <PageIndicator label={category} variant="red" />
       </Banner>
       <main>
@@ -59,9 +56,9 @@ function FX({ washerExtractor }) {
           model={model}
           line={line}
           category={category}
-          available_models={available_models}
+          available_models={sort(available_models)}
           slider={slider}
-          vertical={isSliderVertical}
+          vertical={isVertical}
           description={description}
         />
         <IconLink
@@ -93,31 +90,106 @@ FX.getLayout = (page) => {
 
 export default FX;
 
-export async function getStaticPaths(context) {
+const TYPE_NAME = 'FX';
+
+export async function getStaticPaths() {
+  const data = await getModels('pralnicowirówki');
+  const models = data[0].subcategories
+    .reduce((acc, item) => {
+      const category = item.title;
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
+      acc.push(...types);
+      return acc;
+    }, [])
+    .reduce((acc, item) => {
+      if (item.models.length !== 0) {
+        let product = null;
+        let available_models = [];
+        for (const model of item.models) {
+          const title = model.model;
+          const subtitle = model.label;
+          available_models.push({ title, subtitle });
+        }
+        for (const model of item.models) {
+          product = {
+            category: item.category,
+            line: item.line,
+            general_description: item.general_description,
+            ...model,
+            available_models,
+          };
+          acc.push(product);
+        }
+      }
+      return acc;
+    }, []);
+  const paths = models.map((item) => {
+    return {
+      params: { model: item.model },
+    };
+  });
   return {
-    paths: [
-      { params: { model: 'FX-65' } },
-      { params: { model: 'FX-80' } },
-      // { params: { model: 'FX-105' } },
-      // { params: { model: 'FX-135' } },
-      // { params: { model: 'FX-180' } },
-      // { params: { model: 'FX-240' } },
-      // { params: { model: 'FX-280' } },
-    ],
+    paths,
     fallback: false,
   };
 }
 
-import { products } from '../../../../constants/products';
 export async function getStaticProps(context) {
-  //fetch data for a single washer extractors
-  // console.log(context);
-  // console.log(context.params.model);
-  const washerExtractor = products.find(
-    (item) => item.model === context.params.model
-  );
+  const data = await getModels('pralnicowirówki');
+  const model = data[0].subcategories
+    .reduce((acc, item) => {
+      const category = item.title;
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
+      acc.push(...types);
+      return acc;
+    }, [])
+    .reduce((acc, item) => {
+      if (item.models.length !== 0) {
+        let product = null;
+        let available_models = [];
+        for (const model of item.models) {
+          const title = model.model;
+          const subtitle = model.label;
+          available_models.push({ title, subtitle });
+        }
+        for (const model of item.models) {
+          product = {
+            category: item.category,
+            line: item.line,
+            general_description: item.general_description,
+            ...model,
+            available_models,
+          };
+          acc.push(product);
+        }
+      }
+      return acc;
+    }, [])
+    .find((item) => item.model === context.params.model);
 
   return {
-    props: { washerExtractor },
+    props: {
+      item: JSON.parse(JSON.stringify(model)),
+    },
   };
 }

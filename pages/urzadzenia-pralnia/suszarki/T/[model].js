@@ -24,7 +24,7 @@ function TDryers({ item }) {
     line,
     available_models,
     slider,
-    isSliderVertical,
+    isVertical,
     features,
     parameters,
     controls,
@@ -52,7 +52,7 @@ function TDryers({ item }) {
           category={category}
           available_models={sort(available_models)}
           slider={slider}
-          vertical={isSliderVertical}
+          vertical={isVertical}
           description={description}
         />
         <IconLink
@@ -81,7 +81,7 @@ TDryers.defaultProps = {
   line: 'Line name',
   available_models: [],
   slider: [],
-  isSliderVertical: false,
+  isVertical: false,
   features: [],
   parameters: [],
   controls: [],
@@ -89,19 +89,23 @@ TDryers.defaultProps = {
 };
 export default TDryers;
 
+const TYPE_NAME = 'T';
 export async function getStaticPaths() {
   const data = await getModels('suszarki');
   const models = data[0].subcategories
     .reduce((acc, item) => {
       const category = item.title;
-      const types = item.types.map((item) => {
-        return {
-          category,
-          line: item.line,
-          general_description: item.description,
-          models: item.models,
-        };
-      });
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
       acc.push(...types);
       return acc;
     }, [])
@@ -132,6 +136,7 @@ export async function getStaticPaths() {
       params: { model: item.model },
     };
   });
+  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -142,14 +147,17 @@ export async function getStaticProps(context) {
   const model = data[0].subcategories
     .reduce((acc, item) => {
       const category = item.title;
-      const types = item.types.map((item) => {
-        return {
-          category,
-          line: item.line,
-          general_description: item.description,
-          models: item.models,
-        };
-      });
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
       acc.push(...types);
       return acc;
     }, [])

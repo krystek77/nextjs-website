@@ -8,12 +8,7 @@ function ImageSlider({ initialState = -1, data = [] }) {
 
   const render = indexes.includes(-1) ? (
     <div className={styles.slider__image}>
-      <Image
-        src={data[0]}
-        alt="Pralnicowirówka wolnostojąca wysokoobrotowa"
-        width="480"
-        height="640"
-      />
+      <Image src={data[0]} alt="zdjęcie urządzenia" width="480" height="640" />
     </div>
   ) : (
     data.map((item, index) => {
@@ -22,12 +17,7 @@ function ImageSlider({ initialState = -1, data = [] }) {
           key={`image_${index + 1}`}
           className={`${styles.slider__image} ${styles.slider__image_active}`}
         >
-          <Image
-            src={item}
-            alt="pralnicowirówka wolnostojąca wysokoobrotow"
-            width="480"
-            height="640"
-          />
+          <Image src={item} alt="zdjęcie urządzenia" width="480" height="640" />
         </div>
       ) : null;
     })
@@ -47,7 +37,11 @@ function ImageSlider({ initialState = -1, data = [] }) {
                   type="button"
                   className={styles.slider__thumb}
                 >
-                  <Image src={item} alt={index} layout="fill" />
+                  <Image
+                    src={item}
+                    alt={`miniatura urządzenia_${index}`}
+                    layout="fill"
+                  />
                 </button>
               );
             })}

@@ -14,13 +14,13 @@ import IconLink from '../../../../components/IconLink/IconLink';
 import ProductData from '../../../../containers/ProductData/ProductData';
 import ProductControls from '../../../../containers/ProductControls/ProductControls';
 import Leaflets from '../../../../containers/Leaflets/Leaflets';
-import CascadeDrum from '../../../../containers/CascadeDrum/CascadeDrum';
-import { products } from '../../../../constants/products';
-
+import { cutURL } from 'lib';
 import { useRouter } from 'next/router';
-import { cutURL } from '../../../../lib';
+import { getModels } from 'utils/requests';
+import { sort } from 'utils/sortAvailableModels';
 
-function FX350({ washerExtractor }) {
+function FX350({ item }) {
+  const router = useRouter();
   const {
     model,
     title,
@@ -34,25 +34,17 @@ function FX350({ washerExtractor }) {
     parameters,
     controls,
     leaflets,
-  } = washerExtractor;
-
-  const router = useRouter();
+  } = item;
 
   return (
     <React.Fragment>
       <HeadMetaTags
-        title="Pralnicowirówki wolnostojące wysokoobrotowe"
-        description="Najlepszy wybór do pralni przemysłowych, których dzialanie wymaga najlepszych z najlepszych rozwiązań pralniczych. Zaprojektowane, aby zapewnić najniższe koszty zużycia wody
-        i energii, wysoką wydajność i przyjazną obsługę. Innowacyjne technologie: CascadeDrum, supereco, Xcontrol FlEX plus czy TRACE-TECH, czynią ją bezkonkurencyjne na rynku."
-        og_title="Pralnicowirówki wolnostojące wysokoobrotowe"
-        twitter_title="Pralnicowirówki wolnostojące wysokoobrotowe"
+        title={title}
+        description={description}
+        twitter_title={title}
       />
       <Banner classes="banner__washerExtractors_FX350 banner_height_auto">
-        <Title
-          variant="h1"
-          content={title}
-          classes="title_maxWidth_960 title_bg_white_red"
-        />
+        <Title variant="h1" content={title} classes="title_bg_white_red" />
         <PageIndicator label={category} variant="red" />
       </Banner>
       <main>
@@ -61,7 +53,7 @@ function FX350({ washerExtractor }) {
           line={line}
           category={category}
           description={description}
-          available_models={available_models}
+          available_models={sort(available_models)}
           slider={slider}
           vertical={isSliderVertical}
         />
@@ -77,7 +69,6 @@ function FX350({ washerExtractor }) {
         <ProductControls controls={controls} />
         <Leaflets leaflets={leaflets} />
       </main>
-      <CascadeDrum />
     </React.Fragment>
   );
 }
@@ -88,22 +79,105 @@ FX350.getLayout = (page) => {
 
 export default FX350;
 
-export async function getStaticPaths(context) {
+const TYPE_NAME = 'FX350';
+
+export async function getStaticPaths() {
+  const data = await getModels('pralnicowirówki');
+  const models = data[0].subcategories
+    .reduce((acc, item) => {
+      const category = item.title;
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
+      acc.push(...types);
+      return acc;
+    }, [])
+    .reduce((acc, item) => {
+      if (item.models.length !== 0) {
+        let product = null;
+        let available_models = [];
+        for (const model of item.models) {
+          const title = model.model;
+          const subtitle = model.label;
+          available_models.push({ title, subtitle });
+        }
+        for (const model of item.models) {
+          product = {
+            category: item.category,
+            line: item.line,
+            general_description: item.general_description,
+            ...model,
+            available_models,
+          };
+          acc.push(product);
+        }
+      }
+      return acc;
+    }, []);
+  const paths = models.map((item) => {
+    return {
+      params: { model: item.model },
+    };
+  });
   return {
-    paths: [
-      { params: { model: 'FX-350' } },
-      // { params: { model: 'FX-450' } },
-      // { params: { model: 'FX-600' } },
-    ],
+    paths,
     fallback: false,
   };
 }
-
 export async function getStaticProps(context) {
-  const washerExtractor = products.find(
-    (item) => item.model === context.params.model
-  );
+  const data = await getModels('pralnicowirówki');
+  const model = data[0].subcategories
+    .reduce((acc, item) => {
+      const category = item.title;
+      const types = item.types
+        .map((item) => {
+          return {
+            category,
+            line: item.line,
+            general_description: item.description,
+            models: item.models,
+            name: item.name,
+          };
+        })
+        .filter((item) => item.name === TYPE_NAME);
+      acc.push(...types);
+      return acc;
+    }, [])
+    .reduce((acc, item) => {
+      if (item.models.length !== 0) {
+        let product = null;
+        let available_models = [];
+        for (const model of item.models) {
+          const title = model.model;
+          const subtitle = model.label;
+          available_models.push({ title, subtitle });
+        }
+        for (const model of item.models) {
+          product = {
+            category: item.category,
+            line: item.line,
+            general_description: item.general_description,
+            ...model,
+            available_models,
+          };
+          acc.push(product);
+        }
+      }
+      return acc;
+    }, [])
+    .find((item) => item.model === context.params.model);
+
   return {
-    props: { washerExtractor },
+    props: {
+      item: JSON.parse(JSON.stringify(model)),
+    },
   };
 }
