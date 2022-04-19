@@ -41,3 +41,6 @@
 .description_center {
   text-align: center;
 }
+.description_maxWidth_auto {
+  max-width: 100%;
+}
