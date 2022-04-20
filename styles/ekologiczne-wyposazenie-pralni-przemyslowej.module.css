@@ -19,6 +19,9 @@
   /* border: 1px solid blue; */
   min-width: 50%;
   position: relative;
+  background-image: radial-gradient(90% 1000% at 50% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.75) 100%);
+  background-position: center;
+  filter: brightness(0.75);
 }
 .greenPassport__image img {
   position: absolute;
@@ -35,20 +38,10 @@
   padding: 2rem 4rem;
 }
 .greenPassport__title_passport {
-  background: radial-gradient(
-    100% 200% at 0% 0%,
-    rgb(156 204 102) 0%,
-    rgb(132 191 64) 50%,
-    rgb(105 153 51) 100%
-  );
+  background: radial-gradient(100% 200% at 0% 0%, rgb(156 204 102) 0%, rgb(132 191 64) 50%, rgb(105 153 51) 100%);
 }
 .greenPassport__title_water {
-  background: radial-gradient(
-    100% 200% at 0% 0%,
-    rgb(77 195 254) 0%,
-    rgb(1 153 228) 50%,
-    rgb(1 119 178) 100%
-  );
+  background: radial-gradient(100% 200% at 0% 0%, rgb(77 195 254) 0%, rgb(1 153 228) 50%, rgb(1 119 178) 100%);
 }
 
 .greenPassport__content {
@@ -75,8 +68,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .greenPassport__subwrapper:nth-child(2n + 1) {
   flex-direction: row-reverse;
@@ -90,6 +83,7 @@
   justify-content: flex-end;
   align-items: center;
   perspective: 600px;
+  /* filter: brightness(0.75); */
 }
 .greenPassport__subImage > span {
   transform: rotateY(-20deg);

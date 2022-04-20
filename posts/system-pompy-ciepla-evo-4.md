@@ -11,7 +11,7 @@
 
 - najkrótszy czas suszenia
 - zużycie energii mniejsze o **60%**
-- mniejsza niż **4 kW** moc zinstalowana zamiast 10 - 25 kW
+- mniejszy pobór prądu - mniej niż **4 kW** zamiast 10 - 25 kW
 - instalacja w pętli zamkniętej  - nie ma potrzeby stosowania rur wentylacyjnych
 
 ![Suszarki z pompą ciepła](https://res.cloudinary.com/doydwvtkw/image/upload/v1647954825/uploads/posts/evo4_cycle_with_logo_xedli8.webp)
