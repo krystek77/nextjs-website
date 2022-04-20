@@ -54,3 +54,7 @@
   font-family: var(--font-base);
   color: var(--dark-700);
 }
+.subtitle_number .subtitle__content {
+  font-size: 5rem;
+  font-weight: 800;
+}
