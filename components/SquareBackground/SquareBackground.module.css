@@ -49,3 +49,19 @@
 .squaresBgDecorator.squaresBgDecorator_opacity_1 {
   filter: opacity(1);
 }
+.eco_water {
+  top: initial;
+  left: 0;
+  bottom: 0;
+  transform: rotate(-180deg) translateY(-100%);
+  z-index: 1;
+}
+.eco_water {
+  top: initial;
+  left: initial;
+  right: 0;
+  bottom: 0;
+  transform: rotate(-90deg);
+  transform: translateY(400%);
+  z-index: 0;
+}

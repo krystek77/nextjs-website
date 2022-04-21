@@ -19,3 +19,15 @@
   transform: translateX(100%) rotate(-90deg) translateY(-200%) translateX(-80%);
 }
 
+.bigLabel_center_right {
+  top: 100%;
+  right: 0;
+  z-index: 1;
+  transform: translateX(100%) rotate(-90deg) translateY(-200%) translateX(-80%);
+}
+.bigLabel_center_left {
+  top: 300px;
+  left: 0;
+  transform: rotate(-90deg) translateX(-100%) translateY(100%);
+  z-index: 1;
+}
