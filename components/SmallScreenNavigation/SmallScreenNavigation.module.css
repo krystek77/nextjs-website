@@ -1,3 +1,6 @@
+.smallScreenNavigation {
+  display: none;
+}
 .smallScreenNavigation__button {
   outline: none;
   cursor: pointer;
@@ -97,7 +100,7 @@
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  content: "";
+  content: '';
   display: block;
   inset: 0px;
   position: absolute;
@@ -129,5 +132,11 @@
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .smallScreenNavigation {
+    display: none;
+    /*temporary*/
   }
 }
