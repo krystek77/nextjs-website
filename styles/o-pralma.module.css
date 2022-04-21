@@ -1,0 +1,26 @@
+.aboutUs {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+.aboutUs__greeting {
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.aboutUs__signature {
+  font-size: 0.75rem;
+}
+.aboutUs + section {
+  background-image: radial-gradient(
+    90% 1000% at 50% 50%,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+}
+.aboutUs__ceo {
+  font-family: var(--font-decorative);
+  font-size: 2rem;
+}

@@ -10,14 +10,14 @@
   padding-bottom: 4.5rem;
 }
 .greenPassport__section_water {
-  background-color: rgb(180 229 254);
+  background-color: rgb(226 245 255);
   position: relative;
 }
 .greenPassport__section_gas {
-  background-color: rgb(231 231 228);
+  background-color: rgb(240 240 240);
 }
 .greenPassport__section_detergents {
-  background-color: rgb(241, 255, 239);
+  background-color: rgb(248 251 247);
 }
 .greenPassport__header {
   /* border: 1px solid red; */

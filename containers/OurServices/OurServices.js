@@ -27,7 +27,7 @@ function OurServices() {
             classes="description_18"
             content="Prawie 30 lat obecności na rynku rozwiązań dla pralni przemysłowych, to dla nas różne wyzwania oraz bagaż wielu doświadczeń. 
             Mimo realizacji setek pralni przemysłowych, zarówno od podstaw jak i doposażeń już istniejących, jeszcze bardziej się angażuejmy w kolejne projekty.
-            Potrzeby rosną, wyposażenie pralnicze zmienia się, dzieki czemu nadal rozwijamy swoją pasję, aby tworzyć dla Ciebie jeszcze bardziej wydajne, ekologiczne
+            Potrzeby rosną, wyposażenie pralnicze zmienia się, dzieki temu i Twojemu zaufaniu nadal rozwijamy swoją pasję, aby tworzyć dla Ciebie jeszcze bardziej wydajne, ekologiczne
             i optymalne do potrzeb przemysłowe wyposażenie pralnicze."
           />
         </div>
