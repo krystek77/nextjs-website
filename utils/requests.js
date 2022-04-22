@@ -28,7 +28,7 @@ export async function getCategoryByName(name) {
         { $match: { name } },
       ])
       .toArray();
-    console.log(categories);
+    // console.log(categories);
     return items;
   } catch (error) {
     console.log(error.message);
