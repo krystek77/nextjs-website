@@ -93,7 +93,6 @@ const TYPE_NAME = 'SE_SP';
 const CATEGORY = 'suszarki';
 export async function getStaticPaths() {
   const paths = await modelsPaths(CATEGORY, TYPE_NAME);
-  console.log(paths)
   return {
     paths,
     fallback: false,
@@ -101,7 +100,6 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps(context) {
   const oneModel = await model(CATEGORY, context, TYPE_NAME);
-  console.log(oneModel)
   return {
     props: {
       item: JSON.parse(JSON.stringify(oneModel)),
