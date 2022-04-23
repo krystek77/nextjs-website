@@ -20,8 +20,8 @@ function HeadMetaTags({ title, description, og_title, og_url, og_type, og_site_n
 }
 
 HeadMetaTags.defaultProps = {
-  title: "Pralma - wyposażenie pralni przemysłowej. Pralki, suszarki, pralnicowirówki",
-  description: "Pralma - polski producent pralek, pralnicowirówek i suszarek bębnowych oraz wózków i regałów do pralni przemysłowych. 👌 Autoryzowany przedstawiciel najpopularniejszych na świecie urządzeń marki Primus",
+  title: "Pralma - wyposażenie pralni przemysłowej 👈. Pralki, suszarki, pralnicowirówki",
+  description: "Pralma - 👈 polski producent pralek, pralnicowirówek i suszarek bębnowych oraz wózków i regałów do pralni przemysłowych. 👌 Autoryzowany przedstawiciel najpopularniejszych na świecie urządzeń marki Primus",
   og_title: "Polskie urządzenia pralnicze - Pralma",
   og_url: "http://www.pralma.pl",
   og_type: "website",
