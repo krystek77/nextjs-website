@@ -136,3 +136,8 @@
     );
   background-position: center;
 }
+
+.banner__trolleys {
+  background-image: url('/assets/images/for_banners/banner_trolleys.webp'),
+    radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
