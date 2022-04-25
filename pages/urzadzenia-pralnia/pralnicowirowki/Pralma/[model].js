@@ -118,5 +118,6 @@ export async function getStaticProps(context) {
     props: {
       item: JSON.parse(JSON.stringify(oneModel)),
     },
+    revalidate: 10,
   };
 }

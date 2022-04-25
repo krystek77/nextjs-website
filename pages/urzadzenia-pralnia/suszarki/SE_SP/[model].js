@@ -38,11 +38,7 @@ function SE_SPDryers({ item }) {
         twitter_title={title}
       />
       <Banner classes="banner__dryer_T banner_height_auto">
-        <Title
-          variant="h1"
-          content={title}
-          classes=" title_bg_white_primary"
-        />
+        <Title variant="h1" content={title} classes=" title_bg_white_primary" />
         <PageIndicator label={category} variant="primary" />
       </Banner>
       <main>
@@ -104,5 +100,6 @@ export async function getStaticProps(context) {
     props: {
       item: JSON.parse(JSON.stringify(oneModel)),
     },
+    revalidate: 10,
   };
 }
