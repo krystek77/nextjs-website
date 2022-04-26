@@ -9,7 +9,7 @@ import { getCategoryByName } from 'utils/requests';
 import SiteInProgress from 'containers/SiteInProgress/SiteInProgress';
 import { useRouter } from 'next/router';
 
-function Washers({ items }) {
+function ProfessionalDryers({ items }) {
   const router = useRouter();
   if (items.length) {
     const { title, description, name, subcategories } = items[0];
@@ -40,13 +40,13 @@ function Washers({ items }) {
   return <SiteInProgress page={router.pathname} />;
 }
 
-Washers.getLayout = (page) => {
+ProfessionalDryers.getLayout = (page) => {
   return <PageLayout>{page}</PageLayout>;
 };
-export default Washers;
+export default ProfessionalDryers;
 
 export async function getStaticProps() {
-  const items = await getCategoryByName('pralnice');
+  const items = await getCategoryByName('małe komercyjne suszarki');
   return {
     props: {
       items: JSON.parse(JSON.stringify(items)),

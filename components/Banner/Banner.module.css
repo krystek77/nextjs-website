@@ -3,8 +3,8 @@
   height: 550px;
   background-image: radial-gradient(
     90% 1000% at 50% 50%,
-    var(--accent-700) 0%,
-    var(--accent-500) 100%
+    var(--dark-700) 0%,
+    var(--dark-500) 100%
   );
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -32,6 +32,14 @@
 }
 .banner__washerExtractors {
   background-image: url('/assets/images/for_banners/banner_washerextractors.webp'),
+    radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
+.banner__ironers {
+  background-image: url('/assets/images/for_banners/banner_ironers.webp'),
+    radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+}
+.banner__barriers {
+  background-image: url('/assets/images/for_banners/banner_barriers.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
 .banner__thumbleDryers {
