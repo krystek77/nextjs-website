@@ -10,6 +10,7 @@ import SiteInProgress from 'containers/SiteInProgress/SiteInProgress';
 import { useRouter } from 'next/router';
 
 function Ironers({ items }) {
+  console.log(items);
   const router = useRouter();
   if (items.length) {
     const { title, description, name, subcategories } = items[0];

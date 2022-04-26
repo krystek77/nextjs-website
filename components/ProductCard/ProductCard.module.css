@@ -10,10 +10,22 @@
   overflow: hidden;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  /* max-width: 50%; */
   min-width: 360px;
 }
-
+.productCardHorizontal {
+  width: 640px;
+  height: 480px;
+  border: 1px solid var(--light-300);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  min-width: 360px;
+}
 .productCard__overlay {
   position: absolute;
   display: none;
@@ -26,7 +38,8 @@
   -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-.productCard:hover .productCard__overlay {
+.productCard:hover .productCard__overlay,
+.productCardHorizontal:hover .productCard__overlay {
   display: flex;
 }
 

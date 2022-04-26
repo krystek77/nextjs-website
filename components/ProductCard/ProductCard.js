@@ -1,23 +1,46 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import Button from "../Button/Button";
-import List from "../List/List";
-import styles from "./ProductCard.module.css";
+import Button from '../Button/Button';
+import List from '../List/List';
+import styles from './ProductCard.module.css';
 
-function ProductCard({ label, path, image, list, children }) {
+function ProductCard({ label, path, image, list, children, horizontal }) {
   const formattedList = list.map((item) => {
-    return typeof item === "object" ? item.name : item;
+    return typeof item === 'object' ? item.name : item;
   });
-  return (
+
+  return horizontal ? (
     <Link href={`/${path}`}>
-      <a className={styles.productCard}>
-        <Image src={`/assets/images/${image}`} alt={label} width='260' height='350' />
+      <a className={styles.productCardHorizontal}>
+        <Image
+          src={`/assets/images/${image}`}
+          alt={label}
+          width="320"
+          height="240"
+        />
         {children}
         <div className={styles.productCard__overlay}>
           {children}
-          <List items={formattedList} classes='list_light' />
-          <Button label='Dowiedz się więcej' />
+          <List items={formattedList} classes="list_light" />
+          <Button label="Dowiedz się więcej" />
+        </div>
+      </a>
+    </Link>
+  ) : (
+    <Link href={`/${path}`}>
+      <a className={styles.productCard}>
+        <Image
+          src={`/assets/images/${image}`}
+          alt={label}
+          width="240"
+          height="320"
+        />
+        {children}
+        <div className={styles.productCard__overlay}>
+          {children}
+          <List items={formattedList} classes="list_light" />
+          <Button label="Dowiedz się więcej" />
         </div>
       </a>
     </Link>
@@ -25,10 +48,11 @@ function ProductCard({ label, path, image, list, children }) {
 }
 
 ProductCard.defaultProps = {
-  parent: "/",
-  label: "some machines",
-  path: "/",
-  image: "washer_extractors.png",
-  list: ["some item 1", "some item 2", "some item 3"],
+  parent: '/',
+  label: 'some machines',
+  path: '/',
+  image: 'washer_extractors.png',
+  list: ['some item 1', 'some item 2', 'some item 3'],
+  horizontal: false,
 };
 export default ProductCard;

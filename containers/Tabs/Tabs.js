@@ -34,6 +34,7 @@ function Tabs({ initialState = 0, data }) {
                     image={item.image}
                     list={item.list}
                     label={item.label}
+                    horizontal={item.isHorizontal}
                   >
                     <Label
                       label={item.label}
