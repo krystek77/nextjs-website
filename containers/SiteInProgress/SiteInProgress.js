@@ -1,13 +1,11 @@
 import styles from "./SiteInProgress.module.css";
 import Subtitle from "../../components/Subtitle/Subtitle";
 import Title from "../../components/Title/Title";
-import HeadMetaTags from '../../components/HeadMetaTags/HeadMetaTags'
 import React from "react";
 
 function SiteInProgress({ page }) {
   return (
     <React.Fragment>
-      <HeadMetaTags/>
       <main className={styles.siteInProgress}>
         <div className={styles.siteInProgress__container}>
           <Subtitle content='Póki co ...' />
