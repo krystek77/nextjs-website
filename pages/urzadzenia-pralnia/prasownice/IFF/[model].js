@@ -1,7 +1,7 @@
 import React from 'react';
 
 /*
- * http://localhost:3000/urzadzenia-pralnia/prasownice/I/I30-160
+ * http://localhost:3000/urzadzenia-pralnia/prasownice/IFF/IFF50-200
  */
 
 import HeadMetaTags from '../../../../components/HeadMetaTags/HeadMetaTags';
@@ -20,7 +20,7 @@ import { sort } from 'utils/sortAvailableModels';
 import { model, modelsPaths } from 'utils/models';
 import SiteInProgress from 'containers/SiteInProgress/SiteInProgress';
 
-function I({ item }) {
+function IFF({ item }) {
   const router = useRouter();
 
   if (item) {
@@ -45,7 +45,7 @@ function I({ item }) {
           description={description}
           twitter_title={title}
         />
-        <Banner classes="banner__I banner_height_auto">
+        <Banner classes="banner_height_auto">
           <Title variant="h1" content={title} classes="title_bg_white_red" />
           <PageIndicator label={category} variant="red" />
         </Banner>
@@ -77,13 +77,13 @@ function I({ item }) {
   return <SiteInProgress page={router.pathname} />;
 }
 
-I.getLayout = (page) => {
+IFF.getLayout = (page) => {
   return <PageLayout>{page}</PageLayout>;
 };
 
-export default I;
+export default IFF;
 
-const TYPE_NAME = 'I';
+const TYPE_NAME = 'IFF';
 const CATEGORY = 'prasownice';
 export async function getStaticPaths() {
   const paths = await modelsPaths(CATEGORY, TYPE_NAME);

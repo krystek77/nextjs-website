@@ -16,8 +16,8 @@ function ProductCard({ label, path, image, list, children, horizontal }) {
         <Image
           src={`/assets/images/${image}`}
           alt={label}
-          width="320"
-          height="240"
+          width="480"
+          height="360"
         />
         {children}
         <div className={styles.productCard__overlay}>
@@ -33,8 +33,8 @@ function ProductCard({ label, path, image, list, children, horizontal }) {
         <Image
           src={`/assets/images/${image}`}
           alt={label}
-          width="240"
-          height="320"
+          width="300"
+          height="400"
         />
         {children}
         <div className={styles.productCard__overlay}>

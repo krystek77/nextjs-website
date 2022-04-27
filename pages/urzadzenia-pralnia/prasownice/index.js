@@ -20,6 +20,7 @@ function Ironers({ items }) {
           title={title}
           description={description}
           twitter_title={title}
+          og_title={title}
         />
         <Banner classes="banner__ironers">
           <Title

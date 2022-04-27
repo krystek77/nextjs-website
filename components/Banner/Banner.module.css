@@ -38,6 +38,11 @@
   background-image: url('/assets/images/for_banners/banner_ironers.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
 }
+.banner__I {
+  background-image: url('/assets/images/for_banners/banner_I.webp'),
+    radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);
+  background-position: top center;
+}
 .banner__barriers {
   background-image: url('/assets/images/for_banners/banner_barriers.webp'),
     radial-gradient(90% 1000% at 50% 50%, #000000 0%, var(--black) 100%);

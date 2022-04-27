@@ -2,13 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './ImageSlider.module.css';
 
-function ImageSlider({ initialState = -1, data = [] }) {
+function ImageSlider({ initialState = -1, data = [], vertical }) {
   const [indexes, setIndexes] = React.useState([initialState]);
   const toggleImage = (index) => setIndexes([index]);
 
   const render = indexes.includes(-1) ? (
     <div className={styles.slider__image}>
-      <Image src={data[0]} alt="zdjęcie urządzenia" width="480" height="640" />
+      <Image
+        src={data[0]}
+        alt="zdjęcie urządzenia"
+        width={vertical ? '640' : '480'}
+        height={vertical ? '480' : '640'}
+      />
     </div>
   ) : (
     data.map((item, index) => {
@@ -17,7 +22,12 @@ function ImageSlider({ initialState = -1, data = [] }) {
           key={`image_${index + 1}`}
           className={`${styles.slider__image} ${styles.slider__image_active}`}
         >
-          <Image src={item} alt="zdjęcie urządzenia" width="480" height="640" />
+          <Image
+            src={item}
+            alt="zdjęcie urządzenia"
+            width={vertical ? '640' : '480'}
+            height={vertical ? '480' : '640'}
+          />
         </div>
       ) : null;
     })
@@ -27,7 +37,15 @@ function ImageSlider({ initialState = -1, data = [] }) {
     <div className={styles.slider}>
       {data.length ? (
         <React.Fragment>
-          <div className={styles.slider__imageWrapper}>{render}</div>
+          <div
+            className={
+              vertical
+                ? `${styles.slider__imageWrappeVertical}`
+                : `${styles.slider__imageWrapper}`
+            }
+          >
+            {render}
+          </div>
           <div className={styles.slider__thumbs}>
             {data.map((item, index) => {
               return (

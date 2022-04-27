@@ -28,12 +28,18 @@ function ProductInfo({
       <div className={styles.productInfo__container}>
         <ModelIndicator model={model} />
         <ModelIndicator model={model} down />
-        <ImageSlider data={slider} initialState={-1} />
+        <ImageSlider data={slider} initialState={-1} vertical={vertical} />
 
         <div className={styles.productInfo__content}>
           <Subtitle content={line} />
           <Title variant="h2" content={category} classes="title_capitalize" />
-          <Description classes="description_mb_3">{description}</Description>
+          <Description
+            classes={
+              vertical ? `description_maxWidth_auto` : `description_mb_3`
+            }
+          >
+            {description}
+          </Description>
           <AvailableModels items={available_models} model={model} />
           <ScrollToAnchor anchor="specyfikacja" label="zobacz specyfikację" />
         </div>
