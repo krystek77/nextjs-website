@@ -91,6 +91,10 @@
   background-image: radial-gradient(90% 1000% at 50% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.75) 100%), url("/assets/images/for_banners/banner_fireBrigade.webp");
   background-position: center;
 }
+.banner__navy {
+  background-image: radial-gradient(90% 1000% at 50% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.75) 100%), url("/assets/images/for_banners/banner_navy.webp");
+  background-position: center;
+}
 .banner__vend_equipments {
   background-image: url("/assets/images/for_banners/vend_equipments.webp"), radial-gradient(200% 1000% at 50% 50%, var(--dark-700) 0%, var(--dark-500) 100%);
   background-position: center;
