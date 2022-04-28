@@ -64,7 +64,7 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   const getLayout = Component.getLayout || ((page) => page);
-  console.log(canonicalUrl);
+  // console.log(canonicalUrl);
   return (
     <>
       <Head>

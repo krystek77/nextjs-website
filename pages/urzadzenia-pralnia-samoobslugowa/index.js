@@ -10,7 +10,7 @@ import PageIndicator from 'components/Banner/PageIndicator/PageIndicator';
 import ModernLaundryEquipment from 'containers/ModernLaundryEquipment/ModernLaundryEquipment';
 import { connectMongoDB } from 'utils/database';
 function SelfServiceLaundryEquipment(props) {
-  console.log(props.product_cards);
+  // console.log(props.product_cards);
   return (
     <React.Fragment>
       <HeadMetaTags />
