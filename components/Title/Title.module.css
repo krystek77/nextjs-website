@@ -16,6 +16,9 @@
 .title_pb_1 {
   padding-bottom: 1rem;
 }
+.title_pb_2 {
+  padding-bottom: 2rem;
+}
 .title_pt_05 {
   padding-top: 0.5rem;
 }
@@ -30,6 +33,9 @@
 }
 .title_mb_3 {
   margin-bottom: 3rem;
+}
+.title_mb_2 {
+  margin-bottom: 2rem;
 }
 .title_mb_0 {
   margin-bottom: 0;
@@ -130,6 +136,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.title_display_h2 {
+  font-size: 3.125rem;
+  line-height: 1.2;
 }
 
 .title_display_h4 {

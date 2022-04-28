@@ -1,0 +1,78 @@
+.fireBrigade {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-top: 9rem;
+  padding-bottom: 0rem;
+}
+.fireBrigade__article {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /* border: 1px solid lightgrey; */
+}
+.fireBrigade__content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.fireBrigade__article.fireBrigade_FDC .fireBrigade__features,
+.fireBrigade__article.fireBrigade_SW .fireBrigade__features,
+.fireBrigade__article.fireBrigade_SoftWashExtremeCare .fireBrigade__features,
+.fireBrigade__article.fireBrigade_ShowerJet .fireBrigade__features,
+.fireBrigade__article.fireBrigade_T .fireBrigade__features {
+  display: flex;
+  align-items: flex-start;
+  /* padding-bottom: 2rem; */
+  padding-top: 2rem;
+}
+.fireBrigade__article.fireBrigade_FDC
+  .fireBrigade__features
+  .fireBrigade__image,
+.fireBrigade__article.fireBrigade_SW .fireBrigade__features .fireBrigade__image,
+.fireBrigade__article.fireBrigade_SoftWashExtremeCare
+  .fireBrigade__features
+  .fireBrigade__image,
+.fireBrigade__article.fireBrigade_ShowerJet
+  .fireBrigade__features
+  .fireBrigade__image,
+.fireBrigade__article.fireBrigade_T .fireBrigade__features .fireBrigade__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fireBrigade__article.fireBrigade_FDC .fireBrigade__features .fireBrigade__list,
+.fireBrigade__article.fireBrigade_SW .fireBrigade__features .fireBrigade__list,
+.fireBrigade__article.fireBrigade_SoftWashExtremeCare
+  .fireBrigade__features
+  .fireBrigade__list,
+.fireBrigade__article.fireBrigade_ShowerJet
+  .fireBrigade__features
+  .fireBrigade__list,
+.fireBrigade__article.fireBrigade_T .fireBrigade__features .fireBrigade__list {
+  flex: 1;
+}
+.fireBrigade__article.fireBrigade_FDC .fireBrigade__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+}
+.fireBrigade__article.fireBrigade_FDC .fireBrigade__footer > div {
+  padding: 1rem;
+}
+.fireBrigade_SW .fireBrigade__content {
+  margin-bottom: 2rem;
+}
+.fireBrigade_HTS {
+  /* background-color: #edffff; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.fireBrigade__article.fireBrigade_ShowerJet {
+  padding-bottom: 0;
+}
+.fireBrigade__article.fireBrigade_HTS {
+  padding-bottom: 0;
+}
