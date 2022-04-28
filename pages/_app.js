@@ -2,10 +2,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import Layout from '../components/Layout/Layout';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const [authorized, setAuthorized] = React.useState(false);
   const router = useRouter();
+  const canonicalUrl = (
+    `https://pralma.com.pl` + (router.asPath === '/' ? '' : router.asPath)
+  ).split('?')[0];
   const hideContent = () => setAuthorized(false);
   React.useEffect(() => {
     const authorizationPathCheck = (url) => {
@@ -60,8 +64,14 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   const getLayout = Component.getLayout || ((page) => page);
+  console.log(canonicalUrl);
   return (
-    <Layout>{getLayout(authorized && <Component {...pageProps} />)}</Layout>
+    <>
+      <Head>
+        <link rel="canonical" href={canonicalUrl} />
+      </Head>
+      <Layout>{getLayout(authorized && <Component {...pageProps} />)}</Layout>
+    </>
   );
 }
 
