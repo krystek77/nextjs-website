@@ -1,0 +1,67 @@
+.navy {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-top: 9rem;
+  padding-bottom: 0rem;
+}
+.navy__article {
+  padding-top: 4rem;
+  /* padding-bottom: 4rem; */
+}
+.navy__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.navy__iconsList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.navy__iconItem {
+  padding: 1rem;
+  /* filter: grayscale(1); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-alt);
+  font-size: 0.7rem;
+  max-width: 150px;
+}
+.navy__iconCaption {
+  text-align: center;
+  text-transform: uppercase;
+  height: 35px;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+.navy__featuredEquipment {
+  background-image: linear-gradient(
+    to right,
+    var(--primary-500) 0%,
+    transparent 15%,
+    transparent 85%,
+    var(--primary-500) 100%
+  );
+}
+.navy__featuredEquipmentInner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.navy__featuredEquipmentArticle {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.navy__featuredEquipmentArticle .navy__iconsList {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.navy__featuredEquipmentArticle .navy__iconItem {
+  padding: 0.25rem;
+  filter: grayscale(1);
+}
+.featuredEquipmentBannerImage {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}

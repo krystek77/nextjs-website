@@ -40,3 +40,17 @@
 .list_mb_1 {
   margin-bottom: 1rem;
 }
+.list.list_small span {
+  display: block;
+  width: 24px !important;
+  height: 24px !important;
+}
+.list.list_small span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.list.list_small .list__content {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
