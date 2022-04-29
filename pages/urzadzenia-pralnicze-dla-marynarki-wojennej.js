@@ -382,8 +382,11 @@ function Navy() {
               />
             </header>
             <Description classes="description_18 description_maxWidth_auto">
-              idealne dla statków towarowych oraz kontenerowych, cystern oraz
-              statków o podobnym przeznaczeniu
+              Idealne dla statków towarowych oraz kontenerowych, cystern i jednostek
+              o podobnym przeznaczeniu. Najpopularniejsze pralnicowirówki na okrętach wojennych.
+              Sztywna konstrukcja powoduje, że urządzenie kołysze się razem ze statkiem, a mniejsza
+              liczba elementów eksploatacyjnych to większa niezawdoność, trwałość i rzadsza konieczność
+              serwisu.
             </Description>
             <div className={styles.featuredEquipmentBannerImage}>
               <Image
@@ -454,14 +457,17 @@ function Navy() {
               />
             </header>
             <Description classes="description_18 description_maxWidth_auto">
-              dla statków wycieczkowych i promów
+              Najmocniejsze pralnicowirówki stanowią idealne wyposażenie każdego statku pasażerskiego czy promu.
+              Znajdują zastsowanie zwłasza na statkach plywających na długich dystansach, dając możliwość
+              pasażerom zabrać mniej odzieży na podróż a obsłudze zapewnić wysokiej jakości usługi i zawsze świeże
+              i czyste pranie.
             </Description>
             <div className={styles.featuredEquipmentBannerImage}>
               <Image
                 src="/assets/images/navy/banner_highspin.webp"
                 alt="pralnicowirówki wolnosotojące"
                 width={1280}
-                height={500}
+                height={350}
               />
             </div>
             <LinkButton
@@ -517,8 +523,11 @@ function Navy() {
               />
             </header>
             <Description classes="description_18 description_maxWidth_auto">
-              suszarki bębnowe, suszarki komorowe, prasownice walcowe i nieckowe
-              przydatne na każdym rodzaju statku bądź okrętu
+              Gdy potrzeby prania na statku są specyficzne, posiadamy też 
+              dodatkowe urządzenia spłaniające wymogi morskiej konstrukcji,
+              takie jak duże suszarki bębnowe, prasownice walcowe i nieckowe,
+              a nawet bariery higieny gdy pełna ochrona przed bakteriami i zarazkami
+              jest bezwzględnie wymagana.
             </Description>
             <div className={styles.featuredEquipmentBannerImage}>
               <Image
