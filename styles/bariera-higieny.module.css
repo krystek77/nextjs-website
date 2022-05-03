@@ -1,0 +1,6 @@
+.hygieneBarrier{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+}

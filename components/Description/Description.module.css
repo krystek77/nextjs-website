@@ -46,3 +46,14 @@
 .description_mb_9 {
   margin-bottom: 9rem;
 }
+.description_weight_600 {
+  font-weight: 600;
+}
+.description_bg {
+  background-color: var(--primary-300);
+  padding:2rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius:0.4rem;
+  filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.15));
+}
