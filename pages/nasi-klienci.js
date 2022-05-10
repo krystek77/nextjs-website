@@ -26,7 +26,7 @@ function Customers() {
       <Banner classes="banner__customers">
         <Title
           variant="h1"
-          content="dla CIEBIE odpowiednie WYPOSAŻENIE PRALNICZE"
+          content="WYPOSAŻENIE PRALNICZE odpowiednie dla CIEBIE"
           classes="title_maxWidth_960 title_bg_white_dark"
         />
       </Banner>
