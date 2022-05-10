@@ -1,0 +1,8 @@
+.hospitalityIntroduction {
+  background-image: url('/assets/images/hospitality/bg_hospitality_1.webp');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  max-width: var(--container);
+  margin: 0 auto;
+}

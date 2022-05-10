@@ -201,6 +201,13 @@ function Footer() {
           {/** list items */}
           <ul className={styles.list}>
             <li className={styles.list__item}>
+              <Link href="/goscinnosc">
+                <a className={styles.list__link}>
+                  Hotele, pensjonaty, restauracje
+                </a>
+              </Link>
+            </li>
+            <li className={styles.list__item}>
               <Link href="/do-prania-mop">
                 <a className={styles.list__link}>Firmy sprzątające - MOP</a>
               </Link>

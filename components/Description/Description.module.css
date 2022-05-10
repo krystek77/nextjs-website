@@ -31,6 +31,9 @@
   text-align: center;
   margin: 0 auto;
 }
+.description_center_container {
+  margin: 0 auto;
+}
 .description_maxWidth_auto {
   max-width: 100%;
 }
@@ -51,9 +54,9 @@
 }
 .description_bg {
   background-color: var(--primary-300);
-  padding:2rem;
+  padding: 2rem;
   text-align: center;
   text-transform: uppercase;
-  border-radius:0.4rem;
-  filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.15));
+  border-radius: 0.4rem;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.15));
 }

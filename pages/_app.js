@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
         '/urzadzenia-pralnicze-dla-marynarki-wojennej',
         '/urzadzenia-pralnicze-dla-strazy-pozarnej',
         '/xcontrol-flex',
+        '/goscinnosc',
       ];
       const path = url.split('?')[0];
       const token =
