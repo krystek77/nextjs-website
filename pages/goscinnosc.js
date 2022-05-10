@@ -7,7 +7,8 @@ import Description from 'components/Description/Description';
 import styles from 'styles/goscinnosc.module.css';
 
 const title = 'Urządzenia do pralni hotelowej, pensjonatów, restauracji ';
-const description = 'Pralnicowirówki, suszarki przemysłowe i prasownice';
+const description =
+  'Pralnicowirówki, suszarki przemysłowe i prasownice, wszystko co niezbędne w pralni każdego hotelu, w którym satysfakcja gości z pobytu jest najważniejsza.';
 
 function Hospitality() {
   return (
