@@ -1,8 +1,28 @@
 .hospitalityIntroduction {
+  position: relative;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+.hospitalityIntroductionDescription {
+  max-width: var(--container);
+  margin: 0 auto;
   background-image: url('/assets/images/hospitality/bg_hospitality_1.webp');
   background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
+  background-position: 100% 100%;
+  background-clip: border-box;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+  /* background-size: contain; */
+}
+.hospitalityInnovator {
+  background-image: URL('/assets/images/hospitality/bg_hospitality_2.webp');
+  background-repeat: no-repeat;
+  background-position: -40% 100%;
+  background-size: 50%;
+  background-clip: border-box;
+  position: relative;
+}
+.hospitalityInnovatorInner {
   max-width: var(--container);
   margin: 0 auto;
 }
