@@ -8,6 +8,7 @@ import styles from 'styles/goscinnosc.module.css';
 import Subtitle from 'components/Subtitle/Subtitle';
 import SquareBackground from 'components/SquareBackground/SquareBackground';
 import List from 'components/List/List';
+import LinkButton from 'components/LinkButton/LinkButton';
 
 const title = 'Urządzenia do pralni hotelowej, pensjonatów, restauracji ';
 const description =
@@ -197,8 +198,128 @@ function Hospitality() {
           </article>
         </div>
       </section>
-      <main className={styles.hospitality}>---</main>
+      <main className={styles.hospitality}>
+        <Subtitle content="Polecane wyposażenie pralni hotelowej" />
+        <Title
+          content="Doskonała jakość usług hotelarskich"
+          classes="title_mb_2"
+        />
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
+            <Range type="pralnicowirówki sztywnomocowane" mark="RX" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="RX80" value="8 kg" />
+              <Model name="RX105" value="10.5 kg" />
+              <Model name="RX135" value="13.5 kg" />
+              <Model name="RX180" value="18 kg" />
+              <Model name="RX240" value="24 kg" />
+              <Model name="RX280" value="28 kg" />
+              <Model name="RX350" value="35 kg" />
+              <Model name="RX520" value="52 kg" />
+            </div>
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+          </footer>
+        </article>
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
+            <Range type="pralnicowirówki wysokoobrotowe" mark="FX" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="FX65" value="6.5 kg" />
+              <Model name="FX80" value="8 kg" />
+              <Model name="FX105" value="10.5 kg" />
+              <Model name="FX135" value="13.5 kg" />
+              <Model name="FX180" value="18 kg" />
+              <Model name="FX240" value="24 kg" />
+              <Model name="FX280" value="28 kg" />
+              <Model name="FX350" value="35 kg" />
+              <Model name="FX450" value="45 kg" />
+              <Model name="FX600" value="60 kg" />
+            </div>
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+          </footer>
+        </article>
+        <article>
+          <header>
+            <Range type="pralnicowirówki wysokoobrotowe" mark="FS" />
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+          </footer>
+        </article>
+        <article>
+          <header>
+            <Range type="suszarki bębnowe" mark="T" />
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />j
+          </footer>
+        </article>
+        <article>
+          <header>
+            <Range type="prasownice walcowe" mark="I33" />
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+          </footer>
+        </article>
+        <article>
+          <header>
+            <Range type="prasownice walcowe" mark="I50" />
+          </header>
+          <div className={styles.hospitalityFeaturedContent}>
+            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
+            <div className={styles.hospitalityFeaturedList}>LIST</div>
+          </div>
+          <footer className={styles.hospitalityFeaturedFooter}>
+            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+          </footer>
+        </article>
+      </main>
     </React.Fragment>
+  );
+}
+
+function Range({ type, mark }) {
+  return (
+    <div className={styles.range}>
+      <p className={styles.rangeType}>{type}</p>
+      <div className={styles.rangeName}>
+        <span className={styles.rangeMark}>{mark}</span>
+        <p className={styles.rangeLine}>linia</p>
+      </div>
+    </div>
+  );
+}
+function Model({ name, value }) {
+  return (
+    <div className={styles.model}>
+      <span className={styles.modelName}>{name}</span>
+      <span className={styles.modelValue}>{value}</span>
+    </div>
   );
 }
 Hospitality.getLayout = (page) => {
