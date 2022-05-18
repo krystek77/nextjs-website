@@ -7,6 +7,7 @@ import Description from 'components/Description/Description';
 import styles from 'styles/goscinnosc.module.css';
 import Subtitle from 'components/Subtitle/Subtitle';
 import SquareBackground from 'components/SquareBackground/SquareBackground';
+import List from 'components/List/List';
 
 const title = 'Urządzenia do pralni hotelowej, pensjonatów, restauracji ';
 const description =
@@ -53,13 +54,13 @@ function Hospitality() {
           </Description>
         </div>
       </section>
-      {/**  */}
+      {/** Innovator  */}
       <section className={styles.hospitalityInnovator}>
         <SquareBackground classes="squaresBgDecorator_bottom_right squaresBgDecorator_rotate_0" />
         <div className={styles.hospitalityInnovatorInner}>
           <header className={styles.hospitalityInnovatorHeader}>
             <Subtitle
-              content="Sprzęt pralniczy a jakość gościnności"
+              content="Sprzęt pralniczy a jakość usług"
               classes="subtitle_max_width_760"
             />
             <Title
@@ -105,6 +106,95 @@ function Hospitality() {
             które dają Ci sprzęt z najnowocześniejszą technologią, ekologicznymi
             rozwiązaniami i zaspokoją Twoje potrzby w zakresie prania w hotelu.
           </Description>
+        </div>
+      </section>
+      {/** Technologies for excellent  hospitality service */}
+      <section className={styles.hospitalityTechnologies}>
+        <div className={styles.hospitalityTechnologiesInner}>
+          <header>
+            <Subtitle
+              content="Technologie pralnicze zapewniające wyższą jakość usług hotelowych"
+              classes="subtitle_max_width_760"
+            />
+            <Title
+              variant="h2"
+              content="Rozwiązania pralnicze dla branży hotelarskiej"
+            />
+          </header>
+          <article>
+            <header>
+              <Title variant="h3" content="Duża oszczędność wody i energii" />
+            </header>
+            <Title variant="h4" content="Pranie" />
+            <List
+              classes="list_mb_2"
+              items={[
+                '20% mniejsze zużycie energii',
+                '25% mniniejsza wilgotność resztkowa',
+                'lepsze rezultat prania przy zuzyciu wody mniejszym od 30%',
+              ]}
+            />
+            <Title variant="h4" content="Suszenie" />
+            <List
+              classes="list_mb_2"
+              items={[
+                'zwiększona wydajność suszenia dzięki innowacyjnej technologii podgrzewu pompą ciepła - EVO4',
+                'zwiększony calkowity przepływ ciepłaego powietrza dzięki połączeniu radialnego i osiowego przepływu',
+                'zmniejszenie zużycia energii o 65% podczas ssuzenia',
+                'mniej niż 5kW mocy niezbędnej do instalacji',
+                'zamknięty przepływ powietrza bez dodatkowej wentylacji',
+                'skrócony cykl suszenia dzięki perforowanym przewałom',
+              ]}
+            />
+          </article>
+          <article>
+            <header>
+              <Title
+                variant="h3"
+                content="Optymalizacja procesu prania dla lepszych jego rezultatów"
+              />
+            </header>
+            <Title variant="h4" content="Pranie" />
+            <List
+              classes="list_mb_2"
+              items={[
+                'bardziej wydajne odwirowanie wody',
+                'ekstreamlnie niksi procent wilgotności resztkowej',
+                'pranie nie styka się z bębnem Cascade™ drum',
+                'opatentowany pojemnik środków piorących i bardzo precyzyjny czujnik poziomu wody',
+                'brak bezpośredniego kontaktu chemii z praniem',
+                'zapisywanie parametrów prania w pamięci sterownika',
+                'pełne śledzenie cykli prania',
+                'zgodność z normami higienicznymi',
+                'możliwość stosowania płynnych środków piorących',
+                'łatwe rozwiązania typu plug and play',
+              ]}
+            />
+            <Title variant="h4" content="Prasowanie" />
+            <List
+              classes="list_mb_2"
+              items={[
+                'automatycznie regulowana prędkość prasowania zależnie od wilgotności resztkowej prania',
+                'brak mokrej bielizny po praniu',
+              ]}
+            />
+          </article>
+          <article>
+            <header>
+              <Title variant="h3" content="Lepsza wydajność pracy" />
+            </header>
+            <Title variant="h4" content="Pranie" />
+            <List
+              classes="list_mb_2"
+              items={[
+                'inteligentne napełnianie wodą i chemią w zależności od załadunku',
+                'czujniki ważenia w ramie pralnicowirówki',
+                'nieograniczone możliwości programwoania',
+                'przyjazny użytkownikowi, czytelny wyświetlacz',
+                'port USB do wygodnego i szybkiego ładowania nowych programów prania',
+              ]}
+            />
+          </article>
         </div>
       </section>
       <main className={styles.hospitality}>---</main>
