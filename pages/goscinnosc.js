@@ -9,6 +9,7 @@ import Subtitle from 'components/Subtitle/Subtitle';
 import SquareBackground from 'components/SquareBackground/SquareBackground';
 import List from 'components/List/List';
 import LinkButton from 'components/LinkButton/LinkButton';
+import Image from 'next/image';
 
 const title = 'Urządzenia do pralni hotelowej, pensjonatów, restauracji ';
 const description =
@@ -124,7 +125,11 @@ function Hospitality() {
           </header>
           <article>
             <header>
-              <Title variant="h3" content="Duża oszczędność wody i energii" />
+              <Title
+                variant="h3"
+                content="Duża oszczędność wody i energii"
+                classes="title_mb_2"
+              />
             </header>
             <Title variant="h4" content="Pranie" />
             <List
@@ -153,6 +158,7 @@ function Hospitality() {
               <Title
                 variant="h3"
                 content="Optymalizacja procesu prania dla lepszych jego rezultatów"
+                classes="title_mb_2"
               />
             </header>
             <Title variant="h4" content="Pranie" />
@@ -182,7 +188,11 @@ function Hospitality() {
           </article>
           <article>
             <header>
-              <Title variant="h3" content="Lepsza wydajność pracy" />
+              <Title
+                variant="h3"
+                content="Lepsza wydajność pracy"
+                classes="title_mb_2"
+              />
             </header>
             <Title variant="h4" content="Pranie" />
             <List
@@ -199,10 +209,13 @@ function Hospitality() {
         </div>
       </section>
       <main className={styles.hospitality}>
-        <Subtitle content="Polecane wyposażenie pralni hotelowej" />
+        <Subtitle
+          content="Polecane wyposażenie pralni hotelowej"
+          classes="subtitle_max_width_760"
+        />
         <Title
           content="Doskonała jakość usług hotelarskich"
-          classes="title_mb_2"
+          classes="title_mb_3"
         />
         <article className={styles.hospitalityFeatured}>
           <header className={styles.hospitalityFeaturedHeader}>
@@ -219,11 +232,40 @@ function Hospitality() {
             </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/rx.webp"
+                alt="pralnicowirówki sztywnomocowane"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <List
+                items={[
+                  'Xcontrol® - easy to use microprocessor',
+                  'Stainless steel top panel & Anthracite grey front and side panels',
+                  'Stainless steel Cascade™ drum and tub',
+                  'Patented Soap Hopper',
+                  'Large drain valve (Ø 76 mm)',
+                  'Easy access to all vital parts from the front',
+                  'Large door opening for easy loading & unloading',
+                ]}
+                classes=""
+              />
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
-            <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
+            <LinkButton
+              classes="linkButton_center"
+              label="Poznaj"
+              to="/urzadzenia-pralnia/pralnicowirowki/RX_G200/RX-65"
+            />
           </footer>
         </article>
         <article className={styles.hospitalityFeatured}>
@@ -243,56 +285,244 @@ function Hospitality() {
             </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/washer_extractors.webp"
+                alt="pralnicowirówki wysokoobrotowe"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <div>
+                <Title
+                  content="FX65, FX80, FX135, FX180, Fx240, FX280"
+                  variant="h4"
+                  classes="title_display_h5 title_uppercase title_mb_2"
+                />
+                <List
+                  items={[
+                    'Xcontrol - easy to use microprocessor',
+                    'Stainless steel top panel & Anthracite grey front and side panels',
+                    'Stainless steel Cascade™ drum and tub',
+                    'Patented Soap Hopper',
+                    'Large drain valve (Ø 76mm)',
+                    'Easy access to all vital parts from the front',
+                    'Large door opening for easy loading & unloading',
+                  ]}
+                  classes="list_mb_2"
+                />
+                <Title
+                  content="FX350, FX450, FX600"
+                  variant="h4"
+                  classes="title_display_h5 title_uppercase title_mb_2"
+                />
+                <List
+                  items={[
+                    'Freestanding, high spin',
+                    'Stainless steel drum and tub',
+                    'Xcontrol Plus - Fully programmable',
+                    'High capacity water inlets',
+                    '2x large drain valves (Ø 76 mm)',
+                    'Cascade Drum',
+                    'Protective Bumper',
+                    'Large door opening for easy loading & unloading',
+                  ]}
+                  classes="list_mb_2"
+                />
+              </div>
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
             <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
           </footer>
         </article>
-        <article>
-          <header>
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
             <Range type="pralnicowirówki wysokoobrotowe" mark="FS" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="FS800" value="80 kg" />
+              <Model name="FS1000" value="100 kg" />
+              <Model name="FS1200" value="120 kg" />
+            </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/fs.webp"
+                alt="pralnicowirówki wysokoobrotowe"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <List
+                items={[
+                  'Xcontrol Plus microprocessor',
+                  'Large drain valve (2 x Ø 103mm)',
+                  'Liquid soap connections',
+                  'Easy access to all parts',
+                  'Power Wash perforated lifting ribs',
+                ]}
+                classes=""
+              />
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
             <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
           </footer>
         </article>
-        <article>
-          <header>
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
             <Range type="suszarki bębnowe" mark="T" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="T9" value="9 kg" />
+              <Model name="T11" value="11 kg" />
+              <Model name="T13" value="13 kg" />
+              <Model name="T16" value="16 kg" />
+              <Model name="T24" value="24 kg" />
+              <Model name="T35" value="35 kg" />
+            </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/T_9_35.webp"
+                alt="przemysłowe suszarki bębnowe"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <div>
+                <Title
+                  content="T9, T11, T13, T16"
+                  variant="h4"
+                  classes="title_display_h5 title_uppercase title_mb_2"
+                />
+                <List
+                  items={[
+                    'RADAX concept: combination of radial and axial airflow',
+                    'Easy to use microprocessor',
+                    'Large door opening for easy',
+                    'loading and unloading',
+                    'Heat pump (HP) available',
+                  ]}
+                  classes="list_mb_2"
+                />
+                <Title
+                  content="T24, T35"
+                  variant="h4"
+                  classes="title_display_h5 title_uppercase title_mb_2"
+                />
+                <List
+                  items={[
+                    'Easy Control microprocessor',
+                    'Radial airflow with Powerdry',
+                    'Stainless steel drum with large diameter',
+                  ]}
+                  classes="list_mb_2"
+                />
+              </div>
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
             <LinkButton classes="linkButton_center" label="Poznaj" to="/" />j
           </footer>
         </article>
-        <article>
-          <header>
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
             <Range type="prasownice walcowe" mark="I33" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="I33-160E" value="62 kg/godz." />
+              <Model name="I33-200E" value="70 kg/godz." />
+              <Model name="I33-160G" value="58 kg/godz." />
+              <Model name="I33-200G" value="72 kg/godz." />
+            </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/I33.webp"
+                alt="prasownice walcowe"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <List
+                items={[
+                  'Indication of ironing speed and temperature',
+                  'Frequency controlled motor',
+                  'Space saving wall installation: front return',
+                  'Automatic cooldown',
+                  'Easy to operate microprocessor',
+                  'Patented direct drive system',
+                  'Patented central suction system',
+                  'Metal fibre premix burner',
+                ]}
+              />
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
             <LinkButton classes="linkButton_center" label="Poznaj" to="/" />
           </footer>
         </article>
-        <article>
-          <header>
+        <article className={styles.hospitalityFeatured}>
+          <header className={styles.hospitalityFeaturedHeader}>
             <Range type="prasownice walcowe" mark="I50" />
+            <div className={styles.hospitalityFeaturedModels}>
+              <Model name="I50-160" value="65 kg/godz." />
+              <Model name="I50-200" value="80 kg/godz." />
+              <Model name="I50-320" value="95 kg/godz." />
+            </div>
           </header>
           <div className={styles.hospitalityFeaturedContent}>
-            <aside className={styles.hospitalityFeaturedImage}>IMAGE</aside>
-            <div className={styles.hospitalityFeaturedList}>LIST</div>
+            <aside className={styles.hospitalityFeaturedImage}>
+              <Image
+                src="/assets/images/I50.webp"
+                alt="prasownice walcowe"
+                width={320}
+                height={426}
+              />
+            </aside>
+            <div className={styles.hospitalityFeaturedList}>
+              <Title
+                content="Cechy"
+                variant="h3"
+                classes="title_display_h4 title_uppercase title_mb_2"
+              />
+              <List
+                items={[
+                  'Large contact with linen over an angle of 300°',
+                  'Finger protection and emergency button',
+                  '20 pre-set ironing programs',
+                  'Reverse mode possible',
+                  'Frequency controlled motor',
+                  'Space saving wall installation: front return',
+                ]}
+              />
+            </div>
           </div>
           <footer className={styles.hospitalityFeaturedFooter}>
             <LinkButton classes="linkButton_center" label="Poznaj" to="/" />

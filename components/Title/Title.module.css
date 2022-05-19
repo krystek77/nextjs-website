@@ -170,3 +170,7 @@
 .title_drop_shadow {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.75));
 }
+.title_left {
+  text-align: left;
+  align-self: flex-start;
+}
