@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.pralma.com.pl',
+  siteUrl: process.env.SITE_URL || 'https://pralma.com.pl',
   generateRobotsTxt: true,
   // ...other options
 };

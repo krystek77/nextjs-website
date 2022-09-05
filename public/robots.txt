@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pralma.com.pl
+
+# Sitemaps
+Sitemap: https://pralma.com.pl/sitemap.xml
