@@ -6,7 +6,7 @@
 .hospitalityIntroductionDescription {
   max-width: var(--container);
   margin: 0 auto;
-  background-image: url('/assets/images/hospitality/bg_hospitality_1.webp');
+  background-image: url("/assets/images/hospitality/bg_hospitality_1.webp");
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-clip: border-box;
@@ -15,7 +15,7 @@
   /* background-size: contain; */
 }
 .hospitalityInnovator {
-  background-image: URL('/assets/images/hospitality/bg_hospitality_2.webp');
+  background-image: URL("/assets/images/hospitality/bg_hospitality_2.webp");
   background-repeat: no-repeat;
   background-position: -40% 100%;
   background-size: 50%;
@@ -30,10 +30,6 @@
   max-width: var(--container);
   margin: 0 auto;
 }
-.hospitality {
-  max-width: var(--container);
-  margin: 0 auto;
-}
 /** range */
 .range {
   width: 150px;
@@ -41,11 +37,7 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  background-image: radial-gradient(
-    100% 100% at 50% 50%,
-    var(--dark-500),
-    var(--dark-700)
-  );
+  background-image: radial-gradient(100% 100% at 50% 50%, var(--dark-500), var(--dark-700));
   color: var(--white);
   border-radius: 0.25rem;
 }
@@ -79,11 +71,7 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  background-image: radial-gradient(
-    200% 200% at 50% 50%,
-    var(--dark-300),
-    var(--dark-500)
-  );
+  background-image: radial-gradient(200% 200% at 50% 50%, var(--dark-300), var(--dark-500));
   color: var(--white);
   border-radius: 0.25rem;
   display: flex;
@@ -98,13 +86,18 @@
   line-height: 1;
   text-transform: uppercase;
 }
-.modelValue {
+.hospitalityMainHeader {
+  max-width: var(--container);
+  margin: 0 auto;
 }
 .hospitalityFeatured {
-  /* border: 1px solid green; */
-  padding-bottom: 4.5rem;
+  max-width: var(--container);
+  margin: 0 auto;
 }
-.hospitalityFeatured:nth-child(odd) {
+.hospitalityBackground {
+  padding: 4.5rem;
+}
+.hospitalityBackground:nth-child(odd) {
   background-color: #ededed;
 }
 .hospitalityFeatured:nth-child(even) {
