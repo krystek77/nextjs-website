@@ -1,3 +1,6 @@
+# Introduction
+This is the code repository of sample company website built using the React framework this is **Next.js**.
+
 ![Zrzut ekranu (23)](https://user-images.githubusercontent.com/45161412/203322541-0798a147-ac60-4bcd-b91e-ecca9dd1524d.png)
 
 ![Zrzut ekranu (22)](https://user-images.githubusercontent.com/45161412/203322575-f4cdce7b-7211-4700-91c1-0eaa45e20c6c.png)
