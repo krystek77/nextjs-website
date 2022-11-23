@@ -7,13 +7,16 @@ Using Next.js, CSS modules, not relational MongoDB database, Sendgrid, jsonwebto
 Logged in user can add latest news from company.
 
 ## Web Technologies
+- Next.js
 - SendGrid - subscribe to newsletter, send email by the contact form
 - MongoDB - store data
-- mongodb - connect to database, manipulate data
-- gray-matter to convert string to object, remark-html to convert markdown to html, remark to unified and serialze mardown
+- mongodb library - connect to database, manipulate data
+- gray-matter library to convert string to object, remark-html to convert markdown to html, remark to unified and serialze mardown
 - jsonwebtoken to handle authentication
 - monent library to format dates
 - react-file-base64 library to convert file to base64 format
+
+---
 
 ![Zrzut ekranu (23)](https://user-images.githubusercontent.com/45161412/203322541-0798a147-ac60-4bcd-b91e-ecca9dd1524d.png)
 
