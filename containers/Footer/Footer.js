@@ -242,8 +242,10 @@ function Footer() {
           </ul>
           <div className={styles.socialMedia}>
             <a
+              target="_blank"
+              rel="noreferrer"
               className={styles.socialMedia__icon}
-              href="http://wwww.pralma.pl"
+              href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100087791394868"
             >
               <Image
                 src="/assets/icons/facebook.svg"
