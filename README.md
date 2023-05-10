@@ -62,3 +62,5 @@ Browse photo gallery image.
 
 
 1. [See deployed website directly at Vercel](https://nextjs-website-weld.vercel.app/)
+2. [See deployed website at onrender](https://nextjs-website-bcrj.onrender.com)
+
