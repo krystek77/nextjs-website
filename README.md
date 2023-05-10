@@ -60,5 +60,5 @@ Browse photo gallery image.
 
 **Page creation is in progress - i do it in my free time and it is not my job.**
 
-1. [See deployed website - www.pralma.com.pl](https://www.pralma.com.pl)
-2. [See deployed website directly at Vercel](https://nextjs-website-weld.vercel.app/)
+
+1. [See deployed website directly at Vercel](https://nextjs-website-weld.vercel.app/)
