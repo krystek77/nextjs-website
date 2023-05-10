@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
   const [authorized, setAuthorized] = React.useState(false);
@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }) {
   // console.log(canonicalUrl);
   return (
     <>
-      <Script
+      {/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-2E93RL2XN5"
       ></Script>
@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps }) {
 
           gtag('config', 'G-2E93RL2XN5');
       `}
-      </Script>
+      </Script> */}
       <Head>
         <link rel="canonical" href={canonicalUrl} />
       </Head>
